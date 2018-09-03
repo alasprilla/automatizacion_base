@@ -16,6 +16,7 @@ public class actionsUtil {
 
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
+	 * Comentario adicional Pull Request
 	 */
 
 	public static String globalAux;
