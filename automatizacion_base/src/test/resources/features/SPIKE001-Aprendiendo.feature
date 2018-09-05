@@ -1,5 +1,7 @@
 #Author: hacorrea@indracompany.com
 #Keywords Summary : Aprendiendo
+@issue:ADP-25
+
 @Turorial
 Feature: paga tu factura
   mas informacion de paga tu factura
