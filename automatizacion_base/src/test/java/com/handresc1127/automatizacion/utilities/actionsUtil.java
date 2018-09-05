@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class actionsUtil {
@@ -35,15 +34,14 @@ public class actionsUtil {
 		}
 
 		driver.findElement(by).isDisplayed();
-		assertTrue(driver.findElements(by).size() > 0);
+		//assertTrue(driver.findElements(by).size() > 0);
 		WebElement element = driver.findElement(by);
-		new Actions(driver).moveToElement(element).perform();
+		//new Actions(driver).moveToElement(element).perform();
 
 		String originalStyle = element.getAttribute("style");
 
 		String modifyStyle = "border: 3px solid green;";
 		if (originalStyle.contains("border:")) {
-			System.out.println("El elemento contiene borde");
 			int indexInicio = 7 + originalStyle.indexOf("border:");
 			String aux = originalStyle.substring(indexInicio);
 			int indexFin = indexInicio + aux.indexOf(";");
@@ -52,11 +50,9 @@ public class actionsUtil {
 			String strFinal = originalStyle.substring(indexFin);
 			modifyStyle = strInicial + strMedio + strFinal;
 		} else {
-			System.out.println("No Contiene la propiedad de borde");
 			modifyStyle = modifyStyle + " " + originalStyle;
 
 		}
-		// System.out.println("Modificación: " + modifyStyle);
 
 		for (int i = 0; i < 2; i++) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
