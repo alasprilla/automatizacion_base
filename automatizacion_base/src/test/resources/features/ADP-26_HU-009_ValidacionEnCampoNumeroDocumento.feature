@@ -1,6 +1,7 @@
 #Author: Henry Andres Correa Correa
 #Keywords Summary : Cedula, Validacion, Documento
-@issue:ADP-26 @HU009 @NumeroDocumento
+@issue:ADP-26 
+@HU009 @NumeroDocumento
 Feature: HU009: CC válida en campo número de documento
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
