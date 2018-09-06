@@ -1,16 +1,19 @@
 package com.handresc1127.automatizacion.definition;
 
+import com.handresc1127.automatizacion.pageobjects.PagePagaTuFacturaMovil;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class DefValidacionEmail {
+public class DefPagaTuFacturaMovil {
 
+	PagePagaTuFacturaMovil pagePagaFactMvl;
 	
 	@Given("^Dado que estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void dado_que_estoy_en_la_página_de_inicio_de_pago_de_facturas(String arg1) {
-	    
-
+		pagePagaFactMvl.open();
+		pagePagaFactMvl.irPagina();
 	}
 
 	@When("^Cuando doy clic en el campo \"([^\"]*)\"$")
