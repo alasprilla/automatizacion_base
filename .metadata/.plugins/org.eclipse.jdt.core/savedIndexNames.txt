@@ -1,2 +1,0 @@
-INDEX VERSION 1.131+C:\Users\INDRA\Documents\GitHub\automatizacion_base\.metadata\.plugins\org.eclipse.jdt.core
-834134088.index
