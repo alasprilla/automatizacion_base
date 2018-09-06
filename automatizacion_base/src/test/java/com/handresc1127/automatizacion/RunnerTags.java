@@ -11,10 +11,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		glue = { "com.handresc1127.automatizacion" }, 
-		//features = {"src/test/resources/features/HU0001-BusquedaBasicaGoogle.feature" }, 
-		//tags = {"@BusquedaBasica"},}
-		features = {"src/test/resources/features/SPIKE001-Aprendiendo.feature" }, 
-		tags = {"@Turorial","@Tigo"},
+		features = {"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature" }, 
+		tags = {},//"@HU-003", "@Caso1", "@Caso2", "@Caso3", "@Caso4", "@Caso5"
 		monochrome = true, 
 		plugin = {"pretty", "html:target/reports/html/", "junit:target/reports/junit/allcukes.xml","json:target/reports/cukes.json" }
 		)

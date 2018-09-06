@@ -8,8 +8,8 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("https://www.google.com.co/")
 public class PagePagaTuFacturaMovil extends PageObject{
 
-	public void irPagina(String pagina) {
-		actionsUtil.goToWebSide(getDriver(), "");
+	public void irPagina(String url) {
+		actionsUtil.goToWebSide(getDriver(), url);
 	}
 
 }
