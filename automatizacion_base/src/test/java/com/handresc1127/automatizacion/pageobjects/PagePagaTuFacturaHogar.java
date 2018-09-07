@@ -55,6 +55,9 @@ public class PagePagaTuFacturaHogar extends PageObject{
 		case "numerodedocumento":
 			setObjetoToCliked(txtNumeroDocumento);
 			break;
+		case "correoelectronico":
+			setObjetoToCliked(txtCorreoElectronico);
+			break;
 		default: assertTrue(false);
 		}
 		actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);

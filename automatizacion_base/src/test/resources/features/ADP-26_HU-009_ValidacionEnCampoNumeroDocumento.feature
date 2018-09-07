@@ -1,13 +1,11 @@
 #Author: Henry Andres Correa Correa
 #Keywords Summary : Cedula, Validacion, Documento
-@issue:ADP-26 
-@HU009 @NumeroDocumento
+@issue:ADP-26 @HU009 @NumeroDocumento
 Feature: HU009: CC válida en campo número de documento
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que la consulta se realice con una cédula de ciudadanía válida
 
-@Debug
   Scenario: Ingreso de texto en el campo número de documento
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en la opción "HOGAR"
@@ -21,20 +19,21 @@ Feature: HU009: CC válida en campo número de documento
     When doy clic en la opción "HOGAR"
     And selecciono la opción "CC" en el campo Tipo de documento
     And ingreso "12345678901234" en el campo "número de documento"
-    Then mostrará hasta el 13° dígito
+    Then mostrará en el campo "número de documento" el texto "1234567890123"
 
+  
   Scenario Outline: Ingreso de documentos de <digitos> dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en la opción "HOGAR"
     And selecciono la opción "CC" en el campo Tipo de documento
     And ingreso <documento> en el campo "número de documento"
-    Then mostrará hasta el 13° dígito
+    Then mostrará el siguiente mensaje en color rojo "Ingresaste un documento no soportado, por favor verifícalo."
 
     Examples: 
-      | digitos | documento    |
-      |       9 |    123456789 |
-      |      11 |  12345678901 |
-      |      11 | 123456789012 |
+      | digitos | documento      |
+      |       9 | "123456789"    |
+      |      11 | "12345678901"  |
+      |      12 | "123456789012" |
 
   #Scenario: Ingreso de documentos de 9 dígitos
   #Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
@@ -56,6 +55,8 @@ Feature: HU009: CC válida en campo número de documento
   #And selecciono la opción "CC" en el campo Tipo de documento
   #And ingreso "123456789012" en el campo "número de documento"
   #Then mostrará el siguiente mensaje en color rojo "Ingresaste un documento no soportado, por favor verifícalo"
+  
+  @Debug
   Scenario Outline: Ingreso de cédula válida
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en la opción "HOGAR"
@@ -68,8 +69,8 @@ Feature: HU009: CC válida en campo número de documento
     #Si no tiene el msj esta en letras blancas con fondo azul
     Examples: 
       | documento | estadoFacturas                 |
-      |  71770656 | "no tiene facturas pendientes" |
-      |    552716 |                    12345678901 |
+      |  "71770656" | "no tiene facturas pendientes" |
+     # |    "552716" |                    "12345678901" |
   #Scenario Outline: Ingreso de cédula válida sin facturas pendientes
     #Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     #When doy clic en la opción "HOGAR"

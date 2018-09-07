@@ -41,34 +41,20 @@ public class DefPagaTuFacturaHogar {
 	    pagePagaTuFacturaHogar.compararAtributo("label error documento","color","rgba(240, 30, 70, 1)");
 	}
 
-	@Then("^mostrará hasta el (\\d+)° dígito$")
-	public void mostrará_hasta_el_dígito(int arg1)  {
-	    
-	    
+	@Then("^mostrará en el campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
+	public void mostrará_en_el_campo_el_texto(String objeto, String valor) {
+	    pagePagaTuFacturaHogar.compararAtributo(objeto, "value",valor);
 	}
 
-	@When("^ingreso (\\d+) en el campo \"([^\"]*)\"$")
-	public void ingreso_en_el_campo(int arg1, String arg2)  {
-	    
-	    
-	}
 
 	@When("^doy clic en el botón \"([^\"]*)\"$")
 	public void doy_clic_en_el_botón(String arg1)  {
-	    
-	    
-	}
 
+	}
+	
 	@Then("^mostrará el \"([^\"]*)\"$")
 	public void mostrará_el(String arg1)  {
-	    
-	    
-	}
-
-	@Then("^mostrará el (\\d+)$")
-	public void mostrará_el(int arg1)  {
-	    
-	    
+	   
 	}
 	
 }
