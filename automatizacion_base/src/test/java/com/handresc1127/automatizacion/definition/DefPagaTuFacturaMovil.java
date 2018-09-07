@@ -1,5 +1,7 @@
 package com.handresc1127.automatizacion.definition;
 
+import java.awt.AWTException;
+
 import com.handresc1127.automatizacion.pageobjects.PagePagaTuFacturaMovil;
 
 import cucumber.api.java.en.Given;
@@ -17,7 +19,7 @@ public class DefPagaTuFacturaMovil {
 	}
 
 	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_número_celular_en_el_campo(String numcelular,String campo) {
+	public void ingreso_el_número_celular_en_el_campo(String numcelular,String campo) throws AWTException {
 		pagePagaFactMvl.seleccionCelular();
 		pagePagaFactMvl.escribirCelular(numcelular);
 	}
@@ -29,15 +31,15 @@ public class DefPagaTuFacturaMovil {
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo rojo \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_rojo(String objeto,String txtmensaje) {
-		pagePagaFactMvl.compararMensaje(objeto,txtmensaje);
-		//pagePagaFactMvl.compararAtributos();
+	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_rojo(String txtmensaje) {
+		pagePagaFactMvl.compararMensaje("label error documento",txtmensaje);
+	    pagePagaFactMvl.compararAtributo("label error documento","color","rgba(240, 30, 70, 1)");
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo azul \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_azul(String objeto,String txtmensaje) {
-		pagePagaFactMvl.compararMensaje(objeto,txtmensaje);
-		//pagePagaFactMvl.compararAtributos();
+	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_azul(String txtmensaje) {
+		pagePagaFactMvl.compararMensaje("label error documento",txtmensaje);
+		pagePagaFactMvl.compararAtributo("label error documento","color","rgba(0, 200, 255, 1)");
 	}
 
 	@Then("^llevará al formulario donde se selecciona el tipo de pago$")

@@ -1,4 +1,9 @@
 package com.handresc1127.automatizacion.pageobjects;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.By;
 
@@ -13,7 +18,9 @@ public class PagePagaTuFacturaMovil extends PageObject{
 	public By txtCorreo= By.id("edit-email");
 	public By txtmensaje= By.xpath("//*[@id='alert_main']/div/p");
     public String objeto = "No hemos encontrado facturas para este número de línea";
-	
+    public By lbMsgErrorDoc=By.xpath("//*[@id='alert_main']/div/p");
+	private By objetoToAction;
+    
 	public void irAlaPagina(String url) {
 		actionsUtil.goToWebSide(getDriver(), url);
 	}
@@ -22,8 +29,11 @@ public class PagePagaTuFacturaMovil extends PageObject{
 		actionsUtil.clic(getDriver(), txtMsisdn);
 	}
 	
-	public void escribirCelular(String numcelular) {
+	public void escribirCelular(String numcelular) throws AWTException {
 		actionsUtil.setTextFieldSlowly(getDriver(), txtMsisdn, numcelular);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		robot.keyRelease(KeyEvent.VK_TAB);
 	}
 	
 	public void seleccionCorreo() {
@@ -40,19 +50,35 @@ public class PagePagaTuFacturaMovil extends PageObject{
 	
 	public void compararMensaje(String objeto,String txtmensaje) {
 
-		if(txtmensaje.equals(objeto)) {
+		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
+		case "numerodelinea":
 			setObjetoToCliked(txtMsisdn);
+			break;
+			
+		case "labelerrordocumento":
+			setObjetoToCliked(lbMsgErrorDoc);
+			break;
+		default: assertTrue(false);
 		}
+		actionsUtil.compareText(getDriver(), objetoToAction, txtmensaje);
 	}
 	
-	//private void compararAtributos() {
-		
-	//}
+	public void compararAtributo(String objeto, String atributo, String txtmensaje) {
+		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
+		case "numerodelinea":
+			setObjetoToCliked(txtMsisdn);
+			break;
 
-	public void setObjetoToCliked(By objetoToCliked) {
-		this.txtMsisdn = objetoToCliked;
+		case "labelerrordocumento":
+			setObjetoToCliked(lbMsgErrorDoc);
+			break;
+		default: assertTrue(false);
+		}
+		actionsUtil.compareAtributo(getDriver(), objetoToAction, objeto, txtmensaje);
 	}
-
-
+	
+	public void setObjetoToCliked(By objetoToCliked) {
+		this.objetoToAction = objetoToCliked;
+	}
 	
 }

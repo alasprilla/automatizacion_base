@@ -21,6 +21,6 @@ Feature: HU008 Validación número Celular
 
   Scenario: Ingreso de número válido Tigo con facturas pendientes
     Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso el número celular "3137890323" en el campo "Tu línea Tigo"
+    When ingreso el número celular "3043302450" en el campo "Tu línea Tigo"
     And ingreso el correo "prueba@prueba.com" en el campo "Correo electrónico"
     Then llevará al formulario donde se selecciona el tipo de pago
