@@ -17,23 +17,27 @@ public class DefPagaTuFacturaMovil {
 	}
 
 	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_número_celular_en_el_campo(String numcelular) {
+	public void ingreso_el_número_celular_en_el_campo(String numcelular,String campo) {
+		pagePagaFactMvl.seleccionCelular();
 		pagePagaFactMvl.escribirCelular(numcelular);
 	}
 
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_correo_en_el_campo(String correo)  {
+	public void ingreso_el_correo_en_el_campo(String correo,String campocorreo)  {
+		pagePagaFactMvl.seleccionCorreo();
 		pagePagaFactMvl.escribirCorreo(correo);
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo rojo \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_rojo(String mensaje) {
-		pagePagaFactMvl.mostrarMensaje();
+	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_rojo(String objeto,String txtmensaje) {
+		pagePagaFactMvl.compararMensaje(objeto,txtmensaje);
+		//pagePagaFactMvl.compararAtributos();
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo azul \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_azul(String mensaje) {
-		pagePagaFactMvl.mostrarMensaje();
+	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_azul(String objeto,String txtmensaje) {
+		pagePagaFactMvl.compararMensaje(objeto,txtmensaje);
+		//pagePagaFactMvl.compararAtributos();
 	}
 
 	@Then("^llevará al formulario donde se selecciona el tipo de pago$")
