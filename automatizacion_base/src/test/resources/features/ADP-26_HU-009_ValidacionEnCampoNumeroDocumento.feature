@@ -7,6 +7,7 @@ Feature: HU009: CC válida en campo número de documento
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que la consulta se realice con una cédula de ciudadanía válida
 
+@Debug
   Scenario: Ingreso de texto en el campo número de documento
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en la opción "HOGAR"

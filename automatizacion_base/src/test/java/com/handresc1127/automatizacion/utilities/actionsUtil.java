@@ -1,5 +1,6 @@
 package com.handresc1127.automatizacion.utilities;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -109,7 +110,7 @@ public class actionsUtil {
 	public static void selectText(WebDriver driver, By by, String option) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
-		System.out.println("Seleccionar: " + option);
+		//System.out.println("Seleccionar: " + option);
 		new Select(element).selectByVisibleText(option);
 	}
 
@@ -127,7 +128,7 @@ public class actionsUtil {
 		int index = 0;
 		for (int i = 0; i < values.length; i++) {
 			if (values[i].contains(valueContains)) {
-				System.out.println(values[i]);
+				//System.out.println(values[i]);
 				index = i;
 				break;
 			}
@@ -146,7 +147,7 @@ public class actionsUtil {
 		List<WebElement> tr_collection = table_element.findElements(By.tagName("tr"));
 		String tabla[][] = new String[999][999];
 		// System.out.println("NUMBER OF ROWS IN THIS TABLE = "+tr_collection.size());
-		System.out.print("Leyendo tabla: ");
+		//System.out.print("Leyendo tabla: ");
 		int row_num, col_num, col_max = 0;
 		row_num = 0;
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -166,14 +167,14 @@ public class actionsUtil {
 			for (WebElement tdElement : td_collection) {
 				// System.out.println("row # "+row_num+", col # "+col_num+
 				// "text="+tdElement.getText());
-				System.out.print(".");
+				//System.out.print(".");
 				tabla[row_num][col_num] = tdElement.getText();
 				col_num++;
 			}
 			row_num++;
 		}
-		System.out.println();
-		System.out.println("Filas:" + row_num + " Columnas:" + col_max);
+		//System.out.println();
+		//System.out.println("Filas:" + row_num + " Columnas:" + col_max);
 		assertTrue(row_num > 0);
 		assertTrue(col_max > 0);
 		// String resize
@@ -193,7 +194,7 @@ public class actionsUtil {
 				if (element.isEnabled()) {
 					element.click();
 				} else {
-					System.out.println("No esta habilitado: " + by.toString());
+					//System.out.println("No esta habilitado: " + by.toString());
 				}
 
 			}
@@ -202,7 +203,7 @@ public class actionsUtil {
 				if (element.isEnabled()) {
 					element.click();
 				} else {
-					System.out.println("No esta habilitado: " + by.toString());
+					//System.out.println("No esta habilitado: " + by.toString());
 				}
 			}
 		}
@@ -214,4 +215,43 @@ public class actionsUtil {
 		return element.getText();
 	}
 
+	public static void compareText(WebDriver driver, By by, String valorEsperado) {
+		String valorObtenido=getText(driver, by);
+		//System.out.println("Valor esperado: "+valorEsperado);
+		//System.out.println("Valor obtenido: "+valorObtenido);
+		assertEquals(valorEsperado, valorObtenido);
+	}
+	
+	public static String textoMinusculasSinEspacios(String texto) {
+		// Cadena de caracteres original a sustituir.
+	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+	    // Cadena de caracteres ASCII que reemplazarán los originales.
+	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+	    for (int i=0; i<original.length(); i++) {
+	        // Reemplazamos los caracteres especiales.
+	    	texto = texto.replace(original.charAt(i), ascii.charAt(i));
+	    }//for i
+		// Elimina espacios, tabuladores y retornos detrás.
+		texto=texto.replaceAll("\t|\n| ","");
+		texto=texto.toLowerCase();
+		return texto;
+	}
+	
+	public static String getAttribute(WebDriver driver, By by, String atributo) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		String retorno = element.getAttribute(atributo);
+		if(retorno == null) retorno="";
+		if(retorno.isEmpty())
+			retorno = element.getCssValue(atributo);
+		return retorno;
+	}
+	
+	public static void compareAtributo(WebDriver driver, By by, String atributo,String valorEsperado) {
+		String valorObtenido=getAttribute(driver, by, atributo);
+		//System.out.println("Valor esperado: "+valorEsperado);
+		//System.out.println("Valor obtenido: "+valorObtenido);
+		if(valorObtenido.isEmpty()) assertTrue(false);
+		else assertTrue(valorObtenido.contains(valorEsperado));
+	}
 }

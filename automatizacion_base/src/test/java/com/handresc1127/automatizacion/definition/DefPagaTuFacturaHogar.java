@@ -37,8 +37,8 @@ public class DefPagaTuFacturaHogar {
 
 	@Then("^mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
 	public void mostrará_el_siguiente_mensaje_en_color_rojo(String txtEsperado)  {
-	    pagePagaTuFacturaHogar.compararTxt("label colocito rojo",txtEsperado);
-	    pagePagaTuFacturaHogar.compararAtributo("label colocito rojo","atributo","texto rojo");
+	    pagePagaTuFacturaHogar.compararTxt("label error documento",txtEsperado);
+	    pagePagaTuFacturaHogar.compararAtributo("label error documento","color","rgba(240, 30, 70, 1)");
 	}
 
 	@Then("^mostrará hasta el (\\d+)° dígito$")

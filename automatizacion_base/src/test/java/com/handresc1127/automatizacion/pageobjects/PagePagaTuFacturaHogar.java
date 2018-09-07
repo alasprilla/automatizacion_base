@@ -1,5 +1,7 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.By;
 
 import com.handresc1127.automatizacion.utilities.actionsUtil;
@@ -16,8 +18,10 @@ public class PagePagaTuFacturaHogar extends PageObject{
 	public By txtCorreoElectronico=By.xpath("//*[@id='content_right_forms_unified']/div/div/label");
 	public By linkTerminosyCondiciones=By.id("tyc_Fijo");
 	public By btnConsultar=By.id("edit-consult--2");
+	public By lbMsgErrorDoc=By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
 	private By objetoToAction;
 	
+
 	public void irAlSitio(String webSite) {
 		actionsUtil.goToWebSide(getDriver(), webSite);
 	}
@@ -47,26 +51,41 @@ public class PagePagaTuFacturaHogar extends PageObject{
 	}
 
 	public void ingresar(String objeto, String txtIngresado) {
-		switch(objeto) {
-		case "número de documento":
+		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
+		case "numerodedocumento":
 			setObjetoToCliked(txtNumeroDocumento);
 			break;
+		default: assertTrue(false);
 		}
 		actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);
 	}
 
 	public void compararTxt(String objeto, String valorEsperado) {
-		switch(objeto) {
-		case "número de documento":
+		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
+		case "numerodedocumento":
 			setObjetoToCliked(txtNumeroDocumento);
 			break;
+			
+		case "labelerrordocumento":
+			setObjetoToCliked(lbMsgErrorDoc);
+			break;
+		default: assertTrue(false);
 		}
-	
-		System.out.println("FALATA IMPLEMENTAR COMPARAR");
+		actionsUtil.compareText(getDriver(), objetoToAction, valorEsperado);
 	}
 
-	public void compararAtributo(String string, String string2, String string3) {
-		System.out.println("FALATA IMPLEMENTAR COMPARAR ATRIBUTO");
+	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
+		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
+		case "numerodedocumento":
+			setObjetoToCliked(txtNumeroDocumento);
+			break;
+
+		case "labelerrordocumento":
+			setObjetoToCliked(lbMsgErrorDoc);
+			break;
+		default: assertTrue(false);
+		}
+		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 	}
 
 
