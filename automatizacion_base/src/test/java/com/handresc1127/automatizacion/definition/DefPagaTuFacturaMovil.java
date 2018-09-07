@@ -16,15 +16,15 @@ public class DefPagaTuFacturaMovil {
 		pagePagaFactMvl.irPagina(url);
 	}
 
-	@When("^Cuando doy clic en el campo \"([^\"]*)\"$")
-	public void cuando_doy_clic_en_el_campo(String arg1) {
-	    
+	@When("^Cuando doy clic en el campo Tu línea Tigo$")
+	public void cuando_doy_clic_en_el_campo() {
+		pagePagaFactMvl.clicTuLineaTigo();
 		
 	}
 
 	@When("^escribo el número celular (\\d+)$")
-	public void escribo_el_número_celular(int arg1) {
-	    
+	public void escribo_el_número_celular(String msisdn) {
+		pagePagaFactMvl.escribirMsisdn(msisdn);
 		
 	}
 

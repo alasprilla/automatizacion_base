@@ -7,7 +7,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
   @Caso1
   Scenario Outline: Email sin usuario
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When Cuando doy clic en el campo "Tu línea Tigo"
+    When Cuando doy clic en el campo 'Tu línea Tigo'
     And escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico"
     And escribo el email <email>
