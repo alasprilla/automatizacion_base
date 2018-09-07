@@ -16,40 +16,21 @@ public class DefPagaTuFacturaMovil {
 		pagePagaFactMvl.irPagina(url);
 	}
 
-	@When("^Cuando doy clic en el campo Tu línea Tigo$")
-	public void cuando_doy_clic_en_el_campo() {
-		pagePagaFactMvl.clicTuLineaTigo();
-		
+	@When("^Cuando doy clic en el campo \"([^\"]*)\" y escribo el número celular (\\d+)$")
+	public void cuando_doy_clic_en_el_campo_y_escribo_el_número_celular(String tuLineaTigo, String msisdn) {
+		pagePagaFactMvl.clicEn(tuLineaTigo);
+		pagePagaFactMvl.escribir(tuLineaTigo, msisdn);
 	}
 
-	@When("^escribo el número celular (\\d+)$")
-	public void escribo_el_número_celular(String msisdn) {
-		pagePagaFactMvl.escribirMsisdn(msisdn);
-		
+	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
+	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
+		pagePagaFactMvl.escribir(correoElectronico, email);
 	}
 
-	@When("^doy clic en el campo \"([^\"]*)\"$")
-	public void doy_clic_en_el_campo(String arg1) {
-	    
-		
-	}
-
-	@When("^escribo el email \"([^\"]*)\"$")
-	public void escribo_el_email(String arg1) {
-	    
-		
-	}
-
-	@Then("^El botón \"([^\"]*)\" se deshabilita$")
-	public void el_botón_se_deshabilita(String arg1) {
-	    
-		
-	}
-
-	@Then("^mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_color_rojo(String arg1) {
-	    
-		
+	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente mensaje en color rojo\"([^\"]*)\"$")
+	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_mensaje_en_color_rojo(String btnConsultar, String msgError) {
+		pagePagaFactMvl.botonInabilitado();
+		pagePagaFactMvl.mensaje();
 	}
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")

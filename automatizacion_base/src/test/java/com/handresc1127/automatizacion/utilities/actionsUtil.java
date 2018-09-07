@@ -2,6 +2,9 @@ package com.handresc1127.automatizacion.utilities;
 
 import static org.junit.Assert.assertTrue;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +22,7 @@ public class actionsUtil {
 	 */
 
 	public static String globalAux;
-
+	
 	public static void highlightElement(WebDriver driver, By by) {
 		for (int second = 0; second <= 120; second++) {
 			try {
@@ -213,5 +216,5 @@ public class actionsUtil {
 		WebElement element = driver.findElement(by);
 		return element.getText();
 	}
-
+	
 }
