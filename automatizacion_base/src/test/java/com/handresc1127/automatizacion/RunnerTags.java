@@ -5,9 +5,6 @@ import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
-//@tag1 AND @tag2= "@tag1","@tag2"
-//@tag1 OR @tag2= "@tag1, @tag2"
-//NOT @tag1 = "~@tag1"
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		glue = { "com.handresc1127.automatizacion" }, 

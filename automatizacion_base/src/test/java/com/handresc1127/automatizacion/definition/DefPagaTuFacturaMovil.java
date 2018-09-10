@@ -9,7 +9,7 @@ import cucumber.api.java.en.When;
 public class DefPagaTuFacturaMovil {
 
 	PagePagaTuFacturaMovil pagePagaFactMvl;
-	
+
 	@Given("^Dado que estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void dado_que_estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
 		pagePagaFactMvl.open();
@@ -28,14 +28,16 @@ public class DefPagaTuFacturaMovil {
 	}
 
 	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
-	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_mensaje_en_color_rojo(String btnConsultar, String msgError) {
+	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
+			String msgError) {
 		pagePagaFactMvl.mensaje(msgError);
 		pagePagaFactMvl.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
-		pagePagaFactMvl.botonInabilitado(btnConsultar,"disabled","true");
+		pagePagaFactMvl.botonInabilitado(btnConsultar, "disabled", "true");
 	}
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
-		pagePagaFactMvl.botonInabilitado(btnConsultar,"class","btn btn_send button js-form-submit form-submit button--secondary button--active");
+		pagePagaFactMvl.botonInabilitado(btnConsultar, "class",
+				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 }

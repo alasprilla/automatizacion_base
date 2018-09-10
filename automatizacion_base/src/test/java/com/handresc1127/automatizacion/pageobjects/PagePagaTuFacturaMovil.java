@@ -11,10 +11,8 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class PagePagaTuFacturaMovil extends PageObject {
 
 	public By txtTuLineaTigo = By.id("edit-candidate-number");
-	//public By txtCorreoElectronico = By.id("edit-email");
 	public By txtCorreoElectronico = By.xpath("//*[@id='edit-email']");
-	public By msgErrorCorreoElectronico=By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
-												  //*[@id='content_right_forms_unified']/div/div[1]/span
+	public By msgErrorCorreoElectronico = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
 	public By btnConsultar = By.id("edit-consult");
 
 	private By objetoToAction;
@@ -64,13 +62,13 @@ public class PagePagaTuFacturaMovil extends PageObject {
 	}
 
 	public void mensaje(String msgError) {
-		actionsUtil.compareText(getDriver(), msgErrorCorreoElectronico , msgError);
+		actionsUtil.compareText(getDriver(), msgErrorCorreoElectronico, msgError);
 	}
 
 	public void colorTextoMensaje(String atributo, String valorEsperado) {
 		actionsUtil.compareAtributo(getDriver(), msgErrorCorreoElectronico, atributo, valorEsperado);
 	}
-	
+
 	public void botonInabilitado(String objeto, String atributo, String valorEsperado) {
 		setObjetoToCliked(btnConsultar);
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
