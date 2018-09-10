@@ -16,8 +16,6 @@ public class PagePagaTuFacturaMovil extends PageObject{
 	public By txtMsisdn= By.id("edit-candidate-number");
 	public By btnConfirmar= By.id("edit-consult");
 	public By txtCorreo= By.id("edit-email");
-	//public By txtmensaje= By.xpath("//*[@id='alert_main']/div/p");
-    //public String objeto = "No hemos encontrado facturas para este número de línea";
 	public By objeto = By.xpath("//*[@id='alert_main']/div/p");
     public By lbMsgError=By.id("alert_main");
 	private By objetoToAction;
