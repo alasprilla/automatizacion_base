@@ -74,6 +74,7 @@ public class PagePagaTuFacturaMovil extends PageObject {
 	public void botonInabilitado(String objeto, String atributo, String valorEsperado) {
 		setObjetoToCliked(btnConsultar);
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
+		actionsUtil.generarTab(1);
 	}
 
 }

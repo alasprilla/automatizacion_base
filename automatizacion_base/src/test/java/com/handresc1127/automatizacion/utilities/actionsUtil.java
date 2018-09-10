@@ -3,6 +3,9 @@ package com.handresc1127.automatizacion.utilities;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -217,8 +220,8 @@ public class actionsUtil {
 	
 	public static void compareText(WebDriver driver, By by, String valorEsperado) {
 		String valorObtenido=getText(driver, by);
-		System.out.println("Valor esperado Text: "+valorEsperado);
-		System.out.println("Valor obtenido Text: "+valorObtenido);
+//		System.out.println("Valor esperado Text: "+valorEsperado);
+//		System.out.println("Valor obtenido Text: "+valorObtenido);
 		assertEquals(valorEsperado, valorObtenido);
 	}
 	
@@ -249,10 +252,24 @@ public class actionsUtil {
 	
 	public static void compareAtributo(WebDriver driver, By by, String atributo,String valorEsperado) {
 		String valorObtenido=getAttribute(driver, by, atributo);
-		System.out.println("Valor esperado Atr: "+valorEsperado);
-		System.out.println("Valor obtenido Atr: "+valorObtenido);
+//		System.out.println("Valor esperado Atr: "+valorEsperado);
+//		System.out.println("Valor obtenido Atr: "+valorObtenido);
 		if(valorObtenido.isEmpty()) assertTrue(false);
 		else assertTrue(valorObtenido.contains(valorEsperado));
 	}
 	
+	public static void generarTab(int cantidad) {
+
+		Robot rob;
+
+		for (int i = 0; i <= cantidad; i++) {
+			try {
+				rob = new Robot();
+				rob.keyPress(KeyEvent.VK_TAB);
+				rob.keyRelease(KeyEvent.VK_TAB);
+			} catch (AWTException e) {
+				e.getMessage();
+			}
+		}
+	}
 }
