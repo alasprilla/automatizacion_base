@@ -1,12 +1,11 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-24 @tag
+@issue:ADP-24
 Feature: HU008 Validación número Celular
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil
   Para garantizar que se pueden utilizar las teclas especiales básicas en el formulario de consulta de facturas
 
-  @tag1
   Scenario: Ingreso de número valido que no es Tigo
     Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso el número celular "3000000000" en el campo "Tu línea Tigo"
