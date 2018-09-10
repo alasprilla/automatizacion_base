@@ -4,7 +4,6 @@
 Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil Para garantizar que la consulta se realice con un email válido
 
   #Parámetros: "@prueba.com", "@PRUEBA.COM", "@aquí.com", "@AQUÍ.COM"
-  @Caso1
   Scenario Outline: Email sin usuario
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
@@ -21,7 +20,6 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
       | 3043302450 | "@PRUEBA2.COM.co" |
 
   #Parámetros: "usuario", "usuario@", "USUARIO", "aquí", "aquí@", "AQUÍ@"
-  @Caso2
   Scenario Outline: Email sin dominio
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
@@ -40,7 +38,6 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
       | 3043302450 | "AQUÍ@go"  |
 
   #Parámetros: "ejemplo@dominio.a", "ejemplo@dominio.com.a", "ejemplo@d.a", "ejemplo@d.com.a"
-  @Caso3
   Scenario Outline: Email con dominio de primer nivel de solo un caracter
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
@@ -55,7 +52,6 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
       | 3043302450 | "ejemplo@d.com.a"       |
 
   #Parámetros: "ejemplo.", "ejemplo.@", "ejemplo@.", "ejemplo@dominio.", "ejemplo@dominio.com."
-  @Caso4
   Scenario Outline: Email terminado en punto (.)
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
@@ -72,7 +68,6 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
       | 3043302450 | "ejemplo.@dominio."    |
 
   #Parámetros: "ejemplo@ejemplo.com"
-  @Caso5
   Scenario Outline: Email correcto
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
@@ -84,4 +79,3 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
       | 3043302450 | "ejemplo@ejemplo.com"   |
       | 3043302450 | "casoexitoso@ti.go"     |
       | 3043302450 | "caso_exitoso@tigo.com" |
-      

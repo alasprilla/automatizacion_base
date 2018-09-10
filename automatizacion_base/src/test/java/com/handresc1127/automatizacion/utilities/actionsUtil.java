@@ -1,11 +1,7 @@
 package com.handresc1127.automatizacion.utilities;
 
-<<<<<<< HEAD
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
-=======
->>>>>>> HU-003
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -22,18 +18,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-
 public class actionsUtil {
 
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
-	 * Comentario adicional Pull Request
-	 * WebElement parent = myElement.findElement(By.xpath(".."));
-	 * WebElement childs = myElement.findElement(By.xpath('.//*'));
+	 * Comentario adicional Pull Request WebElement parent =
+	 * myElement.findElement(By.xpath("..")); WebElement childs =
+	 * myElement.findElement(By.xpath('.//*'));
 	 */
 
 	public static String globalAux;
-	
+
 	public static void highlightElement(WebDriver driver, By by) {
 		for (int second = 0; second <= 120; second++) {
 			try {
@@ -48,9 +43,9 @@ public class actionsUtil {
 		}
 
 		driver.findElement(by).isDisplayed();
-		//assertTrue(driver.findElements(by).size() > 0);
+		// assertTrue(driver.findElements(by).size() > 0);
 		WebElement element = driver.findElement(by);
-		//new Actions(driver).moveToElement(element).perform();
+		// new Actions(driver).moveToElement(element).perform();
 
 		String originalStyle = element.getAttribute("style");
 
@@ -97,17 +92,17 @@ public class actionsUtil {
 			WebElement element = driver.findElement(by);
 			element.clear();
 
-			for (int i=0;i<text.length();i++) {
-				String character=text.substring(i, i+1);
+			for (int i = 0; i < text.length(); i++) {
+				String character = text.substring(i, i + 1);
 				element.sendKeys(character);
 				try {
 					Thread.sleep(5);
 				} catch (InterruptedException e) {
 				}
-				}
+			}
 		}
 	}
-	
+
 	public static void setTextActions(WebDriver driver, By by, String text) {
 		if (!text.isEmpty()) {
 			highlightElement(driver, by);
@@ -117,7 +112,7 @@ public class actionsUtil {
 			actions.click();
 			actions.build().perform();
 			actions.sendKeys("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
-					+"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+					+ "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
 			actions.build().perform();
 			actions.sendKeys(text);
 			actions.build().perform();
@@ -126,7 +121,8 @@ public class actionsUtil {
 			try {
 				element.findElement(By.xpath("..")).click();
 				element.findElement(By.xpath("../..")).click();
-			}catch(Exception e) {}
+			} catch (Exception e) {
+			}
 		}
 	}
 
@@ -145,7 +141,7 @@ public class actionsUtil {
 	public static void selectText(WebDriver driver, By by, String option) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
-		//System.out.println("Seleccionar: " + option);
+		// System.out.println("Seleccionar: " + option);
 		new Select(element).selectByVisibleText(option);
 	}
 
@@ -163,7 +159,7 @@ public class actionsUtil {
 		int index = 0;
 		for (int i = 0; i < values.length; i++) {
 			if (values[i].contains(valueContains)) {
-				//System.out.println(values[i]);
+				// System.out.println(values[i]);
 				index = i;
 				break;
 			}
@@ -183,7 +179,7 @@ public class actionsUtil {
 		List<WebElement> tr_collection = table_element.findElements(By.tagName("tr"));
 		String tabla[][] = new String[999][999];
 		// System.out.println("NUMBER OF ROWS IN THIS TABLE = "+tr_collection.size());
-		//System.out.print("Leyendo tabla: ");
+		// System.out.print("Leyendo tabla: ");
 		int row_num, col_num, col_max = 0;
 		row_num = 0;
 		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
@@ -203,17 +199,17 @@ public class actionsUtil {
 			for (WebElement tdElement : td_collection) {
 				// System.out.println("row # "+row_num+", col # "+col_num+
 				// "text="+tdElement.getText());
-				//System.out.print(".");
+				// System.out.print(".");
 				tabla[row_num][col_num] = tdElement.getText();
 				col_num++;
 			}
 			row_num++;
 		}
-		//System.out.println();
-		//System.out.println("Filas:" + row_num + " Columnas:" + col_max);
-		//assertTrue(row_num > 0);
+		// System.out.println();
+		// System.out.println("Filas:" + row_num + " Columnas:" + col_max);
+		// assertTrue(row_num > 0);
 		assertThat(row_num, greaterThan(0));
-		//assertTrue(col_max > 0);
+		// assertTrue(col_max > 0);
 		assertThat(col_max, greaterThan(0));
 		// String resize
 		String tabla_return[][] = new String[row_num][col_max];
@@ -223,7 +219,7 @@ public class actionsUtil {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return tabla_return;
 	}
-	
+
 	public static String[][] getTableDiv(WebDriver driver, By by) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
@@ -233,41 +229,42 @@ public class actionsUtil {
 		String tabla[][] = new String[999][999];
 		int row_num, col_num, col_max = 0;
 		row_num = 0;
-		boolean containInfo=false;
+		boolean containInfo = false;
 		for (WebElement childElement : child_collection) {
 			List<WebElement> grandChild_collection = childElement.findElements(By.xpath("./*"));
-			//System.out.println("NUMBER OF COLUMNS="+grandChild_collection.size());
+			// System.out.println("NUMBER OF COLUMNS="+grandChild_collection.size());
 			if (grandChild_collection.size() > col_max)
 				col_max = grandChild_collection.size();
 			col_num = 0;
-			containInfo=false;
+			containInfo = false;
 			for (WebElement tdElement : grandChild_collection) {
-				String aux=tdElement.getText();
-				//System.out.println("row # "+row_num+", col # "+col_num+
+				String aux = tdElement.getText();
+				// System.out.println("row # "+row_num+", col # "+col_num+
 				// " text="+aux);
-				//System.out.print(".");
-				
+				// System.out.print(".");
+
 				tabla[row_num][col_num] = aux;
 				col_num++;
-				if(aux!=null) {
-					if(!aux.isEmpty()) {
-						containInfo=true;
+				if (aux != null) {
+					if (!aux.isEmpty()) {
+						containInfo = true;
 					}
 				}
 			}
-			if(containInfo) {
+			if (containInfo) {
 				row_num++;
-				//System.out.println();				
-				}
+				// System.out.println();
+			}
 		}
-		//System.out.println();
-		//System.out.println("Filas:" + row_num + " Columnas:" + col_max);
+		// System.out.println();
+		// System.out.println("Filas:" + row_num + " Columnas:" + col_max);
 		assertTrue(row_num > 0);
 		assertTrue(col_max > 0);
 		String tabla_return[][] = new String[row_num][col_max];
-		/*for (int i = 0; i < row_num; i++) {
-			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
-		}*/
+		/*
+		 * for (int i = 0; i < row_num; i++) { System.arraycopy(tabla[i], 0,
+		 * tabla_return[i], 0, col_max); }
+		 */
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return tabla_return;
 	}
@@ -280,7 +277,7 @@ public class actionsUtil {
 				if (element.isEnabled()) {
 					element.click();
 				} else {
-					//System.out.println("No esta habilitado: " + by.toString());
+					// System.out.println("No esta habilitado: " + by.toString());
 				}
 
 			}
@@ -289,105 +286,65 @@ public class actionsUtil {
 				if (element.isEnabled()) {
 					element.click();
 				} else {
-					//System.out.println("No esta habilitado: " + by.toString());
+					// System.out.println("No esta habilitado: " + by.toString());
 				}
 			}
 		}
 	}
-	
+
 	public static String getText(WebDriver driver, By by) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		return element.getText();
 	}
-	
+
 	public static void compareText(WebDriver driver, By by, String valorEsperado) {
-		String valorObtenido=getText(driver, by);
+		String valorObtenido = getText(driver, by);
 //		System.out.println("Valor esperado Text: "+valorEsperado);
 //		System.out.println("Valor obtenido Text: "+valorObtenido);
 		assertEquals(valorEsperado, valorObtenido);
 	}
-	
+
 	public static String textoMinusculasSinEspacios(String texto) {
 		// Cadena de caracteres original a sustituir.
-	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
-	    // Cadena de caracteres ASCII que reemplazarán los originales.
-	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
-	    for (int i=0; i<original.length(); i++) {
-	        // Reemplazamos los caracteres especiales.
-	    	texto = texto.replace(original.charAt(i), ascii.charAt(i));
-	    }//for i
-		// Elimina espacios, tabuladores y retornos detrás.
-		texto=texto.replaceAll("\t|\n| ","");
-		texto=texto.toLowerCase();
+		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+		// Cadena de caracteres ASCII que reemplazarán los originales.
+		String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+		for (int i = 0; i < original.length(); i++) {
+			// Reemplazamos los caracteres especiales.
+			texto = texto.replace(original.charAt(i), ascii.charAt(i));
+		} // for i
+			// Elimina espacios, tabuladores y retornos detrás.
+		texto = texto.replaceAll("\t|\n| ", "");
+		texto = texto.toLowerCase();
 		return texto;
 	}
-	
+
 	public static String getAttribute(WebDriver driver, By by, String atributo) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		String retorno = element.getAttribute(atributo);
-		if(retorno == null) retorno="";
-		if(retorno.isEmpty())
+		if (retorno == null)
+			retorno = "";
+		if (retorno.isEmpty())
 			retorno = element.getCssValue(atributo);
 		return retorno;
 	}
-	
-	public static void compareAtributo(WebDriver driver, By by, String atributo,String valorEsperado) {
-		String valorObtenido=getAttribute(driver, by, atributo);
+
+	public static void compareAtributo(WebDriver driver, By by, String atributo, String valorEsperado) {
+		String valorObtenido = getAttribute(driver, by, atributo);
 //		System.out.println("Valor esperado Atr: "+valorEsperado);
 //		System.out.println("Valor obtenido Atr: "+valorObtenido);
-		if(valorObtenido.isEmpty()) assertTrue(false);
-		else assertTrue(valorObtenido.contains(valorEsperado));
+		if (valorObtenido.isEmpty())
+			assertTrue(false);
+		else
+			assertTrue(valorObtenido.contains(valorEsperado));
 	}
-	
+
 	public static void generarTab(int cantidad) {
 
 		Robot rob;
 
-<<<<<<< HEAD
-	public static void compareText(WebDriver driver, By by, String valorEsperado) {
-		String valorObtenido=getText(driver, by);
-		//System.out.println("Valor esperado: "+valorEsperado);
-		//System.out.println("Valor obtenido: "+valorObtenido);
-		assertEquals(valorEsperado, valorObtenido);
-	}
-	
-	public static String textoMinusculasSinEspacios(String texto) {
-		// Cadena de caracteres original a sustituir.
-	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
-	    // Cadena de caracteres ASCII que reemplazarán los originales.
-	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
-	    for (int i=0; i<original.length(); i++) {
-	        // Reemplazamos los caracteres especiales.
-	    	texto = texto.replace(original.charAt(i), ascii.charAt(i));
-	    }//for i
-		// Elimina espacios, tabuladores y retornos detrás.
-		texto=texto.replaceAll("\t|\n| ","");
-		texto=texto.toLowerCase();
-		return texto;
-	}
-	
-	public static String getAttribute(WebDriver driver, By by, String atributo) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		String retorno = element.getAttribute(atributo);
-		if(retorno == null) retorno="";
-		if(retorno.isEmpty())
-			retorno = element.getCssValue(atributo);
-		//System.out.println();
-		return retorno;
-	}
-	
-	public static void compareAtributo(WebDriver driver, By by, String atributo,String valorEsperado) {
-		String valorObtenido=getAttribute(driver, by, atributo);
-		//System.out.println("Valor esperado: "+valorEsperado);
-		//System.out.println("Valor obtenido: "+valorObtenido);
-		assertThat(valorObtenido, containsString(valorEsperado));
-	}
-
-	
-=======
 		for (int i = 0; i <= cantidad; i++) {
 			try {
 				rob = new Robot();
@@ -398,5 +355,5 @@ public class actionsUtil {
 			}
 		}
 	}
->>>>>>> HU-003
+
 }
