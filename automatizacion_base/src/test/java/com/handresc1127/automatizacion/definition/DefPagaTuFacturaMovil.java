@@ -27,15 +27,15 @@ public class DefPagaTuFacturaMovil {
 		pagePagaFactMvl.escribir(correoElectronico, email);
 	}
 
-	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente mensaje en color rojo\"([^\"]*)\"$")
+	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
 	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_mensaje_en_color_rojo(String btnConsultar, String msgError) {
-		pagePagaFactMvl.botonInabilitado();
-		pagePagaFactMvl.mensaje();
+		pagePagaFactMvl.mensaje(msgError);
+		pagePagaFactMvl.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
+		pagePagaFactMvl.botonInabilitado(btnConsultar,"disabled","true");
 	}
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")
-	public void el_botón_se_habilita(String arg1) {
-	    
-		
+	public void el_botón_se_habilita(String btnConsultar) {
+		pagePagaFactMvl.botonInabilitado(btnConsultar,"class","btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 }

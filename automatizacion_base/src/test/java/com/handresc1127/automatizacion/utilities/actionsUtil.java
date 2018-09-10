@@ -1,10 +1,8 @@
 package com.handresc1127.automatizacion.utilities;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -215,6 +213,46 @@ public class actionsUtil {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		return element.getText();
+	}
+	
+	public static void compareText(WebDriver driver, By by, String valorEsperado) {
+		String valorObtenido=getText(driver, by);
+		System.out.println("Valor esperado Text: "+valorEsperado);
+		System.out.println("Valor obtenido Text: "+valorObtenido);
+		assertEquals(valorEsperado, valorObtenido);
+	}
+	
+	public static String textoMinusculasSinEspacios(String texto) {
+		// Cadena de caracteres original a sustituir.
+	    String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+	    // Cadena de caracteres ASCII que reemplazarán los originales.
+	    String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+	    for (int i=0; i<original.length(); i++) {
+	        // Reemplazamos los caracteres especiales.
+	    	texto = texto.replace(original.charAt(i), ascii.charAt(i));
+	    }//for i
+		// Elimina espacios, tabuladores y retornos detrás.
+		texto=texto.replaceAll("\t|\n| ","");
+		texto=texto.toLowerCase();
+		return texto;
+	}
+	
+	public static String getAttribute(WebDriver driver, By by, String atributo) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		String retorno = element.getAttribute(atributo);
+		if(retorno == null) retorno="";
+		if(retorno.isEmpty())
+			retorno = element.getCssValue(atributo);
+		return retorno;
+	}
+	
+	public static void compareAtributo(WebDriver driver, By by, String atributo,String valorEsperado) {
+		String valorObtenido=getAttribute(driver, by, atributo);
+		System.out.println("Valor esperado Atr: "+valorEsperado);
+		System.out.println("Valor obtenido Atr: "+valorObtenido);
+		if(valorObtenido.isEmpty()) assertTrue(false);
+		else assertTrue(valorObtenido.contains(valorEsperado));
 	}
 	
 }

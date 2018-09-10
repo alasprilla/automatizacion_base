@@ -9,7 +9,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo"
+    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
 
     Examples: 
       | msisdn     | email             |
@@ -26,7 +26,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo"
+    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
 
     Examples: 
       | msisdn     | email      |
@@ -45,7 +45,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo"
+    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
 
     Examples: 
       | msisdn     | email                   |
@@ -60,7 +60,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
     Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo"
+    Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
 
     Examples: 
       | msisdn     | email                  |
@@ -84,3 +84,4 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
       | 3043302450 | "ejemplo@ejemplo.com"   |
       | 3043302450 | "casoexitoso@ti.go"     |
       | 3043302450 | "caso_exitoso@tigo.com" |
+      
