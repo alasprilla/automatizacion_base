@@ -1,5 +1,6 @@
 package com.handresc1127.automatizacion.definition;
 
+import java.awt.AWTException;
 import com.handresc1127.automatizacion.pageobjects.PagePagaTuFacturaMovil;
 
 import cucumber.api.java.en.Given;
@@ -10,7 +11,6 @@ public class DefPagaTuFacturaMovil {
 
 	PagePagaTuFacturaMovil pagePagaFactMvl;
 
-	}
 	@When("^Cuando doy clic en el campo \"([^\"]*)\" y escribo el número celular (\\d+)$")
 	public void cuando_doy_clic_en_el_campo_y_escribo_el_número_celular(String tuLineaTigo, String msisdn) {
 		pagePagaFactMvl.clicEn(tuLineaTigo);
@@ -35,6 +35,10 @@ public class DefPagaTuFacturaMovil {
 		pagePagaFactMvl.botonInabilitado(btnConsultar, "class",
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
+
+	
+	
+	
 	@Given("^estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url)  {
 		pagePagaFactMvl.open();
