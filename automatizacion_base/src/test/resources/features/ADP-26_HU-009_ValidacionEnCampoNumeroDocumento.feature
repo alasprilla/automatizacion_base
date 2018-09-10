@@ -48,30 +48,3 @@ Feature: HU009: CC válida en campo número de documento
       | documento  | estadoFacturas                            |
       | "71770656" | "El usuario no tiene facturas pendientes" |
       | "552716"   | "listado de facturas pendientes"          |
-  
-  
-  #Scenario Outline: Ingreso de cédula válida sin facturas pendientes
-    #Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    #When doy clic en la opción "HOGAR"
-    #And selecciono la opción "CC" en el campo Tipo de documento
-    #And ingreso <documento> en el campo "número de documento"
-    #And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-    #And doy clic en el botón "Consultar"
-    #Then mostrará el siguiente mensaje en letras blancas con fondo azul "El usuario no tiene facturas pendientes"
-#
-    #Examples: 
-      #| documento |
-      #|  71770656 |
-#
-  #Scenario Outline: Ingreso de cédula válida con facturas pendientes
-    #Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    #When doy clic en la opción "HOGAR"
-    #And selecciono la opción "CC" en el campo Tipo de documento
-    #And ingreso <documento> en el campo "número de documento"
-    #And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-    #And doy clic en el botón "Consultar"
-    #Then mostrará el listado de facturas pendientes
-#
-    #Examples: 
-      #| documento |
-      #|    552716 |

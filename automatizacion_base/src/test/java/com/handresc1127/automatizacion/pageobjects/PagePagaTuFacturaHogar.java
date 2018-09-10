@@ -20,7 +20,7 @@ public class PagePagaTuFacturaHogar extends PageObject {
 	public By btnConsultar = By.id("edit-consult--2");
 	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
 	public By lbFacturasPendientes = By.id("alert_main");
-	public By listFacturasPendientes=By.xpath("//*[@id='content_list_invoices']");
+	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
 	private By objetoToAction;
 
 	public By getObjetoToCliked() {
@@ -54,7 +54,7 @@ public class PagePagaTuFacturaHogar extends PageObject {
 		case "labelfacturas":
 			setObjetoToCliked(lbFacturasPendientes);
 			break;
-			
+
 		case "listfacturas":
 			setObjetoToCliked(listFacturasPendientes);
 			break;
