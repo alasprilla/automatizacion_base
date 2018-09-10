@@ -14,11 +14,12 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("https://www.google.com.co/")
 public class PagePagaTuFacturaMovil extends PageObject{
 	public By txtMsisdn= By.id("edit-candidate-number");
-	public By btnConfirmar= By.xpath("//*[@id='edit-button-query']");
+	public By btnConfirmar= By.id("edit-consult");
 	public By txtCorreo= By.id("edit-email");
-	public By txtmensaje= By.xpath("//*[@id='alert_main']/div/p");
-    public String objeto = "No hemos encontrado facturas para este número de línea";
-    public By lbMsgErrorDoc=By.xpath("//*[@id='alert_main']/div/p");
+	//public By txtmensaje= By.xpath("//*[@id='alert_main']/div/p");
+    //public String objeto = "No hemos encontrado facturas para este número de línea";
+	public By objeto = By.xpath("//*[@id='alert_main']/div/p");
+    public By lbMsgError=By.id("alert_main");
 	private By objetoToAction;
     
 	public void irAlaPagina(String url) {
@@ -40,41 +41,27 @@ public class PagePagaTuFacturaMovil extends PageObject{
 		actionsUtil.clic(getDriver(), txtCorreo);
 
 	}
-	public void escribirCorreo(String correo) {
+	public void escribirCorreo(String correo) throws AWTException {
 		actionsUtil.setTextFieldSlowly(getDriver(), txtCorreo, correo);
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);	
 	}
 	
 	public void presionBotonConfirmar() {
 		actionsUtil.clic(getDriver(), btnConfirmar);
 	}
 	
-	public void compararMensaje(String objeto,String txtmensaje) {
+	public void compararMensaje(String txtmensaje) {
 
-		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
-		case "numerodelinea":
-			setObjetoToCliked(txtMsisdn);
-			break;
-			
-		case "labelerrordocumento":
-			setObjetoToCliked(lbMsgErrorDoc);
-			break;
-		default: assertTrue(false);
-		}
-		actionsUtil.compareText(getDriver(), objetoToAction, txtmensaje);
+		actionsUtil.compareText(getDriver(), objeto, txtmensaje);
 	}
 	
-	public void compararAtributo(String objeto, String atributo, String txtmensaje) {
-		switch(actionsUtil.textoMinusculasSinEspacios(objeto)) {
-		case "numerodelinea":
-			setObjetoToCliked(txtMsisdn);
-			break;
+	public void compararAtributo(String atributo, String valorEsperado) {
 
-		case "labelerrordocumento":
-			setObjetoToCliked(lbMsgErrorDoc);
-			break;
-		default: assertTrue(false);
-		}
-		actionsUtil.compareAtributo(getDriver(), objetoToAction, objeto, txtmensaje);
+		setObjetoToCliked(lbMsgError);
+
+		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 	}
 	
 	public void setObjetoToCliked(By objetoToCliked) {
