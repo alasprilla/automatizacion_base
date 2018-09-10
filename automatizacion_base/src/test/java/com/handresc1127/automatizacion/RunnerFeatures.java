@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/features/HU0001-BusquedaBasicaGoogle.feature")
+@CucumberOptions(features = "src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature")
 public class RunnerFeatures {
 
 }
