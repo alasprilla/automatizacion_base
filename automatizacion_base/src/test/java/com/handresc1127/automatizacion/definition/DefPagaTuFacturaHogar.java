@@ -28,6 +28,7 @@ public class DefPagaTuFacturaHogar {
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_en_el_campo(String txtIngresado, String objeto)  {
 	    pagePagaTuFacturaHogar.ingresar(objeto,txtIngresado);
+	    
 	}
 
 	@Then("^el texto que se intenta ingresar no se mostrará$")
@@ -48,13 +49,24 @@ public class DefPagaTuFacturaHogar {
 
 
 	@When("^doy clic en el botón \"([^\"]*)\"$")
-	public void doy_clic_en_el_botón(String arg1)  {
-
+	public void doy_clic_en_el_botón(String objeto)  {
+		pagePagaTuFacturaHogar.clic(objeto);
 	}
 	
 	@Then("^mostrará el \"([^\"]*)\"$")
-	public void mostrará_el(String arg1)  {
-	   
+	public void mostrará_el(String texto)  {
+		if(texto.contains("no tiene")) {
+			pagePagaTuFacturaHogar.compararTxt("label facturas", texto);
+			//Letra blanca
+			pagePagaTuFacturaHogar.compararAtributo("label facturas","color","rgba(255, 255, 255, 1)");
+			//Fondo azul
+			pagePagaTuFacturaHogar.compararAtributo("label facturas","background-color","rgba(0, 200, 255, 1)");
+			
+			// #Si no tiene el msj esta en letras blancas con fondo azul
+		}else {
+			pagePagaTuFacturaHogar.tieneHijos("list facturas");
+		}
+		
 	}
 	
 }

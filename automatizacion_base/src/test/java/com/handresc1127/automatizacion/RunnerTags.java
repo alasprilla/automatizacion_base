@@ -12,7 +12,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @CucumberOptions(
 		glue = { "com.handresc1127.automatizacion" }, 
 		features = {"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature" }, 
-		tags = {"@Debug"},
+		tags = {"@issue:ADP-26"},
 		monochrome = true, 
 		plugin = {"pretty", "html:target/reports/html/", "junit:target/reports/junit/allcukes.xml","json:target/reports/cukes.json" }
 		)

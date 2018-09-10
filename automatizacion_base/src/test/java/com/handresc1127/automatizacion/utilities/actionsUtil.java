@@ -1,5 +1,8 @@
 package com.handresc1127.automatizacion.utilities;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -10,13 +13,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+
 
 public class actionsUtil {
 
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 * Comentario adicional Pull Request
+	 * WebElement parent = myElement.findElement(By.xpath(".."));
+	 * WebElement childs = myElement.findElement(By.xpath('.//*'));
 	 */
 
 	public static String globalAux;
@@ -94,6 +101,28 @@ public class actionsUtil {
 				}
 		}
 	}
+	
+	public static void setTextActions(WebDriver driver, By by, String text) {
+		if (!text.isEmpty()) {
+			highlightElement(driver, by);
+			WebElement element = driver.findElement(by);
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element);
+			actions.click();
+			actions.build().perform();
+			actions.sendKeys("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
+					+"\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
+			actions.build().perform();
+			actions.sendKeys(text);
+			actions.build().perform();
+			actions.click();
+			actions.build().perform();
+			try {
+				element.findElement(By.xpath("..")).click();
+				element.findElement(By.xpath("../..")).click();
+			}catch(Exception e) {}
+		}
+	}
 
 	public static void goToWebSide(WebDriver driver, String text) {
 		if (!text.isEmpty()) {
@@ -143,6 +172,7 @@ public class actionsUtil {
 	}
 
 	public static String[][] getTable(WebDriver driver, By by) {
+		highlightElement(driver, by);
 		WebElement table_element = driver.findElement(by);
 		List<WebElement> tr_collection = table_element.findElements(By.tagName("tr"));
 		String tabla[][] = new String[999][999];
@@ -175,13 +205,63 @@ public class actionsUtil {
 		}
 		//System.out.println();
 		//System.out.println("Filas:" + row_num + " Columnas:" + col_max);
-		assertTrue(row_num > 0);
-		assertTrue(col_max > 0);
+		//assertTrue(row_num > 0);
+		assertThat(row_num, greaterThan(0));
+		//assertTrue(col_max > 0);
+		assertThat(col_max, greaterThan(0));
 		// String resize
 		String tabla_return[][] = new String[row_num][col_max];
 		for (int i = 0; i < row_num; i++) {
 			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
 		}
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		return tabla_return;
+	}
+	
+	public static String[][] getTableDiv(WebDriver driver, By by) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+		List<WebElement> child_collection = element.findElements(By.xpath("./*"));
+
+		String tabla[][] = new String[999][999];
+		int row_num, col_num, col_max = 0;
+		row_num = 0;
+		boolean containInfo=false;
+		for (WebElement childElement : child_collection) {
+			List<WebElement> grandChild_collection = childElement.findElements(By.xpath("./*"));
+			//System.out.println("NUMBER OF COLUMNS="+grandChild_collection.size());
+			if (grandChild_collection.size() > col_max)
+				col_max = grandChild_collection.size();
+			col_num = 0;
+			containInfo=false;
+			for (WebElement tdElement : grandChild_collection) {
+				String aux=tdElement.getText();
+				//System.out.println("row # "+row_num+", col # "+col_num+
+				// " text="+aux);
+				//System.out.print(".");
+				
+				tabla[row_num][col_num] = aux;
+				col_num++;
+				if(aux!=null) {
+					if(!aux.isEmpty()) {
+						containInfo=true;
+					}
+				}
+			}
+			if(containInfo) {
+				row_num++;
+				//System.out.println();				
+				}
+		}
+		//System.out.println();
+		//System.out.println("Filas:" + row_num + " Columnas:" + col_max);
+		assertTrue(row_num > 0);
+		assertTrue(col_max > 0);
+		String tabla_return[][] = new String[row_num][col_max];
+		/*for (int i = 0; i < row_num; i++) {
+			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
+		}*/
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return tabla_return;
 	}
@@ -244,6 +324,7 @@ public class actionsUtil {
 		if(retorno == null) retorno="";
 		if(retorno.isEmpty())
 			retorno = element.getCssValue(atributo);
+		//System.out.println();
 		return retorno;
 	}
 	
@@ -251,7 +332,8 @@ public class actionsUtil {
 		String valorObtenido=getAttribute(driver, by, atributo);
 		//System.out.println("Valor esperado: "+valorEsperado);
 		//System.out.println("Valor obtenido: "+valorObtenido);
-		if(valorObtenido.isEmpty()) assertTrue(false);
-		else assertTrue(valorObtenido.contains(valorEsperado));
+		assertThat(valorObtenido, containsString(valorEsperado));
 	}
+
+	
 }
