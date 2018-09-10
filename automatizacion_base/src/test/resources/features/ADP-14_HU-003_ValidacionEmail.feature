@@ -5,7 +5,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
 
   #Parámetros: "@prueba.com", "@PRUEBA.COM", "@aquí.com", "@AQUÍ.COM"
   Scenario Outline: Email sin usuario
-    Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -21,7 +21,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
 
   #Parámetros: "usuario", "usuario@", "USUARIO", "aquí", "aquí@", "AQUÍ@"
   Scenario Outline: Email sin dominio
-    Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -39,7 +39,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
 
   #Parámetros: "ejemplo@dominio.a", "ejemplo@dominio.com.a", "ejemplo@d.a", "ejemplo@d.com.a"
   Scenario Outline: Email con dominio de primer nivel de solo un caracter
-    Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -53,7 +53,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
 
   #Parámetros: "ejemplo.", "ejemplo.@", "ejemplo@.", "ejemplo@dominio.", "ejemplo@dominio.com."
   Scenario Outline: Email terminado en punto (.)
-    Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -69,7 +69,7 @@ Feature: Como Tigoune Quiero realizar pruebas automatizadas de la consulta de fa
 
   #Parámetros: "ejemplo@ejemplo.com"
   Scenario Outline: Email correcto
-    Given Dado que estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se habilita

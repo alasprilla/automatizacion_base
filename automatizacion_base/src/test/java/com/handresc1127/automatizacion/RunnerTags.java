@@ -12,7 +12,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @CucumberOptions(
 		glue = { "com.handresc1127.automatizacion" }, 
 		features = {"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature",
-				"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature" }, 
+				"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature",
+				"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature"}, 
 		tags = {},
 		monochrome = true, 
 		plugin = {"pretty", "html:target/reports/html/", "junit:target/reports/junit/allcukes.xml","json:target/reports/cukes.json" }

@@ -2,6 +2,7 @@ package com.handresc1127.automatizacion.utilities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -141,7 +142,9 @@ public class actionsUtil {
 	public static void selectText(WebDriver driver, By by, String option) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
+
 		// System.out.println("Seleccionar: " + option);
+
 		new Select(element).selectByVisibleText(option);
 	}
 
@@ -299,6 +302,7 @@ public class actionsUtil {
 	}
 
 	public static void compareText(WebDriver driver, By by, String valorEsperado) {
+
 		String valorObtenido = getText(driver, by);
 //		System.out.println("Valor esperado Text: "+valorEsperado);
 //		System.out.println("Valor obtenido Text: "+valorObtenido);
@@ -324,6 +328,7 @@ public class actionsUtil {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		String retorno = element.getAttribute(atributo);
+
 		if (retorno == null)
 			retorno = "";
 		if (retorno.isEmpty())
