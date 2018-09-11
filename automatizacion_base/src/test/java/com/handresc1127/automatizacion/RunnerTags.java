@@ -11,9 +11,11 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
 		glue = { "com.handresc1127.automatizacion" }, 
-		features = {"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature",
-				"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature",
-				"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature"}, 
+		features = {"src/test/resources/features/ADP-13_HU-002-ValidacionMSISDN.feature"
+				//"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature",
+				//"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature",
+				//"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature"
+				}, 
 		tags = {},
 		monochrome = true, 
 		plugin = {"pretty", "html:target/reports/html/", "junit:target/reports/junit/allcukes.xml","json:target/reports/cukes.json" }
