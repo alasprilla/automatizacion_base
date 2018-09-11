@@ -15,7 +15,7 @@ public class PagePagaTuFacturaHogar extends PageObject {
 	public By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
 	public By listTipoDocumento = By.id("edit-document-type");
 	public By txtNumeroDocumento = By.id("edit-document");
-	public By txtCorreoElectronico = By.xpath("//*[@id='content_right_forms_unified']/div/div/label");
+	public By txtCorreoElectronico = By.id("edit-email-fijo");
 	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
 	public By btnConsultar = By.id("edit-consult--2");
 	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
@@ -81,15 +81,9 @@ public class PagePagaTuFacturaHogar extends PageObject {
 	}
 
 	public void ingresar(String objeto, String txtIngresado) {
-		boolean isCorreo = false;
 		sharedObjet(objeto);
-		if (objeto.toLowerCase().contains("correo"))
-			isCorreo = true;
-		if (isCorreo) {
-			actionsUtil.setTextActions(getDriver(), objetoToAction, txtIngresado);
-		} else {
-			actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);
-		}
+		actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);
+		actionsUtil.clicParent(getDriver(), objetoToAction);
 	}
 
 	public void compararTxt(String objeto, String valorEsperado) {

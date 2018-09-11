@@ -127,6 +127,15 @@ public class actionsUtil {
 		}
 	}
 
+	public static void clicParent(WebDriver driver, By by) {
+		WebElement element = driver.findElement(by);
+		try {
+			element.findElement(By.xpath("..")).click();
+			element.findElement(By.xpath("../..")).click();
+		} catch (Exception e) {
+		}
+	}
+
 	public static void goToWebSide(WebDriver driver, String text) {
 		if (!text.isEmpty()) {
 			driver.navigate().to(text);

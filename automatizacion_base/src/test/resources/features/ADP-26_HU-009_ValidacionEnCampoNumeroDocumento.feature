@@ -1,7 +1,7 @@
 #Author: Henry Andres Correa Correa
 #Keywords Summary : Cedula, Validacion, Documento
-@issue:ADP-26 @HU-009
-Feature: HU009: CC válida en campo número de documento
+@issue:ADP-26
+Feature: HU009 CC válida en campo número de documento
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que la consulta se realice con una cédula de ciudadanía válida
@@ -34,6 +34,7 @@ Feature: HU009: CC válida en campo número de documento
       |      11 | "12345678901"  |
       |      12 | "123456789012" |
 
+	@CasoFeliz
   Scenario Outline: Ingreso de cédula válida
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en la opción "HOGAR"
