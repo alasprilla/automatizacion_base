@@ -1,5 +1,6 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -18,6 +19,7 @@ public class PagePagaTuFacturaMovil extends PageObject {
 	public By txtTuLineaTigo = By.id("edit-candidate-number");
 	public By txtCorreoElectronico = By.xpath("//*[@id='edit-email']");
 	public By msgErrorCorreoElectronico = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
+	public By msgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
 	public By btnConsultar = By.id("edit-consult");
 	public By txtMsisdn= By.id("edit-candidate-number");
 	public By btnConfirmar= By.id("edit-consult");
@@ -74,6 +76,11 @@ public class PagePagaTuFacturaMovil extends PageObject {
 	public void mensaje(String msgError) {
 		actionsUtil.compareText(getDriver(), msgErrorCorreoElectronico, msgError);
 	}
+	
+	public void mensajeC(String msgErrorCel) {
+		actionsUtil.compareText(getDriver(), msgErrorCelular, msgErrorCel);
+	}
+	
 
 	public void colorTextoMensaje(String atributo, String valorEsperado) {
 		actionsUtil.compareAtributo(getDriver(), msgErrorCorreoElectronico, atributo, valorEsperado);
@@ -84,8 +91,6 @@ public class PagePagaTuFacturaMovil extends PageObject {
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 		actionsUtil.generarTab(1);
 	}
-
-	
     
 	public void irAlaPagina(String url) {
 		actionsUtil.goToWebSide(getDriver(), url);

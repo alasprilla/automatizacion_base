@@ -29,6 +29,14 @@ public class DefPagaTuFacturaMovil {
 		pagePagaFactMvl.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
 		pagePagaFactMvl.botonInabilitado(btnConsultar, "disabled", "true");
 	}
+	
+	@Then("^botón \"([^\"]*)\" se deshabilita y muestra el siguiente mensaje en color rojo \"([^\"]*)\"$")
+	public void botón_se_deshabilita_y_muestra_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
+			String msgErrorCel) {
+		pagePagaFactMvl.mensajeC(msgErrorCel);
+		pagePagaFactMvl.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
+		pagePagaFactMvl.botonInabilitado(btnConsultar, "disabled", "true");
+	}
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
@@ -36,8 +44,6 @@ public class DefPagaTuFacturaMovil {
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
-	
-	
 	
 	@Given("^estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url)  {

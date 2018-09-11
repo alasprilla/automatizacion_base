@@ -14,11 +14,13 @@ public class PagePagaTuFacturaHogar extends PageObject {
 	public By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
 	public By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
 	public By listTipoDocumento = By.id("edit-document-type");
+	public By txtTuLineaTigo = By.id("edit-candidate-number");
 	public By txtNumeroDocumento = By.id("edit-document");
 	public By txtCorreoElectronico = By.id("edit-email-fijo");
 	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
 	public By btnConsultar = By.id("edit-consult--2");
 	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
+	public By lbMsgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
 	public By lbFacturasPendientes = By.id("alert_main");
 	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
 	private By objetoToAction;
@@ -42,11 +44,17 @@ public class PagePagaTuFacturaHogar extends PageObject {
 		case "numerodedocumento":
 			setObjetoToCliked(txtNumeroDocumento);
 			break;
-
+		case "tulineatigo":
+			setObjetoToCliked(txtTuLineaTigo);
+			break;
 		case "labelerrordocumento":
 			setObjetoToCliked(lbMsgErrorDoc);
 			break;
 
+		case "labelerrorcelular":
+			setObjetoToCliked(lbMsgErrorCelular);
+			break;
+			
 		case "consultar":
 			setObjetoToCliked(btnConsultar);
 			break;
@@ -82,6 +90,7 @@ public class PagePagaTuFacturaHogar extends PageObject {
 
 	public void ingresar(String objeto, String txtIngresado) {
 		sharedObjet(objeto);
+		
 		actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);
 		actionsUtil.clicParent(getDriver(), objetoToAction);
 	}
