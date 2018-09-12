@@ -1,5 +1,7 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+import static org.junit.Assert.assertEquals;
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -12,18 +14,26 @@ import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://www.google.com.co/")
-public class PagePagaTuFacturaMovil extends PageObject {
+public class PagePagaTuFactura extends PageObject {
 
 	public By txtTuLineaTigo = By.id("edit-candidate-number");
 	public By txtCorreoElectronico = By.xpath("//*[@id='edit-email']");
 	public By msgErrorCorreoElectronico = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
-	public By msgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
+	public By lbMsgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
 	public By btnConsultar = By.id("edit-consult");
 	public By txtMsisdn = By.id("edit-candidate-number");
 	public By btnConfirmar = By.id("edit-consult");
 	public By txtCorreo = By.id("edit-email");
 	public By objeto = By.xpath("//*[@id='alert_main']/div/p");
 	public By lbMsgError = By.id("alert_main");
+	
+	public By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
+	public By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
+	public By listTipoDocumento = By.id("edit-document-type");
+	public By txtNumeroDocumento = By.id("edit-document");
+	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
+	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
+	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
 
 	private By objetoToAction;
 	private String msisdn = "";
@@ -78,7 +88,7 @@ public class PagePagaTuFacturaMovil extends PageObject {
 	}
 
 	public void mensajeC(String msgErrorCel) {
-		actionsUtil.compareText(getDriver(), msgErrorCelular, msgErrorCel);
+		actionsUtil.compareText(getDriver(), lbMsgErrorCelular, msgErrorCel);
 	}
 
 	public void colorTextoMensaje(String atributo, String valorEsperado) {
@@ -157,4 +167,95 @@ public class PagePagaTuFacturaMovil extends PageObject {
 		actionsUtil.validateMSISDNFin(textoInicial, textoFinal);
 	}
 
+	
+	
+	
+	
+	
+	//******** HOGAR
+	
+	
+	public void sharedObjet(String objeto) {
+		switch (actionsUtil.textoMinusculasSinEspacios(objeto)) {
+		case "hogar":
+			setObjetoToCliked(btnHogar);
+			break;
+		case "movil":
+			setObjetoToCliked(btnMovil);
+			break;
+		case "numerodedocumento":
+			setObjetoToCliked(txtNumeroDocumento);
+			break;
+		case "tulineatigo":
+			setObjetoToCliked(txtTuLineaTigo);
+			break;
+		case "labelerrordocumento":
+			setObjetoToCliked(lbMsgErrorDoc);
+			break;
+
+		case "labelerrorcelular":
+			setObjetoToCliked(lbMsgErrorCelular);
+			break;
+
+		case "consultar":
+			setObjetoToCliked(btnConsultar);
+			break;
+
+		case "labelfacturas":
+			setObjetoToCliked(lbMsgError);
+			break;
+
+		case "listfacturas":
+			setObjetoToCliked(listFacturasPendientes);
+			break;
+
+		case "correoelectronico":
+			setObjetoToCliked(txtCorreoElectronico);
+			break;
+		default:
+			assertEquals(null, objeto);
+		}
+	}
+
+	public void irAlSitio(String webSite) {
+		actionsUtil.goToWebSide(getDriver(), webSite);
+	}
+
+	public void clicEnHogar(String opcionPagaTuFactura) {
+		sharedObjet(opcionPagaTuFactura);
+		actionsUtil.clic(getDriver(), objetoToAction);
+	}
+
+	public void seleccionar(String tipoDocumento) {
+		actionsUtil.selectContains(getDriver(), listTipoDocumento, tipoDocumento);
+	}
+
+	public void ingresar(String objeto, String txtIngresado) {
+		sharedObjet(objeto);
+
+		actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);
+		actionsUtil.clicParent(getDriver(), objetoToAction);
+	}
+
+	public void compararTxt(String objeto, String valorEsperado) {
+		sharedObjet(objeto);
+		actionsUtil.compareText(getDriver(), objetoToAction, valorEsperado);
+	}
+
+	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
+		sharedObjet(objeto);
+		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
+	}
+
+	public void clic(String objeto) {
+		sharedObjet(objeto);
+		actionsUtil.clic(getDriver(), objetoToAction);
+	}
+
+	public void tieneHijos(String objeto) {
+		sharedObjet(objeto);
+		actionsUtil.getTableDiv(getDriver(), objetoToAction);
+	}
+
+	
 }
