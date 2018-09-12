@@ -1,7 +1,5 @@
 package com.handresc1127.automatizacion.definition;
 
-import java.awt.AWTException;
-
 import com.handresc1127.automatizacion.pageobjects.PagePagaTuFactura;
 
 import cucumber.api.java.en.Given;
@@ -26,16 +24,16 @@ public class DefPagaTuFactura {
 	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
 	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
 			String msgError) {
-		pagePagaFact.mensaje(msgError);
-		pagePagaFact.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
+		pagePagaFact.compararTxt(btnConsultar, msgError);
+		pagePagaFact.compararAtributo(btnConsultar, "color", "rgba(240, 30, 70, 1)");
 		pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
 	}
 
 	@Then("^botón \"([^\"]*)\" se deshabilita y muestra el siguiente mensaje en color rojo \"([^\"]*)\"$")
 	public void botón_se_deshabilita_y_muestra_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
 			String msgErrorCel) {
-		pagePagaFact.mensajeC(msgErrorCel);
-		pagePagaFact.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
+		pagePagaFact.compararTxt(btnConsultar, msgErrorCel);
+		pagePagaFact.compararAtributo(btnConsultar, "color", "rgba(240, 30, 70, 1)");
 		pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
 	}
 
@@ -52,29 +50,29 @@ public class DefPagaTuFactura {
 	}
 
 	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_número_celular_en_el_campo(String numcelular, String campo) throws AWTException {
-		pagePagaFact.clic(campo);
-		pagePagaFact.escribirCelular(numcelular);
+	public void ingreso_el_número_celular_en_el_campo(String msisdn, String campoMsisdn) {
+		pagePagaFact.clic(campoMsisdn);
+		pagePagaFact.escribir(campoMsisdn, msisdn);
 	}
 
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) throws AWTException {
+	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) {
 		pagePagaFact.clic(campoCorreo);
-		pagePagaFact.escribirCorreo(correo);
+		pagePagaFact.escribir(campoCorreo, correo);
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo rojo \"([^\"]*)\"$")
 	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_rojo(String txtmensaje) {
 		pagePagaFact.presionBotonConfirmar();
-		pagePagaFact.compararMensaje(txtmensaje);
-		pagePagaFact.compararAtributo("background", "rgb(240, 30, 70)");
+		pagePagaFact.compararTxt(null, txtmensaje);
+		pagePagaFact.compararAtributo(null, "background", "rgb(240, 30, 70)");
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo azul \"([^\"]*)\"$")
 	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_azul(String txtmensaje) {
 		pagePagaFact.presionBotonConfirmar();
-		pagePagaFact.compararMensaje(txtmensaje);
-		pagePagaFact.compararAtributo("background", "rgb(0, 200, 255)");
+		pagePagaFact.compararTxt(null, txtmensaje);
+		pagePagaFact.compararAtributo(null, "background", "rgb(0, 200, 255)");
 	}
 
 	@Then("^llevará al formulario donde se selecciona el tipo de pago$")
@@ -97,18 +95,6 @@ public class DefPagaTuFactura {
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@Then("^El último caracter se borra$")
-	public void el_último_caracter_se_borra() {
-		pagePagaFact.compararTextoFinal();
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@Then("^Entonces el primer caracter se borra$")
-	public void entonces_el_primer_caracter_se_borra() {
-		pagePagaFact.compararTextoInicial();
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
 	@When("^Presiono la tecla \"([^\"]*)\" y presiono la tecla \"([^\"]*)\"$")
 	public void presiono_la_tecla_y_presiono_la_tecla(String tecla1, String tecla2) {
 		pagePagaFact.presionarTecla(tecla1);
@@ -116,8 +102,8 @@ public class DefPagaTuFactura {
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@Then("^Entonces el último caracter se borra$")
-	public void entonces_el_último_caracter_se_borra() {
+	@Then("^El último caracter se borra$")
+	public void el_último_caracter_se_borra() {
 		pagePagaFact.compararTextoFinal();
 	}
 
@@ -127,22 +113,14 @@ public class DefPagaTuFactura {
 		pagePagaFact.presionarTecla(tecla);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//******** HOGAR
-	
+	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
+	@Then("^Entonces el primer caracter se borra$")
+	public void entonces_el_primer_caracter_se_borra() {
+		pagePagaFact.compararTextoInicial();
+	}
+
+	// ******** HOGAR
+
 	@When("^doy clic en la opción \"([^\"]*)\"$")
 	public void doy_clic_en_la_opción(String opcionPagaTuFactura) {
 		pagePagaFact.clic(opcionPagaTuFactura);
@@ -155,7 +133,7 @@ public class DefPagaTuFactura {
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_en_el_campo(String txtIngresado, String objeto) {
-		pagePagaFact.ingresar(objeto, txtIngresado);
+		pagePagaFact.escribir(objeto, txtIngresado);
 
 	}
 

@@ -10,6 +10,7 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -346,22 +347,22 @@ public class actionsUtil {
 
 	public static void validateMSISDNFin(String valorInicial, String valorFinal) {
 
-		String auxInicial = "";
+		String auxFinal = "";
 
 		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
 
-			auxInicial = "(" + valorInicial.substring(0, 3) + ") "
+			auxFinal = "(" + valorInicial.substring(0, 3) + ") "
 					+ valorInicial.substring(3, valorInicial.length() - 1);
 		} else if (valorInicial.length() > 6) {
 
-			auxInicial = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, 6) + "-"
+			auxFinal = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, 6) + "-"
 					+ valorInicial.substring(6, valorInicial.length() - 1);
 		} else {
 
-			auxInicial = "(" + valorInicial.substring(0, valorInicial.length() - 1);
+			auxFinal = "(" + valorInicial.substring(0, valorInicial.length() - 1);
 		}
 
-		assertEquals(auxInicial, valorFinal);
+		assertEquals(auxFinal, valorFinal);
 
 	}
 
@@ -443,17 +444,21 @@ public class actionsUtil {
 
 				rob.keyPress(KeyEvent.VK_F5);
 				rob.keyRelease(KeyEvent.VK_F5);
+				rob.delay(100);
 
 			} else if (tecla.equalsIgnoreCase("backspace")) {
 
 				rob.keyPress(KeyEvent.VK_BACK_SPACE);
 				rob.keyRelease(KeyEvent.VK_BACK_SPACE);
+				rob.delay(100);
 
 			} else if (tecla.equalsIgnoreCase("inicio")) {
 
 				rob.keyPress(KeyEvent.VK_HOME);
 				rob.keyRelease(KeyEvent.VK_HOME);
+				rob.delay(100);
 
+				
 			} else if (tecla.equalsIgnoreCase("suprimir")) {
 
 				rob.keyPress(KeyEvent.VK_DELETE);
@@ -463,11 +468,13 @@ public class actionsUtil {
 
 				rob.keyPress(KeyEvent.VK_LEFT);
 				rob.keyRelease(KeyEvent.VK_LEFT);
+				rob.delay(100);
 
 			} else if (tecla.equalsIgnoreCase("flecha derecha")) {
 
 				rob.keyPress(KeyEvent.VK_RIGHT);
 				rob.keyRelease(KeyEvent.VK_RIGHT);
+				rob.delay(100);
 
 			} /*
 				 * else if (tecla.equalsIgnoreCase("")) { rob.keyPress(KeyEvent.);
@@ -479,5 +486,15 @@ public class actionsUtil {
 		}
 
 	}
+	
+	public static boolean existsElement(WebDriver driver, By objeto) {
+		
+		    try {
+		    		driver.findElement(objeto);
+		    } catch (NoSuchElementException e) {
+		        return false;
+		    }
+		    return true;
+		}
 
 }

@@ -45,7 +45,7 @@ Feature: HU002_ValidacionMSISDN
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And Presiono la tecla "flecha izquierda" y presiono la tecla "suprimir"
-    Then Entonces el último caracter se borra
+    Then El último caracter se borra
 
     Examples: 
       | msisdn    |
