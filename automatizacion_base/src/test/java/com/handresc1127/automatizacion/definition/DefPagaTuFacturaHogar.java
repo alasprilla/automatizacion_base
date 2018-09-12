@@ -41,6 +41,11 @@ public class DefPagaTuFacturaHogar {
 		pagePagaTuFacturaHogar.compararTxt("label error documento", txtEsperado);
 		pagePagaTuFacturaHogar.compararAtributo("label error documento", "color", "rgba(240, 30, 70, 1)");
 	}
+	@Then("^mostrará el mensaje en color rojo \"([^\"]*)\"$")
+	public void mostrará_el_mensaje_en_color_rojo(String txtEsperado) {
+		pagePagaTuFacturaHogar.compararTxt("label error celular", txtEsperado);
+		pagePagaTuFacturaHogar.compararAtributo("label error celular", "color", "rgba(240, 30, 70, 1)");
+	}
 
 	@Then("^mostrará en el campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
 	public void mostrará_en_el_campo_el_texto(String objeto, String valor) {
