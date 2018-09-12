@@ -310,12 +310,59 @@ public class actionsUtil {
 		return element.getText();
 	}
 
+	public static String getTextAttribute(WebDriver driver, By by) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		return element.getAttribute("value");
+	}
+
 	public static void compareText(WebDriver driver, By by, String valorEsperado) {
 
 		String valorObtenido = getText(driver, by);
-//		System.out.println("Valor esperado Text: "+valorEsperado);
-//		System.out.println("Valor obtenido Text: "+valorObtenido);
+		// System.out.println("Valor esperado Text: "+valorEsperado);
+		// System.out.println("Valor obtenido Text: "+valorObtenido);
 		assertEquals(valorEsperado, valorObtenido);
+	}
+
+	public static void validateMSISDNIni(String valorInicial, String valorFinal) {
+
+		String auxInicial = "";
+
+		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
+
+			auxInicial = "(" + valorInicial.substring(1, 4) + ") " + valorInicial.substring(4, valorInicial.length());
+		} else if (valorInicial.length() > 6) {
+
+			auxInicial = "(" + valorInicial.substring(1, 4) + ") " + valorInicial.substring(4, 7) + "-"
+					+ valorInicial.substring(7, valorInicial.length());
+		} else {
+
+			auxInicial = "(" + valorInicial.substring(1, valorInicial.length());
+		}
+
+		assertEquals(auxInicial, valorFinal);
+
+	}
+
+	public static void validateMSISDNFin(String valorInicial, String valorFinal) {
+
+		String auxInicial = "";
+
+		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
+
+			auxInicial = "(" + valorInicial.substring(0, 3) + ") "
+					+ valorInicial.substring(3, valorInicial.length() - 1);
+		} else if (valorInicial.length() > 6) {
+
+			auxInicial = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, 6) + "-"
+					+ valorInicial.substring(6, valorInicial.length() - 1);
+		} else {
+
+			auxInicial = "(" + valorInicial.substring(0, valorInicial.length() - 1);
+		}
+
+		assertEquals(auxInicial, valorFinal);
+
 	}
 
 	public static String textoMinusculasSinEspacios(String texto) {
@@ -347,8 +394,8 @@ public class actionsUtil {
 
 	public static void compareAtributo(WebDriver driver, By by, String atributo, String valorEsperado) {
 		String valorObtenido = getAttribute(driver, by, atributo);
-//		System.out.println("Valor esperado Atr: "+valorEsperado);
-//		System.out.println("Valor obtenido Atr: "+valorObtenido);
+		// System.out.println("Valor esperado Atr: "+valorEsperado);
+		// System.out.println("Valor obtenido Atr: "+valorObtenido);
 		if (valorObtenido.isEmpty())
 			assertTrue(false);
 		else
@@ -368,6 +415,54 @@ public class actionsUtil {
 				e.getMessage();
 			}
 		}
+	}
+
+	public static void presionarTeclaRobot(String tecla) {
+
+		Robot rob;
+
+		try {
+			rob = new Robot();
+
+			if (tecla.equalsIgnoreCase("F5")) {
+
+				rob.keyPress(KeyEvent.VK_F5);
+				rob.keyRelease(KeyEvent.VK_F5);
+
+			} else if (tecla.equalsIgnoreCase("backspace")) {
+
+				rob.keyPress(KeyEvent.VK_BACK_SPACE);
+				rob.keyRelease(KeyEvent.VK_BACK_SPACE);
+
+			} else if (tecla.equalsIgnoreCase("inicio")) {
+
+				rob.keyPress(KeyEvent.VK_HOME);
+				rob.keyRelease(KeyEvent.VK_HOME);
+
+			} else if (tecla.equalsIgnoreCase("suprimir")) {
+
+				rob.keyPress(KeyEvent.VK_DELETE);
+				rob.keyRelease(KeyEvent.VK_DELETE);
+
+			} else if (tecla.equalsIgnoreCase("flecha izquierda")) {
+
+				rob.keyPress(KeyEvent.VK_LEFT);
+				rob.keyRelease(KeyEvent.VK_LEFT);
+
+			} else if (tecla.equalsIgnoreCase("flecha derecha")) {
+
+				rob.keyPress(KeyEvent.VK_RIGHT);
+				rob.keyRelease(KeyEvent.VK_RIGHT);
+
+			} /*
+				 * else if (tecla.equalsIgnoreCase("")) { rob.keyPress(KeyEvent.);
+				 * rob.keyRelease(KeyEvent.); }
+				 */
+
+		} catch (AWTException e) {
+			e.getMessage();
+		}
+
 	}
 
 }
