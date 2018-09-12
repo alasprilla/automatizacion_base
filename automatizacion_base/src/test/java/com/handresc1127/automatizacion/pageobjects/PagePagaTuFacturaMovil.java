@@ -92,11 +92,7 @@ public class PagePagaTuFacturaMovil extends PageObject {
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 		actionsUtil.generarTab(1);
 	}
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> HU-002
 	public void irAlaPagina(String url) {
 		actionsUtil.goToWebSide(getDriver(), url);
 	}
