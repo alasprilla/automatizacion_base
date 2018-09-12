@@ -22,7 +22,7 @@ Feature: HU007 Validación número Invalido Celular
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn> 
     Then mostrará en el campo "Tu línea Tigo" el texto <resultado>
     Examples: 
-      | msisdn        |resultado |
+      | msisdn        |resultado   |
       |31234567890123 |"3123456789"|
       |36587589658749 |"3658758965"|
 
@@ -34,7 +34,7 @@ Feature: HU007 Validación número Invalido Celular
    Examples: 
       | msisdn  |
       |312345   |
-    #  |365897   |
+      |365897   |
   Scenario Outline: Ingreso de números que no comiencen con 3 ni con 5
     Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
@@ -43,10 +43,10 @@ Feature: HU007 Validación número Invalido Celular
     Examples: 
       | msisdn  |
       |       0 |
-   #   |       1 |
-   #   |       2 |
-   #    |       4 |
-   #   |       6 |
-   #   |       7 |
-   #   |       8 |
-   #   |       9 |
+      |       1 |
+      |       2 |
+      |       4 |
+      |       6 |
+      |       7 |
+      |       8 |
+      |       9 |
