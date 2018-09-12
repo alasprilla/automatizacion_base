@@ -14,7 +14,7 @@ public class DefPagaTuFactura {
 
 	@When("^Cuando doy clic en el campo \"([^\"]*)\" y escribo el número celular (\\d+)$")
 	public void cuando_doy_clic_en_el_campo_y_escribo_el_número_celular(String tuLineaTigo, String msisdn) {
-		pagePagaFact.clicEn(tuLineaTigo);
+		pagePagaFact.clic(tuLineaTigo);
 		pagePagaFact.escribir(tuLineaTigo, msisdn);
 	}
 
@@ -48,18 +48,18 @@ public class DefPagaTuFactura {
 	@Given("^estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
 		pagePagaFact.open();
-		pagePagaFact.irAlaPagina(url);
+		pagePagaFact.irPagina(url);
 	}
 
 	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_el_número_celular_en_el_campo(String numcelular, String campo) throws AWTException {
-		pagePagaFact.seleccionCelular();
+		pagePagaFact.clic(campo);
 		pagePagaFact.escribirCelular(numcelular);
 	}
 
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_correo_en_el_campo(String correo, String campocorreo) throws AWTException {
-		pagePagaFact.seleccionCorreo();
+	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) throws AWTException {
+		pagePagaFact.clic(campoCorreo);
 		pagePagaFact.escribirCorreo(correo);
 	}
 
@@ -85,7 +85,7 @@ public class DefPagaTuFactura {
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
 	@When("^Cuando doy clic en el campo \"([^\"]*)\" y presiono la tecla \"([^\"]*)\"$")
 	public void cuando_doy_clic_en_el_campo_y_presiono_la_tecla(String tuLineaTigo, String tecla) {
-		pagePagaFact.clicEn(tuLineaTigo);
+		pagePagaFact.clic(tuLineaTigo);
 		pagePagaFact.presionarTecla(tecla);
 
 	}
@@ -143,17 +143,9 @@ public class DefPagaTuFactura {
 	
 	//******** HOGAR
 	
-	/*@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
-	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String webSite) {
-		pagePagaFact.open();
-		pagePagaFact.irAlSitio(webSite);
-	}*/
-	
-	
-
 	@When("^doy clic en la opción \"([^\"]*)\"$")
 	public void doy_clic_en_la_opción(String opcionPagaTuFactura) {
-		pagePagaFact.clicEnHogar(opcionPagaTuFactura);
+		pagePagaFact.clic(opcionPagaTuFactura);
 	}
 
 	@When("^selecciono la opción \"([^\"]*)\" en el campo Tipo de documento$")

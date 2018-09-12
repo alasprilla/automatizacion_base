@@ -2,10 +2,6 @@ package com.handresc1127.automatizacion.pageobjects;
 
 import static org.junit.Assert.assertEquals;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
 
 import com.handresc1127.automatizacion.utilities.actionsUtil;
@@ -16,6 +12,9 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("https://www.google.com.co/")
 public class PagePagaTuFactura extends PageObject {
 
+	/**
+	 * Elmentos de la seccion Movil
+	 */
 	public By txtTuLineaTigo = By.id("edit-candidate-number");
 	public By txtCorreoElectronico = By.xpath("//*[@id='edit-email']");
 	public By msgErrorCorreoElectronico = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
@@ -27,35 +26,29 @@ public class PagePagaTuFactura extends PageObject {
 	public By objeto = By.xpath("//*[@id='alert_main']/div/p");
 	public By lbMsgError = By.id("alert_main");
 	
+	/**
+	 * Elementos de la seccion Hogar
+	 */
 	public By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
 	public By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
 	public By listTipoDocumento = By.id("edit-document-type");
 	public By txtNumeroDocumento = By.id("edit-document");
 	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
-	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
 	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
-
+	
+	/**
+	 * Elementos comunes Movil / Hogar
+	 */
+	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
+	
 	private By objetoToAction;
 	private String msisdn = "";
 
+	
 	public void irPagina(String url) {
 		actionsUtil.goToWebSide(getDriver(), url);
 	}
-
-	public void clicEn(String opcion) {
-
-		switch (opcion) {
-		case "Tu línea Tigo":
-			setObjetoToCliked(txtTuLineaTigo);
-			break;
-		case "Consultar":
-			setObjetoToCliked(btnConsultar);
-			break;
-		}
-
-		actionsUtil.clic(getDriver(), getObjetoToCliked());
-	}
-
+	
 	public By getObjetoToCliked() {
 		return objetoToAction;
 	}
@@ -63,6 +56,10 @@ public class PagePagaTuFactura extends PageObject {
 	public void setObjetoToCliked(By objetoToCliked) {
 		this.objetoToAction = objetoToCliked;
 	}
+
+	
+
+	
 
 	public void escribir(String objeto, String texto) {
 
@@ -101,82 +98,46 @@ public class PagePagaTuFactura extends PageObject {
 		actionsUtil.generarTab(1);
 	}
 
-	public void irAlaPagina(String url) {
-		actionsUtil.goToWebSide(getDriver(), url);
-	}
-
-	public void seleccionCelular() {
-		actionsUtil.clic(getDriver(), txtMsisdn);
-	}
-
-	public void escribirCelular(String numcelular) throws AWTException {
-		actionsUtil.setTextFieldSlowly(getDriver(), txtMsisdn, numcelular);
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_TAB);
-		robot.keyRelease(KeyEvent.VK_TAB);
-	}
-
-	public void seleccionCorreo() {
-		actionsUtil.clic(getDriver(), txtCorreo);
-
-	}
-
-	public void escribirCorreo(String correo) throws AWTException {
-		actionsUtil.setTextFieldSlowly(getDriver(), txtCorreo, correo);
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-	}
-
-	public void presionBotonConfirmar() {
-		actionsUtil.clic(getDriver(), btnConfirmar);
-	}
-
-	public void compararMensaje(String txtmensaje) {
-
-		actionsUtil.compareText(getDriver(), objeto, txtmensaje);
-	}
-
-	public void compararAtributo(String atributo, String valorEsperado) {
-
-		setObjetoToCliked(lbMsgError);
-
-		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
-	}
-
-	public void presionarTecla(String tecla) {
-		actionsUtil.presionarTeclaRobot(tecla);
-	}
-
-	public void compararTextoInicial() {
-
-		String textoInicial = msisdn;
-		actionsUtil.clic(getDriver(), objetoToAction);
-		String textoFinal = actionsUtil.getTextAttribute(getDriver(), objetoToAction);
-
-		actionsUtil.validateMSISDNIni(textoInicial, textoFinal);
-
-	}
-
-	public void compararTextoFinal() {
-
-		String textoInicial = msisdn;
-		actionsUtil.clic(getDriver(), objetoToAction);
-		String textoFinal = actionsUtil.getTextAttribute(getDriver(), objetoToAction);
-
-		actionsUtil.validateMSISDNFin(textoInicial, textoFinal);
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	
 	
 	
 	
 	
-	//******** HOGAR
 	
 	
-	public void sharedObjet(String objeto) {
-		switch (actionsUtil.textoMinusculasSinEspacios(objeto)) {
+	
+	
+	public void sharedObjet(String opcion) {
+		switch (actionsUtil.textoMinusculasSinEspacios(opcion)) {
 		case "hogar":
 			setObjetoToCliked(btnHogar);
 			break;
@@ -212,23 +173,166 @@ public class PagePagaTuFactura extends PageObject {
 		case "correoelectronico":
 			setObjetoToCliked(txtCorreoElectronico);
 			break;
+		
 		default:
 			assertEquals(null, objeto);
 		}
 	}
 
-	public void irAlSitio(String webSite) {
-		actionsUtil.goToWebSide(getDriver(), webSite);
+	public void clic(String objeto) {
+		sharedObjet(objeto);
+		actionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
-
-	public void clicEnHogar(String opcionPagaTuFactura) {
-		sharedObjet(opcionPagaTuFactura);
-		actionsUtil.clic(getDriver(), objetoToAction);
-	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public void seleccionar(String tipoDocumento) {
 		actionsUtil.selectContains(getDriver(), listTipoDocumento, tipoDocumento);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void escribirCelular(String numcelular) {
+		actionsUtil.setTextFieldSlowly(getDriver(), txtMsisdn, numcelular);
+		actionsUtil.generarTab(1);
+	}
+
+	
+
+	public void escribirCorreo(String correo) {
+		actionsUtil.setTextFieldSlowly(getDriver(), txtCorreo, correo);
+		actionsUtil.generarEnter(1);
+	}
+
+	public void presionBotonConfirmar() {
+		actionsUtil.clic(getDriver(), btnConfirmar);
+	}
+
+	public void compararMensaje(String txtmensaje) {
+
+		actionsUtil.compareText(getDriver(), objeto, txtmensaje);
+	}
+
+	public void compararAtributo(String atributo, String valorEsperado) {
+		setObjetoToCliked(lbMsgError);
+		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
+	}
+
+	public void presionarTecla(String tecla) {
+		actionsUtil.presionarTeclaRobot(tecla);
+	}
+
+	public void compararTextoInicial() {
+
+		String textoInicial = msisdn;
+		actionsUtil.clic(getDriver(), objetoToAction);
+		String textoFinal = actionsUtil.getTextAttribute(getDriver(), objetoToAction);
+
+		actionsUtil.validateMSISDNIni(textoInicial, textoFinal);
+
+	}
+
+	public void compararTextoFinal() {
+
+		String textoInicial = msisdn;
+		actionsUtil.clic(getDriver(), objetoToAction);
+		String textoFinal = actionsUtil.getTextAttribute(getDriver(), objetoToAction);
+
+		actionsUtil.validateMSISDNFin(textoInicial, textoFinal);
+	}
+
+	
+	
+	
+	
+	
+	//******** HOGAR
+	
+	
+	
+
+	
 
 	public void ingresar(String objeto, String txtIngresado) {
 		sharedObjet(objeto);
@@ -247,10 +351,7 @@ public class PagePagaTuFactura extends PageObject {
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 	}
 
-	public void clic(String objeto) {
-		sharedObjet(objeto);
-		actionsUtil.clic(getDriver(), objetoToAction);
-	}
+	
 
 	public void tieneHijos(String objeto) {
 		sharedObjet(objeto);

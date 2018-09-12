@@ -416,6 +416,21 @@ public class actionsUtil {
 			}
 		}
 	}
+	
+	public static void generarEnter(int cantidad) {
+
+		Robot rob;
+
+		for (int i = 0; i <= cantidad; i++) {
+			try {
+				rob = new Robot();
+				rob.keyPress(KeyEvent.VK_ENTER);
+				rob.keyRelease(KeyEvent.VK_ENTER);
+			} catch (AWTException e) {
+				e.getMessage();
+			}
+		}
+	}
 
 	public static void presionarTeclaRobot(String tecla) {
 
