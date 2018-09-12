@@ -1,6 +1,5 @@
 package com.handresc1127.automatizacion.pageobjects;
 
-
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -77,11 +76,10 @@ public class PagePagaTuFacturaMovil extends PageObject {
 	public void mensaje(String msgError) {
 		actionsUtil.compareText(getDriver(), msgErrorCorreoElectronico, msgError);
 	}
-	
+
 	public void mensajeC(String msgErrorCel) {
 		actionsUtil.compareText(getDriver(), msgErrorCelular, msgErrorCel);
 	}
-	
 
 	public void colorTextoMensaje(String atributo, String valorEsperado) {
 		actionsUtil.compareAtributo(getDriver(), msgErrorCorreoElectronico, atributo, valorEsperado);

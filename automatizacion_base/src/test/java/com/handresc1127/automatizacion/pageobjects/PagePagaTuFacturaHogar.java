@@ -54,7 +54,7 @@ public class PagePagaTuFacturaHogar extends PageObject {
 		case "labelerrorcelular":
 			setObjetoToCliked(lbMsgErrorCelular);
 			break;
-			
+
 		case "consultar":
 			setObjetoToCliked(btnConsultar);
 			break;
@@ -90,7 +90,7 @@ public class PagePagaTuFacturaHogar extends PageObject {
 
 	public void ingresar(String objeto, String txtIngresado) {
 		sharedObjet(objeto);
-		
+
 		actionsUtil.setTextFieldSlowly(getDriver(), objetoToAction, txtIngresado);
 		actionsUtil.clicParent(getDriver(), objetoToAction);
 	}

@@ -29,7 +29,7 @@ public class DefPagaTuFacturaMovil {
 		pagePagaFactMvl.colorTextoMensaje("color", "rgba(240, 30, 70, 1)");
 		pagePagaFactMvl.botonInabilitado(btnConsultar, "disabled", "true");
 	}
-	
+
 	@Then("^botón \"([^\"]*)\" se deshabilita y muestra el siguiente mensaje en color rojo \"([^\"]*)\"$")
 	public void botón_se_deshabilita_y_muestra_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
 			String msgErrorCel) {
