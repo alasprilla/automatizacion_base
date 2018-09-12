@@ -8,7 +8,7 @@ Feature: HU003: Validación de email
 
   #Parámetros: "@prueba.com", "@PRUEBA.COM", "@aquí.com", "@AQUÍ.COM"
   Scenario Outline: Email sin usuario
-    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -24,7 +24,7 @@ Feature: HU003: Validación de email
 
   #Parámetros: "usuario", "usuario@", "USUARIO", "aquí", "aquí@", "AQUÍ@"
   Scenario Outline: Email sin dominio
-    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -42,7 +42,7 @@ Feature: HU003: Validación de email
 
   #Parámetros: "ejemplo@dominio.a", "ejemplo@dominio.com.a", "ejemplo@d.a", "ejemplo@d.com.a"
   Scenario Outline: Email con dominio de primer nivel de solo un caracter
-    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -56,7 +56,7 @@ Feature: HU003: Validación de email
 
   #Parámetros: "ejemplo.", "ejemplo.@", "ejemplo@.", "ejemplo@dominio.", "ejemplo@dominio.com."
   Scenario Outline: Email terminado en punto (.)
-    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se deshabilita y mostrará el siguiente mensaje en color rojo "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
@@ -73,7 +73,7 @@ Feature: HU003: Validación de email
   #Parámetros: "ejemplo@ejemplo.com"
   @CasoFeliz
   Scenario Outline: Email correcto
-    Given estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When Cuando doy clic en el campo "Tu línea Tigo" y escribo el número celular <msisdn>
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
     Then El botón "Consultar" se habilita

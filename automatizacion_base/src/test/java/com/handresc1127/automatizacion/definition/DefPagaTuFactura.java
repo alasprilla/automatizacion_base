@@ -45,7 +45,7 @@ public class DefPagaTuFactura {
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
-	@Given("^estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
+	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
 		pagePagaFact.open();
 		pagePagaFact.irPagina(url);
