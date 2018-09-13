@@ -21,11 +21,11 @@ public class PagePagaTuFactura extends PageObject {
 	public By lbMsgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
 	public By btnConsultarM = By.id("edit-consult");
 	public By txtMsisdn = By.id("edit-candidate-number");
-	//public By btnConfirmar = By.id("edit-consult");
+	// public By btnConfirmar = By.id("edit-consult");
 	public By txtCorreo = By.id("edit-email");
 	public By objeto = By.xpath("//*[@id='alert_main']/div/p");
 	public By lbMsgError = By.id("alert_main");
-	
+
 	/**
 	 * Elementos de la seccion Hogar
 	 */
@@ -37,20 +37,19 @@ public class PagePagaTuFactura extends PageObject {
 	public By listTipoDocumento = By.id("edit-document-type");
 	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
 	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
-	
+
 	/**
 	 * Elementos comunes Movil / Hogar
 	 */
 	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
-	
+
 	private By objetoToAction;
 	private String msisdn = "";
 
-	
 	public void irPagina(String url) {
 		actionsUtil.goToWebSide(getDriver(), url);
 	}
-	
+
 	public By getObjetoToCliked() {
 		return objetoToAction;
 	}
@@ -60,7 +59,7 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void sharedObjet(String opcion) {
-		
+
 		switch (actionsUtil.textoMinusculasSinEspacios(opcion)) {
 		case "hogar":
 			setObjetoToCliked(btnHogar);
@@ -83,13 +82,13 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 
 		case "consultar":
-			
+
 			if (actionsUtil.existsElement(getDriver(), btnConsultarH)) {
 				setObjetoToCliked(btnConsultarH);
 			} else {
 				setObjetoToCliked(btnConsultarM);
 			}
-			
+
 			break;
 
 		case "labelfacturas":
@@ -101,15 +100,23 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 
 		case "correoelectronico":
-			
-			if (actionsUtil.existsElement(getDriver(), txtCorreoElectronicoH)) {
-				setObjetoToCliked(txtCorreoElectronicoH);
-			}else {
+
+			if (actionsUtil.existsElement(getDriver(), txtCorreoElectronicoM)) {
 				setObjetoToCliked(txtCorreoElectronicoM);
+			} else {
+				setObjetoToCliked(txtCorreoElectronicoH);
 			}
-			
+
 			break;
-		
+
+		case "mensajedeerrorcorreo":
+			setObjetoToCliked(msgErrorCorreoElectronico);
+			break;
+
+		case "mensajedeerrormsisdn":
+			setObjetoToCliked(lbMsgErrorCelular);
+			break;
+
 		default:
 			assertEquals(null, objeto);
 		}
@@ -120,12 +127,10 @@ public class PagePagaTuFactura extends PageObject {
 		actionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
 
-	
 	public void tieneHijos(String objeto) {
 		sharedObjet(objeto);
 		actionsUtil.getTableDiv(getDriver(), objetoToAction);
 	}
-	
 
 	public void presionarTecla(String tecla) {
 		actionsUtil.presionarTeclaRobot(tecla);
@@ -149,71 +154,34 @@ public class PagePagaTuFactura extends PageObject {
 
 		actionsUtil.validateMSISDNFin(textoInicial, textoFinal);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	public void escribir(String objeto, String texto) {
-		
+	public void escribirConClick(String objeto, String texto) {
+
 		sharedObjet(objeto);
 		this.msisdn = texto;
 		actionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
-		
-		//actionsUtil.clicParent(getDriver(), getObjetoToCliked());
+		actionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
-	
+
+	public void escribir(String objeto, String texto) {
+
+		sharedObjet(objeto);
+		this.msisdn = texto;
+		actionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+	}
+
 	public void compararTxt(String objeto, String valorEsperado) {
-		
-		if (objeto != null ) {
+
+		if (objeto != null) {
 			sharedObjet(objeto);
 			actionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
 		} else {
 			sharedObjet(objeto);
 			actionsUtil.compareText(getDriver(), this.objeto, valorEsperado);
 		}
-		
+
 	}
-	
+
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
 
 		if (objeto != null) {
@@ -224,197 +192,34 @@ public class PagePagaTuFactura extends PageObject {
 			actionsUtil.compareText(getDriver(), this.objeto, valorEsperado);
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	/*	
-	public void compararMensaje(String txtmensaje) {
-		actionsUtil.compareText(getDriver(), objeto, txtmensaje);
-	}
-	*/
+	/*
+	 * public void compararMensaje(String txtmensaje) {
+	 * actionsUtil.compareText(getDriver(), objeto, txtmensaje); }
+	 */
 
-	
-	
-	
-	
-	
-	
-	/*public void compararAtributo(String atributo, String valorEsperado) {
-		setObjetoToCliked(lbMsgError);
-		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
-	}
-	
-	public void colorTextoMensaje(String atributo, String valorEsperado) {
-		actionsUtil.compareAtributo(getDriver(), msgErrorCorreoElectronico, atributo, valorEsperado);
-	}*/
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/*
+	 * public void compararAtributo(String atributo, String valorEsperado) {
+	 * setObjetoToCliked(lbMsgError); actionsUtil.compareAtributo(getDriver(),
+	 * objetoToAction, atributo, valorEsperado); }
+	 * 
+	 * public void colorTextoMensaje(String atributo, String valorEsperado) {
+	 * actionsUtil.compareAtributo(getDriver(), msgErrorCorreoElectronico, atributo,
+	 * valorEsperado); }
+	 */
 
 	public void presionBotonConfirmar() {
 		actionsUtil.clic(getDriver(), btnConsultarM);
 	}
 
-	
-
 	public void seleccionar(String tipoDocumento) {
 		actionsUtil.selectContains(getDriver(), listTipoDocumento, tipoDocumento);
 	}
-	
+
 	public void botonInabilitado(String objeto, String atributo, String valorEsperado) {
 		setObjetoToCliked(btnConsultarM);
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 		actionsUtil.generarTab(1);
 	}
-	
-	
-	
-	
 
-	
-
-	
 }

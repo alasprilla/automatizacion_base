@@ -13,27 +13,19 @@ public class DefPagaTuFactura {
 	@When("^Cuando doy clic en el campo \"([^\"]*)\" y escribo el número celular (\\d+)$")
 	public void cuando_doy_clic_en_el_campo_y_escribo_el_número_celular(String tuLineaTigo, String msisdn) {
 		pagePagaFact.clic(tuLineaTigo);
-		pagePagaFact.escribir(tuLineaTigo, msisdn);
+		pagePagaFact.escribirConClick(tuLineaTigo, msisdn);
 	}
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
 	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
-		pagePagaFact.escribir(correoElectronico, email);
+		pagePagaFact.escribirConClick(correoElectronico, email);
 	}
 
-	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
-	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
+	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente \"([^\"]*)\" en color rojo \"([^\"]*)\"$")
+	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_en_color_rojo(String btnConsultar, String campoClick,
 			String msgError) {
-		pagePagaFact.compararTxt(btnConsultar, msgError);
-		pagePagaFact.compararAtributo(btnConsultar, "color", "rgba(240, 30, 70, 1)");
-		pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
-	}
-
-	@Then("^botón \"([^\"]*)\" se deshabilita y muestra el siguiente mensaje en color rojo \"([^\"]*)\"$")
-	public void botón_se_deshabilita_y_muestra_el_siguiente_mensaje_en_color_rojo(String btnConsultar,
-			String msgErrorCel) {
-		pagePagaFact.compararTxt(btnConsultar, msgErrorCel);
-		pagePagaFact.compararAtributo(btnConsultar, "color", "rgba(240, 30, 70, 1)");
+		pagePagaFact.compararTxt(campoClick, msgError);
+		pagePagaFact.compararAtributo(campoClick, "color", "rgba(240, 30, 70, 1)");
 		pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
 	}
 
@@ -58,7 +50,7 @@ public class DefPagaTuFactura {
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) {
 		pagePagaFact.clic(campoCorreo);
-		pagePagaFact.escribir(campoCorreo, correo);
+		pagePagaFact.escribirConClick(campoCorreo, correo);
 	}
 
 	@Then("^mostrará el siguiente mensaje en letras blancas con fondo rojo \"([^\"]*)\"$")

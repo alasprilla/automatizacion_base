@@ -351,8 +351,7 @@ public class actionsUtil {
 
 		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
 
-			auxFinal = "(" + valorInicial.substring(0, 3) + ") "
-					+ valorInicial.substring(3, valorInicial.length() - 1);
+			auxFinal = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, valorInicial.length() - 1);
 		} else if (valorInicial.length() > 6) {
 
 			auxFinal = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, 6) + "-"
@@ -417,7 +416,7 @@ public class actionsUtil {
 			}
 		}
 	}
-	
+
 	public static void generarEnter(int cantidad) {
 
 		Robot rob;
@@ -458,7 +457,6 @@ public class actionsUtil {
 				rob.keyRelease(KeyEvent.VK_HOME);
 				rob.delay(100);
 
-				
 			} else if (tecla.equalsIgnoreCase("suprimir")) {
 
 				rob.keyPress(KeyEvent.VK_DELETE);
@@ -486,15 +484,15 @@ public class actionsUtil {
 		}
 
 	}
-	
+
 	public static boolean existsElement(WebDriver driver, By objeto) {
-		
-		    try {
-		    		driver.findElement(objeto);
-		    } catch (NoSuchElementException e) {
-		        return false;
-		    }
-		    return true;
+
+		try {
+			driver.findElement(objeto);
+		} catch (NoSuchElementException e) {
+			return false;
 		}
+		return true;
+	}
 
 }
