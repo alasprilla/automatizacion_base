@@ -18,6 +18,7 @@ public class DefPagaTuFactura {
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
 	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
+		//pagePagaFact.clic(correoElectronico);
 		pagePagaFact.validarEscribir(correoElectronico, email);
 	}
 	
@@ -35,7 +36,7 @@ public class DefPagaTuFactura {
 
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) {
-		pagePagaFact.clic(campoCorreo);
+		//pagePagaFact.clic(campoCorreo);
 		pagePagaFact.validarEscribir(campoCorreo, correo);
 	}
 
@@ -95,18 +96,18 @@ public class DefPagaTuFactura {
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
-	@Then("^mostrará el siguiente mensaje en letras blancas con fondo rojo \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_rojo(String txtmensaje) {
+	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")
+	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_rojo(String msgFactura, String txtmensaje) {
 		pagePagaFact.presionBotonConfirmar();
-		pagePagaFact.compararTxt(null, txtmensaje);
-		pagePagaFact.compararAtributo(null, "background", "rgb(240, 30, 70)");
+		pagePagaFact.compararTxt(msgFactura, txtmensaje);
+		pagePagaFact.compararAtributo(msgFactura, "background", "rgb(240, 30, 70)");
 	}
 
-	@Then("^mostrará el siguiente mensaje en letras blancas con fondo azul \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_letras_blancas_con_fondo_azul(String txtmensaje) {
+	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo azul \"([^\"]*)\"$")
+	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_azul(String msgFactura, String txtmensaje) {
 		pagePagaFact.presionBotonConfirmar();
-		pagePagaFact.compararTxt(null, txtmensaje);
-		pagePagaFact.compararAtributo(null, "background", "rgb(0, 200, 255)");
+		pagePagaFact.compararTxt(msgFactura, txtmensaje);
+		pagePagaFact.compararAtributo(msgFactura, "background", "rgb(0, 200, 255)");
 	}
 
 	@Then("^llevará al formulario donde se selecciona el tipo de pago$")
@@ -117,7 +118,7 @@ public class DefPagaTuFactura {
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
 	@Then("^La página se recarga$")
 	public void la_página_se_recarga() {
-		
+		pagePagaFact.validarPagRecargada();
 	}
 
 	@Then("^el texto que se intenta ingresar no se mostrará$")

@@ -10,13 +10,13 @@ Feature: HU008 Validación número Celular
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso el número celular "3000000000" en el campo "Tu línea Tigo"
     And ingreso el correo "prueba@prueba.com" en el campo "Correo electrónico"
-    Then mostrará el siguiente mensaje en letras blancas con fondo rojo "No hemos encontrado facturas para este número de línea."
+    Then mostrará el siguiente "mensaje sin facturas" en letras blancas con fondo rojo "No hemos encontrado facturas para este número de línea."
 
   Scenario: Ingreso de número válido Tigo sin facturas pendientes
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso el número celular "3003255454" en el campo "Tu línea Tigo"
     And ingreso el correo "prueba@prueba.com" en el campo "Correo electrónico"
-    Then mostrará el siguiente mensaje en letras blancas con fondo azul "No hemos encontrado facturas para este número de línea."
+    Then mostrará el siguiente "mensaje sin facturas" en letras blancas con fondo azul "No hemos encontrado facturas para este número de línea."
 
   Scenario: Ingreso de número válido Tigo con facturas pendientes
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"

@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
 
-import com.handresc1127.automatizacion.utilities.actionsUtil;
+import com.handresc1127.automatizacion.utilities.ActionsUtil;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -16,14 +16,13 @@ public class PagePagaTuFactura extends PageObject {
 	 * Elmentos de la seccion Movil
 	 */
 	public By txtTuLineaTigo = By.id("edit-candidate-number");
-	public By txtCorreoElectronicoM = By.xpath("//*[@id='edit-email']");
+	public By txtCorreoElectronicoM = By.id("edit-email");
 	public By msgErrorCorreoElectronico = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
 	public By lbMsgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
 	public By btnConsultarM = By.id("edit-consult");
 	public By txtMsisdn = By.id("edit-candidate-number");
-	// public By btnConfirmar = By.id("edit-consult");
 	public By txtCorreo = By.id("edit-email");
-	public By objeto = By.xpath("//*[@id='alert_main']/div/p");
+	public By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
 	public By lbMsgError = By.id("alert_main");
 
 	/**
@@ -47,7 +46,7 @@ public class PagePagaTuFactura extends PageObject {
 	private String msisdn = "";
 
 	public void irPagina(String url) {
-		actionsUtil.goToWebSide(getDriver(), url);
+		ActionsUtil.goToWebSide(getDriver(), url);
 	}
 
 	public By getObjetoToCliked() {
@@ -60,7 +59,7 @@ public class PagePagaTuFactura extends PageObject {
 
 	public void sharedObjet(String opcion) {
 
-		switch (actionsUtil.textoMinusculasSinEspacios(opcion)) {
+		switch (ActionsUtil.textoMinusculasSinEspacios(opcion)) {
 		case "hogar":
 			setObjetoToCliked(btnHogar);
 			break;
@@ -80,10 +79,10 @@ public class PagePagaTuFactura extends PageObject {
 			setObjetoToCliked(lbMsgErrorCelular);
 			break;
 		case "consultar":
-			if (actionsUtil.existsElement(getDriver(), btnConsultarH)) {
+			if (ActionsUtil.existsElement(getDriver(), btnConsultarH)) {
 				setObjetoToCliked(btnConsultarH);
-			} 
-			if (actionsUtil.existsElement(getDriver(), btnConsultarM)) {
+			}
+			if (ActionsUtil.existsElement(getDriver(), btnConsultarM)) {
 				setObjetoToCliked(btnConsultarM);
 			}
 			break;
@@ -94,10 +93,10 @@ public class PagePagaTuFactura extends PageObject {
 			setObjetoToCliked(listFacturasPendientes);
 			break;
 		case "correoelectronico":
-			if (actionsUtil.existsElement(getDriver(), txtCorreoElectronicoM)) {
+			if (ActionsUtil.existsElement(getDriver(), txtCorreoElectronicoM)) {
 				setObjetoToCliked(txtCorreoElectronicoM);
 			}
-			if (actionsUtil.existsElement(getDriver(), txtCorreoElectronicoH)) {
+			if (ActionsUtil.existsElement(getDriver(), txtCorreoElectronicoH)) {
 				setObjetoToCliked(txtCorreoElectronicoH);
 			}
 			break;
@@ -108,100 +107,98 @@ public class PagePagaTuFactura extends PageObject {
 		case "mensajedeerrormsisdn":
 			setObjetoToCliked(lbMsgErrorCelular);
 			break;
+		case "mensajesinfacturas":
+			setObjetoToCliked(lbMsgError);
+			break;
 		default:
-			assertEquals(null, objeto);
+			assertEquals(null, msgFactura);
 		}
 	}
 
 	public void clic(String objeto) {
+		
 		sharedObjet(objeto);
-		actionsUtil.clic(getDriver(), getObjetoToCliked());
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
 
 	public void tieneHijos(String objeto) {
+		
 		sharedObjet(objeto);
-		actionsUtil.getTableDiv(getDriver(), objetoToAction);
+		ActionsUtil.getTableDiv(getDriver(), objetoToAction);
 	}
 
 	public void presionarTecla(String tecla) {
-		actionsUtil.presionarTeclaRobot(tecla);
+		ActionsUtil.presionarTeclaRobot(tecla);
 	}
 
 	public void compararTextoInicial() {
 
 		String textoInicial = msisdn;
-		actionsUtil.clic(getDriver(), getObjetoToCliked());
-		String textoFinal = actionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		actionsUtil.validateMSISDNIni(textoInicial, textoFinal);
-
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+		ActionsUtil.validateMSISDNIni(textoInicial, textoFinal);
 	}
 
 	public void compararTextoFinal() {
 
 		String textoInicial = msisdn;
-		actionsUtil.clic(getDriver(), getObjetoToCliked());
-		String textoFinal = actionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		actionsUtil.validateMSISDNFin(textoInicial, textoFinal);
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+		ActionsUtil.validateMSISDNFin(textoInicial, textoFinal);
 	}
 
 	public void escribirConClick(String objeto, String texto) {
 
 		sharedObjet(objeto);
 		this.msisdn = texto;
-		actionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
-		actionsUtil.clicParent(getDriver(), getObjetoToCliked());
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
 
 	public void escribir(String objeto, String texto) {
 
 		sharedObjet(objeto);
 		this.msisdn = texto;
-		actionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 	}
 
 	public void compararTxt(String objeto, String valorEsperado) {
 
-		if (objeto != null) {
-			sharedObjet(objeto);
-			actionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
-		} else {
-			sharedObjet(objeto);
-			actionsUtil.compareText(getDriver(), this.objeto, valorEsperado);
-		}
+		sharedObjet(objeto);
+		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
 	}
 
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
 
-		if (objeto != null) {
-			sharedObjet(objeto);
-			actionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
-		} else {
-			sharedObjet(objeto);
-			actionsUtil.compareText(getDriver(), this.objeto, valorEsperado);
-		}
+		sharedObjet(objeto);
+		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
 
 	public void presionBotonConfirmar() {
-		actionsUtil.clic(getDriver(), btnConsultarM);
+		ActionsUtil.clic(getDriver(), btnConsultarM);
 	}
 
 	public void seleccionar(String tipoDocumento) {
-		actionsUtil.selectContains(getDriver(), listTipoDocumento, tipoDocumento);
+		ActionsUtil.selectContains(getDriver(), listTipoDocumento, tipoDocumento);
 	}
 
 	public void botonInabilitado(String objeto, String atributo, String valorEsperado) {
+		
 		setObjetoToCliked(btnConsultarM);
-		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
-		//actionsUtil.generarTab(1);
+		ActionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
 	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
-		
-		if(actionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico")) {
+
+		if (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico")) {
 			escribirConClick(objeto2, txtIngresado);
-		}else {
+		} else {
 			escribir(objeto2, txtIngresado);
 		}
+	}
+
+	public void validarPagRecargada() {
+		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
 	}
 
 }
