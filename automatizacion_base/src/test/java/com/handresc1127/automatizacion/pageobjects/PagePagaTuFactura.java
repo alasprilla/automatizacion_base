@@ -76,39 +76,31 @@ public class PagePagaTuFactura extends PageObject {
 		case "labelerrordocumento":
 			setObjetoToCliked(lbMsgErrorDoc);
 			break;
-
 		case "labelerrorcelular":
 			setObjetoToCliked(lbMsgErrorCelular);
 			break;
-
 		case "consultar":
-
 			if (actionsUtil.existsElement(getDriver(), btnConsultarH)) {
 				setObjetoToCliked(btnConsultarH);
-			} else {
+			} 
+			if (actionsUtil.existsElement(getDriver(), btnConsultarM)) {
 				setObjetoToCliked(btnConsultarM);
 			}
-
 			break;
-
 		case "labelfacturas":
 			setObjetoToCliked(lbMsgError);
 			break;
-
 		case "listfacturas":
 			setObjetoToCliked(listFacturasPendientes);
 			break;
-
 		case "correoelectronico":
-
 			if (actionsUtil.existsElement(getDriver(), txtCorreoElectronicoM)) {
 				setObjetoToCliked(txtCorreoElectronicoM);
-			} else {
+			}
+			if (actionsUtil.existsElement(getDriver(), txtCorreoElectronicoH)) {
 				setObjetoToCliked(txtCorreoElectronicoH);
 			}
-
 			break;
-
 		case "mensajedeerrorcorreo":
 			setObjetoToCliked(msgErrorCorreoElectronico);
 			break;
@@ -116,7 +108,6 @@ public class PagePagaTuFactura extends PageObject {
 		case "mensajedeerrormsisdn":
 			setObjetoToCliked(lbMsgErrorCelular);
 			break;
-
 		default:
 			assertEquals(null, objeto);
 		}
@@ -141,7 +132,6 @@ public class PagePagaTuFactura extends PageObject {
 		String textoInicial = msisdn;
 		actionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = actionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-
 		actionsUtil.validateMSISDNIni(textoInicial, textoFinal);
 
 	}
@@ -151,7 +141,6 @@ public class PagePagaTuFactura extends PageObject {
 		String textoInicial = msisdn;
 		actionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = actionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-
 		actionsUtil.validateMSISDNFin(textoInicial, textoFinal);
 	}
 
@@ -179,7 +168,6 @@ public class PagePagaTuFactura extends PageObject {
 			sharedObjet(objeto);
 			actionsUtil.compareText(getDriver(), this.objeto, valorEsperado);
 		}
-
 	}
 
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
@@ -193,21 +181,6 @@ public class PagePagaTuFactura extends PageObject {
 		}
 	}
 
-	/*
-	 * public void compararMensaje(String txtmensaje) {
-	 * actionsUtil.compareText(getDriver(), objeto, txtmensaje); }
-	 */
-
-	/*
-	 * public void compararAtributo(String atributo, String valorEsperado) {
-	 * setObjetoToCliked(lbMsgError); actionsUtil.compareAtributo(getDriver(),
-	 * objetoToAction, atributo, valorEsperado); }
-	 * 
-	 * public void colorTextoMensaje(String atributo, String valorEsperado) {
-	 * actionsUtil.compareAtributo(getDriver(), msgErrorCorreoElectronico, atributo,
-	 * valorEsperado); }
-	 */
-
 	public void presionBotonConfirmar() {
 		actionsUtil.clic(getDriver(), btnConsultarM);
 	}
@@ -219,7 +192,7 @@ public class PagePagaTuFactura extends PageObject {
 	public void botonInabilitado(String objeto, String atributo, String valorEsperado) {
 		setObjetoToCliked(btnConsultarM);
 		actionsUtil.compareAtributo(getDriver(), objetoToAction, atributo, valorEsperado);
-		actionsUtil.generarTab(1);
+		//actionsUtil.generarTab(1);
 	}
 
 }
