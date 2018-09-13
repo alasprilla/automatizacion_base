@@ -195,4 +195,13 @@ public class PagePagaTuFactura extends PageObject {
 		//actionsUtil.generarTab(1);
 	}
 
+	public void validarEscribir(String objeto2, String txtIngresado) {
+		
+		if(actionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico")) {
+			escribirConClick(objeto2, txtIngresado);
+		}else {
+			escribir(objeto2, txtIngresado);
+		}
+	}
+
 }

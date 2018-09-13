@@ -18,25 +18,25 @@ public class DefPagaTuFactura {
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
 	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
-		pagePagaFact.escribirConClick(correoElectronico, email);
+		pagePagaFact.validarEscribir(correoElectronico, email);
 	}
 	
 	@When("^Cuando doy clic en el campo \"([^\"]*)\" y escribo el número celular (\\d+)$")
 	public void cuando_doy_clic_en_el_campo_y_escribo_el_número_celular(String tuLineaTigo, String msisdn) {
 		pagePagaFact.clic(tuLineaTigo);
-		pagePagaFact.escribir(tuLineaTigo, msisdn);
+		pagePagaFact.validarEscribir(tuLineaTigo, msisdn);
 	}
 
 	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_el_número_celular_en_el_campo(String msisdn, String campoMsisdn) {
 		pagePagaFact.clic(campoMsisdn);
-		pagePagaFact.escribir(campoMsisdn, msisdn);
+		pagePagaFact.validarEscribir(campoMsisdn, msisdn);
 	}
 
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) {
 		pagePagaFact.clic(campoCorreo);
-		pagePagaFact.escribirConClick(campoCorreo, correo);
+		pagePagaFact.validarEscribir(campoCorreo, correo);
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
@@ -72,8 +72,8 @@ public class DefPagaTuFactura {
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_en_el_campo(String txtIngresado, String objeto) {
-		pagePagaFact.escribir(objeto, txtIngresado);
-
+		//pagePagaFact.escribir(objeto, txtIngresado);
+		pagePagaFact.validarEscribir(objeto, txtIngresado);
 	}
 
 	@When("^doy clic en el botón \"([^\"]*)\"$")
