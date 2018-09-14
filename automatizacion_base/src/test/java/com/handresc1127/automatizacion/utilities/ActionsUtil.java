@@ -369,6 +369,24 @@ public class ActionsUtil {
 		assertEquals(auxFinal, valorFinal);
 
 	}
+	
+	public static void validateNumDocIni(String valorInicial, String valorFinal) {
+		
+		String auxDocFinal = "";
+		auxDocFinal = valorInicial.substring(1,valorInicial.length());
+				
+		assertEquals(auxDocFinal, valorFinal);
+	}
+
+	public static void validateNumDocFin(String valorInicial, String valorFinal) {
+
+		String auxDocFinal = "";
+	
+		auxDocFinal = valorInicial.substring(0, valorInicial.length() - 1);
+
+		assertEquals(auxDocFinal, valorFinal);
+
+	}
 
 	public static String textoMinusculasSinEspacios(String texto) {
 		// Cadena de caracteres original a sustituir.

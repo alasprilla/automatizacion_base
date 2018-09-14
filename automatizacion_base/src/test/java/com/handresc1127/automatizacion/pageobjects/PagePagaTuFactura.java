@@ -44,6 +44,7 @@ public class PagePagaTuFactura extends PageObject {
 
 	private By objetoToAction;
 	private String msisdn = "";
+	private String numdoc = "";
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
@@ -146,11 +147,28 @@ public class PagePagaTuFactura extends PageObject {
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
 		ActionsUtil.validateMSISDNFin(textoInicial, textoFinal);
 	}
+	
+	public void compararDocInicial() {
+
+		String textoInicial = numdoc;
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+		ActionsUtil.validateNumDocIni(textoInicial, textoFinal);
+	}
+
+	public void compararDocFinal() {
+
+		String textoInicial = numdoc;
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+		ActionsUtil.validateNumDocFin(textoInicial, textoFinal);
+	}
 
 	public void escribirConClick(String objeto, String texto) {
 
 		sharedObjet(objeto);
 		this.msisdn = texto;
+		this.numdoc = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
@@ -159,6 +177,7 @@ public class PagePagaTuFactura extends PageObject {
 
 		sharedObjet(objeto);
 		this.msisdn = texto;
+		this.numdoc = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 	}
 

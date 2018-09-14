@@ -170,5 +170,17 @@ public class DefPagaTuFactura {
 	public void el_último_caracter_se_borra() {
 		pagePagaFact.compararTextoFinal();
 	}
+	
+	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
+	@Then("^El último caracter del campo número de documento se borra$")
+	public void el_último_caracter_del_campo_número_de_documento_se_borra()  {
+		pagePagaFact.compararDocFinal();
+	}
+	
+	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
+	@Then("^Entonces el primer caracter del campo número de documento se borra$")
+	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra()  {
+		pagePagaFact.compararDocInicial();
+	}
 
 }
