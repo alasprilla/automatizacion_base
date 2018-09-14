@@ -18,14 +18,8 @@ public class DefPagaTuFactura {
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
 	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
-		//pagePagaFact.clic(correoElectronico);
+		// pagePagaFact.clic(correoElectronico);
 		pagePagaFact.validarEscribir(correoElectronico, email);
-	}
-	
-	@When("^Cuando doy clic en el campo \"([^\"]*)\" y escribo el número celular (\\d+)$")
-	public void cuando_doy_clic_en_el_campo_y_escribo_el_número_celular(String tuLineaTigo, String msisdn) {
-		pagePagaFact.clic(tuLineaTigo);
-		pagePagaFact.validarEscribir(tuLineaTigo, msisdn);
 	}
 
 	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
@@ -36,23 +30,8 @@ public class DefPagaTuFactura {
 
 	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) {
-		//pagePagaFact.clic(campoCorreo);
+		// pagePagaFact.clic(campoCorreo);
 		pagePagaFact.validarEscribir(campoCorreo, correo);
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@When("^Cuando doy clic en el campo \"([^\"]*)\" y presiono la tecla \"([^\"]*)\"$")
-	public void cuando_doy_clic_en_el_campo_y_presiono_la_tecla(String tuLineaTigo, String tecla) {
-		pagePagaFact.clic(tuLineaTigo);
-		pagePagaFact.presionarTecla(tecla);
-
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@When("^Presiono la tecla \"([^\"]*)\" y presiono la tecla \"([^\"]*)\"$")
-	public void presiono_la_tecla_y_presiono_la_tecla(String tecla1, String tecla2) {
-		pagePagaFact.presionarTecla(tecla1);
-		pagePagaFact.presionarTecla(tecla2);
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
@@ -61,19 +40,19 @@ public class DefPagaTuFactura {
 		pagePagaFact.presionarTecla(tecla);
 	}
 
-	@When("^doy clic en la opción \"([^\"]*)\"$")
-	public void doy_clic_en_la_opción(String opcionPagaTuFactura) {
-		pagePagaFact.clic(opcionPagaTuFactura);
+	@When("^doy clic en \"([^\"]*)\"$")
+	public void doy_clic_en(String objeto) {
+		pagePagaFact.clic(objeto);
 	}
 
-	@When("^selecciono la opción \"([^\"]*)\" en el campo Tipo de documento$")
-	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String tipoDocumento) {
-		pagePagaFact.seleccionar(tipoDocumento);
+	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
+	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String item, String objeto) {
+		pagePagaFact.seleccionar(objeto, item);
 	}
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_en_el_campo(String txtIngresado, String objeto) {
-		//pagePagaFact.escribir(objeto, txtIngresado);
+		// pagePagaFact.escribir(objeto, txtIngresado);
 		pagePagaFact.validarEscribir(objeto, txtIngresado);
 	}
 
@@ -82,17 +61,34 @@ public class DefPagaTuFactura {
 		pagePagaFact.clic(objeto);
 	}
 
-	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente \"([^\"]*)\" en color rojo \"([^\"]*)\"$")
+/*	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente \"([^\"]*)\" en color rojo \"([^\"]*)\"$")
 	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_en_color_rojo(String btnConsultar, String campoClick,
 			String msgError) {
-		pagePagaFact.compararTxt(campoClick, msgError);
-		pagePagaFact.compararAtributo(campoClick, "color", "rgba(240, 30, 70, 1)");
-		pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
+		//pagePagaFact.compararTxt(campoClick, msgError)
+		//pagePagaFact.compararAtributo(campoClick, "color", "rgba(240, 30, 70, 1)")
+		//pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
+	}*/
+	
+	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
+	public void el_botón_esta(String objeto, String estaDeshabilitado) {
+		String isDisable="false";
+		if(estaDeshabilitado.equals("deshabilitado")) isDisable="true";
+		pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
 	}
-
+	
+	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
+	public void el_campo_tiene_el_texto(String objeto, String textoEsperado) {
+		pagePagaFact.compararTxt(objeto, textoEsperado);
+	}
+	
+	@Then("^el campo \"([^\"]*)\" tiene el atributo \"([^\"]*)\" en el valor \"([^\"]*)\"$")
+	public void el_campo_tiene_el_atributo_en_el_valor(String objeto,String atributo, String valorEsperado) {
+		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
+	}
+	
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
-		pagePagaFact.botonInabilitado(btnConsultar, "class",
+		pagePagaFact.compararAtributo(btnConsultar, "class", 
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
@@ -121,6 +117,7 @@ public class DefPagaTuFactura {
 		pagePagaFact.validarPagRecargada();
 	}
 
+	/*
 	@Then("^el texto que se intenta ingresar no se mostrará$")
 	public void el_texto_que_se_intenta_ingresar_no_se_mostrará() {
 		pagePagaFact.compararTxt("número de documento", "");
@@ -137,9 +134,10 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararTxt("label error celular", txtEsperado);
 		pagePagaFact.compararAtributo("label error celular", "color", "rgba(240, 30, 70, 1)");
 	}
+	*/
 
-	@Then("^mostrará en el campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
-	public void mostrará_en_el_campo_el_texto(String objeto, String valor) {
+	@Then("^mostrará en el valor del campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
+	public void mostrará_en_el_valor_del_campo_el_texto(String objeto, String valor) {
 		pagePagaFact.compararAtributo(objeto, "value", valor);
 	}
 
@@ -147,12 +145,8 @@ public class DefPagaTuFactura {
 	public void mostrará_el(String texto) {
 		if (texto.contains("no tiene")) {
 			pagePagaFact.compararTxt("label facturas", texto);
-			// Letra blanca
 			pagePagaFact.compararAtributo("label facturas", "color", "rgba(255, 255, 255, 1)");
-			// Fondo azul
 			pagePagaFact.compararAtributo("label facturas", "background-color", "rgba(0, 200, 255, 1)");
-
-			// #Si no tiene el msj esta en letras blancas con fondo azul
 		} else {
 			pagePagaFact.tieneHijos("list facturas");
 		}

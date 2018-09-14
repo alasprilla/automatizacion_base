@@ -23,7 +23,7 @@ public class PropertiesLoader {
 	private Properties load() {
 
 		try {
-			properties.load(new FileInputStream("src/test/props/serenity.properties"));
+			properties.load(new FileInputStream("serenity.properties"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
