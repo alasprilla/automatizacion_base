@@ -292,8 +292,6 @@ public class ActionsUtil {
 		assertEquals(valorEsperado, valorObtenido);
 	}
 
-<<<<<<< HEAD
-=======
 	public static void validateMSISDNIni(String valorInicial, String valorFinal) {
 
 		String auxInicial = "";
@@ -352,7 +350,6 @@ public class ActionsUtil {
 
 	}
 
->>>>>>> HU-006
 	public static String textoMinusculasSinEspacios(String texto) {
 		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
 		String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
