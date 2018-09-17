@@ -22,18 +22,6 @@ public class DefPagaTuFactura {
 		pagePagaFact.validarEscribir(correoElectronico, email);
 	}
 
-	@When("^ingreso el número celular \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_número_celular_en_el_campo(String msisdn, String campoMsisdn) {
-		pagePagaFact.clic(campoMsisdn);
-		pagePagaFact.validarEscribir(campoMsisdn, msisdn);
-	}
-
-	@When("^ingreso el correo \"([^\"]*)\" en el campo \"([^\"]*)\"$")
-	public void ingreso_el_correo_en_el_campo(String correo, String campoCorreo) {
-		// pagePagaFact.clic(campoCorreo);
-		pagePagaFact.validarEscribir(campoCorreo, correo);
-	}
-
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
 	@When("^Presiono la tecla \"([^\"]*)\"$")
 	public void presiono_la_tecla(String tecla) {
