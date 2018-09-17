@@ -19,7 +19,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature" },
 
 
-		tags = {}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		tags = {"@CasoFeliz"}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit/allcukes.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {
