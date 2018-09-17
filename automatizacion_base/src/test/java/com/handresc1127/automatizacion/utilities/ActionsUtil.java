@@ -1,7 +1,6 @@
 package com.handresc1127.automatizacion.utilities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -209,10 +208,10 @@ public class ActionsUtil {
 			}
 			row_num++;
 		}
-		//assertThat(row_num, greaterThan(0));
-		//assertThat(col_max, greaterThan(0));
-		assertTrue(row_num>0);
-		assertTrue(col_max>0);
+		// assertThat(row_num, greaterThan(0));
+		// assertThat(col_max, greaterThan(0));
+		assertTrue(row_num > 0);
+		assertTrue(col_max > 0);
 		String tabla_return[][] = new String[row_num][col_max];
 		for (int i = 0; i < row_num; i++) {
 			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
@@ -250,8 +249,8 @@ public class ActionsUtil {
 				row_num++;
 			}
 		}
-		assertTrue(row_num>0);
-		assertTrue(col_max>0);
+		assertTrue(row_num > 0);
+		assertTrue(col_max > 0);
 		String tabla_return[][] = new String[row_num][col_max];
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return tabla_return;
@@ -290,64 +289,6 @@ public class ActionsUtil {
 	public static void compareText(WebDriver driver, By by, String valorEsperado) {
 		String valorObtenido = getText(driver, by);
 		assertEquals(valorEsperado, valorObtenido);
-	}
-
-	public static void validateMSISDNIni(String valorInicial, String valorFinal) {
-
-		String auxInicial = "";
-
-		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
-
-			auxInicial = "(" + valorInicial.substring(1, 4) + ") " + valorInicial.substring(4, valorInicial.length());
-		} else if (valorInicial.length() > 6) {
-
-			auxInicial = "(" + valorInicial.substring(1, 4) + ") " + valorInicial.substring(4, 7) + "-"
-					+ valorInicial.substring(7, valorInicial.length());
-		} else {
-
-			auxInicial = "(" + valorInicial.substring(1, valorInicial.length());
-		}
-
-		assertEquals(auxInicial, valorFinal);
-
-	}
-
-	public static void validateMSISDNFin(String valorInicial, String valorFinal) {
-
-		String auxFinal = "";
-
-		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
-
-			auxFinal = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, valorInicial.length() - 1);
-		} else if (valorInicial.length() > 6) {
-
-			auxFinal = "(" + valorInicial.substring(0, 3) + ") " + valorInicial.substring(3, 6) + "-"
-					+ valorInicial.substring(6, valorInicial.length() - 1);
-		} else {
-
-			auxFinal = "(" + valorInicial.substring(0, valorInicial.length() - 1);
-		}
-
-		assertEquals(auxFinal, valorFinal);
-
-	}
-	
-	public static void validateNumDocIni(String valorInicial, String valorFinal) {
-		
-		String auxDocFinal = "";
-		auxDocFinal = valorInicial.substring(1,valorInicial.length());
-				
-		assertEquals(auxDocFinal, valorFinal);
-	}
-
-	public static void validateNumDocFin(String valorInicial, String valorFinal) {
-
-		String auxDocFinal = "";
-	
-		auxDocFinal = valorInicial.substring(0, valorInicial.length() - 1);
-
-		assertEquals(auxDocFinal, valorFinal);
-
 	}
 
 	public static String textoMinusculasSinEspacios(String texto) {

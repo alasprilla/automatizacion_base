@@ -3,6 +3,7 @@ package com.handresc1127.automatizacion.negocio;
 import static org.junit.Assert.assertEquals;
 
 public class BussinesUtil {
+
 	public static void validateMSISDNIni(String valorInicial, String valorFinal) {
 		String auxInicial = "";
 		if (valorInicial.length() > 3 && valorInicial.length() <= 6) {
@@ -27,6 +28,20 @@ public class BussinesUtil {
 			auxFinal = "(" + valorInicial.substring(0, valorInicial.length() - 1);
 		}
 		assertEquals(auxFinal, valorFinal);
+	}
+
+	public static void validateNumDocIni(String valorInicial, String valorFinal) {
+
+		String auxDocFinal = "";
+		auxDocFinal = valorInicial.substring(1, valorInicial.length());
+		assertEquals(auxDocFinal, valorFinal);
+	}
+
+	public static void validateNumDocFin(String valorInicial, String valorFinal) {
+
+		String auxDocFinal = "";
+		auxDocFinal = valorInicial.substring(0, valorInicial.length() - 1);
+		assertEquals(auxDocFinal, valorFinal);
 	}
 
 }

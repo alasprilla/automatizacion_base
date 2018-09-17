@@ -152,7 +152,7 @@ public class PagePagaTuFactura extends PageObject {
 		String textoInicial = numdoc;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		ActionsUtil.validateNumDocIni(textoInicial, textoFinal);
+		BussinesUtil.validateNumDocIni(textoInicial, textoFinal);
 	}
 
 	public void compararDocFinal() {
@@ -160,7 +160,7 @@ public class PagePagaTuFactura extends PageObject {
 		String textoInicial = numdoc;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		ActionsUtil.validateNumDocFin(textoInicial, textoFinal);
+		BussinesUtil.validateNumDocFin(textoInicial, textoFinal);
 	}
 
 	public void escribirConClick(String objeto, String texto) {

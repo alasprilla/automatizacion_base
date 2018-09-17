@@ -61,34 +61,27 @@ public class DefPagaTuFactura {
 		pagePagaFact.clic(objeto);
 	}
 
-/*	@Then("^El botón \"([^\"]*)\" se deshabilita y mostrará el siguiente \"([^\"]*)\" en color rojo \"([^\"]*)\"$")
-	public void el_botón_se_deshabilita_y_mostrará_el_siguiente_en_color_rojo(String btnConsultar, String campoClick,
-			String msgError) {
-		//pagePagaFact.compararTxt(campoClick, msgError)
-		//pagePagaFact.compararAtributo(campoClick, "color", "rgba(240, 30, 70, 1)")
-		//pagePagaFact.botonInabilitado(btnConsultar, "disabled", "true");
-	}*/
-	
 	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
 	public void el_botón_esta(String objeto, String estaDeshabilitado) {
-		String isDisable="false";
-		if(estaDeshabilitado.equals("deshabilitado")) isDisable="true";
+		String isDisable = "false";
+		if (estaDeshabilitado.equals("deshabilitado"))
+			isDisable = "true";
 		pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
 	}
-	
+
 	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
 	public void el_campo_tiene_el_texto(String objeto, String textoEsperado) {
 		pagePagaFact.compararTxt(objeto, textoEsperado);
 	}
-	
+
 	@Then("^el campo \"([^\"]*)\" tiene el atributo \"([^\"]*)\" en el valor \"([^\"]*)\"$")
-	public void el_campo_tiene_el_atributo_en_el_valor(String objeto,String atributo, String valorEsperado) {
+	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
 	}
-	
+
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
-		pagePagaFact.compararAtributo(btnConsultar, "class", 
+		pagePagaFact.compararAtributo(btnConsultar, "class",
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
@@ -116,25 +109,6 @@ public class DefPagaTuFactura {
 	public void la_página_se_recarga() {
 		pagePagaFact.validarPagRecargada();
 	}
-
-	/*
-	@Then("^el texto que se intenta ingresar no se mostrará$")
-	public void el_texto_que_se_intenta_ingresar_no_se_mostrará() {
-		pagePagaFact.compararTxt("número de documento", "");
-	}
-
-	@Then("^mostrará el siguiente mensaje en color rojo \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_mensaje_en_color_rojo(String txtEsperado) {
-		pagePagaFact.compararTxt("label error documento", txtEsperado);
-		pagePagaFact.compararAtributo("label error documento", "color", "rgba(240, 30, 70, 1)");
-	}
-
-	@Then("^mostrará el mensaje en color rojo \"([^\"]*)\"$")
-	public void mostrará_el_mensaje_en_color_rojo(String txtEsperado) {
-		pagePagaFact.compararTxt("label error celular", txtEsperado);
-		pagePagaFact.compararAtributo("label error celular", "color", "rgba(240, 30, 70, 1)");
-	}
-	*/
 
 	@Then("^mostrará en el valor del campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
 	public void mostrará_en_el_valor_del_campo_el_texto(String objeto, String valor) {
@@ -164,16 +138,16 @@ public class DefPagaTuFactura {
 	public void el_último_caracter_se_borra() {
 		pagePagaFact.compararTextoFinal();
 	}
-	
+
 	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
 	@Then("^El último caracter del campo número de documento se borra$")
-	public void el_último_caracter_del_campo_número_de_documento_se_borra()  {
+	public void el_último_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararDocFinal();
 	}
-	
+
 	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
 	@Then("^Entonces el primer caracter del campo número de documento se borra$")
-	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra()  {
+	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararDocInicial();
 	}
 
