@@ -4,9 +4,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +15,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.Keys;
 
 public class ActionsUtil {
 
@@ -321,43 +319,31 @@ public class ActionsUtil {
 			assertThat(valorObtenido, CoreMatchers.containsString(valorEsperado));
 	}
 
-	public static void presionarTeclaRobot(String tecla) {
-		Robot robot;
-		try {
-			robot = new Robot();
-			switch (ActionsUtil.textoMinusculasSinEspacios(tecla)) {
-			case "f5":
-				robot.keyPress(KeyEvent.VK_F5);
-				robot.keyRelease(KeyEvent.VK_F5);
-				break;
+	public static void presionarTecla(WebDriver driver, By by, String tecla) {
 
-			case "backspace":
-				robot.keyPress(KeyEvent.VK_BACK_SPACE);
-				robot.keyRelease(KeyEvent.VK_BACK_SPACE);
-				break;
-			case "inicio":
-				robot.keyPress(KeyEvent.VK_HOME);
-				robot.keyRelease(KeyEvent.VK_HOME);
-				break;
-			case "suprimir":
-				robot.keyPress(KeyEvent.VK_DELETE);
-				robot.keyRelease(KeyEvent.VK_DELETE);
-				break;
-			case "flechaizquierda":
-				robot.keyPress(KeyEvent.VK_LEFT);
-				robot.keyRelease(KeyEvent.VK_LEFT);
-				break;
-			case "flechaderecha":
-				robot.keyPress(KeyEvent.VK_RIGHT);
-				robot.keyRelease(KeyEvent.VK_RIGHT);
-				break;
-			}
-			robot.delay(100);
+		WebElement element = driver.findElement(by);
 
-		} catch (AWTException e) {
-			e.getMessage();
+		switch (ActionsUtil.textoMinusculasSinEspacios(tecla)) {
+		case "f5":
+			element.sendKeys(Keys.F5);
+			break;
+		case "backspace":
+			element.sendKeys(Keys.BACK_SPACE);
+			break;
+		case "inicio":
+			element.sendKeys(Keys.HOME);
+			break;
+		case "suprimir":
+			element.sendKeys(Keys.DELETE);
+			break;
+		case "flechaizquierda":
+			element.sendKeys(Keys.ARROW_LEFT);
+			break;
+		case "flechaderecha":
+			element.sendKeys(Keys.ARROW_RIGHT);
+			break;
+
 		}
-
 	}
 
 	public static boolean existsElement(WebDriver driver, By objeto) {

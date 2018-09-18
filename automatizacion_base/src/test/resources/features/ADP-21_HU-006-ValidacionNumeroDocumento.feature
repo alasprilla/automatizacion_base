@@ -10,6 +10,7 @@ Feature: HU006_ValidacionNumeroDocumento
   Scenario: Recarga de página con F5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
+    And selecciono "CC" en el campo "Tipo de documento"
     And Presiono la tecla "F5"
     Then La página se recarga
 
