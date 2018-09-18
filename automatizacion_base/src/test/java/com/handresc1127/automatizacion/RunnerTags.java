@@ -16,10 +16,11 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-21_HU-006-ValidacionNumeroDocumento.feature",
 		"src/test/resources/features/ADP-23_HU-007_NumerosNoValidosCelular.feature",
 		"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature",
-		"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature" },
+		"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature"
+		},
 
 
-		tags = {"@CasoFeliz"}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		tags = {""}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit/allcukes.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {

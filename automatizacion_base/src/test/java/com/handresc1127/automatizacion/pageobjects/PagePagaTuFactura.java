@@ -60,6 +60,7 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void sharedObjet(String opcion) {
+
 		switch (ActionsUtil.textoMinusculasSinEspacios(opcion)) {
 		case "hogar":
 			setObjetoToCliked(btnHogar);
@@ -120,20 +121,23 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void clic(String objeto) {
+		
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
 
 	public void tieneHijos(String objeto) {
+		
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
 
 	public void presionarTecla(String tecla) {
-		ActionsUtil.presionarTeclaRobot(tecla);
+		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
 
 	public void compararTextoInicial() {
+		
 		String textoInicial = msisdn;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
@@ -141,12 +145,13 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void compararTextoFinal() {
+		
 		String textoInicial = msisdn;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
 		BussinesUtil.validateMSISDNFin(textoInicial, textoFinal);
 	}
-	
+
 	public void compararDocInicial() {
 
 		String textoInicial = numdoc;
@@ -164,6 +169,7 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void escribirConClick(String objeto, String texto) {
+
 		sharedObjet(objeto);
 		this.msisdn = texto;
 		this.numdoc = texto;
@@ -172,6 +178,7 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void escribir(String objeto, String texto) {
+		
 		sharedObjet(objeto);
 		this.msisdn = texto;
 		this.numdoc = texto;
@@ -179,19 +186,24 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void compararTxt(String objeto, String valorEsperado) {
+		
 		sharedObjet(objeto);
 		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
 	}
 
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
+		
 		sharedObjet(objeto);
-		switch(ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
-		case "rojo": valorEsperado="rgba(240, 30, 70, 1)";
+		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
+		case "rojo":
+			valorEsperado = "rgba(240, 30, 70, 1)";
 			break;
-		case "azul": valorEsperado="rgb(0, 200, 255)";
-		break;
-		case "blanco": valorEsperado="rgba(255, 255, 255, 1)";
-		break;
+		case "azul":
+			valorEsperado = "rgb(0, 200, 255)";
+			break;
+		case "blanco":
+			valorEsperado = "rgba(255, 255, 255, 1)";
+			break;
 		}
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
@@ -201,11 +213,13 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void seleccionar(String objeto, String item) {
+		
 		sharedObjet(objeto);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
+		
 		if (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico")) {
 			escribirConClick(objeto2, txtIngresado);
 		} else {
