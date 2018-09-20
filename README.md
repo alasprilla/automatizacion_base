@@ -1,6 +1,6 @@
 # AUTOMATIZACIÓN BASE 
 
-[![Build Status](https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions0.jpg)](http://www.marca.com)
+[![Build Status Sizas](https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions6.jpg), (https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions2.jpg), (https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions.jpg)](http://www.marca.com), (http://www.as.com), (http://www.google.com)
 
 # ¿Qué es automatizacion_base?: 
 ***************
