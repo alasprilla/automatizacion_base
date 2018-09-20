@@ -1,6 +1,6 @@
 # AUTOMATIZACIÓN BASE 
 
-[![Build Status Sizas](https://www.google.com.co), (http://www.as.com)](http://www.marca.com)
+[![Build Status](https://www.google.com.co)](http://www.marca.com)
 
 # ¿Qué es automatizacion_base?: 
 ***************
