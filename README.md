@@ -1,6 +1,6 @@
 # AUTOMATIZACIÓN BASE 
 
-[![Build Status](https://www.google.com.co)](http://www.marca.com)
+[![Build Status](https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions0.jpg)](http://www.marca.com)
 
 # ¿Qué es automatizacion_base?: 
 ***************
