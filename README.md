@@ -1,5 +1,7 @@
 # AUTOMATIZACIÓN BASE 
 
+[![Build Status Sizas](https://www.google.com.co), (http://www.as.com)](http://www.marca.com)
+
 # ¿Qué es automatizacion_base?: 
 ***************
 Es un proyecto en el cual se automatizan las pruebas a la página https://transaccionesco-uat.tigocloud.net/servicios/facturas en sus secciones de Móvil y Hogar mediante un proyecto Maven que integra principalmente las herramientas de Selenium, Serenity, Jira, Cucumber, Gherkin, entre otras. 
