@@ -1,4 +1,4 @@
-# AUTOMATIZACIÓN BASE / INDRA SISTEMAS / PROYECTO TIGOUNE / CANALES DIGITALES #VERSIÓN: 1.0 #FECHA CREACIÓN: 13/09/2018 #FECHA MODIFICACIÓN: 20/09/2018
+# AUTOMATIZACIÓN BASE 
 
 # ¿Qué es automatizacion_base?: 
 ***************
@@ -17,9 +17,9 @@ Nota: Se debe crear un espacio de trabajo en el equipo local donde se almacena l
 # ¿Cómo ejecutar?:
 ***************
 * A través de Eclipse: 
-	** Sobre la carpeta base del proyecto se da clic derecho y posteriormente se selecciona la opción "Run As" y posteriormente la opción "Maven clean". Una vez finalizada esta acción, nuevamente se da clic derecho y posteriormente se selecciona la opción "Run As" y posteriormente la opción "Maven install"
+	* Sobre la carpeta base del proyecto se da clic derecho y posteriormente se selecciona la opción "Run As" y posteriormente la opción "Maven clean". Una vez finalizada esta acción, nuevamente se da clic derecho y posteriormente se selecciona la opción "Run As" y posteriormente la opción "Maven install"
 * A través del CMD: 
-	** Se debe iniciar la consola de comandos y sobre la ruta del equipo local donde se almacenó la información del proyecto se ejecuta el comando "mvn clean install" 
+	* Se debe iniciar la consola de comandos y sobre la ruta del equipo local donde se almacenó la información del proyecto se ejecuta el comando "mvn clean install" 
 
 # Referencias:
 ***************
@@ -37,3 +37,4 @@ Nota: Se debe crear un espacio de trabajo en el equipo local donde se almacena l
 * Henry Correa - handresc1127
 * Rigoberto Henao - rhtigo
 
+## (INDRA SISTEMAS) / (PROYECTO: TIGOUNE) / (CANALES DIGITALES) / (VERSIÓN: 1.0) / (FECHA CREACIÓN: 13/09/2018) / (FECHA MODIFICACIÓN: 20/09/2018)
