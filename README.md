@@ -1,11 +1,5 @@
 # AUTOMATIZACIÓN BASE 
 
-[![uno](https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions6.jpg)](http://www.marca.com)
-[![dos](https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions2.jpg)](http://www.as.com)
-[![tres](https://socialunderground.co/wp-content/uploads/2015/08/Donatella-Lagerfeld-y-otros-iconos-de-la-moda-convertidos-en-Minions.jpg)](http://www.google.com)
-
-
-
 # ¿Qué es automatizacion_base?: 
 ***************
 Es un proyecto en el cual se automatizan las pruebas a la página https://transaccionesco-uat.tigocloud.net/servicios/facturas en sus secciones de Móvil y Hogar mediante un proyecto Maven que integra principalmente las herramientas de Selenium, Serenity, Jira, Cucumber, Gherkin, entre otras. 
