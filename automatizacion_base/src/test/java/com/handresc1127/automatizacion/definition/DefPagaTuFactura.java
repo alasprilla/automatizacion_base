@@ -15,6 +15,13 @@ public class DefPagaTuFactura {
 		pagePagaFact.open();
 		pagePagaFact.irPagina(url);
 	}
+	
+	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
+	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String tc) {
+		
+		//TODO
+		pagePagaFact.clic(tc);
+	}
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
 	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {

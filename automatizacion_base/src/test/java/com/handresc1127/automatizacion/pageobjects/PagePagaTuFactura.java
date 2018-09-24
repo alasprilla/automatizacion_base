@@ -25,6 +25,12 @@ public class PagePagaTuFactura extends PageObject {
 	public By txtCorreo = By.id("edit-email");
 	public By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
 	public By lbMsgError = By.id("alert_main");
+	
+	/**
+	 * Elmentos de la seccion Medio de Pago
+	 */
+	public By linkTarjetaCredito=By.id("payment-method-type-label-credit-payu");
+	public By txtNumerodetarjeta=By.id("edit-cardnumber");
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -114,7 +120,9 @@ public class PagePagaTuFactura extends PageObject {
 		case "tipodedocumento":
 			setObjetoToCliked(listTipoDocumento);
 			break;
-
+		case "tarjetadecredito":	
+			setObjetoToCliked(linkTarjetaCredito);
+			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
