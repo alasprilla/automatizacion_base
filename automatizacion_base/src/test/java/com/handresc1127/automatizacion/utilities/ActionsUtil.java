@@ -135,6 +135,7 @@ public class ActionsUtil {
 			element.findElement(By.xpath("..")).click();
 			element.findElement(By.xpath("../..")).click();
 		} catch (Exception e) {
+			e.getMessage();
 		}
 	}
 
@@ -175,7 +176,9 @@ public class ActionsUtil {
 				break;
 			}
 		}
-		new Select(element).selectByIndex(index);
+		new Select(element).selectByIndex(index + 1);
+
+		assertThat(element.getText(), CoreMatchers.containsString(valueContains));
 	}
 
 	public static void selectValue(WebDriver driver, By by, String valueOption) {
@@ -342,7 +345,9 @@ public class ActionsUtil {
 		case "flechaderecha":
 			element.sendKeys(Keys.ARROW_RIGHT);
 			break;
-
+		case "tab":
+			element.sendKeys(Keys.TAB);
+			break;
 		}
 	}
 

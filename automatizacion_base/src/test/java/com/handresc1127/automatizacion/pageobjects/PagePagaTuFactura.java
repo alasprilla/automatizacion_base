@@ -31,6 +31,13 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	public By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	public By txtNumerodetarjeta = By.id("edit-cardnumber");
+	public By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
+	public By listBanco = By.id("edit-bank");
+	public By listTipodepersona = By.id("edit-buyer-type-person");
+	public By txtNombresyapellidos = By.id("edit-buyer-name");
+	public By listTipod = By.id("edit-buyer-document-type--2");
+	public By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
+	public By btnPagard = By.id("edit-submit--2");
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -43,6 +50,7 @@ public class PagePagaTuFactura extends PageObject {
 	public By listTipoDocumento = By.id("edit-document-type");
 	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
 	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
+	public By txtemailpse = By.id("PNEMail");
 
 	/**
 	 * Elementos comunes Movil / Hogar
@@ -124,6 +132,30 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "numerodetarjeta":
 			setObjetoToCliked(txtNumerodetarjeta);
+			break;
+		case "debitobancariopse":
+			setObjetoToCliked(linkDebitoBancarioPSE);
+			break;
+		case "banco":
+			setObjetoToCliked(listBanco);
+			break;
+		case "tipodepersona":
+			setObjetoToCliked(listTipodepersona);
+			break;
+		case "nombresyapellidos":
+			setObjetoToCliked(txtNombresyapellidos);
+			break;
+		case "tipod":
+			setObjetoToCliked(listTipod);
+			break;
+		case "numerodedocumentod":
+			setObjetoToCliked(txtNumerodedocumentoD);
+			break;
+		case "emailpse":
+			setObjetoToCliked(txtemailpse);
+			break;
+		case "pagard":
+			setObjetoToCliked(btnPagard);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
@@ -238,7 +270,9 @@ public class PagePagaTuFactura extends PageObject {
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
 
-		if (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico")) {
+		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico"))
+				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
+				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc"))) {
 			escribirConClick(objeto2, txtIngresado);
 		} else {
 			escribir(objeto2, txtIngresado);

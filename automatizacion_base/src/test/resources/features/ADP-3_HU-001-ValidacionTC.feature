@@ -21,8 +21,6 @@ Feature: HU001_ValidacionTC
 
     Examples: 
       | tc               |
-      | "54852"          |
-      | "54852865"       |
       | "548528654531"   |
       | "54852865453140" |
 
@@ -36,9 +34,7 @@ Feature: HU001_ValidacionTC
 
     Examples: 
       | tc               |
-      | "44852"          |
       | "44852865"       |
-      | "448528654531"   |
       | "44852865453140" |
 
   #Parametros:
@@ -52,9 +48,7 @@ Feature: HU001_ValidacionTC
     Examples: 
       | tc               |
       | "34852"          |
-      | "34852865"       |
       | "348528654531"   |
-      | "34852865453140" |
 
   #Parametros:
   Scenario Outline: Desplazarse con flecha a la derecha en el campo "Número de tarjeta"
@@ -68,6 +62,4 @@ Feature: HU001_ValidacionTC
     Examples: 
       | tc               |
       | "34110"          |
-      | "34113223"       |
-      | "341130369223"   |
       | "34113030036922" |
