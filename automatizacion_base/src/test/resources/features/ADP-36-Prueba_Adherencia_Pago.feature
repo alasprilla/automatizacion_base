@@ -10,23 +10,24 @@ Background: seleccion medio de pago
     Then llevará al formulario donde se selecciona el tipo de pago
 
   #Parametros:
-#  Scenario Outline: Seleccion Tarjeta de crédito 
-#    Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
-#    When ingreso <tc> en el campo "Número de tarjeta"
-#     And ingreso <cvv> en el campo "CVV"
-#     And selecciono "11" en el campo "MM"
-#     And selecciono "2019" en el campo "AA"
-#     And ingreso <estado> en el campo "Nombre"
-#     And selecciono "CE" en el campo "tipo"
-#     And ingreso <numdoc> en el campo "número de documento TC"
-#     And doy clic en el botón "Pagar"
+  Scenario Outline: Seleccion Tarjeta de crédito 
+    Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
+    When ingreso <tc> en el campo "Número de tarjeta"
+     And ingreso <cvv> en el campo "CVV"
+     And selecciono "11" en el campo "MM"
+     And selecciono "2019" en el campo "AA"
+     And ingreso <estado> en el campo "Nombre"
+     And selecciono "CE" en el campo "tipo"
+     And ingreso <numdoc> en el campo "número de documento TC"
+     And Presiono la tecla "tab"
+     And doy clic en el botón "Pagar"
     #Then llevara al detalle de la transacción 
      
 
-#    Examples: 
-#      | tc                 |cvv    |estado     |numdoc       |
-#      | "4357223863986989" |"932"  |"approved" |"123456789"  |
-     # | "4905741876639102" |"136"  |"pending"  |"108802546"  |   
+    Examples: 
+      | tc                 |cvv    |estado     |numdoc       |
+      | "4357223863986989" |"932"  |"approved" |"123456789"  |
+      | "4905741876639102" |"136"  |"pending"  |"108802546"  |   
      # | "4566039724385949" |"558"  |"declined" |"369854854"  |
      
     Scenario: Seleccion Tarjeta Debito
@@ -39,5 +40,11 @@ Background: seleccion medio de pago
      And Presiono la tecla "tab"
      And doy clic en el botón "Pagar D"
      And ingreso "lasprilla.alexandra@gmail.com" en el campo "Email PSE"
+     And doy clic en el botón "Ir al Banco"
+     And doy clic en el botón "Debug"
+     And ingreso "26/09/2018" en el campo "BankProcessDate"
+     And ingreso "12365478" en el campo "authorizationID"
+     And doy clic en el botón "Return"
+     
      
      

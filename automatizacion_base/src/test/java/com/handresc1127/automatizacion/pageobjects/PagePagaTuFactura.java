@@ -38,7 +38,15 @@ public class PagePagaTuFactura extends PageObject {
 	public By listTipod = By.id("edit-buyer-document-type--2");
 	public By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
 	public By btnPagard = By.id("edit-submit--2");
-
+	/**
+	 * Elmentos de la seccion pago por PSE
+	 */
+	public By btnIralBanco = By.id("btnSeguir");
+	public By btnDebugP = By.id("btnDebug");
+	public By txtProcessDate = By.id("txtBankProcessDate");
+	public By txtauthorizaID = By.id("txtAuthorizationID");
+	public By btnReturn = By.id("btnReturnToPPE");
+	
 	/**
 	 * Elementos de la seccion Hogar
 	 */
@@ -156,6 +164,21 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "pagard":
 			setObjetoToCliked(btnPagard);
+			break;
+		case "iralbanco":
+			setObjetoToCliked(btnIralBanco);
+			break;
+		case "debug":
+			setObjetoToCliked(btnDebugP);
+			break;
+		case "bankprocessdate":
+			setObjetoToCliked(txtProcessDate);
+			break;
+		case "authorizationid":
+			setObjetoToCliked(txtauthorizaID);
+			break;
+		case "return":
+			setObjetoToCliked(btnReturn);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
