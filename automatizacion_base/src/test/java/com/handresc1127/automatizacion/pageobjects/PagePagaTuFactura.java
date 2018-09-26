@@ -25,12 +25,12 @@ public class PagePagaTuFactura extends PageObject {
 	public By txtCorreo = By.id("edit-email");
 	public By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
 	public By lbMsgError = By.id("alert_main");
-	
+
 	/**
 	 * Elmentos de la seccion Medio de Pago
 	 */
-	public By linkTarjetaCredito=By.id("payment-method-type-label-credit-payu");
-	public By txtNumerodetarjeta=By.id("edit-cardnumber");
+	public By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
+	public By txtNumerodetarjeta = By.id("edit-cardnumber");
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -50,8 +50,7 @@ public class PagePagaTuFactura extends PageObject {
 	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
 
 	private By objetoToAction;
-	private String msisdn = "";
-	private String numdoc = "";
+	private String texto = "";
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
@@ -120,8 +119,11 @@ public class PagePagaTuFactura extends PageObject {
 		case "tipodedocumento":
 			setObjetoToCliked(listTipoDocumento);
 			break;
-		case "tarjetadecredito":	
+		case "tarjetadecredito":
 			setObjetoToCliked(linkTarjetaCredito);
+			break;
+		case "numerodetarjeta":
+			setObjetoToCliked(txtNumerodetarjeta);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
@@ -129,13 +131,13 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void clic(String objeto) {
-		
+
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
 
 	public void tieneHijos(String objeto) {
-		
+
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
@@ -145,62 +147,70 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void compararTextoInicial() {
-		
-		String textoInicial = msisdn;
+
+		String textoInicial = texto;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		BussinesUtil.validateMSISDNIni(textoInicial, textoFinal);
+
+		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
+				.equals("edit-cardnumber")) {
+
+			BussinesUtil.validateTCIni(textoInicial, textoFinal);
+		} else if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
+				.equals("edit-document")) {
+
+			BussinesUtil.validateNumDocIni(textoInicial, textoFinal);
+		} else {
+
+			BussinesUtil.validateMSISDNIni(textoInicial, textoFinal);
+		}
+
 	}
 
 	public void compararTextoFinal() {
-		
-		String textoInicial = msisdn;
+
+		String textoInicial = texto;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		BussinesUtil.validateMSISDNFin(textoInicial, textoFinal);
-	}
 
-	public void compararDocInicial() {
+		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
+				.equals("edit-cardnumber")) {
 
-		String textoInicial = numdoc;
-		ActionsUtil.clic(getDriver(), getObjetoToCliked());
-		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		BussinesUtil.validateNumDocIni(textoInicial, textoFinal);
-	}
+			BussinesUtil.validateTCFin(textoInicial, textoFinal);
+		} else if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
+				.equals("edit-document")) {
 
-	public void compararDocFinal() {
+			BussinesUtil.validateNumDocFin(textoInicial, textoFinal);
+		} else {
 
-		String textoInicial = numdoc;
-		ActionsUtil.clic(getDriver(), getObjetoToCliked());
-		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		BussinesUtil.validateNumDocFin(textoInicial, textoFinal);
+			BussinesUtil.validateMSISDNFin(textoInicial, textoFinal);
+		}
+
 	}
 
 	public void escribirConClick(String objeto, String texto) {
 
 		sharedObjet(objeto);
-		this.msisdn = texto;
-		this.numdoc = texto;
+		this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
 
 	public void escribir(String objeto, String texto) {
-		
+
 		sharedObjet(objeto);
-		this.msisdn = texto;
-		this.numdoc = texto;
+		this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 	}
 
 	public void compararTxt(String objeto, String valorEsperado) {
-		
+
 		sharedObjet(objeto);
 		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
 	}
 
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
-		
+
 		sharedObjet(objeto);
 		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
 		case "rojo":
@@ -221,13 +231,13 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void seleccionar(String objeto, String item) {
-		
+
 		sharedObjet(objeto);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
-		
+
 		if (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico")) {
 			escribirConClick(objeto2, txtIngresado);
 		} else {

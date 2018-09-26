@@ -15,17 +15,15 @@ public class DefPagaTuFactura {
 		pagePagaFact.open();
 		pagePagaFact.irPagina(url);
 	}
-	
+
+	// Implementación: "ADP-3_HU-001-ValidacionTC"
 	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
 	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String tc) {
-		
-		//TODO
 		pagePagaFact.clic(tc);
 	}
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
 	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
-		// pagePagaFact.clic(correoElectronico);
 		pagePagaFact.validarEscribir(correoElectronico, email);
 	}
 
@@ -47,7 +45,6 @@ public class DefPagaTuFactura {
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_en_el_campo(String txtIngresado, String objeto) {
-		// pagePagaFact.escribir(objeto, txtIngresado);
 		pagePagaFact.validarEscribir(objeto, txtIngresado);
 	}
 
@@ -137,13 +134,13 @@ public class DefPagaTuFactura {
 	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
 	@Then("^El último caracter del campo número de documento se borra$")
 	public void el_último_caracter_del_campo_número_de_documento_se_borra() {
-		pagePagaFact.compararDocFinal();
+		pagePagaFact.compararTextoFinal();
 	}
 
 	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
 	@Then("^Entonces el primer caracter del campo número de documento se borra$")
 	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
-		pagePagaFact.compararDocInicial();
+		pagePagaFact.compararTextoInicial();
 	}
 
 }
