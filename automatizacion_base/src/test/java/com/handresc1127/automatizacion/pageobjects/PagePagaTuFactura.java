@@ -56,7 +56,7 @@ public class PagePagaTuFactura extends PageObject {
 	public By txtProcessDate = By.id("txtBankProcessDate");
 	public By txtauthorizaID = By.id("txtAuthorizationID");
 	public By btnReturn = By.id("btnReturnToPPE");
-	
+
 	/**
 	 * Elementos de la seccion Hogar
 	 */
@@ -204,7 +204,7 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "nombre":
 			setObjetoToCliked(txtNombre);
-			break;	
+			break;
 		case "tipo":
 			setObjetoToCliked(listTipo);
 			break;

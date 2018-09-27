@@ -148,5 +148,10 @@ public class DefPagaTuFactura {
 	public void llevará_al_detalle_de_la_transacción()  {
 		pagePagaFact.presionBotonConfirmar();
 	}
+	
+	@Then("^Mostrará el \"([^\"]*)\" de la transaccion$")
+	public void mostrará_el_de_la_transaccion(String objeto)  {
+		pagePagaFact.clic(objeto);
+	}
 
 }
