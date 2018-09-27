@@ -5,8 +5,6 @@ import java.util.Properties;
 
 public class PropertiesLoader {
 
-	public static boolean test;
-
 	private PropertiesLoader() {
 		load();
 	}
@@ -24,8 +22,7 @@ public class PropertiesLoader {
 
 		try {
 			properties.load(new FileInputStream("serenity.properties"));
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception ex) {
 		}
 		return properties;
 	}
