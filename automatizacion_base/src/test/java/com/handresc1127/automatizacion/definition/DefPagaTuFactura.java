@@ -142,5 +142,11 @@ public class DefPagaTuFactura {
 	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararTextoInicial();
 	}
+	
+	// Implementación: " ADP-36-Prueba_Adherencia_Pago"
+	@Then("^llevará al detalle de la transacción$")
+	public void llevará_al_detalle_de_la_transacción()  {
+		pagePagaFact.presionBotonConfirmar();
+	}
 
 }

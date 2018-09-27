@@ -27,10 +27,20 @@ public class PagePagaTuFactura extends PageObject {
 	public By lbMsgError = By.id("alert_main");
 
 	/**
-	 * Elmentos de la seccion Medio de Pago
+	 * Elmentos de la seccion Medio de Pago Tarjeta Crédito
 	 */
 	public By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	public By txtNumerodetarjeta = By.id("edit-cardnumber");
+	public By txtCVV = By.id("edit-cvc");
+	public By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
+	public By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
+	public By txtNombre = By.id("edit-ccname");
+	public By listTipo = By.id("edit-buyer-document-type");
+	public By txtNumerodedocumento = By.id("edit-buyer-document");
+	public By btnPagar = By.id("edit-submit");
+	/**
+	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
+	 */
 	public By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
 	public By listBanco = By.id("edit-bank");
 	public By listTipodepersona = By.id("edit-buyer-type-person");
@@ -165,6 +175,9 @@ public class PagePagaTuFactura extends PageObject {
 		case "pagard":
 			setObjetoToCliked(btnPagard);
 			break;
+		case "pagar":
+			setObjetoToCliked(btnPagar);
+			break;
 		case "iralbanco":
 			setObjetoToCliked(btnIralBanco);
 			break;
@@ -179,6 +192,24 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "return":
 			setObjetoToCliked(btnReturn);
+			break;
+		case "cvv":
+			setObjetoToCliked(txtCVV);
+			break;
+		case "mm":
+			setObjetoToCliked(listFechaVencimiento_MM);
+			break;
+		case "aa":
+			setObjetoToCliked(listFechaVencimiento_AA);
+			break;
+		case "nombre":
+			setObjetoToCliked(txtNombre);
+			break;	
+		case "tipo":
+			setObjetoToCliked(listTipo);
+			break;
+		case "numerodedocumentotc":
+			setObjetoToCliked(txtNumerodedocumento);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
