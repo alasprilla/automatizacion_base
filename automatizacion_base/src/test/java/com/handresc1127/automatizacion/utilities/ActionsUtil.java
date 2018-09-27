@@ -35,7 +35,7 @@ public class ActionsUtil {
 
 	public static void highlightElement(WebDriver driver, By by) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-		for (int second = 0; second <= 120; second++) {
+		for (int second = 0; second <= 60; second++) {
 			try {
 				if (driver.findElement(by).isDisplayed())
 					break;
@@ -43,7 +43,7 @@ public class ActionsUtil {
 			}
 			try {
 				Thread.sleep(100);
-			} catch (InterruptedException e) {
+			} catch (Exception ex) {
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
@@ -71,10 +71,10 @@ public class ActionsUtil {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			try {
 				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, modifyStyle);
-				Thread.sleep(25);
+				Thread.sleep(15);
 				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
-				Thread.sleep(10);
-			} catch (Exception e) {
+				Thread.sleep(5);
+			} catch (Exception ex) {
 			}
 
 		}
@@ -100,7 +100,7 @@ public class ActionsUtil {
 				element.sendKeys(character);
 				try {
 					Thread.sleep(5);
-				} catch (InterruptedException e) {
+				} catch (Exception ex) {
 				}
 			}
 		}
