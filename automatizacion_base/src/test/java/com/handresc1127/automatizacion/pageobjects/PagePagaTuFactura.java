@@ -16,49 +16,49 @@ public class PagePagaTuFactura extends PageObject {
 	/**
 	 * Elmentos de la seccion Movil
 	 */
-	public By txtTuLineaTigo = By.id("edit-candidate-number");
-	public By txtCorreoElectronicoM = By.id("edit-email");
-	public By lbMsgErrorCorreo = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
-	public By lbMsgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
-	public By btnConsultarM = By.id("edit-consult");
-	public By txtMsisdn = By.id("edit-candidate-number");
-	public By txtCorreo = By.id("edit-email");
-	public By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
-	public By lbMsgError = By.id("alert_main");
+	By txtTuLineaTigo = By.id("edit-candidate-number");
+	By txtCorreoElectronicoM = By.id("edit-email");
+	By lbMsgErrorCorreo = By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span");
+	By lbMsgErrorCelular = By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span");
+	By btnConsultarM = By.id("edit-consult");
+	By txtMsisdn = By.id("edit-candidate-number");
+	By txtCorreo = By.id("edit-email");
+	By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
+	By lbMsgError = By.id("alert_main");
 
 	/**
 	 * Elmentos de la seccion Medio de Pago
 	 */
-	public By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
-	public By txtNumerodetarjeta = By.id("edit-cardnumber");
-	public By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
-	public By listBanco = By.id("edit-bank");
-	public By listTipodepersona = By.id("edit-buyer-type-person");
-	public By txtNombresyapellidos = By.id("edit-buyer-name");
-	public By listTipod = By.id("edit-buyer-document-type--2");
-	public By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
-	public By btnPagard = By.id("edit-submit--2");
+	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
+	By txtNumerodetarjeta = By.id("edit-cardnumber");
+	By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
+	By listBanco = By.id("edit-bank");
+	By listTipodepersona = By.id("edit-buyer-type-person");
+	By txtNombresyapellidos = By.id("edit-buyer-name");
+	By listTipod = By.id("edit-buyer-document-type--2");
+	By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
+	By btnPagard = By.id("edit-submit--2");
 
 	/**
 	 * Elementos de la seccion Hogar
 	 */
-	public By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
-	public By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
-	public By btnConsultarH = By.id("edit-consult--2");
-	public By txtCorreoElectronicoH = By.id("edit-email-fijo");
-	public By txtNumeroDocumento = By.id("edit-document");
-	public By listTipoDocumento = By.id("edit-document-type");
-	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
-	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
-	public By txtemailpse = By.id("PNEMail");
+	By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
+	By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
+	By btnConsultarH = By.id("edit-consult--2");
+	By txtCorreoElectronicoH = By.id("edit-email-fijo");
+	By txtNumeroDocumento = By.id("edit-document");
+	By listTipoDocumento = By.id("edit-document-type");
+	By linkTerminosyCondiciones = By.id("tyc_Fijo");
+	By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
+	By txtemailpse = By.id("PNEMail");
 
 	/**
 	 * Elementos comunes Movil / Hogar
 	 */
-	public By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
+	By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
 
-	private By objetoToAction;
-	private String texto = "";
+	By objetoToAction;
+	String texto = "";
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
