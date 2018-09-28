@@ -168,6 +168,7 @@ public class ActionsUtil {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		String valueComboBox = element.getText();
+		assertThat(valueComboBox, CoreMatchers.containsString(valueContains));
 		String values[] = valueComboBox.split("\n");
 		int index = 0;
 		for (int i = 0; i < values.length; i++) {
@@ -176,9 +177,22 @@ public class ActionsUtil {
 				break;
 			}
 		}
-		new Select(element).selectByIndex(index + 1);
-
-		assertThat(element.getText(), CoreMatchers.containsString(valueContains));
+		//Prueba alexa Ini
+		/*String ValorLista = element.getAttribute("value");
+		if (ValorLista == "") {
+			new Select(element).selectByIndex(index);
+			assertThat(element.getAttribute("value"), CoreMatchers.containsString(valueContains));
+			System.out.println("value: "+element.getAttribute("value"));
+		}else{
+			new Select(element).selectByIndex(index + 1);
+			//assertThat(element.getAttribute("value"), CoreMatchers.containsString(valueContains));
+			System.out.println("value: "+element.getAttribute("value"));
+		}*/
+		//Prueba alexa FIN
+		
+		new Select(element).selectByIndex(index);
+		System.out.println("value: "+element.getAttribute("value"));
+		assertThat(element.getAttribute("value"), CoreMatchers.containsString(valueContains));
 	}
 
 	public static void selectValue(WebDriver driver, By by, String valueOption) {

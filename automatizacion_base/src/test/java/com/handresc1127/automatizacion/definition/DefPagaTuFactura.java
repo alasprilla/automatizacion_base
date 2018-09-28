@@ -41,6 +41,7 @@ public class DefPagaTuFactura {
 	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String item, String objeto) {
 		pagePagaFact.seleccionar(objeto, item);
+
 	}
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")

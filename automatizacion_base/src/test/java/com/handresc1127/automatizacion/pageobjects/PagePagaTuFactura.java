@@ -37,6 +37,7 @@ public class PagePagaTuFactura extends PageObject {
 	public By txtNombre = By.id("edit-ccname");
 	public By listTipo = By.id("edit-buyer-document-type");
 	public By txtNumerodedocumento = By.id("edit-buyer-document");
+	public By btnAutorizarTc = By.xpath("//*[@id='edit-authorized']/div/div/label[1]");
 	public By btnPagar = By.id("edit-submit");
 	/**
 	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
@@ -210,6 +211,9 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "numerodedocumentotc":
 			setObjetoToCliked(txtNumerodedocumento);
+			break;
+		case "autorizoestatarjetaparafuturospagos":
+			setObjetoToCliked(btnAutorizarTc);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));

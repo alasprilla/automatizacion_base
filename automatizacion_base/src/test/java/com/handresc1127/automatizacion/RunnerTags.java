@@ -18,7 +18,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		//"src/test/resources/features/ADP-23_HU-007_NumerosNoValidosCelular.feature",
 		//"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature",
 		//"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature",
-		"src/test/resources/features/ADP-36-Prueba_Adherencia_Pago.feature"
+		//"src/test/resources/features/ADP-36-Prueba_Adherencia_Pago.feature",
+		"src/test/resources/features/ADP-15_HU-004-LlenadoFormularioTC.feature"	
 		},
 
 
