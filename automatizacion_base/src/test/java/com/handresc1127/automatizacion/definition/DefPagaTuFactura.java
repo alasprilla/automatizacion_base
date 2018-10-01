@@ -57,9 +57,15 @@ public class DefPagaTuFactura {
 	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
 	public void el_botón_esta(String objeto, String estaDeshabilitado) {
 		String isDisable = "false";
-		if (estaDeshabilitado.equals("deshabilitado"))
+		String isEnabled = "false";
+		if (estaDeshabilitado.equals("deshabilitado")) {
 			isDisable = "true";
-		pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
+			pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
+		
+		}else if (estaDeshabilitado.equals("habilitado")){
+			isEnabled = "true";
+			pagePagaFact.compararAtributo(objeto, "enabled", isEnabled);	
+		}
 	}
 
 	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
@@ -71,17 +77,11 @@ public class DefPagaTuFactura {
 	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
 	}
-	/*
+	
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
 		pagePagaFact.compararAtributo(btnConsultar, "class",
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
-	}*/
-
-	@Then("^El botón \"([^\"]*)\" se habilita$")
-	public void el_botón_se_habilita(String objeto) {
-		pagePagaFact.compararAtributo(objeto, "class",
-				"button--form--submit button js-form-submit form-submit button--secondary");
 	}
 
 	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")

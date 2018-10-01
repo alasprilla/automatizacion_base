@@ -11,7 +11,7 @@ Background: seleccion medio de pago
 
     Scenario Outline: Seleccion Tarjeta Debito
     Given Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
-     #And selecciono "BANCO UNION COLOMBIANO" en el campo "Banco"
+     And selecciono "BANCO UNION COLOMBIANO" en el campo "Banco"
      And selecciono "N" en el campo "Tipo de Persona"
      And ingreso <estado> en el campo "Nombres y Apellidos"
      And selecciono "CC" en el campo "Tipo D"

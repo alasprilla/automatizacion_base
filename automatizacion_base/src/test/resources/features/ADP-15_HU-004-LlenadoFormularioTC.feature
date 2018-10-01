@@ -58,7 +58,7 @@ Feature: HU004_Llenado_Formulario_TC
      And selecciono "CC" en el campo "tipo"
      And ingreso "12345648" en el campo "número de documento TC"
      And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
-		Then El botón "Pagar" se habilita
+		Then el botón "Pagar" esta "habilitado"
 		
 		Examples: 
       | mes     |ano       |
