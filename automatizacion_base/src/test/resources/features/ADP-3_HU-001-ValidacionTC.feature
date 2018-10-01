@@ -12,7 +12,6 @@ Feature: HU001_ValidacionTC
     And doy clic en el campo "Correo electrónico" y escribo el email "prueba@prueba.com"
     Then llevará al formulario donde se selecciona el tipo de pago
 
-  #Parametros:
   Scenario Outline: Borrar caracteres con backspace en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
@@ -24,7 +23,6 @@ Feature: HU001_ValidacionTC
       | "548528654531"   |
       | "54852865453140" |
 
-  #Parametros:
   Scenario Outline: Borrar caracteres con suprimir en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
@@ -37,7 +35,6 @@ Feature: HU001_ValidacionTC
       | "44852865"       |
       | "44852865453140" |
 
-  #Parametros:
   Scenario Outline: Desplazarse con flecha a la izquierda en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
@@ -50,7 +47,6 @@ Feature: HU001_ValidacionTC
       | "34852"          |
       | "348528654531"   |
 
-  #Parametros:
   Scenario Outline: Desplazarse con flecha a la derecha en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"

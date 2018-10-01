@@ -6,7 +6,6 @@ Feature: HU003: Validación de email
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil 
   Para garantizar que la consulta se realice con un email válido
 
-  #Parámetros: "@prueba.com", "@PRUEBA.COM", "@aquí.com", "@AQUÍ.COM"
   Scenario Outline: Email sin usuario
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
@@ -24,7 +23,6 @@ Feature: HU003: Validación de email
       | "3043302450" | "@prueba2.com.co" |
       | "3043302450" | "@PRUEBA2.COM.co" |
 
-  #Parámetros: "usuario", "usuario@", "USUARIO", "aquí", "aquí@", "AQUÍ@"
   Scenario Outline: Email sin dominio
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
@@ -44,7 +42,6 @@ Feature: HU003: Validación de email
       | "3043302450" | "AQUÍ@ti"  |
       | "3043302450" | "AQUÍ@go"  |
 
-  #Parámetros: "ejemplo@dominio.a", "ejemplo@dominio.com.a", "ejemplo@d.a", "ejemplo@d.com.a"
   Scenario Outline: Email con dominio de primer nivel de solo un caracter
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
@@ -60,7 +57,6 @@ Feature: HU003: Validación de email
       | "3043302450" | "ejemplo@d.a"           |
       | "3043302450" | "ejemplo@d.com.a"       |
 
-  #Parámetros: "ejemplo.", "ejemplo.@", "ejemplo@.", "ejemplo@dominio.", "ejemplo@dominio.com."
   Scenario Outline: Email terminado en punto (.)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
@@ -78,13 +74,12 @@ Feature: HU003: Validación de email
       | "3043302450" | "ejemplo@dominio.com." |
       | "3043302450" | "ejemplo.@dominio."    |
 
-  #Parámetros: "ejemplo@ejemplo.com"
   @CasoFeliz
   Scenario Outline: Email correcto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then El botón "Consultar" se habilita
+    Then el campo "Consultar" tiene el atributo "class" en el valor "--active"
 
     Examples: 
       | msisdn       | email                   |
