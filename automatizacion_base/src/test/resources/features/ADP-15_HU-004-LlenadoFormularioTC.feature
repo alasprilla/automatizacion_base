@@ -16,7 +16,7 @@ Feature: HU004_Llenado_Formulario_TC
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
      And ingreso "4357223863986989" en el campo "Número de tarjeta"
      And ingreso "932" en el campo "CVV"
-     And selecciono "" en el campo "MM"
+     And selecciono "MM" en el campo "MM"
      And selecciono "2018" en el campo "AA"
      And ingreso "nombre" en el campo "Nombre"
      And selecciono "CC" en el campo "tipo"
@@ -63,8 +63,3 @@ Feature: HU004_Llenado_Formulario_TC
      #And deshabilito el campo "Autorizo esta tarjeta para futuros pagos"
      And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
 		Then El botón "Pagar" se habilita
-		
-		
-
-
-
