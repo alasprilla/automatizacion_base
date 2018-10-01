@@ -177,22 +177,19 @@ public class ActionsUtil {
 				break;
 			}
 		}
-		//Prueba alexa Ini
-		/*String ValorLista = element.getAttribute("value");
-		if (ValorLista == "") {
-			new Select(element).selectByIndex(index);
-			assertThat(element.getAttribute("value"), CoreMatchers.containsString(valueContains));
-			System.out.println("value: "+element.getAttribute("value"));
-		}else{
-			new Select(element).selectByIndex(index + 1);
-			//assertThat(element.getAttribute("value"), CoreMatchers.containsString(valueContains));
-			System.out.println("value: "+element.getAttribute("value"));
-		}*/
-		//Prueba alexa FIN
-		
-		new Select(element).selectByIndex(index);
-		System.out.println("value: "+element.getAttribute("value"));
-		assertThat(element.getAttribute("value"), CoreMatchers.containsString(valueContains));
+
+		Select select = new Select(element);
+		select.selectByIndex(index);
+		WebElement option = select.getFirstSelectedOption();
+		String valorActual = option.getText();
+		if(!valorActual.contains(valueContains)) {
+			select = new Select(element);
+			select.selectByIndex(index+1);
+			option = select.getFirstSelectedOption();
+			valorActual = option.getText();
+		}
+		System.out.println("tiene: "+valorActual+" y se espera:"+valueContains);
+		assertThat(valorActual, CoreMatchers.containsString(valueContains));
 	}
 
 	public static void selectValue(WebDriver driver, By by, String valueOption) {
