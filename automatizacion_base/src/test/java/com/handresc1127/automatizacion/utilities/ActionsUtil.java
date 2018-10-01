@@ -188,7 +188,6 @@ public class ActionsUtil {
 			option = select.getFirstSelectedOption();
 			valorActual = option.getText();
 		}
-		System.out.println("tiene: "+valorActual+" y se espera:"+valueContains);
 		assertThat(valorActual, CoreMatchers.containsString(valueContains));
 	}
 
