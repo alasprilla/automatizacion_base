@@ -110,7 +110,6 @@ public class DefPagaTuFactura {
 		} else {
 			pagePagaFact.tieneHijos("list facturas");
 		}
-
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
