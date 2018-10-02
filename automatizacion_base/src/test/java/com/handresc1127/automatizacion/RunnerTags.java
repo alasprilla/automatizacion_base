@@ -11,6 +11,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(glue = { "com.handresc1127.automatizacion" }, 
 	features = {
+<<<<<<< HEAD
 		"src/test/resources/features/ADP-3_HU-001-ValidacionTC.feature",	
 		"src/test/resources/features/ADP-13_HU-002-ValidacionMSISDN.feature",
 		"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature",
@@ -18,6 +19,19 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-23_HU-007_NumerosNoValidosCelular.feature",
 		"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature",
 		"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature"
+=======
+		//"src/test/resources/features/ADP-3_HU-001-ValidacionTC.feature",	
+		//"src/test/resources/features/ADP-13_HU-002-ValidacionMSISDN.feature",
+		//"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature",
+		//"src/test/resources/features/ADP-15_HU-004-LlenadoFormularioTC.feature",	
+		  "src/test/resources/features/ADP-16_HU-005-LlenadoFormularioTD.feature",	
+		//"src/test/resources/features/ADP-21_HU-006-ValidacionNumeroDocumento.feature",
+		//"src/test/resources/features/ADP-23_HU-007_NumerosNoValidosCelular.feature",
+		//"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature",
+		//"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature",
+		//"src/test/resources/features/ADP-36-Prueba_Adherencia_Pago.feature",
+		
+>>>>>>> HU-002
 		},
 
 
