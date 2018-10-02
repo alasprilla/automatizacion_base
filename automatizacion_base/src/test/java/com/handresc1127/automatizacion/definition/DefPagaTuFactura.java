@@ -56,9 +56,15 @@ public class DefPagaTuFactura {
 	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
 	public void el_botón_esta(String objeto, String estaDeshabilitado) {
 		String isDisable = "false";
-		if (estaDeshabilitado.equals("deshabilitado"))
+		String isEnabled = "false";
+		if (estaDeshabilitado.equals("deshabilitado")) {
 			isDisable = "true";
-		pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
+			pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
+		
+		}else if (estaDeshabilitado.equals("habilitado")){
+			isEnabled = "true";
+			pagePagaFact.compararAtributo(objeto, "enabled", isEnabled);	
+		}
 	}
 
 	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
