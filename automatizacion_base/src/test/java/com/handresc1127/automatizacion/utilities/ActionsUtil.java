@@ -168,6 +168,7 @@ public class ActionsUtil {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		String valueComboBox = element.getText();
+		assertThat(valueComboBox, CoreMatchers.containsString(valueContains));
 		String values[] = valueComboBox.split("\n");
 		int index = 0;
 		for (int i = 0; i < values.length; i++) {
@@ -176,9 +177,18 @@ public class ActionsUtil {
 				break;
 			}
 		}
-		new Select(element).selectByIndex(index + 1);
 
-		assertThat(element.getText(), CoreMatchers.containsString(valueContains));
+		Select select = new Select(element);
+		select.selectByIndex(index);
+		WebElement option = select.getFirstSelectedOption();
+		String valorActual = option.getText();
+		if(!valorActual.contains(valueContains)) {
+			select = new Select(element);
+			select.selectByIndex(index+1);
+			option = select.getFirstSelectedOption();
+			valorActual = option.getText();
+		}
+		assertThat(valorActual, CoreMatchers.containsString(valueContains));
 	}
 
 	public static void selectValue(WebDriver driver, By by, String valueOption) {

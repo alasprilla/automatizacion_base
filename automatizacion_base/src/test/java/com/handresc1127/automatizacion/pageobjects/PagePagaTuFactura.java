@@ -27,8 +27,9 @@ public class PagePagaTuFactura extends PageObject {
 	By lbMsgError = By.id("alert_main");
 
 	/**
-	 * Elmentos de la seccion Medio de Pago
+	 * Elmentos de la seccion Medio de Pago Tarjeta Crédito
 	 */
+<<<<<<< HEAD
 	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
 	By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
@@ -38,6 +39,36 @@ public class PagePagaTuFactura extends PageObject {
 	By listTipod = By.id("edit-buyer-document-type--2");
 	By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
 	By btnPagard = By.id("edit-submit--2");
+=======
+	public By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
+	public By txtNumerodetarjeta = By.id("edit-cardnumber");
+	public By txtCVV = By.id("edit-cvc");
+	public By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
+	public By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
+	public By txtNombre = By.id("edit-ccname");
+	public By listTipo = By.id("edit-buyer-document-type");
+	public By txtNumerodedocumento = By.id("edit-buyer-document");
+	public By btnAutorizarTc = By.xpath("//*[@id='edit-authorized']/div/div/label[1]");
+	public By btnPagar = By.id("edit-submit");
+	/**
+	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
+	 */
+	public By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
+	public By listBanco = By.id("edit-bank");
+	public By listTipodepersona = By.id("edit-buyer-type-person");
+	public By txtNombresyapellidos = By.id("edit-buyer-name");
+	public By listTipod = By.id("edit-buyer-document-type--2");
+	public By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
+	public By btnPagard = By.id("edit-submit--2");
+	/**
+	 * Elmentos de la seccion pago por PSE
+	 */
+	public By btnIralBanco = By.id("btnSeguir");
+	public By btnDebugP = By.id("btnDebug");
+	public By txtProcessDate = By.id("txtBankProcessDate");
+	public By txtauthorizaID = By.id("txtAuthorizationID");
+	public By btnReturn = By.id("btnReturnToPPE");
+>>>>>>> HU-002
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -156,6 +187,45 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "pagard":
 			setObjetoToCliked(btnPagard);
+			break;
+		case "pagar":
+			setObjetoToCliked(btnPagar);
+			break;
+		case "iralbanco":
+			setObjetoToCliked(btnIralBanco);
+			break;
+		case "debug":
+			setObjetoToCliked(btnDebugP);
+			break;
+		case "bankprocessdate":
+			setObjetoToCliked(txtProcessDate);
+			break;
+		case "authorizationid":
+			setObjetoToCliked(txtauthorizaID);
+			break;
+		case "return":
+			setObjetoToCliked(btnReturn);
+			break;
+		case "cvv":
+			setObjetoToCliked(txtCVV);
+			break;
+		case "mm":
+			setObjetoToCliked(listFechaVencimiento_MM);
+			break;
+		case "aa":
+			setObjetoToCliked(listFechaVencimiento_AA);
+			break;
+		case "nombre":
+			setObjetoToCliked(txtNombre);
+			break;
+		case "tipo":
+			setObjetoToCliked(listTipo);
+			break;
+		case "numerodedocumentotc":
+			setObjetoToCliked(txtNumerodedocumento);
+			break;
+		case "autorizoestatarjetaparafuturospagos":
+			setObjetoToCliked(btnAutorizarTc);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));

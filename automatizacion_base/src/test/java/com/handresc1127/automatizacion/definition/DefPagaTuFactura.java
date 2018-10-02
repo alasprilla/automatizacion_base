@@ -41,6 +41,7 @@ public class DefPagaTuFactura {
 	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String item, String objeto) {
 		pagePagaFact.seleccionar(objeto, item);
+
 	}
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
@@ -56,9 +57,15 @@ public class DefPagaTuFactura {
 	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
 	public void el_botón_esta(String objeto, String estaDeshabilitado) {
 		String isDisable = "false";
-		if (estaDeshabilitado.equals("deshabilitado"))
+		String isEnabled = "false";
+		if (estaDeshabilitado.equals("deshabilitado")) {
 			isDisable = "true";
-		pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
+			pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
+		
+		}else if (estaDeshabilitado.equals("habilitado")){
+			isEnabled = "true";
+			pagePagaFact.compararAtributo(objeto, "enabled", isEnabled);	
+		}
 	}
 
 	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
@@ -70,6 +77,15 @@ public class DefPagaTuFactura {
 	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
 	}
+<<<<<<< HEAD
+=======
+	
+	@Then("^El botón \"([^\"]*)\" se habilita$")
+	public void el_botón_se_habilita(String btnConsultar) {
+		pagePagaFact.compararAtributo(btnConsultar, "class",
+				"btn btn_send button js-form-submit form-submit button--secondary button--active");
+	}
+>>>>>>> HU-002
 
 	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")
 	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_rojo(String msgFactura, String txtmensaje) {
@@ -134,6 +150,17 @@ public class DefPagaTuFactura {
 	@Then("^Entonces el primer caracter del campo número de documento se borra$")
 	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararTextoInicial();
+	}
+	
+	// Implementación: " ADP-36-Prueba_Adherencia_Pago"
+	@Then("^llevará al detalle de la transacción$")
+	public void llevará_al_detalle_de_la_transacción()  {
+		pagePagaFact.presionBotonConfirmar();
+	}
+	
+	@Then("^Mostrará el \"([^\"]*)\" de la transaccion$")
+	public void mostrará_el_de_la_transaccion(String objeto)  {
+		pagePagaFact.clic(objeto);
 	}
 
 }
