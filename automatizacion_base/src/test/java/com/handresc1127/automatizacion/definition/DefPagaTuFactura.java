@@ -135,5 +135,31 @@ public class DefPagaTuFactura {
 	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararTextoInicial();
 	}
+	
+	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
+	@When("^presiono el botón \"([^\"]*)\" sobre la primer factura pendiente de pago$")
+	public void presiono_el_botón_sobre_la_primer_factura_pendiente_de_pago(String objeto){
+		pagePagaFact.tieneHijos("list facturas");
+		pagePagaFact.obtenerObjetoDeMatriz("list facturas [0][6]");
+		pagePagaFact.clic("");
+	}
+
+	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
+	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
+	public void llevará_al_formulario_con_el_objeto(String objeto){
+		pagePagaFact.elementoVisible(objeto);
+	}
+
+	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
+	@Then("^el campo \"([^\"]*)\" comienza con el texto \"([^\"]*)\"$")
+	public void el_campo_comienza_con_el_texto(String objeto, String textoInicial){
+		pagePagaFact.compararTextoDeInicio(objeto,textoInicial);
+	}
+
+	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
+	@Then("^el campo \"([^\"]*)\" no está vacío$")
+	public void el_campo_no_está_vacío(String objeto){
+		pagePagaFact.compararTextoNoVacio(objeto);
+	}
 
 }

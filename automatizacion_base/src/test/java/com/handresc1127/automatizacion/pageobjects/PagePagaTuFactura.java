@@ -283,4 +283,8 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
 	}
 
+	public void obtenerObjetoDeMatriz(String objeto) {
+		By objetoHallado=ActionsUtil.getElementTable(getDriver(), getObjetoToCliked(),0,6);
+	}
+
 }
