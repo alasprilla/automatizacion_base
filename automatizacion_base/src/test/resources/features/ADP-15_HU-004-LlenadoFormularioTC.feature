@@ -36,12 +36,12 @@ Feature: HU004_Llenado_Formulario_TC
      And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
 		Then el botón "Pagar" esta "deshabilitado"
 
-		Scenario: Validación del campo "Fecha vencimiento" con fecha superior al día actual
+		Scenario: Validación del campo "Fecha vencimiento" con fecha inferior al día actual
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
      And ingreso "4357223863986989" en el campo "Número de tarjeta"
      And ingreso "932" en el campo "CVV"
      And selecciono "01" en el campo "MM"
-     And selecciono "2019" en el campo "AA"
+     And selecciono "2018" en el campo "AA"
      And ingreso "nombre" en el campo "Nombre"
      And selecciono "CC" en el campo "tipo"
      And ingreso "12345" en el campo "número de documento TC"
@@ -63,5 +63,5 @@ Feature: HU004_Llenado_Formulario_TC
 		
 		Examples: 
       | mes     |ano       |
-      | "01"    |"2018"    |
+      | "01"    |"2019"    |
       | "10"    |"2018"    |
