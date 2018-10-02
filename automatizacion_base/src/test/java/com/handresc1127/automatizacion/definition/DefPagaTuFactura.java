@@ -78,13 +78,19 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
 	}
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> HU009-Ajuste
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
 		pagePagaFact.compararAtributo(btnConsultar, "class",
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> HU009-Ajuste
 
 	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")
 	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_rojo(String msgFactura, String txtmensaje) {
@@ -150,7 +156,6 @@ public class DefPagaTuFactura {
 	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararTextoInicial();
 	}
-	
 	// Implementación: " ADP-36-Prueba_Adherencia_Pago"
 	@Then("^llevará al detalle de la transacción$")
 	public void llevará_al_detalle_de_la_transacción()  {

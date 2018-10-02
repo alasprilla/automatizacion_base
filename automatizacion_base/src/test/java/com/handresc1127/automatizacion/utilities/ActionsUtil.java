@@ -1,6 +1,9 @@
 package com.handresc1127.automatizacion.utilities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.core.Is.*;
+import static org.hamcrest.core.IsNot.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -9,6 +12,8 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsNot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -263,10 +268,13 @@ public class ActionsUtil {
 		assertTrue(row_num > 0);
 		assertTrue(col_max > 0);
 		String tabla_return[][] = new String[row_num][col_max];
+		for (int i = 0; i < row_num; i++) {
+			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
+		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return tabla_return;
 	}
-
+	
 	public static void checkBox(WebDriver driver, By by, boolean checked) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
@@ -373,5 +381,17 @@ public class ActionsUtil {
 		}
 		return false;
 	}
+
+	public static void compareTextStart(WebDriver driver, By by, String textStart) {
+		String valorObtenido = getText(driver, by);
+		assertThat(valorObtenido, CoreMatchers.startsWith(textStart));
+	}
+
+	public static void compareTextNotEmpty(WebDriver driver, By by) {
+		String valorObtenido = getText(driver, by);
+		
+		assertThat(valorObtenido, !valorObtenido.isEmpty());
+	}
+
 
 }

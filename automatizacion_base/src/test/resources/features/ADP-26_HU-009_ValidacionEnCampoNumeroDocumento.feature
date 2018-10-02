@@ -4,7 +4,7 @@
 Feature: HU009 CC válida en campo número de documento
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
-  Para garantizar que la consulta se realice con una cédula de ciudadanía válida
+  Para garantizar que haya consistencia en los datos entre pantallas
 
   Scenario: Ingreso de texto en el campo número de documento
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
@@ -46,8 +46,24 @@ Feature: HU009 CC válida en campo número de documento
     And doy clic en el botón "Consultar"
     Then mostrará el <estadoFacturas>
 
-    #Si no tiene el msj esta en letras blancas con fondo azul
+    #//Si no tiene el msj esta en letras blancas con fondo azul
     Examples: 
       | documento  | estadoFacturas                            |
       | "71770656" | "El usuario no tiene facturas pendientes" |
       | "552716"   | "listado de facturas pendientes"          |
+
+  Scenario: Visualización de datos de servicios fijos con facturas pendientes
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    When doy clic en "HOGAR"
+    And selecciono "CC" en el campo "Tipo de documento"
+    And ingreso "552716" en el campo "número de documento"
+    And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
+    And doy clic en el botón "Consultar"
+    And doy clic en "primer Pago total"
+    Then llevará al formulario con el objeto "title-detail"
+    And el campo "title-detail" tiene el texto "RESUMEN DE TU TRANSACCIÓN"
+    And el campo "Numero del Producto" comienza con el texto "Tu dirección: ****"
+    And el campo "Fecha límite de pago" no está vacío
+    And el campo "Referente de pago" no está vacío
+    And el campo "Número de contrato" no está vacío
+    And el campo "Valor a pagar" no está vacío

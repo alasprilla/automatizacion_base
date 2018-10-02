@@ -31,6 +31,9 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
+<<<<<<< HEAD
+=======
+>>>>>>> HU009-Ajuste
 	By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
 	By listBanco = By.id("edit-bank");
 	By listTipodepersona = By.id("edit-buyer-type-person");
@@ -38,6 +41,7 @@ public class PagePagaTuFactura extends PageObject {
 	By listTipod = By.id("edit-buyer-document-type--2");
 	By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
 	By btnPagard = By.id("edit-submit--2");
+<<<<<<< HEAD
 	
 
 	public By txtCVV = By.id("edit-cvc");
@@ -57,6 +61,8 @@ public class PagePagaTuFactura extends PageObject {
 	public By txtProcessDate = By.id("txtBankProcessDate");
 	public By txtauthorizaID = By.id("txtAuthorizationID");
 	public By btnReturn = By.id("btnReturnToPPE");
+=======
+>>>>>>> HU009-Ajuste
 
 	/**
 	 * Elementos de la seccion Hogar
