@@ -64,7 +64,8 @@ Background: seleccion medio de pago
      And ingreso "nombre" en el campo "Nombres y Apellidos"
      And selecciono "CC" en el campo "Tipo D"
      And ingreso "123456789" en el campo "Número de documento D"
-     Then el campo "Pagar D" tiene el atributo "class" en el valor "--inactive"
+     And Presiono la tecla "tab"
+     Then el campo "Pagar D" tiene el atributo "class" en el valor "button--secondary"
     
     
     
