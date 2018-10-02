@@ -64,8 +64,8 @@ Background: seleccion medio de pago
      And ingreso "nombre" en el campo "Nombres y Apellidos"
      And selecciono "CC" en el campo "Tipo D"
      And ingreso "123456789" en el campo "Número de documento D"
-    #Then el botón "Pagar D" esta "habilitado"
-    Then el campo "Pagar D" tiene el atributo "class" en el valor "button--inactive button--form--submit button js-form-submit form-submit"
+     Then el campo "Pagar D" tiene el atributo "class" en el valor "--inactive"
+    
     
     
     

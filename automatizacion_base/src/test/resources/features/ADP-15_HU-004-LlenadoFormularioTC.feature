@@ -58,8 +58,7 @@ Feature: HU004_Llenado_Formulario_TC
      And selecciono "CC" en el campo "tipo"
      And ingreso "12345648" en el campo "número de documento TC"
      And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
-		#Then el botón "Pagar" esta "habilitado"
-		Then el campo "Pagar" tiene el atributo "class" en el valor "button--inactive button--form--submit button js-form-submit form-submit"
+		Then el campo "Pagar" tiene el atributo "class" en el valor "button--secondary"
 		
 		
 		Examples: 
