@@ -91,6 +91,8 @@ public class PagePagaTuFactura extends PageObject {
 			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[2]/td/div");
 	By lbNumeroContrato = By.xpath(
 			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div");
+	By lbPeriodoFacturacion = By.xpath(
+			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div");
 	By lbValorPagar = By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]");
 
 	By objetoToAction;
@@ -251,7 +253,9 @@ public class PagePagaTuFactura extends PageObject {
 		case "numerodecontrato":
 			setObjetoToCliked(lbNumeroContrato);
 			break;
-
+		case "periododefacturacion":
+			setObjetoToCliked(lbPeriodoFacturacion);
+			break;	
 		case "valorapagar":
 			setObjetoToCliked(lbValorPagar);
 			break;
@@ -340,6 +344,12 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "blanco":
 			valorEsperado = "rgba(255, 255, 255, 1)";
+			break;
+		case "rojo_rgb":
+			valorEsperado = "rgb(240, 30, 70)";
+			break;
+		case "blanco_rgb":
+			valorEsperado = "rgb(255, 255, 255)";
 			break;
 		}
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);

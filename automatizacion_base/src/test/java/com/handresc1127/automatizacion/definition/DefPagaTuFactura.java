@@ -85,25 +85,6 @@ public class DefPagaTuFactura {
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
-	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_rojo(String msgFactura, String txtmensaje) {
-		pagePagaFact.presionBotonConfirmar();
-		pagePagaFact.compararTxt(msgFactura, txtmensaje);
-		pagePagaFact.compararAtributo(msgFactura, "background", "rgb(240, 30, 70)");
-	}
-
-	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo azul \"([^\"]*)\"$")
-	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_azul(String msgFactura, String txtmensaje) {
-		pagePagaFact.presionBotonConfirmar();
-		pagePagaFact.compararTxt(msgFactura, txtmensaje);
-		pagePagaFact.compararAtributo(msgFactura, "background", "rgb(0, 200, 255)");
-	}
-
-	@Then("^llevará al formulario donde se selecciona el tipo de pago$")
-	public void llevará_al_formulario_donde_se_selecciona_el_tipo_de_pago() {
-		pagePagaFact.presionBotonConfirmar();
-	}
-
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
 	@Then("^La página se recarga$")
 	public void la_página_se_recarga() {
