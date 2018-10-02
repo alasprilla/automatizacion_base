@@ -1,9 +1,6 @@
 package com.handresc1127.automatizacion.utilities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.empty;
-import static org.hamcrest.core.Is.*;
-import static org.hamcrest.core.IsNot.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -12,15 +9,13 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
-import org.hamcrest.core.Is;
-import org.hamcrest.core.IsNot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.Keys;
 
 public class ActionsUtil {
 

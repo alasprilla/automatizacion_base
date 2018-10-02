@@ -78,19 +78,12 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
 	}
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> HU009-Ajuste
+
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
 		pagePagaFact.compararAtributo(btnConsultar, "class",
 				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> HU009-Ajuste
 
 	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")
 	public void mostrará_el_siguiente_en_letras_blancas_con_fondo_rojo(String msgFactura, String txtmensaje) {

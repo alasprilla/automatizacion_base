@@ -31,8 +31,7 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
-<<<<<<< HEAD
-=======
+
 	By txtCVV = By.id("edit-cvc");
 	By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
 	By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
@@ -44,7 +43,7 @@ public class PagePagaTuFactura extends PageObject {
 	/**
 	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
 	 */
->>>>>>> HU009-Ajuste
+
 	By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
 	By listBanco = By.id("edit-bank");
 	By listTipodepersona = By.id("edit-buyer-type-person");
@@ -52,27 +51,7 @@ public class PagePagaTuFactura extends PageObject {
 	By listTipod = By.id("edit-buyer-document-type--2");
 	By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
 	By btnPagard = By.id("edit-submit--2");
-<<<<<<< HEAD
-	
 
-	public By txtCVV = By.id("edit-cvc");
-	public By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
-	public By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
-	public By txtNombre = By.id("edit-ccname");
-	public By listTipo = By.id("edit-buyer-document-type");
-	public By txtNumerodedocumento = By.id("edit-buyer-document");
-	public By btnAutorizarTc = By.xpath("//*[@id='edit-authorized']/div/div/label[1]");
-	public By btnPagar = By.id("edit-submit");
-
-	/**
-	 * Elmentos de la seccion pago por PSE
-	 */
-	public By btnIralBanco = By.id("btnSeguir");
-	public By btnDebugP = By.id("btnDebug");
-	public By txtProcessDate = By.id("txtBankProcessDate");
-	public By txtauthorizaID = By.id("txtAuthorizationID");
-	public By btnReturn = By.id("btnReturnToPPE");
-=======
 	/**
 	 * Elmentos de la seccion pago por PSE
 	 */
@@ -81,7 +60,6 @@ public class PagePagaTuFactura extends PageObject {
 	By txtProcessDate = By.id("txtBankProcessDate");
 	By txtauthorizaID = By.id("txtAuthorizationID");
 	By btnReturn = By.id("btnReturnToPPE");
->>>>>>> HU009-Ajuste
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -100,18 +78,20 @@ public class PagePagaTuFactura extends PageObject {
 	 * Elementos comunes Movil / Hogar
 	 */
 	By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
-	
+
 	/**
 	 * Resumen de la transacción
 	 */
-	By btnPrimerPagoTotal=By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
-	By lbTituloResumenTransaccion=By.id("title-detail");
-	By lbNumeroDelProducto=By.id("product-number");
-	By lbFechaLimitePago=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div");
-	By lbReferentePago=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[2]/td/div");
-	By lbNumeroContrato=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div");
-	By lbValorPagar=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]");
-	
+	By btnPrimerPagoTotal = By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
+	By lbTituloResumenTransaccion = By.id("title-detail");
+	By lbNumeroDelProducto = By.id("product-number");
+	By lbFechaLimitePago = By.xpath(
+			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div");
+	By lbReferentePago = By.xpath(
+			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[2]/td/div");
+	By lbNumeroContrato = By.xpath(
+			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div");
+	By lbValorPagar = By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]");
 
 	By objetoToAction;
 	String texto = "";
@@ -129,7 +109,6 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void sharedObjet(String opcion) {
-
 		switch (ActionsUtil.textoMinusculasSinEspacios(opcion)) {
 		case "hogar":
 			setObjetoToCliked(btnHogar);
@@ -261,35 +240,32 @@ public class PagePagaTuFactura extends PageObject {
 		case "numerodelproducto":
 			setObjetoToCliked(lbNumeroDelProducto);
 			break;
-			
+
 		case "fechalimitedepago":
 			setObjetoToCliked(lbFechaLimitePago);
 			break;
-			
 		case "referentedepago":
 			setObjetoToCliked(lbReferentePago);
 			break;
-			
+
 		case "numerodecontrato":
 			setObjetoToCliked(lbNumeroContrato);
 			break;
-			
+
 		case "valorapagar":
 			setObjetoToCliked(lbValorPagar);
-			break;			
+			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
 	}
 
 	public void clic(String objeto) {
-
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
 
 	public void tieneHijos(String objeto) {
-
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
@@ -299,7 +275,6 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void compararTextoInicial() {
-
 		String textoInicial = texto;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
@@ -316,15 +291,12 @@ public class PagePagaTuFactura extends PageObject {
 
 			BussinesUtil.validateMSISDNIni(textoInicial, textoFinal);
 		}
-
 	}
 
 	public void compararTextoFinal() {
-
 		String textoInicial = texto;
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-
 		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
 				.equals("edit-cardnumber")) {
 
@@ -337,11 +309,9 @@ public class PagePagaTuFactura extends PageObject {
 
 			BussinesUtil.validateMSISDNFin(textoInicial, textoFinal);
 		}
-
 	}
 
 	public void escribirConClick(String objeto, String texto) {
-
 		sharedObjet(objeto);
 		this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
@@ -349,20 +319,17 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void escribir(String objeto, String texto) {
-
 		sharedObjet(objeto);
 		this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 	}
 
 	public void compararTxt(String objeto, String valorEsperado) {
-
 		sharedObjet(objeto);
 		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
 	}
 
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
-
 		sharedObjet(objeto);
 		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
 		case "rojo":
@@ -383,13 +350,11 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void seleccionar(String objeto, String item) {
-
 		sharedObjet(objeto);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
-
 		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc"))) {
