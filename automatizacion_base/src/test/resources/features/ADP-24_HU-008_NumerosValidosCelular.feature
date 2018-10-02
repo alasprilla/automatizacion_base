@@ -10,7 +10,7 @@ Feature: HU008 Validación número Celular
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then mostrará el siguiente "mensaje sin facturas" en letras blancas con fondo rojo "No hemos encontrado facturas para este número de línea."
+    Then mostrará el siguiente "mensaje sin facturas" en letras blancas con fondo rojo "No hemos encontrado facturas pendientes para este número de línea."
     
     Examples: 
       | msisdn       | email                  |
@@ -23,7 +23,7 @@ Feature: HU008 Validación número Celular
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
 		When ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then mostrará el siguiente "mensaje sin facturas" en letras blancas con fondo azul "No hemos encontrado facturas para este número de línea."
+    Then mostrará el siguiente "mensaje sin facturas" en letras blancas con fondo azul "No hemos encontrado facturas pendientes para este número de línea."
     
     Examples: 
       | msisdn       | email                  |
