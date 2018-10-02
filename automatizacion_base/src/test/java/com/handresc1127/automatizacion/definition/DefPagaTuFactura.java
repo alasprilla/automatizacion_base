@@ -65,6 +65,9 @@ public class DefPagaTuFactura {
 		}else if (estaDeshabilitado.equals("habilitado")){
 			isEnabled = "true";
 			pagePagaFact.compararAtributo(objeto, "enabled", isEnabled);	
+		}else {
+			//Sí entra acá siempre fallará
+			pagePagaFact.compararTxt(objeto, estaDeshabilitado);
 		}
 	}
 

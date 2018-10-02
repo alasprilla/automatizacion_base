@@ -315,6 +315,7 @@ public class PagePagaTuFactura extends PageObject {
 		}
 	}
 
+	//Revisar esto
 	public void escribirConClick(String objeto, String texto) {
 		sharedObjet(objeto);
 		this.texto = texto;
@@ -355,6 +356,7 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
 
+	//Esta función se debe de suprimir, ya hay otra que hace lo mismo y parámetrizada clic
 	public void presionBotonConfirmar() {
 		ActionsUtil.clic(getDriver(), btnConsultarM);
 	}
