@@ -41,6 +41,7 @@ public class DefPagaTuFactura {
 	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String item, String objeto) {
 		pagePagaFact.seleccionar(objeto, item);
+
 	}
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
@@ -75,6 +76,12 @@ public class DefPagaTuFactura {
 	@Then("^el campo \"([^\"]*)\" tiene el atributo \"([^\"]*)\" en el valor \"([^\"]*)\"$")
 	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
+	}
+
+	@Then("^El botón \"([^\"]*)\" se habilita$")
+	public void el_botón_se_habilita(String btnConsultar) {
+		pagePagaFact.compararAtributo(btnConsultar, "class",
+				"btn btn_send button js-form-submit form-submit button--secondary button--active");
 	}
 
 	@Then("^mostrará el siguiente \"([^\"]*)\" en letras blancas con fondo rojo \"([^\"]*)\"$")
@@ -141,14 +148,6 @@ public class DefPagaTuFactura {
 	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
 		pagePagaFact.compararTextoInicial();
 	}
-	
-	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
-	@When("^presiono el botón \"([^\"]*)\" sobre la primer factura pendiente de pago$")
-	public void presiono_el_botón_sobre_la_primer_factura_pendiente_de_pago(String objeto){
-		pagePagaFact.tieneHijos("list facturas");
-		pagePagaFact.obtenerObjetoDeMatriz("list facturas [0][6]");
-		pagePagaFact.clic("");
-	}
 
 	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
@@ -166,6 +165,17 @@ public class DefPagaTuFactura {
 	@Then("^el campo \"([^\"]*)\" no está vacío$")
 	public void el_campo_no_está_vacío(String objeto){
 		pagePagaFact.compararTextoNoVacio(objeto);
+	}
+		
+	// Implementación: " ADP-36-Prueba_Adherencia_Pago"
+	@Then("^llevará al detalle de la transacción$")
+	public void llevará_al_detalle_de_la_transacción()  {
+		pagePagaFact.presionBotonConfirmar();
+	}
+	
+	@Then("^Mostrará el \"([^\"]*)\" de la transaccion$")
+	public void mostrará_el_de_la_transaccion(String objeto)  {
+		pagePagaFact.clic(objeto);
 	}
 
 }

@@ -27,10 +27,21 @@ public class PagePagaTuFactura extends PageObject {
 	By lbMsgError = By.id("alert_main");
 
 	/**
-	 * Elmentos de la seccion Medio de Pago
+	 * Elmentos de la seccion Medio de Pago Tarjeta Crédito
 	 */
 	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
+	By txtCVV = By.id("edit-cvc");
+	By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
+	By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
+	By txtNombre = By.id("edit-ccname");
+	By listTipo = By.id("edit-buyer-document-type");
+	By txtNumerodedocumento = By.id("edit-buyer-document");
+	By btnAutorizarTc = By.xpath("//*[@id='edit-authorized']/div/div/label[1]");
+	By btnPagar = By.id("edit-submit");
+	/**
+	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
+	 */
 	By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
 	By listBanco = By.id("edit-bank");
 	By listTipodepersona = By.id("edit-buyer-type-person");
@@ -38,6 +49,14 @@ public class PagePagaTuFactura extends PageObject {
 	By listTipod = By.id("edit-buyer-document-type--2");
 	By txtNumerodedocumentoD = By.id("edit-buyer-document--2");
 	By btnPagard = By.id("edit-submit--2");
+	/**
+	 * Elmentos de la seccion pago por PSE
+	 */
+	By btnIralBanco = By.id("btnSeguir");
+	By btnDebugP = By.id("btnDebug");
+	By txtProcessDate = By.id("txtBankProcessDate");
+	By txtauthorizaID = By.id("txtAuthorizationID");
+	By btnReturn = By.id("btnReturnToPPE");
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -56,6 +75,18 @@ public class PagePagaTuFactura extends PageObject {
 	 * Elementos comunes Movil / Hogar
 	 */
 	By lbMsgErrorDoc = By.xpath("//*[@id='content_left_forms_unified']/div[1]/span");
+	
+	/**
+	 * Resumen de la transacción
+	 */
+	By btnPrimerPagoTotal=By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
+	By lbTituloResumenTransaccion=By.id("title-detail");
+	By lbNumeroDelProducto=By.id("product-number");
+	By lbFechaLimitePago=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div");
+	By lbReferentePago=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[2]/td/div");
+	By lbNumeroContrato=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div");
+	By lbValorPagar=By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]");
+	
 
 	By objetoToAction;
 	String texto = "";
@@ -157,6 +188,70 @@ public class PagePagaTuFactura extends PageObject {
 		case "pagard":
 			setObjetoToCliked(btnPagard);
 			break;
+		case "pagar":
+			setObjetoToCliked(btnPagar);
+			break;
+		case "iralbanco":
+			setObjetoToCliked(btnIralBanco);
+			break;
+		case "debug":
+			setObjetoToCliked(btnDebugP);
+			break;
+		case "bankprocessdate":
+			setObjetoToCliked(txtProcessDate);
+			break;
+		case "authorizationid":
+			setObjetoToCliked(txtauthorizaID);
+			break;
+		case "return":
+			setObjetoToCliked(btnReturn);
+			break;
+		case "cvv":
+			setObjetoToCliked(txtCVV);
+			break;
+		case "mm":
+			setObjetoToCliked(listFechaVencimiento_MM);
+			break;
+		case "aa":
+			setObjetoToCliked(listFechaVencimiento_AA);
+			break;
+		case "nombre":
+			setObjetoToCliked(txtNombre);
+			break;
+		case "tipo":
+			setObjetoToCliked(listTipo);
+			break;
+		case "numerodedocumentotc":
+			setObjetoToCliked(txtNumerodedocumento);
+			break;
+		case "autorizoestatarjetaparafuturospagos":
+			setObjetoToCliked(btnAutorizarTc);
+			break;
+		case "primerpagototal":
+			setObjetoToCliked(btnPrimerPagoTotal);
+			break;
+		case "title-detail":
+			setObjetoToCliked(lbTituloResumenTransaccion);
+			break;
+		case "numerodelproducto":
+			setObjetoToCliked(lbNumeroDelProducto);
+			break;
+			
+		case "fechalimitedepago":
+			setObjetoToCliked(lbFechaLimitePago);
+			break;
+			
+		case "referentedepago":
+			setObjetoToCliked(lbReferentePago);
+			break;
+			
+		case "numerodecontrato":
+			setObjetoToCliked(lbNumeroContrato);
+			break;
+			
+		case "valorapagar":
+			setObjetoToCliked(lbValorPagar);
+			break;			
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
@@ -283,8 +378,19 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
 	}
 
-	public void obtenerObjetoDeMatriz(String objeto) {
-		By objetoHallado=ActionsUtil.getElementTable(getDriver(), getObjetoToCliked(),0,6);
+	public void elementoVisible(String objeto) {
+		sharedObjet(objeto);
+		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
+	}
+
+	public void compararTextoDeInicio(String objeto, String textoInicial) {
+		sharedObjet(objeto);
+		ActionsUtil.compareTextStart(getDriver(), getObjetoToCliked(), textoInicial);
+	}
+
+	public void compararTextoNoVacio(String objeto) {
+		sharedObjet(objeto);
+		ActionsUtil.compareTextNotEmpty(getDriver(), getObjetoToCliked());
 	}
 
 }

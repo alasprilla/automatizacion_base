@@ -1,6 +1,9 @@
 package com.handresc1127.automatizacion.utilities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.core.Is.*;
+import static org.hamcrest.core.IsNot.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -9,6 +12,8 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
+import org.hamcrest.core.Is;
+import org.hamcrest.core.IsNot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -270,46 +275,6 @@ public class ActionsUtil {
 		return tabla_return;
 	}
 	
-	public static By getElementTable(WebDriver driver, By by, int row, int column) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-		List<WebElement> child_collection = element.findElements(By.xpath("./*"));
-		By tabla[][] = new By[999][999];
-		int row_num, col_num, col_max = 0;
-		row_num = 0;
-		boolean containInfo = false;
-		for (WebElement childElement : child_collection) {
-			List<WebElement> grandChild_collection = childElement.findElements(By.xpath("./*"));
-			if (grandChild_collection.size() > col_max)
-				col_max = grandChild_collection.size();
-			col_num = 0;
-			containInfo = false;
-			for (WebElement tdElement : grandChild_collection) {
-				String aux = tdElement.getText();
-				By auxBy = By.id(tdElement.getAttribute("id"));
-				tabla[row_num][col_num] = auxBy;
-				col_num++;
-				if (aux != null) {
-					if (!aux.isEmpty()) {
-						containInfo = true;
-					}
-				}
-			}
-			if (containInfo) {
-				row_num++;
-			}
-		}
-		assertTrue(row_num > 0);
-		assertTrue(col_max > 0);
-		By tabla_return[][] = new By[row_num][col_max];
-		for (int i = 0; i < row_num; i++) {
-			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
-		}
-		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		return tabla_return[row][column];
-	}
-
 	public static void checkBox(WebDriver driver, By by, boolean checked) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
@@ -417,6 +382,16 @@ public class ActionsUtil {
 		return false;
 	}
 
-	
+	public static void compareTextStart(WebDriver driver, By by, String textStart) {
+		String valorObtenido = getText(driver, by);
+		assertThat(valorObtenido, CoreMatchers.startsWith(textStart));
+	}
+
+	public static void compareTextNotEmpty(WebDriver driver, By by) {
+		String valorObtenido = getText(driver, by);
+		
+		assertThat(valorObtenido, !valorObtenido.isEmpty());
+	}
+
 
 }
