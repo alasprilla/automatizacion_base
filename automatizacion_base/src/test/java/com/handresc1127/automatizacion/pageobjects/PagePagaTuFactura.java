@@ -14,7 +14,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class PagePagaTuFactura extends PageObject {
 
 	/**
-	 * Elmentos de la seccion Movil
+	 * Elementos de la seccion Movil
 	 */
 	public By txtTuLineaTigo = By.id("edit-candidate-number");
 	public By txtCorreoElectronicoM = By.id("edit-email");
@@ -70,6 +70,7 @@ public class PagePagaTuFactura extends PageObject {
 	public By linkTerminosyCondiciones = By.id("tyc_Fijo");
 	public By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
 	public By txtemailpse = By.id("PNEMail");
+	public By lbMsgErrorCorreoH = By.xpath("//*[@id='content_right_forms_unified']/div/span");
 
 	/**
 	 * Elementos comunes Movil / Hogar
@@ -114,6 +115,9 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "labelerrorcorreo":
 			setObjetoToCliked(lbMsgErrorCorreo);
+			break;
+		case "labelerrorcorreoh":
+			setObjetoToCliked(lbMsgErrorCorreoH);
 			break;
 		case "consultar":
 			if (ActionsUtil.existsElement(getDriver(), btnConsultarH)) {
