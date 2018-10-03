@@ -355,7 +355,6 @@ public class ActionsUtil {
 
 	public static void compareTextNotEmpty(WebDriver driver, By by) {
 		String valorObtenido = getText(driver, by);
-		
 		assertThat(valorObtenido, !valorObtenido.isEmpty());
 	}
 
@@ -385,5 +384,10 @@ public class ActionsUtil {
 		}
 	}
 
+	public static void ejecutarScript(WebDriver driver, String script, By by) {
+		WebElement element = driver.findElement(by);
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript(script,element);
+	}
 
 }

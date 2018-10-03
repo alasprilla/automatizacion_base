@@ -18,8 +18,9 @@ public class DefPagaTuFactura {
 
 	// Implementación: "ADP-3_HU-001-ValidacionTC"
 	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
-	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String tc) {
-		pagePagaFact.clic(tc);
+	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String objeto) {
+		pagePagaFact.clic(objeto);
+		pagePagaFact.elementoVisible("Forma Pago Seleccionada");
 	}
 
 	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
@@ -36,6 +37,11 @@ public class DefPagaTuFactura {
 	@When("^doy clic en \"([^\"]*)\"$")
 	public void doy_clic_en(String objeto) {
 		pagePagaFact.clic(objeto);
+	}
+	
+	@When("^doy clic forzado en \"([^\"]*)\"$")
+	public void doy_clic_forzado_en(String objeto) {
+		pagePagaFact.hardClic(objeto);
 	}
 
 	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
@@ -80,7 +86,6 @@ public class DefPagaTuFactura {
 	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
 	}
-
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {

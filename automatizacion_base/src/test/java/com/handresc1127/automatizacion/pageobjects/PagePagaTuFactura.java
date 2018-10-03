@@ -33,6 +33,7 @@ public class PagePagaTuFactura extends PageObject {
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
 
 	By txtCVV = By.id("edit-cvc");
+	By txtNumeroCuotas = By.id("edit-cardnumber-quota");
 	By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
 	By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
 	By txtNombre = By.id("edit-ccname");
@@ -40,6 +41,8 @@ public class PagePagaTuFactura extends PageObject {
 	By txtNumerodedocumento = By.id("edit-buyer-document");
 	By btnAutorizarTc = By.xpath("//*[@id='edit-authorized']/div/div/label[1]");
 	By btnPagar = By.id("edit-submit");
+	By lbMsgErrorTC= By.xpath("//*[@id='image-credit_card']//*[contains(@class,'error')]");
+
 	/**
 	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
 	 */
@@ -89,6 +92,8 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By btnPrimerPagoTotal = By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
 	By lbTituloResumenTransaccion = By.id("title-detail");
+	By lbFormaPagoSeleccionada = By.xpath("//*[@class='tigoune-card actived']");
+	
 	By lbNumeroDelProducto = By.id("product-number");
 	By lbFechaLimitePago = By.xpath(
 			"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div");
@@ -273,6 +278,15 @@ public class PagePagaTuFactura extends PageObject {
 		case "cancelartc":
 			setObjetoToCliked(btnCancelarTC);
 			break;
+		case "msgerrortc":
+			setObjetoToCliked(lbMsgErrorTC);
+			break;
+		case "formapagoseleccionada":
+			setObjetoToCliked(lbFormaPagoSeleccionada);
+			break;
+		case "numerocuotas":
+			setObjetoToCliked(txtNumeroCuotas);
+			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
@@ -407,6 +421,11 @@ public class PagePagaTuFactura extends PageObject {
 	public void compararTextoNoVacio(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.compareTextNotEmpty(getDriver(), getObjetoToCliked());
+	}
+	
+	public void hardClic(String objeto) {
+		sharedObjet(objeto);
+		ActionsUtil.ejecutarScript(getDriver(), "arguments[0].click();",getObjetoToCliked());
 	}
 
 }
