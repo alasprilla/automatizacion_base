@@ -22,7 +22,7 @@ Feature: HU009 CC válida en campo número de documento
     And ingreso "12345678901234" en el campo "número de documento"
     Then mostrará en el valor del campo "número de documento" el texto "1234567890123"
 
-  Scenario Outline: Ingreso de documentos de <digitos> dígitos
+  Scenario Outline: Ingreso de documentos de N dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"

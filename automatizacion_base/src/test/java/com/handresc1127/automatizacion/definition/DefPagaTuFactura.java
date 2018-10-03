@@ -152,15 +152,5 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararTextoNoVacio(objeto);
 	}
 		
-	// Implementación: " ADP-36-Prueba_Adherencia_Pago"
-	@Then("^llevará al detalle de la transacción$")
-	public void llevará_al_detalle_de_la_transacción()  {
-		pagePagaFact.presionBotonConfirmar();
-	}
-	
-	@Then("^Mostrará el \"([^\"]*)\" de la transaccion$")
-	public void mostrará_el_de_la_transaccion(String objeto)  {
-		pagePagaFact.clic(objeto);
-	}
 
 }

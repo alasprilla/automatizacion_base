@@ -60,6 +60,11 @@ public class PagePagaTuFactura extends PageObject {
 	By txtProcessDate = By.id("txtBankProcessDate");
 	By txtauthorizaID = By.id("txtAuthorizationID");
 	By btnReturn = By.id("btnReturnToPPE");
+	
+	By btnCancelarTC = By.id("edit-cancel");
+	By btnCancelarPSE= By.id("edit-cancel--2");
+	By btnCancelarNequi= By.id("tigoune-nequi-button-cancel");
+	
 
 	/**
 	 * Elementos de la seccion Hogar
@@ -259,6 +264,15 @@ public class PagePagaTuFactura extends PageObject {
 		case "valorapagar":
 			setObjetoToCliked(lbValorPagar);
 			break;
+		case "cancelarnequi":
+			setObjetoToCliked(btnCancelarNequi);
+			break;
+		case "cancelarpse":
+			setObjetoToCliked(btnCancelarPSE);
+			break;
+		case "cancelartc":
+			setObjetoToCliked(btnCancelarTC);
+			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
@@ -356,10 +370,10 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
 
-	//Esta función se debe de suprimir, ya hay otra que hace lo mismo y parámetrizada clic
-	public void presionBotonConfirmar() {
-		ActionsUtil.clic(getDriver(), btnConsultarM);
-	}
+//	//Esta función se debe de suprimir, ya hay otra que hace lo mismo y parámetrizada clic
+//	public void presionBotonConfirmar() {
+//		ActionsUtil.clic(getDriver(), btnConsultarM);
+//	}
 
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);

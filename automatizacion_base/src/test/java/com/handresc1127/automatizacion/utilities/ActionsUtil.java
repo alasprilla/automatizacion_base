@@ -21,9 +21,6 @@ public class ActionsUtil {
 
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
-	 * Comentario adicional Pull Request WebElement parent =
-	 * myElement.findElement(By.xpath("..")); WebElement childs =
-	 * myElement.findElement(By.xpath('.//*'));
 	 */
 
 	public static String globalAux;
@@ -80,6 +77,66 @@ public class ActionsUtil {
 		}
 	}
 
+	public static void goToWebSide(WebDriver driver, String text) {
+		String currentURL = driver.getCurrentUrl();
+		if (!text.isEmpty() && !text.equals(currentURL)) {
+			driver.navigate().to(text);
+		}
+	}
+
+	public static void presionarTecla(WebDriver driver, By by, String tecla) {
+
+		WebElement element = driver.findElement(by);
+
+		switch (ActionsUtil.textoMinusculasSinEspacios(tecla)) {
+		case "f5":
+			element.sendKeys(Keys.F5);
+			break;
+		case "backspace":
+			element.sendKeys(Keys.BACK_SPACE);
+			break;
+		case "inicio":
+			element.sendKeys(Keys.HOME);
+			break;
+		case "suprimir":
+			element.sendKeys(Keys.DELETE);
+			break;
+		case "flechaizquierda":
+			element.sendKeys(Keys.ARROW_LEFT);
+			break;
+		case "flechaderecha":
+			element.sendKeys(Keys.ARROW_RIGHT);
+			break;
+		case "tab":
+			element.sendKeys(Keys.TAB);
+			break;
+		}
+	}
+
+	public static boolean existsElement(WebDriver driver, By objeto) {
+		try {
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+			WebElement element = driver.findElement(objeto);
+			driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
+			if (element.isDisplayed())
+				return true;
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+		return false;
+	}
+
+	public static String textoMinusculasSinEspacios(String texto) {
+		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
+		String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
+		for (int i = 0; i < original.length(); i++) {
+			texto = texto.replace(original.charAt(i), ascii.charAt(i));
+		}
+		texto = texto.replaceAll("\t|\n| ", "");
+		texto = texto.toLowerCase();
+		return texto;
+	}
+
 	public static void setTextField(WebDriver driver, By by, String text) {
 		if (!text.isEmpty()) {
 			highlightElement(driver, by);
@@ -127,74 +184,6 @@ public class ActionsUtil {
 			} catch (Exception e) {
 			}
 		}
-	}
-
-	public static void clicParent(WebDriver driver, By by) {
-		WebElement element = driver.findElement(by);
-		try {
-			element.findElement(By.xpath("..")).click();
-			element.findElement(By.xpath("../..")).click();
-		} catch (Exception e) {
-			e.getMessage();
-		}
-	}
-
-	public static void goToWebSide(WebDriver driver, String text) {
-		String currentURL = driver.getCurrentUrl();
-		if (!text.isEmpty() && !text.equals(currentURL)) {
-			driver.navigate().to(text);
-		}
-	}
-
-	public static void clic(WebDriver driver, By by) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		element.click();
-	}
-
-	public static void selectText(WebDriver driver, By by, String option) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		new Select(element).selectByVisibleText(option);
-	}
-
-	public static void selectIndex(WebDriver driver, By by, int indexOption) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		new Select(element).selectByIndex(indexOption);
-	}
-
-	public static void selectContains(WebDriver driver, By by, String valueContains) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		String valueComboBox = element.getText();
-		assertThat(valueComboBox, CoreMatchers.containsString(valueContains));
-		String values[] = valueComboBox.split("\n");
-		int index = 0;
-		for (int i = 0; i < values.length; i++) {
-			if (values[i].contains(valueContains)) {
-				index = i;
-				break;
-			}
-		}
-
-		Select select = new Select(element);
-		select.selectByIndex(index);
-		WebElement option = select.getFirstSelectedOption();
-		String valorActual = option.getText();
-		if(!valorActual.contains(valueContains)) {
-			select = new Select(element);
-			select.selectByIndex(index+1);
-			option = select.getFirstSelectedOption();
-			valorActual = option.getText();
-		}
-		assertThat(valorActual, CoreMatchers.containsString(valueContains));
-	}
-
-	public static void selectValue(WebDriver driver, By by, String valueOption) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		new Select(element).selectByValue(valueOption);
 	}
 
 	public static String[][] getTable(WebDriver driver, By by) {
@@ -270,6 +259,114 @@ public class ActionsUtil {
 		return tabla_return;
 	}
 	
+	public static String getText(WebDriver driver, By by) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		return element.getText();
+	}
+
+	public static String getTextAttribute(WebDriver driver, By by) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		return element.getAttribute("value");
+	}
+
+	public static String getAttribute(WebDriver driver, By by, String atributo) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		String retorno = element.getAttribute(atributo);
+		if (retorno == null)
+			retorno = "";
+		if (retorno.isEmpty())
+			retorno = element.getCssValue(atributo);
+		return retorno;
+	}
+	
+	public static void clicParent(WebDriver driver, By by) {
+		WebElement element = driver.findElement(by);
+		try {
+			element.findElement(By.xpath("..")).click();
+			element.findElement(By.xpath("../..")).click();
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+
+	public static void clic(WebDriver driver, By by) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		element.click();
+	}
+
+	public static void selectText(WebDriver driver, By by, String option) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		new Select(element).selectByVisibleText(option);
+	}
+
+	public static void selectIndex(WebDriver driver, By by, int indexOption) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		new Select(element).selectByIndex(indexOption);
+	}
+
+	public static void selectContains(WebDriver driver, By by, String valueContains) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		String valueComboBox = element.getText();
+		assertThat(valueComboBox, CoreMatchers.containsString(valueContains));
+		String values[] = valueComboBox.split("\n");
+		int index = 0;
+		for (int i = 0; i < values.length; i++) {
+			if (values[i].contains(valueContains)) {
+				index = i;
+				break;
+			}
+		}
+
+		Select select = new Select(element);
+		select.selectByIndex(index);
+		WebElement option = select.getFirstSelectedOption();
+		String valorActual = option.getText();
+		if(!valorActual.contains(valueContains)) {
+			select = new Select(element);
+			select.selectByIndex(index+1);
+			option = select.getFirstSelectedOption();
+			valorActual = option.getText();
+		}
+		assertThat(valorActual, CoreMatchers.containsString(valueContains));
+	}
+
+	public static void selectValue(WebDriver driver, By by, String valueOption) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		new Select(element).selectByValue(valueOption);
+	}
+
+	public static void compareText(WebDriver driver, By by, String valorEsperado) {
+		String valorObtenido = getText(driver, by);
+		assertEquals(valorEsperado, valorObtenido);
+	}
+
+	public static void compareTextStart(WebDriver driver, By by, String textStart) {
+		String valorObtenido = getText(driver, by);
+		assertThat(valorObtenido, CoreMatchers.startsWith(textStart));
+	}
+
+	public static void compareTextNotEmpty(WebDriver driver, By by) {
+		String valorObtenido = getText(driver, by);
+		
+		assertThat(valorObtenido, !valorObtenido.isEmpty());
+	}
+
+	public static void compareAtributo(WebDriver driver, By by, String atributo, String valorEsperado) {
+		String valorObtenido = getAttribute(driver, by, atributo);
+		if (valorObtenido.isEmpty())
+			assertEquals(valorEsperado, valorObtenido);
+		else
+			assertThat(valorObtenido, CoreMatchers.containsString(valorEsperado));
+	}
+
 	public static void checkBox(WebDriver driver, By by, boolean checked) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
@@ -286,106 +383,6 @@ public class ActionsUtil {
 				}
 			}
 		}
-	}
-
-	public static String getText(WebDriver driver, By by) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		return element.getText();
-	}
-
-	public static String getTextAttribute(WebDriver driver, By by) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		return element.getAttribute("value");
-	}
-
-	public static void compareText(WebDriver driver, By by, String valorEsperado) {
-		String valorObtenido = getText(driver, by);
-		assertEquals(valorEsperado, valorObtenido);
-	}
-
-	public static String textoMinusculasSinEspacios(String texto) {
-		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
-		String ascii = "aaaeeeiiiooouuunAAAEEEIIIOOOUUUNcC";
-		for (int i = 0; i < original.length(); i++) {
-			texto = texto.replace(original.charAt(i), ascii.charAt(i));
-		}
-		texto = texto.replaceAll("\t|\n| ", "");
-		texto = texto.toLowerCase();
-		return texto;
-	}
-
-	public static String getAttribute(WebDriver driver, By by, String atributo) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		String retorno = element.getAttribute(atributo);
-		if (retorno == null)
-			retorno = "";
-		if (retorno.isEmpty())
-			retorno = element.getCssValue(atributo);
-		return retorno;
-	}
-
-	public static void compareAtributo(WebDriver driver, By by, String atributo, String valorEsperado) {
-		String valorObtenido = getAttribute(driver, by, atributo);
-		if (valorObtenido.isEmpty())
-			assertEquals(valorEsperado, valorObtenido);
-		else
-			assertThat(valorObtenido, CoreMatchers.containsString(valorEsperado));
-	}
-
-	public static void presionarTecla(WebDriver driver, By by, String tecla) {
-
-		WebElement element = driver.findElement(by);
-
-		switch (ActionsUtil.textoMinusculasSinEspacios(tecla)) {
-		case "f5":
-			element.sendKeys(Keys.F5);
-			break;
-		case "backspace":
-			element.sendKeys(Keys.BACK_SPACE);
-			break;
-		case "inicio":
-			element.sendKeys(Keys.HOME);
-			break;
-		case "suprimir":
-			element.sendKeys(Keys.DELETE);
-			break;
-		case "flechaizquierda":
-			element.sendKeys(Keys.ARROW_LEFT);
-			break;
-		case "flechaderecha":
-			element.sendKeys(Keys.ARROW_RIGHT);
-			break;
-		case "tab":
-			element.sendKeys(Keys.TAB);
-			break;
-		}
-	}
-
-	public static boolean existsElement(WebDriver driver, By objeto) {
-		try {
-			driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-			WebElement element = driver.findElement(objeto);
-			driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-			if (element.isDisplayed())
-				return true;
-		} catch (NoSuchElementException e) {
-			return false;
-		}
-		return false;
-	}
-
-	public static void compareTextStart(WebDriver driver, By by, String textStart) {
-		String valorObtenido = getText(driver, by);
-		assertThat(valorObtenido, CoreMatchers.startsWith(textStart));
-	}
-
-	public static void compareTextNotEmpty(WebDriver driver, By by) {
-		String valorObtenido = getText(driver, by);
-		
-		assertThat(valorObtenido, !valorObtenido.isEmpty());
 	}
 
 

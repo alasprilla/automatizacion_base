@@ -10,7 +10,8 @@ Feature: HU001_ValidacionTC
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "3043302450" en el campo "Tu línea Tigo"
     And doy clic en el campo "Correo electrónico" y escribo el email "prueba@prueba.com"
-    Then llevará al formulario donde se selecciona el tipo de pago
+    And doy clic en el botón "Consultar"
+    Then llevará al formulario con el objeto "title-detail"
 
   Scenario Outline: Borrar caracteres con backspace en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
