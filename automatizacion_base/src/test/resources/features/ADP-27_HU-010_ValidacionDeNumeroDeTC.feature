@@ -25,7 +25,7 @@ Feature: HU010 Validación de número de TC
     Then el campo "Msg Error TC" tiene el texto "Debe ingresar una tarjeta de crédito valida."
     And el campo "Msg Error TC" tiene el atributo "color" en el valor "rojo"
 
-  Scenario: Ingreso de número de más de 20 dígitos
+  Scenario: Ingreso de número de más de 19 dígitos
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso "123456789012345678901234" en el campo "Número de tarjeta"
-    Then mostrará en el valor del campo "Número de tarjeta" el texto "12345678901234567890"
+    Then mostrará en el valor del campo "Número de tarjeta" el texto "1234567890123456789"
