@@ -32,9 +32,9 @@ Feature: HU012_ValidacionCVV
 
     Examples: 
       | Tipos de Tarjeta | tarjeta            | numero | resultado |
-      | "Visa"           | "4357223863986989" | "3214" | "***"     |
-      | "Mastercard"     | "5511807769895870" | "6547" | "***"     |
-      | "Diners"         | "38454807134064"   | "9375" | "***"     |
+      | "Visa"           | "4357223863986989" | "3214" | "321"     |
+      | "Mastercard"     | "5511807769895870" | "6547" | "654"     |
+      | "Diners"         | "38454807134064"   | "9375" | "937"     |
 
   Scenario Outline: Ingreso de número "CVV" con American Express
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
@@ -44,5 +44,5 @@ Feature: HU012_ValidacionCVV
 
     Examples: 
       | Tipos de Tarjeta  | tarjeta           | numero  | resultado |
-      | "AmericanExpress" | "348902405962190" | "32149" | "****"    |
-      | "AmericanExpress" | "344195017589436" | "65471" | "****"    |
+      | "AmericanExpress" | "348902405962190" | "32149" | "3214"    |
+      | "AmericanExpress" | "344195017589436" | "65471" | "6547"    |
