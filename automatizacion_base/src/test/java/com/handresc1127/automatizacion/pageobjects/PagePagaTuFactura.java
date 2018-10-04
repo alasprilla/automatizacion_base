@@ -47,7 +47,7 @@ public class PagePagaTuFactura extends PageObject {
 	 * Elmentos de la seccion Medio de Pago Tarjeta Débito
 	 */
 
-	By linkDebitoBancarioPSE = By.id("payment-method-type-label-debit-payu");
+	By linkDebitoBancarioPSE = By.xpath("//*[@id='payment-method-type-label-debit-payu' and @class='tigoune-card-header']");
 	By listBanco = By.id("edit-bank");
 	By listTipodepersona = By.id("edit-buyer-type-person");
 	By txtNombresyapellidos = By.id("edit-buyer-name");
