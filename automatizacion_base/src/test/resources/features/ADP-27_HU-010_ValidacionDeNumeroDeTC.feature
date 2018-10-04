@@ -17,17 +17,15 @@ Feature: HU010 Validación de número de TC
     When ingreso "No númerico" en el campo "Número de tarjeta"
     Then el campo "Msg Error TC" tiene el texto "El número de tarjeta solo debe tener números"
     And el campo "Msg Error TC" tiene el atributo "color" en el valor "rojo"
-    
-   Scenario: El campo "Número de tarjeta" de menos de 14 dígitos
+
+  Scenario: El campo "Número de tarjeta" de menos de 14 dígitos
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso "1234567890123" en el campo "Número de tarjeta"
     And doy clic forzado en "CVV"
     Then el campo "Msg Error TC" tiene el texto "Debe ingresar una tarjeta de crédito valida."
     And el campo "Msg Error TC" tiene el atributo "color" en el valor "rojo"
 
-#Scenario: Ingreso de número de más de 19 dígitos
-#Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
-#When doy clic en el campo "Número de tarjeta"
-#And escribo un número que tiene más de 19 dígitos
-#Then mostrará hasta el 19° dígito
-#
+  Scenario: Ingreso de número de más de 20 dígitos
+    Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
+    When ingreso "123456789012345678901234" en el campo "Número de tarjeta"
+    Then mostrará en el valor del campo "Número de tarjeta" el texto "12345678901234567890"
