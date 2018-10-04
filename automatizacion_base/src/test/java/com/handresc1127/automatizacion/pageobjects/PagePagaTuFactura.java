@@ -31,7 +31,7 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
-
+    By IcoTarjeta = By.xpath("//*[@id=\'ico_card\']");
 	By txtCVV = By.id("edit-cvc");
 	By txtNumeroCuotas = By.id("edit-cardnumber-quota");
 	By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
@@ -225,6 +225,9 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "return":
 			setObjetoToCliked(btnReturn);
+			break;
+		case "iconotarjeta":
+			setObjetoToCliked(IcoTarjeta);
 			break;
 		case "cvv":
 			setObjetoToCliked(txtCVV);
