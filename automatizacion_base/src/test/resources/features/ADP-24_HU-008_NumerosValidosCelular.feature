@@ -34,7 +34,6 @@ Feature: HU008 Validación número Celular
     Examples: 
       | msisdn       | email                 |
       | "3006759101" | "prueba@prueba.com"   |
-      | "3014422427" | "ejemplo@ejemplo.com" |
       | "3014769996" | "ejemplo@pruebas.com" |
 
   @CasoFeliz

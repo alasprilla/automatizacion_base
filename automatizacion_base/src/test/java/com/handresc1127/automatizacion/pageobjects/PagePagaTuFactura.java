@@ -23,8 +23,8 @@ public class PagePagaTuFactura extends PageObject {
 	By btnConsultarM = By.id("edit-consult");
 	By txtMsisdn = By.id("edit-candidate-number");
 	By txtCorreo = By.id("edit-email");
-	By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
-	By lbMsgError = By.id("alert_main");
+	//By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
+	By lbMsgError = By.xpath("//*[@id='alert_main' and @style='display: block;']");
 
 	/**
 	 * Elmentos de la seccion Medio de Pago Tarjeta Crédito
