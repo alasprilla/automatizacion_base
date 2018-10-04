@@ -20,7 +20,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		//"src/test/resources/features/ADP-23_HU-007_NumerosNoValidosCelular.feature",
 		//"src/test/resources/features/ADP-24_HU-008_NumerosValidosCelular.feature",
 		//"src/test/resources/features/ADP-26_HU-009_ValidacionEnCampoNumeroDocumento.feature",
-		"src/test/resources/features/ADP-29_HU-012-ValidacionCVV.feature",
+		  "src/test/resources/features/ADP-28-HU-011_IconoEnTC.feature",	
+		//"src/test/resources/features/ADP-29_HU-012-ValidacionCVV.feature",
 		//"src/test/resources/features/ADP-31_HU-013_ValidacionEmailHogar.feature",
 		
 		},
