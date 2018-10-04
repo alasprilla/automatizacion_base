@@ -78,6 +78,7 @@ public class PagePagaTuFactura extends PageObject {
 	By linkTerminosyCondiciones = By.id("tyc_Fijo");
 	By listFacturasPendientes = By.xpath("//*[@id='content_list_invoices']");
 	By txtemailpse = By.id("PNEMail");
+	By lbMsgErrorCorreoH = By.xpath("//*[@id=\'content_right_forms_unified\']/div/span");
 
 	/**
 	 * Elementos comunes Movil / Hogar
@@ -137,6 +138,9 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "labelerrorcorreo":
 			setObjetoToCliked(lbMsgErrorCorreo);
+			break;
+		case "labelerrorcorreoh":
+			setObjetoToCliked(lbMsgErrorCorreoH);
 			break;
 		case "consultar":
 			if (ActionsUtil.existsElement(getDriver(), btnConsultarH)) {
