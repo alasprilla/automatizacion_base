@@ -6,6 +6,10 @@ import com.handresc1127.automatizacion.utilities.ActionsUtil;
 
 public class BussinesUtil {
 
+	private BussinesUtil() {
+		throw new IllegalStateException("Utility class");
+	}
+
 	public static void validateMSISDNIni(String valorInicial, String valorFinal) {
 
 		String auxInicial = "";

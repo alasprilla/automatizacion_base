@@ -63,15 +63,13 @@ public class DefPagaTuFactura {
 
 	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
 	public void el_botón_esta(String objeto, String estaDeshabilitado) {
-		String isDisable = "false";
-		String isEnabled = "false";
+		boolean isDisable = false, isEnabled = false;
 		if (estaDeshabilitado.equals("deshabilitado")) {
-			isDisable = "true";
-			pagePagaFact.compararAtributo(objeto, "disabled", isDisable);
-		
+			isDisable = true;
+			pagePagaFact.compararAtributo(objeto, "disabled", String.valueOf(isDisable) );
 		}else if (estaDeshabilitado.equals("habilitado")){
-			isEnabled = "true";
-			pagePagaFact.compararAtributo(objeto, "enabled", isEnabled);	
+			isEnabled = true;
+			pagePagaFact.compararAtributo(objeto, "enabled",String.valueOf(isEnabled) );	
 		}else {
 			//Sí entra acá siempre fallará
 			pagePagaFact.compararTxt(objeto, estaDeshabilitado);
@@ -108,9 +106,10 @@ public class DefPagaTuFactura {
 	@Then("^mostrará el \"([^\"]*)\"$")
 	public void mostrará_el(String texto) {
 		if (texto.contains("no tiene")) {
-			pagePagaFact.compararTxt("label facturas", texto);
-			pagePagaFact.compararAtributo("label facturas", "color", "rgba(255, 255, 255, 1)");
-			pagePagaFact.compararAtributo("label facturas", "background-color", "rgba(0, 200, 255, 1)");
+			final String objeto="label facturas";
+			pagePagaFact.compararTxt(objeto, texto);
+			pagePagaFact.compararAtributo(objeto, "color", "rgba(255, 255, 255, 1)");
+			pagePagaFact.compararAtributo(objeto, "background-color", "rgba(0, 200, 255, 1)");
 		} else {
 			pagePagaFact.tieneHijos("list facturas");
 		}

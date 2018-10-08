@@ -23,7 +23,7 @@ public class ActionsUtil {
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 */
 
-	//static String globalAux;
+	// static String globalAux;
 	static PropertiesLoader properties = PropertiesLoader.getInstance();
 
 	private static final long TIMEOUTS = (properties.getProperty("webdriver.timeouts.implicitlywait")) != null
@@ -188,57 +188,55 @@ public class ActionsUtil {
 
 	public static String[][] getTable(WebDriver driver, By by) {
 		highlightElement(driver, by);
-		WebElement table_element = driver.findElement(by);
-		List<WebElement> tr_collection = table_element.findElements(By.tagName("tr"));
+		WebElement tableElement = driver.findElement(by);
+		List<WebElement> trCollection = tableElement.findElements(By.tagName("tr"));
 		String tabla[][] = new String[999][999];
-		int row_num, col_num, col_max = 0;
-		row_num = 0;
+		int rowNum, colNum, colMax = 0;
+		rowNum = 0;
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-		for (WebElement trElement : tr_collection) {
-			List<WebElement> td_collection = trElement.findElements(By.tagName("td"));
-			if (td_collection.size() == 0) {
-				td_collection = trElement.findElements(By.tagName("th"));
+		for (WebElement trElement : trCollection) {
+			List<WebElement> tdCollection = trElement.findElements(By.tagName("td"));
+			if (tdCollection.size() == 0) {
+				tdCollection = trElement.findElements(By.tagName("th"));
 			}
-			if (td_collection.size() > col_max)
-				col_max = td_collection.size();
-			col_num = 0;
-			for (WebElement tdElement : td_collection) {
-				tabla[row_num][col_num] = tdElement.getText();
-				col_num++;
+			if (tdCollection.size() > colMax)
+				colMax = tdCollection.size();
+			colNum = 0;
+			for (WebElement tdElement : tdCollection) {
+				tabla[rowNum][colNum] = tdElement.getText();
+				colNum++;
 			}
-			row_num++;
+			rowNum++;
 		}
-		// assertThat(row_num, greaterThan(0));
-		// assertThat(col_max, greaterThan(0));
-		assertTrue(row_num > 0);
-		assertTrue(col_max > 0);
-		String tabla_return[][] = new String[row_num][col_max];
-		for (int i = 0; i < row_num; i++) {
-			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
+		assertTrue(rowNum > 0);
+		assertTrue(colMax > 0);
+		String tablaReturn[][] = new String[rowNum][colMax];
+		for (int i = 0; i < rowNum; i++) {
+			System.arraycopy(tabla[i], 0, tablaReturn[i], 0, colMax);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		return tabla_return;
+		return tablaReturn;
 	}
 
 	public static String[][] getTableDiv(WebDriver driver, By by) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-		List<WebElement> child_collection = element.findElements(By.xpath("./*"));
+		List<WebElement> childCollection = element.findElements(By.xpath("./*"));
 		String tabla[][] = new String[999][999];
-		int row_num, col_num, col_max = 0;
-		row_num = 0;
+		int rowNum, colNum, colMax = 0;
+		rowNum = 0;
 		boolean containInfo = false;
-		for (WebElement childElement : child_collection) {
-			List<WebElement> grandChild_collection = childElement.findElements(By.xpath("./*"));
-			if (grandChild_collection.size() > col_max)
-				col_max = grandChild_collection.size();
-			col_num = 0;
+		for (WebElement childElement : childCollection) {
+			List<WebElement> grandChildCollection = childElement.findElements(By.xpath("./*"));
+			if (grandChildCollection.size() > colMax)
+				colMax = grandChildCollection.size();
+			colNum = 0;
 			containInfo = false;
-			for (WebElement tdElement : grandChild_collection) {
+			for (WebElement tdElement : grandChildCollection) {
 				String aux = tdElement.getText();
-				tabla[row_num][col_num] = aux;
-				col_num++;
+				tabla[rowNum][colNum] = aux;
+				colNum++;
 				if (aux != null) {
 					if (!aux.isEmpty()) {
 						containInfo = true;
@@ -246,19 +244,19 @@ public class ActionsUtil {
 				}
 			}
 			if (containInfo) {
-				row_num++;
+				rowNum++;
 			}
 		}
-		assertTrue(row_num > 0);
-		assertTrue(col_max > 0);
-		String tabla_return[][] = new String[row_num][col_max];
-		for (int i = 0; i < row_num; i++) {
-			System.arraycopy(tabla[i], 0, tabla_return[i], 0, col_max);
+		assertTrue(rowNum > 0);
+		assertTrue(colMax > 0);
+		String tablaReturn[][] = new String[rowNum][colMax];
+		for (int i = 0; i < rowNum; i++) {
+			System.arraycopy(tabla[i], 0, tablaReturn[i], 0, colMax);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		return tabla_return;
+		return tablaReturn;
 	}
-	
+
 	public static String getText(WebDriver driver, By by) {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
@@ -281,7 +279,7 @@ public class ActionsUtil {
 			retorno = element.getCssValue(atributo);
 		return retorno;
 	}
-	
+
 	public static void clicParent(WebDriver driver, By by) {
 		WebElement element = driver.findElement(by);
 		try {
@@ -328,9 +326,9 @@ public class ActionsUtil {
 		select.selectByIndex(index);
 		WebElement option = select.getFirstSelectedOption();
 		String valorActual = option.getText();
-		if(!valorActual.contains(valueContains)) {
+		if (!valorActual.contains(valueContains)) {
 			select = new Select(element);
-			select.selectByIndex(index+1);
+			select.selectByIndex(index + 1);
 			option = select.getFirstSelectedOption();
 			valorActual = option.getText();
 		}
@@ -386,28 +384,38 @@ public class ActionsUtil {
 
 	public static void ejecutarScript(WebDriver driver, String script, By by) {
 		WebElement element = driver.findElement(by);
-		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript(script,element);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse.executeScript(script, element);
 	}
 
 	public static void waitForXElements(WebDriver driver, By by, String condicion, int cantidad) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-		boolean brakeLoop=false;
+		boolean brakeLoop = false;
 		for (int second = 0; second <= 60; second++) {
 			try {
 				switch (condicion) {
-				case ">":if (driver.findElements(by).size()>cantidad) brakeLoop=true;
+				case ">":
+					if (driver.findElements(by).size() > cantidad)
+						brakeLoop = true;
 					break;
-				case ">=":if (driver.findElements(by).size()>=cantidad) brakeLoop=true;
+				case ">=":
+					if (driver.findElements(by).size() >= cantidad)
+						brakeLoop = true;
 					break;
-				case "<":if (driver.findElements(by).size()<cantidad) brakeLoop=true;
+				case "<":
+					if (driver.findElements(by).size() < cantidad)
+						brakeLoop = true;
 					break;
-				case "<=":if (driver.findElements(by).size()<=cantidad) brakeLoop=true;
+				case "<=":
+					if (driver.findElements(by).size() <= cantidad)
+						brakeLoop = true;
 					break;
-				case "==":if (driver.findElements(by).size()==cantidad) brakeLoop=true;
+				case "==":
+					if (driver.findElements(by).size() == cantidad)
+						brakeLoop = true;
 					break;
 				default:
-					brakeLoop=true;
+					brakeLoop = true;
 					break;
 				}
 			} catch (Exception e) {
@@ -416,7 +424,8 @@ public class ActionsUtil {
 				Thread.sleep(100);
 			} catch (Exception ex) {
 			}
-			if(brakeLoop) break;
+			if (brakeLoop)
+				break;
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 	}

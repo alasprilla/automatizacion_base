@@ -395,11 +395,6 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
 
-//	//Esta función se debe de suprimir, ya hay otra que hace lo mismo y parámetrizada clic
-//	public void presionBotonConfirmar() {
-//		ActionsUtil.clic(getDriver(), btnConsultarM);
-//	}
-
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
