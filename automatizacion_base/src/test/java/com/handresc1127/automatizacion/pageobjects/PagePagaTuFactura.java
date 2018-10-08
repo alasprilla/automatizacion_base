@@ -31,11 +31,11 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By linkTarjetaCredito = By.id("payment-method-type-label-credit-payu");
 	By txtNumerodetarjeta = By.id("edit-cardnumber");
-    By IcoTarjeta = By.xpath("//*[@id=\'ico_card\']");
+    By icoTarjeta = By.xpath("//*[@id=\'ico_card\']");
 	By txtCVV = By.id("edit-cvc");
 	By txtNumeroCuotas = By.id("edit-cardnumber-quota");
-	By listFechaVencimiento_MM = By.id("edit-buyer-card-month-expiration");
-	By listFechaVencimiento_AA = By.id("edit-buyer-card-year-expiration");
+	By listFechaVencimientoMM = By.id("edit-buyer-card-month-expiration");
+	By listFechaVencimientoAA = By.id("edit-buyer-card-year-expiration");
 	By txtNombre = By.id("edit-ccname");
 	By listTipo = By.id("edit-buyer-document-type");
 	By txtNumerodedocumento = By.id("edit-buyer-document");
@@ -228,16 +228,16 @@ public class PagePagaTuFactura extends PageObject {
 			setObjetoToCliked(btnReturn);
 			break;
 		case "iconotarjeta":
-			setObjetoToCliked(IcoTarjeta);
+			setObjetoToCliked(icoTarjeta);
 			break;
 		case "cvv":
 			setObjetoToCliked(txtCVV);
 			break;
 		case "mm":
-			setObjetoToCliked(listFechaVencimiento_MM);
+			setObjetoToCliked(listFechaVencimientoMM);
 			break;
 		case "aa":
-			setObjetoToCliked(listFechaVencimiento_AA);
+			setObjetoToCliked(listFechaVencimientoAA);
 			break;
 		case "nombre":
 			setObjetoToCliked(txtNombre);
