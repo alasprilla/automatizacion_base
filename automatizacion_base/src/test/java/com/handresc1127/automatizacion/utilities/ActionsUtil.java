@@ -23,8 +23,8 @@ public class ActionsUtil {
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 */
 
-	public static String globalAux;
-	public static PropertiesLoader properties = PropertiesLoader.getInstance();
+	//static String globalAux;
+	static PropertiesLoader properties = PropertiesLoader.getInstance();
 
 	private static final long TIMEOUTS = (properties.getProperty("webdriver.timeouts.implicitlywait")) != null
 			? Long.parseLong(properties.getProperty("webdriver.timeouts.implicitlywait"))
