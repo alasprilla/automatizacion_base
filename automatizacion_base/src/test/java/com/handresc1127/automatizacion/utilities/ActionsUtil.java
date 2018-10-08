@@ -19,11 +19,14 @@ import org.openqa.selenium.support.ui.Select;
 
 public class ActionsUtil {
 
+	private ActionsUtil() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 */
 
-	// static String globalAux;
 	static PropertiesLoader properties = PropertiesLoader.getInstance();
 
 	private static final long TIMEOUTS = (properties.getProperty("webdriver.timeouts.implicitlywait")) != null
@@ -40,12 +43,10 @@ public class ActionsUtil {
 			}
 			try {
 				Thread.sleep(100);
-			} catch (Exception ex) {
-			}
+			}catch (Exception e) {}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		driver.findElement(by).isDisplayed();
-		// assertTrue(driver.findElements(by).size() > 0);
 
 		WebElement element = driver.findElement(by);
 
@@ -55,7 +56,7 @@ public class ActionsUtil {
 		if (originalStyle.contains("border:")) {
 			int indexInicio = 7 + originalStyle.indexOf("border:");
 			String aux = originalStyle.substring(indexInicio);
-			int indexFin = indexInicio + aux.indexOf(";");
+			int indexFin = indexInicio + aux.indexOf(';');
 			String strInicial = originalStyle.substring(0, originalStyle.indexOf("border:"));
 			String strMedio = "border: 3px solid green";
 			String strFinal = originalStyle.substring(indexFin);
@@ -237,10 +238,8 @@ public class ActionsUtil {
 				String aux = tdElement.getText();
 				tabla[rowNum][colNum] = aux;
 				colNum++;
-				if (aux != null) {
-					if (!aux.isEmpty()) {
+				if(aux != null && !aux.isEmpty()) {
 						containInfo = true;
-					}
 				}
 			}
 			if (containInfo) {
@@ -368,16 +367,12 @@ public class ActionsUtil {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		if (checked) {
-			if (!element.isSelected()) {
-				if (element.isEnabled()) {
-					element.click();
-				}
+			if (!element.isSelected() && element.isEnabled()) {
+				element.click();
 			}
 		} else {
-			if (element.isSelected()) {
-				if (element.isEnabled()) {
-					element.click();
-				}
+			if (element.isSelected()&&element.isEnabled()) {
+				element.click();
 			}
 		}
 	}
