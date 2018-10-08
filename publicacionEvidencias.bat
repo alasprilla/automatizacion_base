@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set key="..\\..\\Metis-WebReports.priv"
 cmd /c icacls %key% /c /t /inheritance:d
 cmd /c icacls %key% /c /t /grant %username%:F
