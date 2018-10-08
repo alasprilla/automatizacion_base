@@ -390,4 +390,35 @@ public class ActionsUtil {
 		jse.executeScript(script,element);
 	}
 
+	public static void waitForXElements(WebDriver driver, By by, String condicion, int cantidad) {
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+		boolean brakeLoop=false;
+		for (int second = 0; second <= 60; second++) {
+			try {
+				switch (condicion) {
+				case ">":if (driver.findElements(by).size()>cantidad) brakeLoop=true;
+					break;
+				case ">=":if (driver.findElements(by).size()>=cantidad) brakeLoop=true;
+					break;
+				case "<":if (driver.findElements(by).size()<cantidad) brakeLoop=true;
+					break;
+				case "<=":if (driver.findElements(by).size()<=cantidad) brakeLoop=true;
+					break;
+				case "==":if (driver.findElements(by).size()==cantidad) brakeLoop=true;
+					break;
+				default:
+					brakeLoop=true;
+					break;
+				}
+			} catch (Exception e) {
+			}
+			try {
+				Thread.sleep(100);
+			} catch (Exception ex) {
+			}
+			if(brakeLoop) break;
+		}
+		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
+	}
+
 }

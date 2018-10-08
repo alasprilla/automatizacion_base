@@ -94,6 +94,7 @@ public class PagePagaTuFactura extends PageObject {
 	By btnPrimerPagoTotal = By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
 	By lbTituloResumenTransaccion = By.id("title-detail");
 	By lbFormaPagoSeleccionada = By.xpath("//*[@class='tigoune-card actived']");
+	By lbFormasDePago= By.xpath("//*[@id='payment_method']/div");
 	
 	By lbNumeroDelProducto = By.id("product-number");
 	By lbFechaLimitePago = By.xpath(
@@ -291,6 +292,9 @@ public class PagePagaTuFactura extends PageObject {
 		case "formapagoseleccionada":
 			setObjetoToCliked(lbFormaPagoSeleccionada);
 			break;
+		case "formasdepago":
+			setObjetoToCliked(lbFormasDePago);
+			break;
 		case "numerocuotas":
 			setObjetoToCliked(txtNumeroCuotas);
 			break;
@@ -433,6 +437,11 @@ public class PagePagaTuFactura extends PageObject {
 	public void hardClic(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.ejecutarScript(getDriver(), "arguments[0].click();",getObjetoToCliked());
+	}
+
+	public void esperarElementos(String objeto, String condicion, int cantidad) {
+		sharedObjet(objeto);
+		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
 	}
 
 }
