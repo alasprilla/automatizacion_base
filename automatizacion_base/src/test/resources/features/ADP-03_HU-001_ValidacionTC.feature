@@ -1,5 +1,8 @@
 #Author: Metis
-#Keywords Summary : Número de tarjeta de crédito
+#Keywords Summary : tarjeta, crédito
+#Encoding: utf-8
+#Language: es
+
 @issue:ADP-3
 Feature: HU001_ValidacionTC
   Como Tigoune
