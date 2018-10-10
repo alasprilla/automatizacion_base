@@ -1,7 +1,7 @@
-	#Author: Alexandra Lasprilla Cardona
+#Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-36
-Feature: Prueba de Adherencia Pago Completo
+@issue:ADP-51
+Feature: Pago Completo de Facturas Pendientes
 
 Background: seleccion medio de pago
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
@@ -10,7 +10,7 @@ Background: seleccion medio de pago
     And doy clic en el botón "Consultar"
     Then llevará al formulario con el objeto "title-detail"
 
-    Scenario Outline: Seleccion Tarjeta Debito
+    Scenario Outline: Seleccion Tarjeta Debito para realizar el Pago Completo 
     Given Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
      And selecciono "BANCO UNION COLOMBIANO" en el campo "Banco"
      And selecciono "N" en el campo "Tipo de Persona"
