@@ -25,6 +25,8 @@ public class PagePagaTuFactura extends PageObject {
 	By txtCorreo = By.id("edit-email");
 	//By msgFactura = By.xpath("//*[@id='alert_main']/div/p");
 	By lbMsgError = By.xpath("//*[@id='alert_main' and @style='display: block;']");
+	By lbTituloFacturasMovil = By.id("title-init");
+	
 
 	/**
 	 * Elmentos de la seccion Medio de Pago Tarjeta Crédito
@@ -297,6 +299,9 @@ public class PagePagaTuFactura extends PageObject {
 			break;
 		case "numerocuotas":
 			setObjetoToCliked(txtNumeroCuotas);
+			break;
+		case "titulofacturasmoviles":
+			setObjetoToCliked(lbTituloFacturasMovil);
 			break;
 		default:
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));

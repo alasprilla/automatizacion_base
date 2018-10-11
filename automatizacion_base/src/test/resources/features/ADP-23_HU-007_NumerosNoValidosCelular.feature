@@ -31,8 +31,9 @@ Feature: HU007 Validación número Invalido Celular
   Scenario Outline: Ingreso de números de menos de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
+    And doy clic en "Titulo facturas moviles"
     Then el botón "Consultar" esta "deshabilitado"
-    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es válido"
+    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es válida."
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
 
     Examples: 
