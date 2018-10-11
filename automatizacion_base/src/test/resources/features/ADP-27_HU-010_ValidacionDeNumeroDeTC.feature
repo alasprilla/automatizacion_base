@@ -21,7 +21,7 @@ Feature: HU010 Validación de número de TC
   Scenario: El campo "Número de tarjeta" de menos de 14 dígitos
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso "1234567890123" en el campo "Número de tarjeta"
-    And doy clic forzado en "CVV"
+    And Presiono la tecla "Tab"
     Then el campo "Msg Error TC" tiene el texto "Debe ingresar una tarjeta de crédito valida."
     And el campo "Msg Error TC" tiene el atributo "color" en el valor "rojo"
 
