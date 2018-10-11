@@ -12,9 +12,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<serenity.version>1.9.36</serenity.version>
-		<serenity.maven.version>1.9.36</serenity.maven.version>
-		<serenity.cucumber.version>1.9.8</serenity.cucumber.version>
+		<serenity.version>1.9.45</serenity.version>
+		<serenity.maven.version>1.9.45</serenity.maven.version>
+		<serenity.cucumber.version>1.9.15</serenity.cucumber.version>
 		<tags></tags>
 		<parallel.tests></parallel.tests>
 		<webdriver.base.url></webdriver.base.url>
@@ -82,13 +82,13 @@
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<version>3.6.2</version>
+			<version>3.11.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.6</version>
+			<version>1.7.25</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
