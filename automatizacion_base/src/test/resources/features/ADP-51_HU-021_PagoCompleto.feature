@@ -1,7 +1,7 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
 @issue:ADP-51
-Feature: Pago Completo de Facturas Pendientes
+Feature: HU021 Pago Completo de Facturas Pendientes
 
 Background: seleccion medio de pago
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"

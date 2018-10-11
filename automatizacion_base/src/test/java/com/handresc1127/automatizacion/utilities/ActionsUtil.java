@@ -46,7 +46,7 @@ public class ActionsUtil {
 			}catch (Exception e) {}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		driver.findElement(by).isDisplayed();
+		//driver.findElement(by).isDisplayed();
 
 		WebElement element = driver.findElement(by);
 
