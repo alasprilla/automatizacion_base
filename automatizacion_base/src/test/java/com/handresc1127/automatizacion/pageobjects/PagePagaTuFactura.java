@@ -124,6 +124,29 @@ public class PagePagaTuFactura extends PageObject {
 		this.objetoToAction = objetoToCliked;
 	}
 
+	public enum Objetos {
+		btnHogar,btnMovil,txtNumeroDocumento,
+		txtTuLineaTigo,lbMsgErrorDoc,lbMsgErrorCelular,
+		lbMsgErrorCorreo,lbMsgErrorCorreoH,btnConsultarH,
+		btnConsultarM,lbMsgError,listFacturasPendientes,
+		txtCorreoElectronicoM,txtCorreoElectronicoH,listTipoDocumento,
+		linkTarjetaCredito,txtNumerodetarjeta,linkDebitoBancarioPSE,
+		listBanco,listTipodepersona,txtNombresyapellidos,
+		listTipod,txtNumerodedocumentoD,txtemailpse,
+		btnPagard,btnPagar,btnIralBanco,
+		btnDebugP,txtProcessDate,txtauthorizaID,
+		btnReturn,icoTarjeta,txtCVV,
+		listFechaVencimientoMM,listFechaVencimientoAA,txtNombre,
+		listTipo,txtNumerodedocumento,btnAutorizarTc,
+		btnPrimerPagoTotal,lbTituloResumenTransaccion,lbNumeroDelProducto,
+		lbFechaLimitePago,lbReferentePago,lbNumeroContrato,
+		lbPeriodoFacturacion,lbValorPagar,btnCancelarNequi,
+		btnCancelarPSE,btnCancelarTC,lbMsgErrorTC,
+		lbFormaPagoSeleccionada,lbFormasDePago,txtNumeroCuotas,
+		lbTituloFacturasMovil,
+		
+	}
+	/*
 	public void sharedObjet(String opcion) {
 		switch (ActionsUtil.textoMinusculasSinEspacios(opcion)) {
 		case "hogar":
@@ -307,7 +330,7 @@ public class PagePagaTuFactura extends PageObject {
 			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
 	}
-
+*/
 	public void clic(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
