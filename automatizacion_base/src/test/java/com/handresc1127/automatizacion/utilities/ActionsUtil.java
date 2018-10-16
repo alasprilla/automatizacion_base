@@ -424,5 +424,14 @@ public class ActionsUtil {
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 	}
+	public static void slider(WebDriver driver, By by){
+		  int x=10;
+		    WebElement slider = driver.findElement(by);
+		    int width=slider.getSize().getWidth();
+		    Actions move = new Actions(driver);
+		    move.moveToElement(slider, ((width*x)/100), 0).click();
+		    move.build().perform();
+		    System.out.println("Slider moved");
+		}
 
 }
