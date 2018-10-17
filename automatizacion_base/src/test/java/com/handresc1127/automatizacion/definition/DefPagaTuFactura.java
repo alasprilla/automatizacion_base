@@ -9,6 +9,7 @@ import cucumber.api.java.en.When;
 public class DefPagaTuFactura {
 
 	PagePagaTuFactura pagePagaFact;
+	//PageEcommerce pageecommerce;
 
 	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
@@ -157,5 +158,22 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararTextoNoVacio(objeto);
 	}
 		
+	//PRUEBA INI
+	@Given("^Estoy en la página de inicio de activa tu sim \"([^\"]*)\"$")
+	public void estoy_en_la_página_de_inicio_de_activa_tu_sim (String url) {
+		pagePagaFact.open();
+		pagePagaFact.irPagina(url);
+	}
+
+	@When("^doy clic en \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
+	public void doy_clic_en_y_escribo_el_email(String correoElectronico, String email) {
+		pagePagaFact.validarEscribir(correoElectronico, email);
+	}
+	
+	@Given("^deslizo la flecha \"([^\"]*)\" para seguir con el proceso$")
+	public void deslizo_la_flecha_para_seguir_con_el_proceso(String slider) {
+		pagePagaFact.deslizarBarra(slider);
+	}
+	//PRUEBA FIN
 
 }

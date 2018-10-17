@@ -425,6 +425,7 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 	}
 	public static void slider(WebDriver driver, By by){
+
 		  int x=10;
 		    WebElement slider = driver.findElement(by);
 		    int width=slider.getSize().getWidth();

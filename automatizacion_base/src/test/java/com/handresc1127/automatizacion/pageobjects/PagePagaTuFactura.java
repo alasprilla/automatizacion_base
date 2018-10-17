@@ -76,6 +76,16 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
 	By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
+/*
+	Prueba ***** INI
+	By[][] campos = new By[1][1];
+	
+	By btnMovil = By.xpath(EnumElements.BTNMOVIL.getIdentificadorElemento());
+	By btnHogar = By.xpath(EnumElements.BTNHOGAR.getIdentificadorElemento());
+//	Prueba ***** FIN
+ * */
+
+	
 	By btnConsultarH = By.id("edit-consult--2");
 	By txtCorreoElectronicoH = By.id("edit-email-fijo");
 	By txtNumeroDocumento = By.id("edit-document");
@@ -95,6 +105,9 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By btnPrimerPagoTotal = By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
 	By lbTituloResumenTransaccion = By.id("title-detail");
+	//*****
+	By lbTitulo = By.xpath("//*[@id='block-tigo-theme-page-title']/div/h1");
+	//****
 	By lbFormaPagoSeleccionada = By.xpath("//*[@class='tigoune-card actived']");
 	By lbFormasDePago= By.xpath("//*[@id='payment_method']/div");
 	
@@ -124,213 +137,17 @@ public class PagePagaTuFactura extends PageObject {
 		this.objetoToAction = objetoToCliked;
 	}
 
-	public enum Objetos {
-		btnHogar,btnMovil,txtNumeroDocumento,
-		txtTuLineaTigo,lbMsgErrorDoc,lbMsgErrorCelular,
-		lbMsgErrorCorreo,lbMsgErrorCorreoH,btnConsultarH,
-		btnConsultarM,lbMsgError,listFacturasPendientes,
-		txtCorreoElectronicoM,txtCorreoElectronicoH,listTipoDocumento,
-		linkTarjetaCredito,txtNumerodetarjeta,linkDebitoBancarioPSE,
-		listBanco,listTipodepersona,txtNombresyapellidos,
-		listTipod,txtNumerodedocumentoD,txtemailpse,
-		btnPagard,btnPagar,btnIralBanco,
-		btnDebugP,txtProcessDate,txtauthorizaID,
-		btnReturn,icoTarjeta,txtCVV,
-		listFechaVencimientoMM,listFechaVencimientoAA,txtNombre,
-		listTipo,txtNumerodedocumento,btnAutorizarTc,
-		btnPrimerPagoTotal,lbTituloResumenTransaccion,lbNumeroDelProducto,
-		lbFechaLimitePago,lbReferentePago,lbNumeroContrato,
-		lbPeriodoFacturacion,lbValorPagar,btnCancelarNequi,
-		btnCancelarPSE,btnCancelarTC,lbMsgErrorTC,
-		lbFormaPagoSeleccionada,lbFormasDePago,txtNumeroCuotas,
-		lbTituloFacturasMovil,
-		
-	}
-	/*
+	
+	
 	public void sharedObjet(String opcion) {
-		switch (ActionsUtil.textoMinusculasSinEspacios(opcion)) {
-		case "hogar":
-			setObjetoToCliked(btnHogar);
-			break;
-		case "movil":
-			setObjetoToCliked(btnMovil);
-			break;
-		case "numerodedocumento":
-			setObjetoToCliked(txtNumeroDocumento);
-			break;
-		case "tulineatigo":
-			setObjetoToCliked(txtTuLineaTigo);
-			break;
-		case "labelerrordocumento":
-			setObjetoToCliked(lbMsgErrorDoc);
-			break;
-		case "labelerrorcelular":
-			setObjetoToCliked(lbMsgErrorCelular);
-			break;
-		case "labelerrorcorreo":
-			setObjetoToCliked(lbMsgErrorCorreo);
-			break;
-		case "labelerrorcorreoh":
-			setObjetoToCliked(lbMsgErrorCorreoH);
-			break;
-		case "consultar":
-			if (ActionsUtil.existsElement(getDriver(), btnConsultarH)) {
-				setObjetoToCliked(btnConsultarH);
-			}
-			if (ActionsUtil.existsElement(getDriver(), btnConsultarM)) {
-				setObjetoToCliked(btnConsultarM);
-			}
-			break;
-		case "labelfacturas":
-			setObjetoToCliked(lbMsgError);
-			break;
-		case "listfacturas":
-			setObjetoToCliked(listFacturasPendientes);
-			break;
-		case "correoelectronico":
-			if (ActionsUtil.existsElement(getDriver(), txtCorreoElectronicoM)) {
-				setObjetoToCliked(txtCorreoElectronicoM);
-			}
-			if (ActionsUtil.existsElement(getDriver(), txtCorreoElectronicoH)) {
-				setObjetoToCliked(txtCorreoElectronicoH);
-			}
-			break;
-		case "mensajedeerrormsisdn":
-			setObjetoToCliked(lbMsgErrorCelular);
-			break;
-		case "mensajesinfacturas":
-			setObjetoToCliked(lbMsgError);
-			break;
-		case "tipodedocumento":
-			setObjetoToCliked(listTipoDocumento);
-			break;
-		case "tarjetadecredito":
-			setObjetoToCliked(linkTarjetaCredito);
-			break;
-		case "numerodetarjeta":
-			setObjetoToCliked(txtNumerodetarjeta);
-			break;
-		case "debitobancariopse":
-			setObjetoToCliked(linkDebitoBancarioPSE);
-			break;
-		case "banco":
-			setObjetoToCliked(listBanco);
-			break;
-		case "tipodepersona":
-			setObjetoToCliked(listTipodepersona);
-			break;
-		case "nombresyapellidos":
-			setObjetoToCliked(txtNombresyapellidos);
-			break;
-		case "tipod":
-			setObjetoToCliked(listTipod);
-			break;
-		case "numerodedocumentod":
-			setObjetoToCliked(txtNumerodedocumentoD);
-			break;
-		case "emailpse":
-			setObjetoToCliked(txtemailpse);
-			break;
-		case "pagard":
-			setObjetoToCliked(btnPagard);
-			break;
-		case "pagar":
-			setObjetoToCliked(btnPagar);
-			break;
-		case "iralbanco":
-			setObjetoToCliked(btnIralBanco);
-			break;
-		case "debug":
-			setObjetoToCliked(btnDebugP);
-			break;
-		case "bankprocessdate":
-			setObjetoToCliked(txtProcessDate);
-			break;
-		case "authorizationid":
-			setObjetoToCliked(txtauthorizaID);
-			break;
-		case "return":
-			setObjetoToCliked(btnReturn);
-			break;
-		case "iconotarjeta":
-			setObjetoToCliked(icoTarjeta);
-			break;
-		case "cvv":
-			setObjetoToCliked(txtCVV);
-			break;
-		case "mm":
-			setObjetoToCliked(listFechaVencimientoMM);
-			break;
-		case "aa":
-			setObjetoToCliked(listFechaVencimientoAA);
-			break;
-		case "nombre":
-			setObjetoToCliked(txtNombre);
-			break;
-		case "tipo":
-			setObjetoToCliked(listTipo);
-			break;
-		case "numerodedocumentotc":
-			setObjetoToCliked(txtNumerodedocumento);
-			break;
-		case "autorizoestatarjetaparafuturospagos":
-			setObjetoToCliked(btnAutorizarTc);
-			break;
-		case "primerpagototal":
-			setObjetoToCliked(btnPrimerPagoTotal);
-			break;
-		case "title-detail":
-			setObjetoToCliked(lbTituloResumenTransaccion);
-			break;
-		case "numerodelproducto":
-			setObjetoToCliked(lbNumeroDelProducto);
-			break;
+		
+		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
+		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
+		By byObjeto = x.getObjetoEcommerce(nombreObjeto);
+		setObjetoToCliked(byObjeto);	
 
-		case "fechalimitedepago":
-			setObjetoToCliked(lbFechaLimitePago);
-			break;
-		case "referentedepago":
-			setObjetoToCliked(lbReferentePago);
-			break;
-
-		case "numerodecontrato":
-			setObjetoToCliked(lbNumeroContrato);
-			break;
-		case "periododefacturacion":
-			setObjetoToCliked(lbPeriodoFacturacion);
-			break;	
-		case "valorapagar":
-			setObjetoToCliked(lbValorPagar);
-			break;
-		case "cancelarnequi":
-			setObjetoToCliked(btnCancelarNequi);
-			break;
-		case "cancelarpse":
-			setObjetoToCliked(btnCancelarPSE);
-			break;
-		case "cancelartc":
-			setObjetoToCliked(btnCancelarTC);
-			break;
-		case "msgerrortc":
-			setObjetoToCliked(lbMsgErrorTC);
-			break;
-		case "formapagoseleccionada":
-			setObjetoToCliked(lbFormaPagoSeleccionada);
-			break;
-		case "formasdepago":
-			setObjetoToCliked(lbFormasDePago);
-			break;
-		case "numerocuotas":
-			setObjetoToCliked(txtNumeroCuotas);
-			break;
-		case "titulofacturasmoviles":
-			setObjetoToCliked(lbTituloFacturasMovil);
-			break;
-		default:
-			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
-		}
 	}
-*/
+
 	public void clic(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
@@ -466,5 +283,11 @@ public class PagePagaTuFactura extends PageObject {
 		sharedObjet(objeto);
 		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
 	}
+	
+	//PRUEBA INI
+	public void deslizarBarra(String barra) {
+		ActionsUtil.slider(getDriver(),getObjetoToCliked());
+	}
+	//PRUEBA FIN
 
 }
