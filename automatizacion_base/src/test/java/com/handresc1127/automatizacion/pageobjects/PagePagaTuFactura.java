@@ -84,16 +84,6 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By btnMovil = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p");
 	By btnHogar = By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p");
-/*
-	Prueba ***** INI
-	By[][] campos = new By[1][1];
-	
-	By btnMovil = By.xpath(EnumElements.BTNMOVIL.getIdentificadorElemento());
-	By btnHogar = By.xpath(EnumElements.BTNHOGAR.getIdentificadorElemento());
-//	Prueba ***** FIN
- * */
-
-	
 	By btnConsultarH = By.id("edit-consult--2");
 	By txtCorreoElectronicoH = By.id("edit-email-fijo");
 	By txtNumeroDocumento = By.id("edit-document");
