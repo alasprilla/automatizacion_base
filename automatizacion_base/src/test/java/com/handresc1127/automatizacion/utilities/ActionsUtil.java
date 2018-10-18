@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
@@ -121,7 +120,7 @@ public class ActionsUtil {
 			driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 			if (element.isDisplayed())
 				return true;
-		} catch (NoSuchElementException e) {
+		} catch (Exception e) {
 			return false;
 		}
 		return false;
@@ -423,6 +422,13 @@ public class ActionsUtil {
 				break;
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
+	}
+
+	public static void Slider(WebDriver driver, By by) {
+		highlightElement(driver, by);
+		WebElement element = driver.findElement(by);
+		element.click();
+		/////////casbjagvsjdbvaksd
 	}
 
 }

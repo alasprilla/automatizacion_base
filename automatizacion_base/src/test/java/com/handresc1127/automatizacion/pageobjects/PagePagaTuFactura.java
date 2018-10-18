@@ -303,8 +303,12 @@ public class PagePagaTuFactura extends PageObject {
 		case "titulofacturasmoviles":
 			setObjetoToCliked(lbTituloFacturasMovil);
 			break;
+	
+		case "titlepage-title":
+			setObjetoToCliked(By.id("block-tigo-theme-page-title"));
+			break;
 		default:
-			assertEquals(null, ActionsUtil.textoMinusculasSinEspacios(opcion));
+			assertEquals("El objeto no ha sido mapeado", ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
 	}
 
@@ -442,6 +446,16 @@ public class PagePagaTuFactura extends PageObject {
 	public void esperarElementos(String objeto, String condicion, int cantidad) {
 		sharedObjet(objeto);
 		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
+	}
+
+	public void moverSlider(String objeto) {
+		setObjetoToCliked(By.xpath("//*[@id='tigo-activation-activate-sim']/article/section[2]/div/div[2]"));
+		ActionsUtil.highlightElement(getDriver(),getObjetoToCliked());
+		setObjetoToCliked(By.xpath("//*[@class='unlock slidetounlock']"));
+		ActionsUtil.highlightElement(getDriver(),getObjetoToCliked());
+		ActionsUtil.clic(getDriver(),getObjetoToCliked());
+		ActionsUtil.Slider(getDriver(),getObjetoToCliked());
+		System.out.println("s");
 	}
 
 }

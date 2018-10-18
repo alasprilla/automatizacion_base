@@ -157,5 +157,11 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararTextoNoVacio(objeto);
 	}
 		
+	
+	//Ecommerce
+	@When("^deslizo la flecha \"([^\"]*)\" para seguir con el proceso$")
+	public void deslizo_la_flecha_para_seguir_con_el_proceso(String objeto) {
+		pagePagaFact.moverSlider(objeto);
+	}
 
 }
