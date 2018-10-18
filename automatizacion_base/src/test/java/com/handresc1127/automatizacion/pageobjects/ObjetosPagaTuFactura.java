@@ -5,6 +5,7 @@ import java.util.Hashtable;
 
 import org.openqa.selenium.By;
 
+
 public class ObjetosPagaTuFactura {
 	
 	 
@@ -74,7 +75,11 @@ public class ObjetosPagaTuFactura {
 		objetosPagaTuFactura.put("numerocuotas", By.id("edit-cardnumber-quota"));
 		objetosPagaTuFactura.put("titulofacturasmoviles", By.id("title-init"));
 	 }
-	 public  By getObjetoEcommerce(String NombreObjeto) {
+	 public  By getObjetoPagaTuFactura(String NombreObjeto) {
 		 return objetosPagaTuFactura.get(NombreObjeto);
+	 }
+	 
+	 public  Dictionary<String, By> getDictionary(){
+		 return objetosPagaTuFactura;
 	 }
 }

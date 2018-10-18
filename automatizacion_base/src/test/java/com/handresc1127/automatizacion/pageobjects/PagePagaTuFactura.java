@@ -1,6 +1,6 @@
 package com.handresc1127.automatizacion.pageobjects;
 
-import static org.junit.Assert.assertEquals;
+import java.util.Dictionary;
 
 import org.openqa.selenium.By;
 
@@ -12,6 +12,14 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://transaccionesco-uat.tigocloud.net/servicios/facturas")
 public class PagePagaTuFactura extends PageObject {
+	
+	Dictionary<String, By> objetos;
+	
+	PagePagaTuFactura(){
+		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
+		objetos=x.getDictionary();
+	}
+	
 
 	/**
 	 * Elmentos de la seccion Movil
@@ -143,13 +151,20 @@ public class PagePagaTuFactura extends PageObject {
 		
 		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
 		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
-		By byObjeto = x.getObjetoEcommerce(nombreObjeto);
+		By byObjeto = x.getObjetoPagaTuFactura(nombreObjeto);
 		setObjetoToCliked(byObjeto);	
 
 	}
+	
+	public void sharedObjet(Dictionary<String, By> objetos,String opcion) {
+		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
+		By byObjetos = objetos.get(nombreObjeto);
+		setObjetoToCliked(byObjetos);
+	}
+	
 
 	public void clic(String objeto) {
-		sharedObjet(objeto);
+		sharedObjet(objetos,objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
 
@@ -246,9 +261,10 @@ public class PagePagaTuFactura extends PageObject {
 	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
-		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico"))
+		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicom"))
+				|| ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicoh"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
-				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc"))) {
+				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc")))) {
 			escribirConClick(objeto2, txtIngresado);
 		} else {
 			escribir(objeto2, txtIngresado);
