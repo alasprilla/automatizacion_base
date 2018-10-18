@@ -159,6 +159,7 @@ public class DefPagaTuFactura {
 	}
 		
 	//PRUEBA INI
+	/*
 	@Given("^Estoy en la página de inicio de activa tu sim \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_activa_tu_sim (String url) {
 		pagePagaFact.open();
@@ -175,5 +176,5 @@ public class DefPagaTuFactura {
 		pagePagaFact.deslizarBarra(slider);
 	}
 	//PRUEBA FIN
-
+    */
 }

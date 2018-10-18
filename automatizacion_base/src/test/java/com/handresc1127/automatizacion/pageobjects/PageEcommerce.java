@@ -15,6 +15,7 @@ public class PageEcommerce extends PageObject {
 	By txtCorreoElectronico= By.id("edit-email");
 	By lbBarraDeslizante = By.xpath("//*[@id='tigo-activation-activate-sim]/article/section[2]/div/div[2]/div/div[1]");
 	By lbTitulo = By.xpath("//*[@id='block-tigo-theme-page-title']/div/h1");
+	By listAnoExp = By.xpath("//*[@id='tigo-activation-personal-data']/article/section[3]/div/div[4]/div/div[1]");
 	
 	By objetoToAction;
 	String texto = "";
