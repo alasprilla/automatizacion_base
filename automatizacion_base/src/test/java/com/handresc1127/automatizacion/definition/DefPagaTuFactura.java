@@ -1,6 +1,7 @@
 package com.handresc1127.automatizacion.definition;
 
 import com.handresc1127.automatizacion.pageobjects.PagePagaTuFactura;
+import com.handresc1127.automatizacion.utilities.ActionsUtil;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -159,9 +160,23 @@ public class DefPagaTuFactura {
 		
 	
 	//Ecommerce
-	@When("^deslizo la flecha \"([^\"]*)\" para seguir con el proceso$")
-	public void deslizo_la_flecha_para_seguir_con_el_proceso(String objeto) {
-		pagePagaFact.moverSlider(objeto);
+	@When("^arrastro el elemento \"([^\"]*)\" hasta el elemento \"([^\"]*)\"$")
+	public void arrastro_el_elemento_hasta_el_elemento(String objeto1, String objeto2) {
+		pagePagaFact.ArrastrarYSoltar(objeto1,objeto2);
 	}
+	
+	//Ecommerce
+	@When("^arrastro el elemento \"([^\"]*)\" hasta la posición \"([^\"]*)\"$")
+	public void arrastro_el_elemento_hasta_la_posición(String objeto, String position) {
+		pagePagaFact.ArrastrarYSoltarXY(objeto,position);
+	}
+
+	@When("^Espero (\\d+) segundos$")
+	public void espero_segundos(int sleep) {
+	    // Write code here that turns the phrase above into concrete actions
+	    ActionsUtil.sleepSeconds(sleep);
+	}
+
+
 
 }

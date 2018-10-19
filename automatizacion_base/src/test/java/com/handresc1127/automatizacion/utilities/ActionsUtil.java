@@ -19,9 +19,9 @@ import org.openqa.selenium.support.ui.Select;
 public class ActionsUtil {
 
 	private ActionsUtil() {
-	    throw new IllegalStateException("Utility class");
-	  }
-	
+		throw new IllegalStateException("Utility class");
+	}
+
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 */
@@ -42,10 +42,11 @@ public class ActionsUtil {
 			}
 			try {
 				Thread.sleep(100);
-			}catch (Exception e) {}
+			} catch (Exception e) {
+			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		//driver.findElement(by).isDisplayed();
+		// driver.findElement(by).isDisplayed();
 
 		WebElement element = driver.findElement(by);
 
@@ -237,8 +238,8 @@ public class ActionsUtil {
 				String aux = tdElement.getText();
 				tabla[rowNum][colNum] = aux;
 				colNum++;
-				if(aux != null && !aux.isEmpty()) {
-						containInfo = true;
+				if (aux != null && !aux.isEmpty()) {
+					containInfo = true;
 				}
 			}
 			if (containInfo) {
@@ -370,7 +371,7 @@ public class ActionsUtil {
 				element.click();
 			}
 		} else {
-			if (element.isSelected()&&element.isEnabled()) {
+			if (element.isSelected() && element.isEnabled()) {
 				element.click();
 			}
 		}
@@ -424,11 +425,29 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 	}
 
-	public static void Slider(WebDriver driver, By by) {
-		highlightElement(driver, by);
-		WebElement element = driver.findElement(by);
-		element.click();
-		/////////casbjagvsjdbvaksd
+	public static void dragAndDrop(WebDriver driver, By byDraggable, By byDroppable) {
+		highlightElement(driver, byDraggable);
+		WebElement elementDrag = driver.findElement(byDraggable);
+		highlightElement(driver, byDroppable);
+		WebElement elementDrop = driver.findElement(byDroppable);
+		Actions dragAndDrop = new Actions(driver);
+		dragAndDrop.dragAndDrop(elementDrag, elementDrop).perform();
+	}
+
+	public static void dragAndDrop(WebDriver driver, By byElement, int x, int y) {
+		highlightElement(driver, byElement);
+		WebElement elementDrag = driver.findElement(byElement);
+		Actions dragAndDrop = new Actions(driver);
+		dragAndDrop.dragAndDropBy(elementDrag, x, y).perform();
+	}
+
+	public static void sleepSeconds(int sleep) {
+		for (int i = 0; i < sleep; i++) {
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+			}
+		}
 	}
 
 }

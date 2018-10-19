@@ -307,6 +307,17 @@ public class PagePagaTuFactura extends PageObject {
 		case "titlepage-title":
 			setObjetoToCliked(By.id("block-tigo-theme-page-title"));
 			break;
+		case "draggable":
+			setObjetoToCliked(By.xpath("//*[contains(@class,'draggable')]"));
+			break;
+		case "droppable":
+			setObjetoToCliked(By.xpath("//*[contains(@class,'droppable')]"));
+			break;
+		case "balon":
+			setObjetoToCliked(By.id("ball"));
+			break;
+			
+			
 		default:
 			assertEquals("El objeto no ha sido mapeado", ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
@@ -448,14 +459,21 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
 	}
 
-	public void moverSlider(String objeto) {
-		setObjetoToCliked(By.xpath("//*[@id='tigo-activation-activate-sim']/article/section[2]/div/div[2]"));
-		ActionsUtil.highlightElement(getDriver(),getObjetoToCliked());
-		setObjetoToCliked(By.xpath("//*[@class='unlock slidetounlock']"));
-		ActionsUtil.highlightElement(getDriver(),getObjetoToCliked());
-		ActionsUtil.clic(getDriver(),getObjetoToCliked());
-		ActionsUtil.Slider(getDriver(),getObjetoToCliked());
-		System.out.println("s");
+	public void ArrastrarYSoltar(String objeto1, String objeto2) {
+		sharedObjet(objeto1);
+		By obj1=getObjetoToCliked();
+		sharedObjet(objeto2);
+		By obj2=getObjetoToCliked();
+		ActionsUtil.dragAndDrop(getDriver(),obj1,obj2);
+	}
+
+	public void ArrastrarYSoltarXY(String objeto, String position) {
+		sharedObjet(objeto);
+		By byElement=getObjetoToCliked();
+		String pos[]=ActionsUtil.textoMinusculasSinEspacios(position).split(",");
+		int x= Integer.parseInt(pos[0]);
+		int y= Integer.parseInt(pos[1]);
+		ActionsUtil.dragAndDrop(getDriver(),byElement,x,y);
 	}
 
 }
