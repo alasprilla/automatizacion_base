@@ -29,7 +29,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		},
 
 
-		tags = {"@Ecommerce"}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		tags = {""}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit/allcukes.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {
