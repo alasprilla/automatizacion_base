@@ -11,7 +11,7 @@ Feature: HU004_Llenado_Formulario_TC
 
   Background: seleccion medio de pago
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso "3008914224" en el campo "Tu línea Tigo"
+    When ingreso "3043878232" en el campo "Tu línea Tigo"
     And doy clic en el campo "Correo electrónicoM" y escribo el email "prueba@prueba.com"
     And doy clic en el botón "ConsultarM"
     Then llevará al formulario con el objeto "title-detail"

@@ -14,12 +14,12 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class PagePagaTuFactura extends PageObject {
 	
 	Dictionary<String, By> objetos;
-	
+	/*
 	PagePagaTuFactura(){
 		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
 		objetos=x.getDictionary();
 	}
-	
+	/*
 
 	/**
 	 * Elmentos de la seccion Movil
@@ -122,6 +122,7 @@ public class PagePagaTuFactura extends PageObject {
 
 	By objetoToAction;
 	String texto = "";
+	
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
@@ -151,18 +152,27 @@ public class PagePagaTuFactura extends PageObject {
 		By byObjetos = objetos.get(nombreObjeto);
 		setObjetoToCliked(byObjetos);
 	}
-	
 
-	public void clic(String objeto) {
+
+	public void clic(Dictionary<String, By> objetos,String objeto) {
 		sharedObjet(objetos,objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+	}
+	public void clic(String objeto) {
+		sharedObjet(objeto);
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+	}
+
+	public void tieneHijos(Dictionary<String, By> objetos,String objeto) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
 
 	public void tieneHijos(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
-
+	
 	public void presionarTecla(String tecla) {
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
@@ -211,13 +221,31 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
+	
+	public void escribirConClick(Dictionary<String, By> objetos,String objeto, String texto) {
+		sharedObjet(objetos,objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
+	}
+
+	public void escribir(Dictionary<String, By> objetos,String objeto, String texto) {
+		sharedObjet(objetos,objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+	}
 
 	public void escribir(String objeto, String texto) {
 		sharedObjet(objeto);
 		this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 	}
-
+	
+	public void compararTxt(Dictionary<String, By> objetos,String objeto, String valorEsperado) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
+	}
+	
 	public void compararTxt(String objeto, String valorEsperado) {
 		sharedObjet(objeto);
 		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
@@ -244,15 +272,43 @@ public class PagePagaTuFactura extends PageObject {
 		}
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
+	
+	public void compararAtributo(Dictionary<String, By> objetos,String objeto, String atributo, String valorEsperado) {
+		sharedObjet(objetos,objeto);
+		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
+		case "rojo":
+			valorEsperado = "rgba(240, 30, 70, 1)";
+			break;
+		case "azul":
+			valorEsperado = "rgb(0, 200, 255)";
+			break;
+		case "blanco":
+			valorEsperado = "rgba(255, 255, 255, 1)";
+			break;
+		case "rojo_rgb":
+			valorEsperado = "rgb(240, 30, 70)";
+			break;
+		case "blanco_rgb":
+			valorEsperado = "rgb(255, 255, 255)";
+			break;
+		}
+		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
+	}
 
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
+		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
+	}
+	
+	public void seleccionar(Dictionary<String, By> objetos,String objeto, String item) {
+		sharedObjet(objetos,objeto);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
 		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicom"))
 				|| ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicoh"))
+				//|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumento"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc")))) {
 			escribirConClick(objeto2, txtIngresado);
@@ -260,6 +316,7 @@ public class PagePagaTuFactura extends PageObject {
 			escribir(objeto2, txtIngresado);
 		}
 	}
+	
 
 	public void validarPagRecargada() {
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
@@ -267,6 +324,11 @@ public class PagePagaTuFactura extends PageObject {
 
 	public void elementoVisible(String objeto) {
 		sharedObjet(objeto);
+		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
+	}
+	
+	public void elementoVisible(Dictionary<String, By> objetos,String objeto) {
+		sharedObjet(objetos,objeto);
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
 	}
 
@@ -287,6 +349,11 @@ public class PagePagaTuFactura extends PageObject {
 
 	public void esperarElementos(String objeto, String condicion, int cantidad) {
 		sharedObjet(objeto);
+		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
+	}
+	
+	public void esperarElementos(Dictionary<String, By> objetos,String objeto, String condicion, int cantidad) {
+		sharedObjet(objetos,objeto);
 		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
 	}
 	

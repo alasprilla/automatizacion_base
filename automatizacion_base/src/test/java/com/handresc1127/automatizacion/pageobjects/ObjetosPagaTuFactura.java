@@ -15,7 +15,7 @@ public class ObjetosPagaTuFactura {
 	 public ObjetosPagaTuFactura () {
 		objetosPagaTuFactura.put("hogar",  By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p"));
 		objetosPagaTuFactura.put("movil",  By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p"));
-		objetosPagaTuFactura.put("numerodedocumento", By.id("edit-buyer-document"));
+		objetosPagaTuFactura.put("numerodedocumento", By.id("edit-document"));
 		objetosPagaTuFactura.put("tulineatigo", By.id("edit-candidate-number"));
 		objetosPagaTuFactura.put("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
 		objetosPagaTuFactura.put("labelerrorcelular", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
