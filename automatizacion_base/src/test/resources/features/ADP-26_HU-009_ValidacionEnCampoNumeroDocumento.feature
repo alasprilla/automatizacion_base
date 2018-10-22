@@ -42,7 +42,7 @@ Feature: HU009 CC válida en campo número de documento
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
-    And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
+    And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en el botón "Consultar"
     Then mostrará el <estadoFacturas>
 
@@ -57,7 +57,7 @@ Feature: HU009 CC válida en campo número de documento
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso "552716" en el campo "número de documento"
-    And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
+    And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en el botón "Consultar"
     And doy clic en "primer Pago total"
     Then llevará al formulario con el objeto "title-detail"
