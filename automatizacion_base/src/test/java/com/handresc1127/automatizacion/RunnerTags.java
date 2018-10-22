@@ -24,8 +24,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-28-HU-011_IconoEnTC.feature",	
 		"src/test/resources/features/ADP-29_HU-012_ValidacionCVV.feature",
 		"src/test/resources/features/ADP-31_HU-013_ValidacionEmailHogar.feature",
-		"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature",
-		"src/test/resources/features/ecommerce.feature"
+		"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature"
 		},
 
 
