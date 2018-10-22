@@ -19,9 +19,10 @@ public class PageRecargasPaquetes extends PageObject  {
 	
 //Elemetos de la sección de Recargas	
 	By btnRecarga=By.xpath("//*[@id='tap_selector']/div[2]");
-	By txtTuLineaTigoR=By.xpath("//*[@id='num_lin']");
+	By txtTuLineaTigoR=By.id("recharge-line");
 
 	By objetoToAction;
+	String texto = "";
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
@@ -29,9 +30,9 @@ public class PageRecargasPaquetes extends PageObject  {
 	
 	public void sharedObjet(String opcion) {
 		
-		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
+		ObjetosRecargasPaquetes x = new ObjetosRecargasPaquetes();
 		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
-		By byObjeto = x.getObjetoPagaTuFactura(nombreObjeto);
+		By byObjeto = x.getObjetoRecargasPaquetes(nombreObjeto);
 		setObjetoToCliked(byObjeto);	
 
 	}
@@ -53,6 +54,7 @@ public class PageRecargasPaquetes extends PageObject  {
 		sharedObjet(objetos,objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
+	
 	public void clic(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
@@ -67,4 +69,53 @@ public class PageRecargasPaquetes extends PageObject  {
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
 	}
 
+
+	public void escribirConClick(String objeto, String texto) {
+		sharedObjet(objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
+	}
+	
+	public void escribirConClick(Dictionary<String, By> objetos,String objeto, String texto) {
+		sharedObjet(objetos,objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
+	}
+
+	public void escribir(Dictionary<String, By> objetos,String objeto, String texto) {
+		sharedObjet(objetos,objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+	}
+
+	public void escribir(String objeto, String texto) {
+		sharedObjet(objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+	}
+	
+	public void compararTextoFinal() {
+		String textoInicial = texto;
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
+				.equals("recharge-line")) {
+
+			BussinesUtil.validateMSISDNFin(textoInicial, textoFinal);
+		} 
+	}
+	
+	public void compararTextoInicial() {
+		String textoInicial = texto;
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+
+		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
+				.equals("recharge-line")) {
+
+			BussinesUtil.validateMSISDNIni(textoInicial, textoFinal);
+		} 
+	}
 }

@@ -11,10 +11,10 @@ Dictionary<String, By> objetosRecargasPaquetes = new Hashtable<String, By>();
 	
 	public ObjetosRecargasPaquetes () {
 		objetosRecargasPaquetes.put("recarga",By.xpath("//*[@id='tap_selector']/div[2]"));
-		objetosRecargasPaquetes.put("ingresatulineatigo", By.xpath("//*[@id='num_lin']"));
+		objetosRecargasPaquetes.put("ingresatulineatigo", By.id("recharge-line"));
+		
 	}
-	
-	 public  By getObjetoEcommerce(String NombreObjeto) {
+	 public  By getObjetoRecargasPaquetes(String NombreObjeto) {
 		 return objetosRecargasPaquetes.get(NombreObjeto);
 	 }
 	 

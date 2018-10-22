@@ -31,5 +31,20 @@ public class DefRecargasPaquetes {
 		pageRecargasPaquetes.validarPagRecargada();
 	}
 
+	@When("^Ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
+	public void ingreso_en_el_campo(String txtIngresado, String objeto) {
+		pageRecargasPaquetes.escribir(objeto, txtIngresado);
+	}
+
+
+	@Then("^el último caracter se borra$")
+	public void el_último_caracter_se_borra() {
+		pageRecargasPaquetes.compararTextoFinal();
+	}
+	
+	@Then("^el primer caracter se borra$")
+	public void el_primer_caracter_se_borra() {
+		pageRecargasPaquetes.compararTextoInicial();
+	}
 
 }

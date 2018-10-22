@@ -308,7 +308,6 @@ public class PagePagaTuFactura extends PageObject {
 	public void validarEscribir(String objeto2, String txtIngresado) {
 		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicom"))
 				|| ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicoh"))
-				//|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumento"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc")))) {
 			escribirConClick(objeto2, txtIngresado);
