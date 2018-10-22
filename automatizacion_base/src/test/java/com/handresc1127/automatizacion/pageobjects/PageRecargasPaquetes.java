@@ -19,7 +19,7 @@ public class PageRecargasPaquetes extends PageObject  {
 	
 //Elemetos de la sección de Recargas	
 	By btnRecarga=By.xpath("//*[@id='tap_selector']/div[2]");
-	By txtTuLineaTigoR=By.id("recharge-line");
+	By txtTuLineaTigoR=By.id("num_lin");
 
 	By objetoToAction;
 	String texto = "";

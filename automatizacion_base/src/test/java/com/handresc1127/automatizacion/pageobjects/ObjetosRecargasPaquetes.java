@@ -11,7 +11,8 @@ Dictionary<String, By> objetosRecargasPaquetes = new Hashtable<String, By>();
 	
 	public ObjetosRecargasPaquetes () {
 		objetosRecargasPaquetes.put("recarga",By.xpath("//*[@id='tap_selector']/div[2]"));
-		objetosRecargasPaquetes.put("ingresatulineatigo", By.id("recharge-line"));
+		//objetosRecargasPaquetes.put("ingresatulineatigo", By.id("recharge-line"));
+		objetosRecargasPaquetes.put("ingresatulineatigo", By.id("num_lin"));
 		
 	}
 	 public  By getObjetoRecargasPaquetes(String NombreObjeto) {
