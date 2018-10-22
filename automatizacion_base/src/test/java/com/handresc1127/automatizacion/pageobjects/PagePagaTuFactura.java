@@ -103,9 +103,6 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By btnPrimerPagoTotal = By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
 	By lbTituloResumenTransaccion = By.id("title-detail");
-	//*****
-	By lbTitulo = By.xpath("//*[@id='block-tigo-theme-page-title']/div/h1");
-	//****
 	By lbFormaPagoSeleccionada = By.xpath("//*[@class='tigoune-card actived']");
 	By lbFormasDePago= By.xpath("//*[@id='payment_method']/div");
 	
@@ -145,73 +142,13 @@ public class PagePagaTuFactura extends PageObject {
 		By byObjeto = x.getObjetoPagaTuFactura(nombreObjeto);
 		setObjetoToCliked(byObjeto);	
 
-<<<<<<< HEAD
-		case "fechalimitedepago":
-			setObjetoToCliked(lbFechaLimitePago);
-			break;
-		case "referentedepago":
-			setObjetoToCliked(lbReferentePago);
-			break;
-
-		case "numerodecontrato":
-			setObjetoToCliked(lbNumeroContrato);
-			break;
-		case "periododefacturacion":
-			setObjetoToCliked(lbPeriodoFacturacion);
-			break;	
-		case "valorapagar":
-			setObjetoToCliked(lbValorPagar);
-			break;
-		case "cancelarnequi":
-			setObjetoToCliked(btnCancelarNequi);
-			break;
-		case "cancelarpse":
-			setObjetoToCliked(btnCancelarPSE);
-			break;
-		case "cancelartc":
-			setObjetoToCliked(btnCancelarTC);
-			break;
-		case "msgerrortc":
-			setObjetoToCliked(lbMsgErrorTC);
-			break;
-		case "formapagoseleccionada":
-			setObjetoToCliked(lbFormaPagoSeleccionada);
-			break;
-		case "formasdepago":
-			setObjetoToCliked(lbFormasDePago);
-			break;
-		case "numerocuotas":
-			setObjetoToCliked(txtNumeroCuotas);
-			break;
-		case "titulofacturasmoviles":
-			setObjetoToCliked(lbTituloFacturasMovil);
-			break;
-	
-		case "titlepage-title":
-			setObjetoToCliked(By.id("block-tigo-theme-page-title"));
-			break;
-		case "draggable":
-			setObjetoToCliked(By.xpath("//*[contains(@class,'draggable')]"));
-			break;
-		case "droppable":
-			setObjetoToCliked(By.xpath("//*[contains(@class,'droppable')]"));
-			break;
-		case "balon":
-			setObjetoToCliked(By.id("ball"));
-			break;
-			
-			
-		default:
-			assertEquals("El objeto no ha sido mapeado", ActionsUtil.textoMinusculasSinEspacios(opcion));
-		}
-=======
 	}
+
 	
 	public void sharedObjet(Dictionary<String, By> objetos,String opcion) {
 		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
 		By byObjetos = objetos.get(nombreObjeto);
 		setObjetoToCliked(byObjetos);
->>>>>>> Ecommerce
 	}
 
 
@@ -416,12 +353,7 @@ public class PagePagaTuFactura extends PageObject {
 		sharedObjet(objetos,objeto);
 		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
 	}
-	
-	//PRUEBA INI
-	public void deslizarBarra(String barra) {
-		ActionsUtil.slider(getDriver(),getObjetoToCliked());
-	}
-	//PRUEBA FIN
+
 
 	public void ArrastrarYSoltar(String objeto1, String objeto2) {
 		sharedObjet(objeto1);
