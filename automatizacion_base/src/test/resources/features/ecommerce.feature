@@ -23,8 +23,9 @@ Feature: Prueba de Adherencia Ecommerce
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/activate?msisdn=3018927656&imsi=732111173644059"
     When Espero 3 segundos
     When llevará al formulario con el objeto "title page-title"
-    When doy clic en el campo "Correo electrónico" y escribo el email "nhmesa@indracompany.com"
+    When doy clic en el campo "Correo electrónico M" y escribo el email "nhmesa@indracompany.com"
     When arrastro el elemento "draggable" hasta la posición "400,0"     
+    When Espero 2 segundos
     Then llevará al formulario con el objeto "title page-title" 
     And el campo "title page-title" tiene el texto "Activa tu SIM en 1 paso"
    

@@ -111,6 +111,9 @@ public class ActionsUtil {
 		case "tab":
 			element.sendKeys(Keys.TAB);
 			break;
+		default:
+			assertThat("Tecla no mapeado", CoreMatchers.equalTo(tecla));
+			break;
 		}
 	}
 

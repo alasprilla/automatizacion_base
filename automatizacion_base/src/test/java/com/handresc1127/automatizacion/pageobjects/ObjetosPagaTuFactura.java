@@ -1,8 +1,11 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+import org.hamcrest.CoreMatchers;
 import org.openqa.selenium.By;
 
 
@@ -74,9 +77,19 @@ public class ObjetosPagaTuFactura {
 		objetosPagaTuFactura.put("formasdepago", By.xpath("//*[@id='payment_method']/div"));
 		objetosPagaTuFactura.put("numerocuotas", By.id("edit-cardnumber-quota"));
 		objetosPagaTuFactura.put("titulofacturasmoviles", By.id("title-init"));
+		
+		//Ecommerce
+		objetosPagaTuFactura.put("titlepage-title", By.id("block-tigo-theme-page-title"));
+		objetosPagaTuFactura.put("droppable", By.xpath("//*[contains(@class,'droppable')]"));
+		objetosPagaTuFactura.put("draggable", By.xpath("//*[contains(@class,'draggable')]"));
+		objetosPagaTuFactura.put("balon", By.id("ball"));
 	 }
 	 public  By getObjetoPagaTuFactura(String NombreObjeto) {
-		 return objetosPagaTuFactura.get(NombreObjeto);
+		 By retorno=objetosPagaTuFactura.get(NombreObjeto);
+		 String valueContains="Objeto no mapeado";
+		 if(retorno==null) valueContains=NombreObjeto;
+		 assertThat("Objeto no mapeado", CoreMatchers.equalTo(valueContains));
+		 return retorno;
 	 }
 	 
 	 public  Dictionary<String, By> getDictionary(){

@@ -173,7 +173,6 @@ public class DefPagaTuFactura {
 
 	@When("^Espero (\\d+) segundos$")
 	public void espero_segundos(int sleep) {
-	    // Write code here that turns the phrase above into concrete actions
 	    ActionsUtil.sleepSeconds(sleep);
 	}
 
