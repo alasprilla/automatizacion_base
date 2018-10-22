@@ -46,5 +46,15 @@ public class DefRecargasPaquetes {
 	public void el_primer_caracter_se_borra() {
 		pageRecargasPaquetes.compararTextoInicial();
 	}
+	
+	@When("^El campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
+	public void el_campo_tiene_el_texto(String objeto, String textoEsperado) {
+		pageRecargasPaquetes.compararTxt(objeto, textoEsperado);
+	}
+	
+	@Then("^Mostrará en el valor del campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
+	public void mostrará_en_el_valor_del_campo_el_texto(String objeto, String valor) {
+		pageRecargasPaquetes.compararAtributo(objeto, "value", valor);
+	}
 
 }

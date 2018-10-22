@@ -118,4 +118,24 @@ public class PageRecargasPaquetes extends PageObject  {
 			BussinesUtil.validateMSISDNIni(textoInicial, textoFinal);
 		} 
 	}
+	
+	public void compararTxt(Dictionary<String, By> objetos,String objeto, String valorEsperado) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
+	}
+	
+	public void compararTxt(String objeto, String valorEsperado) {
+		sharedObjet(objeto);
+		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
+	}
+	
+	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
+		sharedObjet(objeto);
+		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
+	}
+	
+	public void compararAtributo(Dictionary<String, By> objetos,String objeto, String atributo, String valorEsperado) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
+	}
 }
