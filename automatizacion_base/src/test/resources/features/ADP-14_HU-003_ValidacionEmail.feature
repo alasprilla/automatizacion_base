@@ -9,8 +9,8 @@ Feature: HU003: Validación de email
   Scenario Outline: Email sin usuario
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
-    And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el botón "Consultar" esta "deshabilitado"
+    And doy clic en el campo "Correo electrónicoM" y escribo el email <email>
+    Then el botón "ConsultarM" esta "deshabilitado"
     And el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
 
@@ -26,8 +26,8 @@ Feature: HU003: Validación de email
   Scenario Outline: Email sin dominio
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
-    And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el botón "Consultar" esta "deshabilitado"
+    And doy clic en el campo "Correo electrónicoM" y escribo el email <email>
+    Then el botón "ConsultarM" esta "deshabilitado"
     And el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
 
@@ -45,8 +45,8 @@ Feature: HU003: Validación de email
   Scenario Outline: Email con dominio de primer nivel de solo un caracter
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
-    And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el botón "Consultar" esta "deshabilitado"
+    And doy clic en el campo "Correo electrónicoM" y escribo el email <email>
+    Then el botón "ConsultarM" esta "deshabilitado"
     And el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
 
@@ -60,8 +60,8 @@ Feature: HU003: Validación de email
   Scenario Outline: Email terminado en punto (.)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
-    And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el botón "Consultar" esta "deshabilitado"
+    And doy clic en el campo "Correo electrónicoM" y escribo el email <email>
+    Then el botón "ConsultarM" esta "deshabilitado"
     And el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
 
@@ -78,8 +78,8 @@ Feature: HU003: Validación de email
   Scenario Outline: Email correcto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
-    And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el campo "Consultar" tiene el atributo "class" en el valor "--active"
+    And doy clic en el campo "Correo electrónicoM" y escribo el email <email>
+    Then el campo "ConsultarM" tiene el atributo "class" en el valor "--active"
 
     Examples: 
       | msisdn       | email                   |

@@ -1,6 +1,6 @@
 package com.handresc1127.automatizacion.pageobjects;
 
-import static org.junit.Assert.assertEquals;
+import java.util.Dictionary;
 
 import org.openqa.selenium.By;
 
@@ -12,6 +12,14 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://transaccionesco-uat.tigocloud.net/servicios/facturas")
 public class PagePagaTuFactura extends PageObject {
+	
+	Dictionary<String, By> objetos;
+	/*
+	PagePagaTuFactura(){
+		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
+		objetos=x.getDictionary();
+	}
+	/*
 
 	/**
 	 * Elmentos de la seccion Movil
@@ -95,6 +103,9 @@ public class PagePagaTuFactura extends PageObject {
 	 */
 	By btnPrimerPagoTotal = By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]");
 	By lbTituloResumenTransaccion = By.id("title-detail");
+	//*****
+	By lbTitulo = By.xpath("//*[@id='block-tigo-theme-page-title']/div/h1");
+	//****
 	By lbFormaPagoSeleccionada = By.xpath("//*[@class='tigoune-card actived']");
 	By lbFormasDePago= By.xpath("//*[@id='payment_method']/div");
 	
@@ -111,6 +122,7 @@ public class PagePagaTuFactura extends PageObject {
 
 	By objetoToAction;
 	String texto = "";
+	
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
@@ -124,145 +136,16 @@ public class PagePagaTuFactura extends PageObject {
 		this.objetoToAction = objetoToCliked;
 	}
 
+	
+	
 	public void sharedObjet(String opcion) {
-		switch (ActionsUtil.textoMinusculasSinEspacios(opcion)) {
-		case "hogar":
-			setObjetoToCliked(btnHogar);
-			break;
-		case "movil":
-			setObjetoToCliked(btnMovil);
-			break;
-		case "numerodedocumento":
-			setObjetoToCliked(txtNumeroDocumento);
-			break;
-		case "tulineatigo":
-			setObjetoToCliked(txtTuLineaTigo);
-			break;
-		case "labelerrordocumento":
-			setObjetoToCliked(lbMsgErrorDoc);
-			break;
-		case "labelerrorcelular":
-			setObjetoToCliked(lbMsgErrorCelular);
-			break;
-		case "labelerrorcorreo":
-			setObjetoToCliked(lbMsgErrorCorreo);
-			break;
-		case "labelerrorcorreoh":
-			setObjetoToCliked(lbMsgErrorCorreoH);
-			break;
-		case "consultar":
-			if (ActionsUtil.existsElement(getDriver(), btnConsultarH)) {
-				setObjetoToCliked(btnConsultarH);
-			}
-			if (ActionsUtil.existsElement(getDriver(), btnConsultarM)) {
-				setObjetoToCliked(btnConsultarM);
-			}
-			break;
-		case "labelfacturas":
-			setObjetoToCliked(lbMsgError);
-			break;
-		case "listfacturas":
-			setObjetoToCliked(listFacturasPendientes);
-			break;
-		case "correoelectronico":
-			if (ActionsUtil.existsElement(getDriver(), txtCorreoElectronicoM)) {
-				setObjetoToCliked(txtCorreoElectronicoM);
-			}
-			if (ActionsUtil.existsElement(getDriver(), txtCorreoElectronicoH)) {
-				setObjetoToCliked(txtCorreoElectronicoH);
-			}
-			break;
-		case "mensajedeerrormsisdn":
-			setObjetoToCliked(lbMsgErrorCelular);
-			break;
-		case "mensajesinfacturas":
-			setObjetoToCliked(lbMsgError);
-			break;
-		case "tipodedocumento":
-			setObjetoToCliked(listTipoDocumento);
-			break;
-		case "tarjetadecredito":
-			setObjetoToCliked(linkTarjetaCredito);
-			break;
-		case "numerodetarjeta":
-			setObjetoToCliked(txtNumerodetarjeta);
-			break;
-		case "debitobancariopse":
-			setObjetoToCliked(linkDebitoBancarioPSE);
-			break;
-		case "banco":
-			setObjetoToCliked(listBanco);
-			break;
-		case "tipodepersona":
-			setObjetoToCliked(listTipodepersona);
-			break;
-		case "nombresyapellidos":
-			setObjetoToCliked(txtNombresyapellidos);
-			break;
-		case "tipod":
-			setObjetoToCliked(listTipod);
-			break;
-		case "numerodedocumentod":
-			setObjetoToCliked(txtNumerodedocumentoD);
-			break;
-		case "emailpse":
-			setObjetoToCliked(txtemailpse);
-			break;
-		case "pagard":
-			setObjetoToCliked(btnPagard);
-			break;
-		case "pagar":
-			setObjetoToCliked(btnPagar);
-			break;
-		case "iralbanco":
-			setObjetoToCliked(btnIralBanco);
-			break;
-		case "debug":
-			setObjetoToCliked(btnDebugP);
-			break;
-		case "bankprocessdate":
-			setObjetoToCliked(txtProcessDate);
-			break;
-		case "authorizationid":
-			setObjetoToCliked(txtauthorizaID);
-			break;
-		case "return":
-			setObjetoToCliked(btnReturn);
-			break;
-		case "iconotarjeta":
-			setObjetoToCliked(icoTarjeta);
-			break;
-		case "cvv":
-			setObjetoToCliked(txtCVV);
-			break;
-		case "mm":
-			setObjetoToCliked(listFechaVencimientoMM);
-			break;
-		case "aa":
-			setObjetoToCliked(listFechaVencimientoAA);
-			break;
-		case "nombre":
-			setObjetoToCliked(txtNombre);
-			break;
-		case "tipo":
-			setObjetoToCliked(listTipo);
-			break;
-		case "numerodedocumentotc":
-			setObjetoToCliked(txtNumerodedocumento);
-			break;
-		case "autorizoestatarjetaparafuturospagos":
-			setObjetoToCliked(btnAutorizarTc);
-			break;
-		case "primerpagototal":
-			setObjetoToCliked(btnPrimerPagoTotal);
-			break;
-		case "title-detail":
-			setObjetoToCliked(lbTituloResumenTransaccion);
-			break;
-		case "numerodelproducto":
-			setObjetoToCliked(lbNumeroDelProducto);
-			break;
+		
+		ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
+		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
+		By byObjeto = x.getObjetoPagaTuFactura(nombreObjeto);
+		setObjetoToCliked(byObjeto);	
 
+<<<<<<< HEAD
 		case "fechalimitedepago":
 			setObjetoToCliked(lbFechaLimitePago);
 			break;
@@ -321,18 +204,36 @@ public class PagePagaTuFactura extends PageObject {
 		default:
 			assertEquals("El objeto no ha sido mapeado", ActionsUtil.textoMinusculasSinEspacios(opcion));
 		}
+=======
+	}
+	
+	public void sharedObjet(Dictionary<String, By> objetos,String opcion) {
+		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
+		By byObjetos = objetos.get(nombreObjeto);
+		setObjetoToCliked(byObjetos);
+>>>>>>> Ecommerce
 	}
 
+
+	public void clic(Dictionary<String, By> objetos,String objeto) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+	}
 	public void clic(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
+	}
+
+	public void tieneHijos(Dictionary<String, By> objetos,String objeto) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
 
 	public void tieneHijos(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
-
+	
 	public void presionarTecla(String tecla) {
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
@@ -381,13 +282,31 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
+	
+	public void escribirConClick(Dictionary<String, By> objetos,String objeto, String texto) {
+		sharedObjet(objetos,objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
+	}
+
+	public void escribir(Dictionary<String, By> objetos,String objeto, String texto) {
+		sharedObjet(objetos,objeto);
+		this.texto = texto;
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
+	}
 
 	public void escribir(String objeto, String texto) {
 		sharedObjet(objeto);
 		this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 	}
-
+	
+	public void compararTxt(Dictionary<String, By> objetos,String objeto, String valorEsperado) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
+	}
+	
 	public void compararTxt(String objeto, String valorEsperado) {
 		sharedObjet(objeto);
 		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
@@ -414,21 +333,50 @@ public class PagePagaTuFactura extends PageObject {
 		}
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
+	
+	public void compararAtributo(Dictionary<String, By> objetos,String objeto, String atributo, String valorEsperado) {
+		sharedObjet(objetos,objeto);
+		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
+		case "rojo":
+			valorEsperado = "rgba(240, 30, 70, 1)";
+			break;
+		case "azul":
+			valorEsperado = "rgb(0, 200, 255)";
+			break;
+		case "blanco":
+			valorEsperado = "rgba(255, 255, 255, 1)";
+			break;
+		case "rojo_rgb":
+			valorEsperado = "rgb(240, 30, 70)";
+			break;
+		case "blanco_rgb":
+			valorEsperado = "rgb(255, 255, 255)";
+			break;
+		}
+		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
+	}
 
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
+	
+	public void seleccionar(Dictionary<String, By> objetos,String objeto, String item) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
+	}
 
 	public void validarEscribir(String objeto2, String txtIngresado) {
-		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronico"))
+		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicom"))
+				|| ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicoh"))
 				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
-				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc"))) {
+				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc")))) {
 			escribirConClick(objeto2, txtIngresado);
 		} else {
 			escribir(objeto2, txtIngresado);
 		}
 	}
+	
 
 	public void validarPagRecargada() {
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
@@ -436,6 +384,11 @@ public class PagePagaTuFactura extends PageObject {
 
 	public void elementoVisible(String objeto) {
 		sharedObjet(objeto);
+		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
+	}
+	
+	public void elementoVisible(Dictionary<String, By> objetos,String objeto) {
+		sharedObjet(objetos,objeto);
 		ActionsUtil.highlightElement(getDriver(), getObjetoToCliked());
 	}
 
@@ -458,6 +411,17 @@ public class PagePagaTuFactura extends PageObject {
 		sharedObjet(objeto);
 		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
 	}
+	
+	public void esperarElementos(Dictionary<String, By> objetos,String objeto, String condicion, int cantidad) {
+		sharedObjet(objetos,objeto);
+		ActionsUtil.waitForXElements(getDriver(),getObjetoToCliked(), condicion, cantidad);
+	}
+	
+	//PRUEBA INI
+	public void deslizarBarra(String barra) {
+		ActionsUtil.slider(getDriver(),getObjetoToCliked());
+	}
+	//PRUEBA FIN
 
 	public void ArrastrarYSoltar(String objeto1, String objeto2) {
 		sharedObjet(objeto1);

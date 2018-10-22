@@ -6,8 +6,8 @@ Feature: HU021 Pago Completo de Facturas Pendientes
 Background: seleccion medio de pago
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "3008914224" en el campo "Tu línea Tigo"
-    And doy clic en el campo "Correo electrónico" y escribo el email "pruebas@yopmail.com"
-    And doy clic en el botón "Consultar"
+    And doy clic en el campo "Correo electrónicoM" y escribo el email "pruebas@yopmail.com"
+    And doy clic en el botón "ConsultarM"
     Then llevará al formulario con el objeto "title-detail"
 
     Scenario Outline: Pago Completo con PSE 

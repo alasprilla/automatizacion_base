@@ -12,8 +12,8 @@ Feature: HU013: Validación de email Hogar
     When doy clic en "HOGAR"
      And selecciono "CC" en el campo "Tipo de documento"
      And ingreso <documento> en el campo "número de documento"
-     And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el botón "Consultar" esta "deshabilitado"
+     And doy clic en el campo "Correo electrónicoH" y escribo el email <email>
+    Then el botón "ConsultarH" esta "deshabilitado"
      And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
      And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
 
@@ -32,8 +32,8 @@ Feature: HU013: Validación de email Hogar
      When doy clic en "HOGAR"
      And selecciono "CC" en el campo "Tipo de documento"
      And ingreso <documento> en el campo "número de documento"
-    And doy clic en el campo "Correo electrónico" y escribo el email <email>
-    Then el botón "Consultar" esta "deshabilitado"
+    And doy clic en el campo "Correo electrónicoH" y escribo el email <email>
+    Then el botón "ConsultarH" esta "deshabilitado"
     And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
 
@@ -52,8 +52,8 @@ Feature: HU013: Validación de email Hogar
      When doy clic en "HOGAR"
       And selecciono "CC" en el campo "Tipo de documento"
       And ingreso <documento> en el campo "número de documento"
-      And doy clic en el campo "Correo electrónico" y escribo el email <email>
-     Then el botón "Consultar" esta "deshabilitado"
+      And doy clic en el campo "Correo electrónicoH" y escribo el email <email>
+     Then el botón "ConsultarH" esta "deshabilitado"
       And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
       And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
 
@@ -70,8 +70,8 @@ Feature: HU013: Validación de email Hogar
      When doy clic en "HOGAR"
       And selecciono "CC" en el campo "Tipo de documento"
       And ingreso <documento> en el campo "número de documento"
-      And doy clic en el campo "Correo electrónico" y escribo el email <email>
-     Then el botón "Consultar" esta "deshabilitado"
+      And doy clic en el campo "Correo electrónicoH" y escribo el email <email>
+     Then el botón "ConsultarH" esta "deshabilitado"
       And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
       And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
 
@@ -90,8 +90,8 @@ Feature: HU013: Validación de email Hogar
      When doy clic en "HOGAR"
       And selecciono "CC" en el campo "Tipo de documento"
       And ingreso <documento> en el campo "número de documento"
-      And doy clic en el campo "Correo electrónico" y escribo el email <email>
-     Then El botón "Consultar" se habilita
+      And doy clic en el campo "Correo electrónicoH" y escribo el email <email>
+     Then El botón "ConsultarH" se habilita
 
     Examples: 
       | documento    | email                   |
