@@ -9,12 +9,9 @@ public class PropertiesLoader {
 		load();
 	}
 
-	public static PropertiesLoader getInstance() {
+	public synchronized static PropertiesLoader getInstance() {
 		if (instance == null)
-			synchronized (PropertiesLoader.class) {
-				if (instance == null)
-					instance = new PropertiesLoader();
-			}
+			instance = new PropertiesLoader();
 		return instance;
 	}
 
@@ -37,7 +34,6 @@ public class PropertiesLoader {
 		if (value == null) {
 			value = defaultValue;
 		}
-
 		return value;
 	}
 
