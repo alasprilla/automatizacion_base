@@ -46,5 +46,35 @@ public class DefRecargasPaquetes {
 	public void el_primer_caracter_se_borra() {
 		pageRecargasPaquetes.compararTextoInicial();
 	}
+	
+	@When("^El campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
+	public void el_campo_tiene_el_texto(String objeto, String textoEsperado) {
+		pageRecargasPaquetes.compararTxt(objeto, textoEsperado);
+	}
+	
+	@Then("^Mostrará en el valor del campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
+	public void mostrará_en_el_valor_del_campo_el_texto(String objeto, String valor) {
+		pageRecargasPaquetes.compararAtributo(objeto, "value", valor);
+	}
 
+	@Then("^El botón \"([^\"]*)\" esta \"([^\"]*)\"$")
+	public void el_botón_esta(String objeto, String estaDeshabilitado) {
+		boolean isDisable = false, isEnabled = false;
+		if (estaDeshabilitado.equals("deshabilitado")) {
+			isDisable = true;
+			pageRecargasPaquetes.compararAtributo(objeto, "disabled", String.valueOf(isDisable) );
+		}else if (estaDeshabilitado.equals("habilitado")){
+			isEnabled = true;
+			pageRecargasPaquetes.compararAtributo(objeto, "enabled",String.valueOf(isEnabled) );	
+		}else {
+			//Sí entra acá siempre fallará
+			pageRecargasPaquetes.compararTxt(objeto, estaDeshabilitado);
+		}
+	}
+	
+
+	@Then("^El campo \"([^\"]*)\" tiene el atributo \"([^\"]*)\" en el valor \"([^\"]*)\"$")
+	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
+		pageRecargasPaquetes.compararAtributo(objeto, atributo, valorEsperado);
+	}
 }
