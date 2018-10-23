@@ -20,7 +20,10 @@ public class PageRecargasPaquetes extends PageObject  {
 //Elemetos de la sección de Recargas	
 	By btnRecarga=By.xpath("//*[@id='tap_selector']/div[2]");
 	By txtTuLineaTigoR=By.id("num_lin");
-
+	By txtcorreo =By.id("edit-email");
+    By btnRecargar = By.id("edit-button-recargar");
+    By lbErrorCelular = By.xpath("//*[@id='block-tieneinformaciondesaldoydeudadelmsisdn']/div[1]/div/div[1]/div[2]/div[1]/p");
+	
 	By objetoToAction;
 	String texto = "";
 
@@ -131,11 +134,57 @@ public class PageRecargasPaquetes extends PageObject  {
 	
 	public void compararAtributo(String objeto, String atributo, String valorEsperado) {
 		sharedObjet(objeto);
+		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
+		case "rojo":
+			valorEsperado = "rgba(240, 30, 70, 1)";
+			break;
+		case "azul":
+			valorEsperado = "rgb(0, 200, 255)";
+			break;
+		case "blanco":
+			valorEsperado = "rgba(255, 255, 255, 1)";
+			break;
+		case "rojo_rgb":
+			valorEsperado = "rgb(240, 30, 70)";
+			break;
+		case "blanco_rgb":
+			valorEsperado = "rgb(255, 255, 255)";
+			break;
+		}
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
 	
 	public void compararAtributo(Dictionary<String, By> objetos,String objeto, String atributo, String valorEsperado) {
 		sharedObjet(objetos,objeto);
+		switch (ActionsUtil.textoMinusculasSinEspacios(valorEsperado)) {
+		case "rojo":
+			valorEsperado = "rgba(240, 30, 70, 1)";
+			break;
+		case "azul":
+			valorEsperado = "rgb(0, 200, 255)";
+			break;
+		case "blanco":
+			valorEsperado = "rgba(255, 255, 255, 1)";
+			break;
+		case "rojo_rgb":
+			valorEsperado = "rgb(240, 30, 70)";
+			break;
+		case "blanco_rgb":
+			valorEsperado = "rgb(255, 255, 255)";
+			break;
+		}
 		ActionsUtil.compareAtributo(getDriver(), getObjetoToCliked(), atributo, valorEsperado);
 	}
+	
+	public void validarEscribir(String objeto2, String txtIngresado) {
+		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicom"))
+				|| ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicoh"))
+				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
+				|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc")))) {
+			escribirConClick(objeto2, txtIngresado);
+		} else {
+			escribir(objeto2, txtIngresado);
+		}
+	}
+	
 }

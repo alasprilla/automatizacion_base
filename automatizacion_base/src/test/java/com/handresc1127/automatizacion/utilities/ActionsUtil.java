@@ -17,11 +17,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+
 public class ActionsUtil {
 
-	private ActionsUtil() {
-	    throw new IllegalStateException("Utility class");
-	  }
 	
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
