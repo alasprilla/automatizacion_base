@@ -53,13 +53,6 @@ public class PageDefault extends PageObject {
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
 
-	// Revisar esto
-	public void escribirConClick(String objeto, String texto) {
-		sharedObjet(objeto);
-		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
-		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
-	}
-
 	public void compararTxt(String objeto, String valorEsperado) {
 		sharedObjet(objeto);
 		ActionsUtil.compareText(getDriver(), getObjetoToCliked(), valorEsperado);
@@ -92,15 +85,10 @@ public class PageDefault extends PageObject {
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
-	public void validarEscribir(String objeto2, String txtIngresado) {
-		if ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicom"))
-				|| ((ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("correoelectronicoh"))
-						|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentod"))
-						|| (ActionsUtil.textoMinusculasSinEspacios(objeto2).equals("numerodedocumentotc")))) {
-			escribirConClick(objeto2, txtIngresado);
-		} else {
-			escribirConClick(objeto2, txtIngresado);
-		}
+	public void validarEscribir(String objeto, String txtIngresado) {
+		sharedObjet(objeto);
+		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), txtIngresado);
+		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
 
 	public void validarPagRecargada() {
