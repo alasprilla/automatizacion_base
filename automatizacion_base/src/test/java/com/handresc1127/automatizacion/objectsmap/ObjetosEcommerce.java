@@ -8,9 +8,9 @@ public class ObjetosEcommerce {
 
 	public ObjetosEcommerce() {
 		// Ecommerce
-		ActionsUtil.objetosPage.put("titlepage-title", By.id("block-tigo-theme-page-title"));
-		ActionsUtil.objetosPage.put("droppable", By.xpath("//*[contains(@class,'droppable')]"));
-		ActionsUtil.objetosPage.put("draggable", By.xpath("//*[contains(@class,'draggable')]"));
-		ActionsUtil.objetosPage.put("balon", By.id("ball"));
+		ActionsUtil.objetosPut("titlepage-title", By.id("block-tigo-theme-page-title"));
+		ActionsUtil.objetosPut("droppable", By.xpath("//*[contains(@class,'droppable')]"));
+		ActionsUtil.objetosPut("draggable", By.xpath("//*[contains(@class,'draggable')]"));
+		ActionsUtil.objetosPut("balon", By.id("ball"));
 	}
 }

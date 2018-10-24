@@ -8,67 +8,67 @@ import com.handresc1127.automatizacion.utilities.ActionsUtil;
 public class ObjetosPagaTuFactura {
 	
 	 public ObjetosPagaTuFactura () {
-		 ActionsUtil.objetosPage.put("hogar",  By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p"));
-		ActionsUtil.objetosPage.put("movil",  By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p"));
-		ActionsUtil.objetosPage.put("numerodedocumento", By.id("edit-document"));
-		ActionsUtil.objetosPage.put("tulineatigo", By.id("edit-candidate-number"));
-		ActionsUtil.objetosPage.put("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
-		ActionsUtil.objetosPage.put("labelerrorcelular", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
-		ActionsUtil.objetosPage.put("labelerrorcorreo", By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span"));
-		ActionsUtil.objetosPage.put("labelerrorcorreoh", By.xpath("//*[@id=\'content_right_forms_unified\']/div/span"));
-		ActionsUtil.objetosPage.put("consultarh", By.id("edit-consult--2"));
-		ActionsUtil.objetosPage.put("consultarm", By.id("edit-consult"));
-		ActionsUtil.objetosPage.put("labelfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
-		ActionsUtil.objetosPage.put("listfacturas", By.xpath("//*[@id='content_list_invoices']"));
-		ActionsUtil.objetosPage.put("correoelectronicom",By.id("edit-email"));
-		ActionsUtil.objetosPage.put("correoelectronicoh",By.id("edit-email-fijo"));
-		ActionsUtil.objetosPage.put("mensajedeerrormsisdn", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
-		ActionsUtil.objetosPage.put("mensajesinfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
-		ActionsUtil.objetosPage.put("tipodedocumento", By.id("edit-document-type"));
-		ActionsUtil.objetosPage.put("tarjetadecredito", By.id("payment-method-type-label-credit-payu"));
-		ActionsUtil.objetosPage.put("numerodetarjeta", By.id("edit-cardnumber"));
-		ActionsUtil.objetosPage.put("debitobancariopse", By.xpath("//*[@id='payment-method-type-label-debit-payu' and @class='tigoune-card-header']"));
-		ActionsUtil.objetosPage.put("banco", By.id("edit-bank"));
-		ActionsUtil.objetosPage.put("tipodepersona", By.id("edit-buyer-type-person"));
-		ActionsUtil.objetosPage.put("nombresyapellidos", By.id("edit-buyer-name"));
-		ActionsUtil.objetosPage.put("tipod", By.id("edit-buyer-document-type--2"));
-		ActionsUtil.objetosPage.put("numerodedocumentod", By.id("edit-buyer-document--2"));
-		ActionsUtil.objetosPage.put("emailpse", By.id("PNEMail"));
-		ActionsUtil.objetosPage.put("pagard", By.id("edit-submit--2"));
-		ActionsUtil.objetosPage.put("pagar", By.id("edit-submit"));
-		ActionsUtil.objetosPage.put("iralbanco", By.id("btnSeguir"));
-		ActionsUtil.objetosPage.put("debug", By.id("btnDebug"));
-		ActionsUtil.objetosPage.put("bankprocessdate", By.id("txtBankProcessDate"));
-		ActionsUtil.objetosPage.put("authorizationid", By.id("txtAuthorizationID"));
-		ActionsUtil.objetosPage.put("return", By.id("btnReturnToPPE"));
-		ActionsUtil.objetosPage.put("iconotarjeta", By.xpath("//*[@id=\'ico_card\']"));
-		ActionsUtil.objetosPage.put("cvv", By.id("edit-cvc"));
-		ActionsUtil.objetosPage.put("mm", By.id("edit-buyer-card-month-expiration"));
-		ActionsUtil.objetosPage.put("aa", By.id("edit-buyer-card-year-expiration"));
-		ActionsUtil.objetosPage.put("nombre", By.id("edit-ccname"));
-		ActionsUtil.objetosPage.put("tipo", By.id("edit-buyer-document-type"));
-		ActionsUtil.objetosPage.put("numerodedocumentotc", By.id("edit-buyer-document"));
-		ActionsUtil.objetosPage.put("autorizoestatarjetaparafuturospagos", By.xpath("//*[@id='edit-authorized']/div/div/label[1]"));
-		ActionsUtil.objetosPage.put("primerpagototal", By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]"));
-		ActionsUtil.objetosPage.put("title-detail", By.id("title-detail"));
-		ActionsUtil.objetosPage.put("numerodelproducto", By.id("product-number"));
-		ActionsUtil.objetosPage.put("fechalimitedepago", By.xpath(
+		 ActionsUtil.objetosPut("hogar",  By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[1]/p"));
+		ActionsUtil.objetosPut("movil",  By.xpath("//*[@id='block-tigo-theme-content']/div/div[1]/div/div/div[2]/p"));
+		ActionsUtil.objetosPut("numerodedocumento", By.id("edit-document"));
+		ActionsUtil.objetosPut("tulineatigo", By.id("edit-candidate-number"));
+		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
+		ActionsUtil.objetosPut("labelerrorcelular", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
+		ActionsUtil.objetosPut("labelerrorcorreo", By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span"));
+		ActionsUtil.objetosPut("labelerrorcorreoh", By.xpath("//*[@id=\'content_right_forms_unified\']/div/span"));
+		ActionsUtil.objetosPut("consultarh", By.id("edit-consult--2"));
+		ActionsUtil.objetosPut("consultarm", By.id("edit-consult"));
+		ActionsUtil.objetosPut("labelfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
+		ActionsUtil.objetosPut("listfacturas", By.xpath("//*[@id='content_list_invoices']"));
+		ActionsUtil.objetosPut("correoelectronicom",By.id("edit-email"));
+		ActionsUtil.objetosPut("correoelectronicoh",By.id("edit-email-fijo"));
+		ActionsUtil.objetosPut("mensajedeerrormsisdn", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
+		ActionsUtil.objetosPut("mensajesinfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
+		ActionsUtil.objetosPut("tipodedocumento", By.id("edit-document-type"));
+		ActionsUtil.objetosPut("tarjetadecredito", By.id("payment-method-type-label-credit-payu"));
+		ActionsUtil.objetosPut("numerodetarjeta", By.id("edit-cardnumber"));
+		ActionsUtil.objetosPut("debitobancariopse", By.xpath("//*[@id='payment-method-type-label-debit-payu' and @class='tigoune-card-header']"));
+		ActionsUtil.objetosPut("banco", By.id("edit-bank"));
+		ActionsUtil.objetosPut("tipodepersona", By.id("edit-buyer-type-person"));
+		ActionsUtil.objetosPut("nombresyapellidos", By.id("edit-buyer-name"));
+		ActionsUtil.objetosPut("tipod", By.id("edit-buyer-document-type--2"));
+		ActionsUtil.objetosPut("numerodedocumentod", By.id("edit-buyer-document--2"));
+		ActionsUtil.objetosPut("emailpse", By.id("PNEMail"));
+		ActionsUtil.objetosPut("pagard", By.id("edit-submit--2"));
+		ActionsUtil.objetosPut("pagar", By.id("edit-submit"));
+		ActionsUtil.objetosPut("iralbanco", By.id("btnSeguir"));
+		ActionsUtil.objetosPut("debug", By.id("btnDebug"));
+		ActionsUtil.objetosPut("bankprocessdate", By.id("txtBankProcessDate"));
+		ActionsUtil.objetosPut("authorizationid", By.id("txtAuthorizationID"));
+		ActionsUtil.objetosPut("return", By.id("btnReturnToPPE"));
+		ActionsUtil.objetosPut("iconotarjeta", By.xpath("//*[@id=\'ico_card\']"));
+		ActionsUtil.objetosPut("cvv", By.id("edit-cvc"));
+		ActionsUtil.objetosPut("mm", By.id("edit-buyer-card-month-expiration"));
+		ActionsUtil.objetosPut("aa", By.id("edit-buyer-card-year-expiration"));
+		ActionsUtil.objetosPut("nombre", By.id("edit-ccname"));
+		ActionsUtil.objetosPut("tipo", By.id("edit-buyer-document-type"));
+		ActionsUtil.objetosPut("numerodedocumentotc", By.id("edit-buyer-document"));
+		ActionsUtil.objetosPut("autorizoestatarjetaparafuturospagos", By.xpath("//*[@id='edit-authorized']/div/div/label[1]"));
+		ActionsUtil.objetosPut("primerpagototal", By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]"));
+		ActionsUtil.objetosPut("title-detail", By.id("title-detail"));
+		ActionsUtil.objetosPut("numerodelproducto", By.id("product-number"));
+		ActionsUtil.objetosPut("fechalimitedepago", By.xpath(
 				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div"));
-		ActionsUtil.objetosPage.put("referentedepago", By.xpath(
+		ActionsUtil.objetosPut("referentedepago", By.xpath(
 				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[2]/td/div"));
-		ActionsUtil.objetosPage.put("numerodecontrato", By.xpath(
+		ActionsUtil.objetosPut("numerodecontrato", By.xpath(
 				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div"));
-		ActionsUtil.objetosPage.put("periododefacturacion", By.xpath(
+		ActionsUtil.objetosPut("periododefacturacion", By.xpath(
 				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div"));	
-    	ActionsUtil.objetosPage.put("valorapagar", By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]"));
-		ActionsUtil.objetosPage.put("cancelarnequi", By.id("tigoune-nequi-button-cancel"));
-	    ActionsUtil.objetosPage.put("cancelarpse", By.id("edit-cancel--2"));
-	 	ActionsUtil.objetosPage.put("cancelartc", By.id("edit-cancel"));
-		ActionsUtil.objetosPage.put("msgerrortc", By.xpath("//*[@id='image-credit_card']//*[contains(@class,'error')]"));
-		ActionsUtil.objetosPage.put("formapagoseleccionada", By.xpath("//*[@class='tigoune-card actived']"));
-		ActionsUtil.objetosPage.put("formasdepago", By.xpath("//*[@id='payment_method']/div"));
-		ActionsUtil.objetosPage.put("numerocuotas", By.id("edit-cardnumber-quota"));
-		ActionsUtil.objetosPage.put("titulofacturasmoviles", By.id("title-init"));
+    	ActionsUtil.objetosPut("valorapagar", By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]"));
+		ActionsUtil.objetosPut("cancelarnequi", By.id("tigoune-nequi-button-cancel"));
+	    ActionsUtil.objetosPut("cancelarpse", By.id("edit-cancel--2"));
+	 	ActionsUtil.objetosPut("cancelartc", By.id("edit-cancel"));
+		ActionsUtil.objetosPut("msgerrortc", By.xpath("//*[@id='image-credit_card']//*[contains(@class,'error')]"));
+		ActionsUtil.objetosPut("formapagoseleccionada", By.xpath("//*[@class='tigoune-card actived']"));
+		ActionsUtil.objetosPut("formasdepago", By.xpath("//*[@id='payment_method']/div"));
+		ActionsUtil.objetosPut("numerocuotas", By.id("edit-cardnumber-quota"));
+		ActionsUtil.objetosPut("titulofacturasmoviles", By.id("title-init"));
 		
 	 }
 

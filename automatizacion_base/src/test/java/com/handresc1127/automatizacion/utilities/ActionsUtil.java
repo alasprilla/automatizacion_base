@@ -31,7 +31,7 @@ public class ActionsUtil {
 			: 10000L;
 
 
-	public static Dictionary<String, By> objetosPage = new Hashtable<String, By>();
+	private static Dictionary<String, By> objetosPage = new Hashtable<String, By>();
 
 	public static By getObjeto(String NombreObjeto) {
 		By retorno = objetosPage.get(NombreObjeto);
@@ -44,6 +44,10 @@ public class ActionsUtil {
 
 	public static Dictionary<String, By> getDictionary() {
 		return objetosPage;
+	}
+	
+	public static void objetosPut(String key, By value){
+		objetosPage.put(key, value);
 	}
 			
 	public static void highlightElement(WebDriver driver, By by) {
