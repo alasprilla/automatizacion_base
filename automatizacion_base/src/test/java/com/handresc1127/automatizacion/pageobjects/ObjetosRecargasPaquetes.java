@@ -13,6 +13,6 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPage.put("ingresatulineatigo", By.id("num_lin"));
 		ActionsUtil.objetosPage.put("correoelectronico" , By.id("edit-email"));
 		ActionsUtil.objetosPage.put("recargar", By.id("edit-button-recargar"));
-		ActionsUtil.objetosPage.put("labelerrorcelular",By.xpath("//*[@id='block-tieneinformaciondesaldoydeudadelmsisdn']/div[1]/div/div[1]/div[2]/div[1]/p"));
+		ActionsUtil.objetosPage.put("labelerrorcelularrecargas",By.xpath("//*[@id='block-tieneinformaciondesaldoydeudadelmsisdn']/div[1]/div/div[1]/div[2]/div[1]/p"));
 	}
 }

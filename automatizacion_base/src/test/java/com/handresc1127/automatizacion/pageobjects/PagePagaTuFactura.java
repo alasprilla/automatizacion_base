@@ -2,7 +2,6 @@ package com.handresc1127.automatizacion.pageobjects;
 
 import org.openqa.selenium.By;
 
-import com.handresc1127.automatizacion.negocio.BussinesUtil;
 import com.handresc1127.automatizacion.utilities.ActionsUtil;
 
 import net.serenitybdd.core.pages.PageObject;
@@ -15,13 +14,8 @@ public class PagePagaTuFactura extends PageObject {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
 	}
-	/*
-	 * PagePagaTuFactura(){ ObjetosPagaTuFactura x = new ObjetosPagaTuFactura();
-	 * objetos=x.getDictionary(); }
-	 */
 
 	By objetoToAction;
-	//String texto = "";
 
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
@@ -55,62 +49,12 @@ public class PagePagaTuFactura extends PageObject {
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
 
-	public void compararTextoInicial(String textoInicial) {
-		//String textoInicial = texto;
-		ActionsUtil.clic(getDriver(), getObjetoToCliked());
-		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-
-		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
-				.equals("edit-cardnumber")) {
-
-			BussinesUtil.validateTCIni(textoInicial, textoFinal);
-		} else if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
-				.equals("edit-document")) {
-
-			BussinesUtil.validateNumDocIni(textoInicial, textoFinal);
-		} else {
-
-			BussinesUtil.validateMSISDNIni(textoInicial, textoFinal);
-		}
-	}
-
-	public void compararTextoFinal(String textoInicial) {
-		//String textoInicial = texto;
-		ActionsUtil.clic(getDriver(), getObjetoToCliked());
-		String textoFinal = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
-		if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
-				.equals("edit-cardnumber")) {
-
-			BussinesUtil.validateTCFin(textoInicial, textoFinal);
-		} else if (getObjetoToCliked().toString().substring(7, getObjetoToCliked().toString().length())
-				.equals("edit-document")) {
-
-			BussinesUtil.validateNumDocFin(textoInicial, textoFinal);
-		} else {
-
-			BussinesUtil.validateMSISDNFin(textoInicial, textoFinal);
-		}
-	}
-
 	// Revisar esto
 	public void escribirConClick(String objeto, String texto) {
 		sharedObjet(objeto);
-		//this.texto = texto;
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
-
-//	public void escribir(Dictionary<String, By> objetos, String objeto, String texto) {
-//		sharedObjet(objetos, objeto);
-//		this.texto = texto;
-//		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
-//	}
-//
-//	public void escribir(String objeto, String texto) {
-//		sharedObjet(objeto);
-//		this.texto = texto;
-//		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), texto);
-//	}
 
 	public void compararTxt(String objeto, String valorEsperado) {
 		sharedObjet(objeto);

@@ -46,8 +46,8 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     When doy clic en "Recarga"
     Then el campo "Recargar" tiene el atributo "class" en el valor "inactive"
-    And el campo "label error celular" tiene el texto "El número ingresado es incorrecto"
-    And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
+    And el campo "label error celular recargas" tiene el texto "El número ingresado es incorrecto"
+    And el campo "label error celular recargas" tiene el atributo "color" en el valor "rojo"
 
     Examples: 
       | msisdn       |

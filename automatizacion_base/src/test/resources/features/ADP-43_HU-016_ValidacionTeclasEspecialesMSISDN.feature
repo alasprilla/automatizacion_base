@@ -9,7 +9,7 @@ Feature: HU16_ValidacionTeclasEspecialesMSISND
   Scenario: Recarga de página con F5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
-    And doy clic en "Ingresa tu línea Tigo"
+    And ingreso "" en el campo "Ingresa tu línea Tigo"
     And Presiono la tecla "F5"
     Then La página se recarga
 
