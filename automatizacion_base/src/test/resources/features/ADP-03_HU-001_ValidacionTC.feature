@@ -2,7 +2,6 @@
 #Keywords Summary : tarjeta, crédito
 #Encoding: utf-8
 #Language: es
-
 @issue:ADP-3
 Feature: HU001_ValidacionTC
   Como Tigoune
@@ -20,36 +19,37 @@ Feature: HU001_ValidacionTC
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "backspace"
-    Then El último caracter se borra
+    Then mostrará en el valor del campo "Número de tarjeta" el texto <resultado>
 
+    #Then El último caracter se borra
     Examples: 
-      | tc               |
-      | "548528654531"   |
-      | "54852865453140" |
+      | tc               | resultado          |
+      | "548528654531"   | "5485 2865 453"    |
+      | "54852865453140" | "5485 2865 4531 4" |
 
   Scenario Outline: Borrar caracteres con suprimir en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "inicio"
     And Presiono la tecla "suprimir"
-    Then Entonces el primer caracter se borra
+    Then mostrará en el valor del campo "Número de tarjeta" el texto <resultado>
 
     Examples: 
-      | tc               |
-      | "44852865"       |
-      | "44852865453140" |
+      | tc               | resultado          |
+      | "44852865"       | "4852 865"         |
+      | "44852865453140" | "4852 8654 5314 0" |
 
   Scenario Outline: Desplazarse con flecha a la izquierda en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "flecha izquierda"
     And Presiono la tecla "suprimir"
-    Then El último caracter se borra
+    Then mostrará en el valor del campo "Número de tarjeta" el texto <resultado>
 
     Examples: 
-      | tc               |
-      | "34852"          |
-      | "348528654531"   |
+      | tc             | resultado       |
+      | "34852"        | "3485"          |
+      | "348528654531" | "3485 286545 3" |
 
   Scenario Outline: Desplazarse con flecha a la derecha en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
@@ -57,9 +57,9 @@ Feature: HU001_ValidacionTC
     And Presiono la tecla "inicio"
     And Presiono la tecla "flecha derecha"
     And Presiono la tecla "backspace"
-    Then Entonces el primer caracter se borra
+    Then mostrará en el valor del campo "Número de tarjeta" el texto <resultado>
 
     Examples: 
-      | tc               |
-      | "34110"          |
-      | "34113030036922" |
+      | tc               | resultado          |
+      | "34110"          | "4110"             |
+      | "34113030036922" | "4113 0300 3692 2" |

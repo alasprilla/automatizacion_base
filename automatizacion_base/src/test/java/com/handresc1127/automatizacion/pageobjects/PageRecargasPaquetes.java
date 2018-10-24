@@ -16,7 +16,9 @@ import java.util.Dictionary;
 
 public class PageRecargasPaquetes extends PageObject  {
 	
-	
+	PageRecargasPaquetes() {
+		new ObjetosRecargasPaquetes();
+	}
 //Elemetos de la sección de Recargas	
 	By btnRecarga=By.xpath("//*[@id='tap_selector']/div[2]");
 	By txtTuLineaTigoR=By.id("num_lin");
@@ -34,12 +36,9 @@ public class PageRecargasPaquetes extends PageObject  {
 	}
 	
 	public void sharedObjet(String opcion) {
-		
-		ObjetosRecargasPaquetes x = new ObjetosRecargasPaquetes();
 		String nombreObjeto = (ActionsUtil.textoMinusculasSinEspacios(opcion));
-		By byObjeto = x.getObjetoRecargasPaquetes(nombreObjeto);
+		By byObjeto = ActionsUtil.getObjeto(nombreObjeto);
 		setObjetoToCliked(byObjeto);	
-
 	}
 	
 	public void sharedObjet(Dictionary<String, By> objetos,String opcion) {

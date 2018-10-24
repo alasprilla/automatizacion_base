@@ -4,6 +4,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -28,6 +30,22 @@ public class ActionsUtil {
 			? Long.parseLong(properties.getProperty("webdriver.timeouts.implicitlywait"))
 			: 10000L;
 
+
+	public static Dictionary<String, By> objetosPage = new Hashtable<String, By>();
+
+	public static By getObjeto(String NombreObjeto) {
+		By retorno = objetosPage.get(NombreObjeto);
+		String valueContains = "Objeto no mapeado";
+		if (retorno == null)
+			valueContains = NombreObjeto;
+		assertThat("Objeto no mapeado", CoreMatchers.equalTo(valueContains));
+		return retorno;
+	}
+
+	public static Dictionary<String, By> getDictionary() {
+		return objetosPage;
+	}
+			
 	public static void highlightElement(WebDriver driver, By by) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (int second = 0; second <= 60; second++) {
@@ -106,6 +124,8 @@ public class ActionsUtil {
 			break;
 		case "tab":
 			element.sendKeys(Keys.TAB);
+			break;
+		case "":
 			break;
 		default:
 			assertThat("Tecla no mapeado", CoreMatchers.equalTo(tecla));

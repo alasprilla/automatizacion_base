@@ -13,8 +13,9 @@ public class DefPagaTuFactura {
 
 	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
-		pagePagaFact.open();
-		pagePagaFact.irPagina(url);
+//		pagePagaFact.open();
+//		pagePagaFact.irPagina(url);
+		pagePagaFact.openAt(url);
 	}
 
 	// Implementación: "ADP-3_HU-001-ValidacionTC"
@@ -104,6 +105,7 @@ public class DefPagaTuFactura {
 		pagePagaFact.compararAtributo(objeto, "value", valor);
 	}
 
+	//Esta funcion debe de reemplazarse por las 3 independientes
 	@Then("^mostrará el \"([^\"]*)\"$")
 	public void mostrará_el(String texto) {
 		if (texto.contains("no tiene")) {
@@ -116,29 +118,29 @@ public class DefPagaTuFactura {
 		}
 	}
 
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@Then("^Entonces el primer caracter se borra$")
-	public void entonces_el_primer_caracter_se_borra() {
-		pagePagaFact.compararTextoInicial();
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	@Then("^El último caracter se borra$")
-	public void el_último_caracter_se_borra() {
-		pagePagaFact.compararTextoFinal();
-	}
-
-	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
-	@Then("^El último caracter del campo número de documento se borra$")
-	public void el_último_caracter_del_campo_número_de_documento_se_borra() {
-		pagePagaFact.compararTextoFinal();
-	}
-
-	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
-	@Then("^Entonces el primer caracter del campo número de documento se borra$")
-	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
-		pagePagaFact.compararTextoInicial();
-	}
+//	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
+//	@Then("^Entonces el primer caracter se borra$")
+//	public void entonces_el_primer_caracter_se_borra() {
+//		pagePagaFact.compararTextoInicial();
+//	}
+//
+//	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
+//	@Then("^El último caracter se borra$")
+//	public void el_último_caracter_se_borra() {
+//		pagePagaFact.compararTextoFinal();
+//	}
+//
+//	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
+//	@Then("^El último caracter del campo número de documento se borra$")
+//	public void el_último_caracter_del_campo_número_de_documento_se_borra() {
+//		pagePagaFact.compararTextoFinal();
+//	}
+//
+//	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
+//	@Then("^Entonces el primer caracter del campo número de documento se borra$")
+//	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
+//		pagePagaFact.compararTextoInicial();
+//	}
 
 	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
