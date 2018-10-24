@@ -2,17 +2,21 @@ package com.handresc1127.automatizacion.pageobjects;
 
 import org.openqa.selenium.By;
 
+import com.handresc1127.automatizacion.objectsmap.ObjetosEcommerce;
+import com.handresc1127.automatizacion.objectsmap.ObjetosPagaTuFactura;
+import com.handresc1127.automatizacion.objectsmap.ObjetosRecargasPaquetes;
 import com.handresc1127.automatizacion.utilities.ActionsUtil;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("https://transaccionesco-uat.tigocloud.net/servicios/facturas")
-public class PagePagaTuFactura extends PageObject {
+public class PageDefault extends PageObject {
 
-	public PagePagaTuFactura() {
+	public PageDefault() {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
+		new ObjetosEcommerce();
 	}
 
 	By objetoToAction;

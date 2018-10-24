@@ -1,15 +1,15 @@
 package com.handresc1127.automatizacion.definition;
 
-import com.handresc1127.automatizacion.pageobjects.PagePagaTuFactura;
+import com.handresc1127.automatizacion.pageobjects.PageDefault;
 import com.handresc1127.automatizacion.utilities.ActionsUtil;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class DefPagaTuFactura {
+public class DefDefault {
 
-	PagePagaTuFactura pagePagaFact;
+	PageDefault pagePagaFact;
 
 	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
@@ -26,12 +26,6 @@ public class DefPagaTuFactura {
 		pagePagaFact.elementoVisible("Forma Pago Seleccionada");
 	}
 
-	@When("^doy clic en el campo \"([^\"]*)\" y escribo el email \"([^\"]*)\"$")
-	public void doy_clic_en_el_campo_y_escribo_el_email(String correoElectronico, String email) {
-		pagePagaFact.validarEscribir(correoElectronico, email);
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
 	@When("^Presiono la tecla \"([^\"]*)\"$")
 	public void presiono_la_tecla(String tecla) {
 		pagePagaFact.presionarTecla(tecla);
@@ -63,6 +57,7 @@ public class DefPagaTuFactura {
 		pagePagaFact.clic(objeto);
 	}
 
+	//Está funcion puede ser reemplazada por la que compara el atributo
 	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
 	public void el_botón_esta(String objeto, String estaDeshabilitado) {
 		boolean isDisable = false, isEnabled = false;
@@ -95,6 +90,7 @@ public class DefPagaTuFactura {
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
+	// Esto se puede cambiar por otra función que ya existe esperar por un elemento
 	@Then("^La página se recarga$")
 	public void la_página_se_recarga() {
 		pagePagaFact.validarPagRecargada();
@@ -118,30 +114,6 @@ public class DefPagaTuFactura {
 		}
 	}
 
-//	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-//	@Then("^Entonces el primer caracter se borra$")
-//	public void entonces_el_primer_caracter_se_borra() {
-//		pagePagaFact.compararTextoInicial();
-//	}
-//
-//	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-//	@Then("^El último caracter se borra$")
-//	public void el_último_caracter_se_borra() {
-//		pagePagaFact.compararTextoFinal();
-//	}
-//
-//	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
-//	@Then("^El último caracter del campo número de documento se borra$")
-//	public void el_último_caracter_del_campo_número_de_documento_se_borra() {
-//		pagePagaFact.compararTextoFinal();
-//	}
-//
-//	// Implementación: " ADP-21_HU-006-ValidacionNumeroDocumento"
-//	@Then("^Entonces el primer caracter del campo número de documento se borra$")
-//	public void entonces_el_primer_caracter_del_campo_número_de_documento_se_borra() {
-//		pagePagaFact.compararTextoInicial();
-//	}
-
 	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
 	public void llevará_al_formulario_con_el_objeto(String objeto){
@@ -159,7 +131,6 @@ public class DefPagaTuFactura {
 	public void el_campo_no_está_vacío(String objeto){
 		pagePagaFact.compararTextoNoVacio(objeto);
 	}
-		
 	
 	//Ecommerce
 	@When("^arrastro el elemento \"([^\"]*)\" hasta el elemento \"([^\"]*)\"$")

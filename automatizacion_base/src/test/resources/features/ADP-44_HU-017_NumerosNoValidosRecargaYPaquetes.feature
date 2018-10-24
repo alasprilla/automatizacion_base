@@ -8,27 +8,27 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
   Para garantizar que solo permita ingresar número válidos
 
   Scenario Outline: Ingreso de texto en el campo "Ingresa tu línea Tigo"
-  Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-  And ingreso <letras> en el campo "Ingresa tu línea Tigo"
-  When doy clic en "Recarga"
-  Then el campo "Ingresa tu línea Tigo" tiene el texto ""
-  
-  Examples:
-  | letras    |
-  | "abcdef"  |
-  | "tigoUne" |
-  
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
+    And ingreso <letras> en el campo "Ingresa tu línea Tigo"
+    When doy clic en "Recarga"
+    Then el campo "Ingresa tu línea Tigo" tiene el texto ""
+
+    Examples: 
+      | letras    |
+      | "abcdef"  |
+      | "tigoUne" |
+
   Scenario Outline: Ingreso de números de más de 10 dígitos
-  Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-  And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
-  When doy clic en "Recarga"
-  Then mostrará en el valor del campo "Ingresa tu línea Tigo" el texto <resultado>
-  
-  Examples:
-  | msisdn           | resultado        |
-  | "31234567890123" | "(312) 345-6789" |
-  | "36587589658749" | "(365) 875-8965" |
-  
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
+    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
+    When doy clic en "Recarga"
+    Then mostrará en el valor del campo "Ingresa tu línea Tigo" el texto <resultado>
+
+    Examples: 
+      | msisdn           | resultado        |
+      | "31234567890123" | "(312) 345-6789" |
+      | "36587589658749" | "(365) 875-8965" |
+
   Scenario Outline: Ingreso de números de menos de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"

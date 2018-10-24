@@ -1,4 +1,4 @@
-package com.handresc1127.automatizacion.pageobjects;
+package com.handresc1127.automatizacion.objectsmap;
 
 import org.openqa.selenium.By;
 
