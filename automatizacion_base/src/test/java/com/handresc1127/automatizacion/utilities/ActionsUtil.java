@@ -48,6 +48,7 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (int second = 0; second <= 60; second++) {
 			try {
+				driver.findElement(by);
 				if (driver.findElement(by).isDisplayed())
 					break;
 			} catch (Exception e) {
