@@ -9,8 +9,8 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
 
   Scenario Outline: Ingreso de texto en el campo "Ingresa tu línea Tigo"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    And ingreso <letras> en el campo "Ingresa tu línea Tigo"
     When doy clic en "Recarga"
+    And ingreso <letras> en el campo "Ingresa tu línea Tigo"
     Then el campo "Ingresa tu línea Tigo" tiene el texto ""
 
     Examples: 
@@ -20,8 +20,8 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
 
   Scenario Outline: Ingreso de números de más de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     When doy clic en "Recarga"
+    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     Then mostrará en el valor del campo "Ingresa tu línea Tigo" el texto <resultado>
 
     Examples: 
@@ -31,8 +31,8 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
 
   Scenario Outline: Ingreso de números de menos de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     When doy clic en "Recarga"
+    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     And ingreso <correo> en el campo "Correo Electronico"
     Then el campo "Recargar" tiene el atributo "class" en el valor "inactive"
 
@@ -43,8 +43,8 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
 
   Scenario Outline: Ingreso de números que no comiencen con 3 ni con 5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     When doy clic en "Recarga"
+    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     Then el campo "Recargar" tiene el atributo "class" en el valor "inactive"
     And el campo "label error celular recargas" tiene el texto "El número ingresado es incorrecto"
     And el campo "label error celular recargas" tiene el atributo "color" en el valor "rojo"
