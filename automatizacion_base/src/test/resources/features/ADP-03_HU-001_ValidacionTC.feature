@@ -10,9 +10,9 @@ Feature: HU001_ValidacionTC
 
   Background: seleccion medio de pago
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso "3004434877" en el campo "Tu línea Tigo"
+    When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "ConsultarM"
+    And doy clic en el botón "Consultar M"
     Then llevará al formulario con el objeto "title-detail"
 
   Scenario Outline: Borrar caracteres con backspace en el campo "Número de tarjeta"

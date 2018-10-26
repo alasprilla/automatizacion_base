@@ -32,9 +32,9 @@ Feature: HU008 Validación número Celular
     And el campo "mensaje sin facturas" tiene el atributo "color" en el valor "blanco"
 
     Examples: 
-      | msisdn       | email                 |
-      | "3006759101" | "prueba@prueba.com"   |
-      | "3014769996" | "ejemplo@pruebas.com" |
+      | msisdn                      | email                 |
+      | "3006759101"                | "prueba@prueba.com"   |
+      | "movil_msisdn sin facturas" | "ejemplo@pruebas.com" |
 
   @CasoFeliz
   Scenario Outline: Ingreso de número válido Tigo con facturas pendientes
@@ -45,8 +45,8 @@ Feature: HU008 Validación número Celular
     Then llevará al formulario con el objeto "title-detail"
 
     Examples: 
-      | msisdn       | email               |
-      | "3004434877" | "prueba@prueba.com" |
+      | msisdn                      | email               |
+      | "movil_msisdn con facturas" | "prueba@prueba.com" |
 
   Scenario: Visualización de datos de línea Tigo con facturas pendientes
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"

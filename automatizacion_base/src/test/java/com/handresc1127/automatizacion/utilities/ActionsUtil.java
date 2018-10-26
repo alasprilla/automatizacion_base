@@ -181,29 +181,6 @@ public class ActionsUtil {
 		}
 	}
 
-	public static void setTextActions(WebDriver driver, By by, String text) {
-		if (!text.isEmpty()) {
-			highlightElement(driver, by);
-			WebElement element = driver.findElement(by);
-			Actions actions = new Actions(driver);
-			actions.moveToElement(element);
-			actions.click();
-			actions.build().perform();
-			actions.sendKeys("\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
-					+ "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b");
-			actions.build().perform();
-			actions.sendKeys(text);
-			actions.build().perform();
-			actions.click();
-			actions.build().perform();
-			try {
-				element.findElement(By.xpath("..")).click();
-				element.findElement(By.xpath("../..")).click();
-			} catch (Exception e) {
-			}
-		}
-	}
-
 	public static String[][] getTable(WebDriver driver, By by) {
 		highlightElement(driver, by);
 		WebElement tableElement = driver.findElement(by);
@@ -302,7 +279,6 @@ public class ActionsUtil {
 			element.findElement(By.xpath("..")).click();
 			element.findElement(By.xpath("../..")).click();
 		} catch (Exception e) {
-			e.getMessage();
 		}
 	}
 
@@ -465,6 +441,38 @@ public class ActionsUtil {
 			} catch (Exception e) {
 			}
 		}
+	}
+
+	public static int byShared(WebDriver driver, By objClass1, By objClass2) {
+		// TODO Auto-generated method stub
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+		int retorno=0;
+		for (int second = 0; second <= 60; second++) {
+			boolean flagBreak=false;
+			try {
+				driver.findElement(objClass1);
+				if (driver.findElement(objClass1).isDisplayed()) {
+					flagBreak=true;
+					retorno=1;
+				}
+			} catch (Exception e) {
+			}
+			try {
+				driver.findElement(objClass2);
+				if (driver.findElement(objClass2).isDisplayed()) {
+					flagBreak=true;
+					retorno=2;
+					}
+			} catch (Exception e) {
+			}
+			if(flagBreak) break;
+			try {
+				Thread.sleep(100);
+			} catch (Exception e) {
+			}
+		}
+		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
+		return retorno;
 	}
 
 }

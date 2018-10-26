@@ -13,8 +13,6 @@ public class DefDefault {
 
 	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
-//		pagePagaFact.open();
-//		pagePagaFact.irPagina(url);
 		pagePagaFact.openAt(url);
 	}
 
@@ -85,8 +83,7 @@ public class DefDefault {
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
-		pagePagaFact.compararAtributo(btnConsultar, "class",
-				"btn btn_send button js-form-submit form-submit button--secondary button--active");
+		pagePagaFact.compararAtributo(btnConsultar, "class","--active");
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
@@ -149,6 +146,9 @@ public class DefDefault {
 	    ActionsUtil.sleepSeconds(sleep);
 	}
 
-
+	@Then("^clasificar el dato \"([^\"]*)\" en \"([^\"]*)\" o en \"([^\"]*)\"$")
+	public void clasificar_el_dato_en_o_en(String dataName, String dataClass1, String dataClass2) {
+	    pagePagaFact.clasificarDato(dataName, dataClass1,dataClass2);
+	}
 
 }

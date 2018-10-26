@@ -11,6 +11,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(glue = { "com.handresc1127.automatizacion" }, 
 	features = {
+		"src/test/resources/features/ADP-00_SPIKE_AdaptabilidadDeDatos.feature",
 		"src/test/resources/features/ADP-03_HU-001_ValidacionTC.feature",	
 		"src/test/resources/features/ADP-13_HU-002_ValidacionMSISDN.feature",
 		"src/test/resources/features/ADP-14_HU-003_ValidacionEmail.feature",
