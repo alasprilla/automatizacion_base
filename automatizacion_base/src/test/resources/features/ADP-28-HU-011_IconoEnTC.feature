@@ -8,7 +8,7 @@ Feature: HU011_IconoEnTC
 
   Background: seleccion medio de pago
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso "3043878232" en el campo "Tu línea Tigo"
+    When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M"
     Then llevará al formulario con el objeto "title-detail"
