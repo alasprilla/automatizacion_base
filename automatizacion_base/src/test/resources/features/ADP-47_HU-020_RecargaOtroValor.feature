@@ -27,7 +27,6 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    And Espero 2 segundos
     And doy clic en "otro valor"
     And llevará al formulario con el objeto "otro valor cargado"
     And ingreso <valor> en el campo "Valor a recargar"
@@ -36,15 +35,14 @@ Feature: HU020 Recarga de otros valores
     And el campo "label error valor recargas" tiene el atributo "color" en el valor "rojo"
 
     Examples: 
-      | valor  | tecla |
-      | "10"   | "tab" |
-      | "2999" | ""    |
+      | valor  | 
+      | "10"   | 
+      | "2999" |
 
   Scenario Outline: Valor mayor a 200.000 en el campo "Valor a recargar"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    And Espero 2 segundos
     And doy clic en "Otro valor"
     And ingreso <valor> en el campo "Valor a recargar"
     Then el campo "label error valor recargas" tiene el texto "El valor a recargar no debe superar los $ 200,000 , por favor ajústalo e intenta de nuevo."
