@@ -12,7 +12,6 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    #And Espero 2 segundos
     And doy clic en "otro valor"
     And Espero 1 segundos
     And doy clic en "otro valor"
@@ -29,7 +28,6 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    #And Espero 2 segundos
     And doy clic en "otro valor"
     And Espero 1 segundos
     And doy clic en "otro valor"
@@ -48,7 +46,6 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    #And Espero 2 segundos
     And doy clic en "otro valor"
     And Espero 1 segundos
     And doy clic en "otro valor"
@@ -65,7 +62,6 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    #And Espero 2 segundos
     And doy clic en "otro valor"
     And Espero 1 segundos
     And doy clic en "otro valor"
