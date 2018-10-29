@@ -17,7 +17,8 @@ public class ObjetosRecargasPaquetes {
 		//ActionsUtil.objetosPut("valorarecargar", By.id("edit-otro-valor"));
 		ActionsUtil.objetosPut("valorarecargar", By.xpath("//*[@id='edit-otro-valor' and not(contains(@style,'none'))and not(contains(@style,'overflow'))]"));
 		//ActionsUtil.objetosPut("otrovalorcargado", By.xpath("//*[@id='other_value' and not(contains(@style,'none'))and not(contains(@style,'overflow'))]/div/div/div[2]"));
-		ActionsUtil.objetosPut("otrovalorcargado", By.xpath("//*[@id='other_value']/div/div/div[2]"));
+		//ActionsUtil.objetosPut("otrovalorcargado", By.xpath("//*[@id='other_value']/div/div/div[2]"));
+		ActionsUtil.objetosPut("otrovalorcargado", By.xpath("//*[@id='other_value']/div/div/div[1]/label"));
 		ActionsUtil.objetosPut("labelerrorvalorrecargas", By.xpath("//*[@id='other_value']/div/div/div[1]/p"));
 		ActionsUtil.objetosPut("recargadesde", By.xpath("//*[@id=\'other_value\']/div/div/div[2]"));
 		ActionsUtil.objetosPut("labelerrorcelularrecargas",By.xpath("//*[@id=\'container_recharge\']/div[1]/div/div[1]/div/p"));
