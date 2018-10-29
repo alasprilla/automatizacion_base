@@ -20,6 +20,7 @@ Feature: SPIKE Adaptabilidad de datos
       | "3043302450" |
       | "3004434877" |
       | "3043605513" |
+      | "3003588240" |
 
   Scenario Outline: Adaptabilidad hogares
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
@@ -33,8 +34,8 @@ Feature: SPIKE Adaptabilidad de datos
 
     #//Si no tiene el msj esta en letras blancas con fondo azul
     Examples: 
-      | documento    | 
+      | documento    |
       | "71770656"   |
       | "70507173"   |
-      | "70031392"   | 
-      | "1035422732" | 
+      | "70031392"   |
+      | "1035422732" |

@@ -23,20 +23,20 @@ Feature: HU16_ValidacionTeclasEspecialesMSISND
     Then mostrará en el valor del campo "Ingresa tu línea Tigo" el texto <resultado>
 
     Examples: 
-      | msisdn      | tecla1             | tecla2           | tecla3      | resultado      |
-      | "300"       | "inicio"           | "flecha derecha" | "backspace" | "(00"          |
-      | "301200"    | "inicio"           | "flecha derecha" | "backspace" | "(012) 00"     |
-      | "30159874"  | "inicio"           | "flecha derecha" | "backspace" | "(015) 987-4"  |
-      | "301623784" | "inicio"           | "flecha derecha" | "backspace" | "(016) 237-84" |
-      | "300"       | "inicio"           | "suprimir"       | ""          | "(00"          |
-      | "301200"    | "inicio"           | "suprimir"       | ""          | "(012) 00"     |
-      | "30159874"  | "inicio"           | "suprimir"       | ""          | "(015) 987-4"  |
-      | "301623784" | "inicio"           | "suprimir"       | ""          | "(016) 237-84" |
-      | "300"       | "backspace"        | ""               | ""          | "(30"          |
-      | "301200"    | "backspace"        | ""               | ""          | "(301) 20"     |
-      | "30159874"  | "backspace"        | ""               | ""          | "(301) 598-7"  |
-      | "301623784" | "backspace"        | ""               | ""          | "(301) 623-78" |
-      | "300"       | "flecha izquierda" | "suprimir"       | ""          | "(30"          |
-      | "301200"    | "flecha izquierda" | "suprimir"       | ""          | "(301) 20"     |
-      | "30159874"  | "flecha izquierda" | "suprimir"       | ""          | "(301) 598-7"  |
-      | "301623784" | "flecha izquierda" | "suprimir"       | ""          | "(301) 623-78" |
+      | msisdn      | tecla1   | tecla2             | tecla3      | resultado      |
+      | "300"       | "inicio" | "flecha derecha"   | "backspace" | "(00"          |
+      | "301200"    | "inicio" | "flecha derecha"   | "backspace" | "(012) 00"     |
+      | "30159874"  | "inicio" | "flecha derecha"   | "backspace" | "(015) 987-4"  |
+      | "301623784" | "inicio" | "flecha derecha"   | "backspace" | "(016) 237-84" |
+      | "300"       | "inicio" | "suprimir"         | ""          | "(00"          |
+      | "301200"    | "inicio" | "suprimir"         | ""          | "(012) 00"     |
+      | "30159874"  | "inicio" | "suprimir"         | ""          | "(015) 987-4"  |
+      | "301623784" | "inicio" | "suprimir"         | ""          | "(016) 237-84" |
+      | "300"       | "fin"    | "backspace"        | ""          | "(30"          |
+      | "301200"    | "fin"    | "backspace"        | ""          | "(301) 20"     |
+      | "30159874"  | "fin"    | "backspace"        | ""          | "(301) 598-7"  |
+      | "301623784" | "fin"    | "backspace"        | ""          | "(301) 623-78" |
+      | "300"       | "fin"    | "flecha izquierda" | "suprimir"  | "(30"          |
+      | "301200"    | "fin"    | "flecha izquierda" | "suprimir"  | "(301) 20"     |
+      | "30159874"  | "fin"    | "flecha izquierda" | "suprimir"  | "(301) 598-7"  |
+      | "301623784" | "fin"    | "flecha izquierda" | "suprimir"  | "(301) 623-78" |

@@ -21,20 +21,20 @@ Feature: HU002_ValidacionMSISDN
     Then mostrará en el valor del campo "Tu línea Tigo" el texto <resultado>
 
     Examples: 
-      | msisdn      | tecla1             | tecla2           | tecla3      | resultado  |
-      | "300"       | "inicio"           | "flecha derecha" | "backspace" | "00"       |
-      | "301200"    | "inicio"           | "flecha derecha" | "backspace" | "01200"    |
-      | "30159874"  | "inicio"           | "flecha derecha" | "backspace" | "0159874"  |
-      | "301623784" | "inicio"           | "flecha derecha" | "backspace" | "01623784" |
-      | "300"       | "inicio"           | "suprimir"       | ""          | "00"       |
-      | "301200"    | "inicio"           | "suprimir"       | ""          | "01200"    |
-      | "30159874"  | "inicio"           | "suprimir"       | ""          | "0159874"  |
-      | "301623784" | "inicio"           | "suprimir"       | ""          | "01623784" |
-      | "300"       | "backspace"        | ""               | ""          | "30"       |
-      | "301200"    | "backspace"        | ""               | ""          | "30120"    |
-      | "30159874"  | "backspace"        | ""               | ""          | "3015987"  |
-      | "301623784" | "backspace"        | ""               | ""          | "30162378" |
-      | "300"       | "flecha izquierda" | "suprimir"       | ""          | "30"       |
-      | "301200"    | "flecha izquierda" | "suprimir"       | ""          | "30120"    |
-      | "30159874"  | "flecha izquierda" | "suprimir"       | ""          | "3015987"  |
-      | "301623784" | "flecha izquierda" | "suprimir"       | ""          | "30162378" |
+      | msisdn      | tecla1   | tecla2             | tecla3      | resultado  |
+      | "300"       | "inicio" | "flecha derecha"   | "backspace" | "00"       |
+      | "301200"    | "inicio" | "flecha derecha"   | "backspace" | "01200"    |
+      | "30159874"  | "inicio" | "flecha derecha"   | "backspace" | "0159874"  |
+      | "301623784" | "inicio" | "flecha derecha"   | "backspace" | "01623784" |
+      | "300"       | "inicio" | "suprimir"         | ""          | "00"       |
+      | "301200"    | "inicio" | "suprimir"         | ""          | "01200"    |
+      | "30159874"  | "inicio" | "suprimir"         | ""          | "0159874"  |
+      | "301623784" | "inicio" | "suprimir"         | ""          | "01623784" |
+      | "300"       | "fin"    | "backspace"        | ""          | "30"       |
+      | "301200"    | "fin"    | "backspace"        | ""          | "30120"    |
+      | "30159874"  | "fin"    | "backspace"        | ""          | "3015987"  |
+      | "301623784" | "fin"    | "backspace"        | ""          | "30162378" |
+      | "300"       | "fin"    | "flecha izquierda" | "suprimir"  | "30"       |
+      | "301200"    | "fin"    | "flecha izquierda" | "suprimir"  | "30120"    |
+      | "30159874"  | "fin"    | "flecha izquierda" | "suprimir"  | "3015987"  |
+      | "301623784" | "fin"    | "flecha izquierda" | "suprimir"  | "30162378" |

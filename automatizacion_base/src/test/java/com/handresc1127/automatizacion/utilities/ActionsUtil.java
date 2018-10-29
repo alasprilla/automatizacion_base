@@ -112,6 +112,9 @@ public class ActionsUtil {
 		case "inicio":
 			element.sendKeys(Keys.HOME);
 			break;
+		case "fin":
+			element.sendKeys(Keys.END);
+			break;
 		case "suprimir":
 			element.sendKeys(Keys.DELETE);
 			break;
