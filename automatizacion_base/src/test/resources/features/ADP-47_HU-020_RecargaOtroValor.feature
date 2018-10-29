@@ -12,9 +12,9 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    And Espero 2 segundos
+    #And Espero 2 segundos
     And doy clic en "otro valor"
-    And Espero 2 segundos
+    And Espero 1 segundos
     And doy clic en "otro valor"
     And llevará al formulario con el objeto "otro valor cargado"
     And ingreso <texto> en el campo "Valor a recargar"
@@ -29,9 +29,9 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    And Espero 2 segundos
+    #And Espero 2 segundos
     And doy clic en "otro valor"
-    And Espero 2 segundos
+    And Espero 1 segundos
     And doy clic en "otro valor"
     And llevará al formulario con el objeto "otro valor cargado"
     And ingreso <valor> en el campo "Valor a recargar"
@@ -48,9 +48,9 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    And Espero 2 segundos
+    #And Espero 2 segundos
     And doy clic en "otro valor"
-    And Espero 2 segundos
+    And Espero 1 segundos
     And doy clic en "otro valor"
     And ingreso <valor> en el campo "Valor a recargar"
     Then el campo "label error valor recargas" tiene el texto "El valor a recargar no debe superar los $ 200,000 , por favor ajústalo e intenta de nuevo."
@@ -65,9 +65,9 @@ Feature: HU020 Recarga de otros valores
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
-    And Espero 2 segundos
+    #And Espero 2 segundos
     And doy clic en "otro valor"
-    And Espero 2 segundos
+    And Espero 1 segundos
     And doy clic en "otro valor"
     And ingreso <valor> en el campo "Valor a recargar"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
