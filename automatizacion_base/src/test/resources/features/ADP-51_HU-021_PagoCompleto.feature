@@ -19,7 +19,7 @@ Feature: HU021 Pago Completo de Facturas Pendientes
     And ingreso "1234567896" en el campo "Número de documento D"
     And Presiono la tecla "tab"
     And doy clic en el botón "Pagar D"
-    And Espero 2 segundos
+    And Espero 10 segundos
     And llevará al formulario con el objeto "Email PSE"
     And ingreso "pruebas@yopmail.com" en el campo "Email PSE"
     And doy clic en el botón "Ir al Banco"

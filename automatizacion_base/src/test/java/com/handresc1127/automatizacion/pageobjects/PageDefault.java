@@ -19,6 +19,7 @@ public class PageDefault extends PageObject {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
 		new ObjetosEcommerce();
+		dataDefault();
 	}
 
 	By objetoToAction;
@@ -34,6 +35,14 @@ public class PageDefault extends PageObject {
 
 	public static void dataPut(String key, String value){
 		datosClasificados.put(key, value);
+		System.out.println(datosClasificados.toString());
+	}
+	
+	public static void dataDefault(){
+		datosClasificados.put("movil_msisdnconfacturas", "3043878232");
+		datosClasificados.put("movil_msisdnsinfacturas", "3003588240");
+		datosClasificados.put("hogar_numdocumentoconfacturas", "70507173");
+		datosClasificados.put("hogar_numdocumentosinfacturas", "71770656");
 		System.out.println(datosClasificados.toString());
 	}
 
