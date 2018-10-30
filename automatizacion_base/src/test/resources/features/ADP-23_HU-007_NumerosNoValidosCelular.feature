@@ -25,8 +25,8 @@ Feature: HU007 Validación número Invalido Celular
 
     Examples: 
       | msisdn           | resultado    |
-      | "31234567890123" | "3123456789" |
-      | "36587589658749" | "3658758965" |
+      | "31234567890123" | "(312) 345-6789" |
+      | "36587589658749" | "(365) 875-8965" |
 
   Scenario Outline: Ingreso de números de menos de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"

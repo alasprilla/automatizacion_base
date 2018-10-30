@@ -4,8 +4,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
@@ -17,10 +18,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
-
 public class ActionsUtil {
 
-	
 	/*
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 */
@@ -31,20 +30,42 @@ public class ActionsUtil {
 			? Long.parseLong(properties.getProperty("webdriver.timeouts.implicitlywait"))
 			: 10000L;
 
+
+	private static Dictionary<String, By> objetosPage = new Hashtable<String, By>();
+
+	public static By getObjeto(String NombreObjeto) {
+		By retorno = objetosPage.get(NombreObjeto);
+		String valueContains = "Objeto no mapeado";
+		if (retorno == null)
+			valueContains = NombreObjeto;
+		assertThat("Objeto no mapeado", CoreMatchers.equalTo(valueContains));
+		return retorno;
+	}
+
+	public static Dictionary<String, By> getDictionary() {
+		return objetosPage;
+	}
+	
+	public static void objetosPut(String key, By value){
+		objetosPage.put(key, value);
+	}
+			
 	public static void highlightElement(WebDriver driver, By by) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (int second = 0; second <= 60; second++) {
 			try {
+				driver.findElement(by);
 				if (driver.findElement(by).isDisplayed())
 					break;
 			} catch (Exception e) {
 			}
 			try {
 				Thread.sleep(100);
-			}catch (Exception e) {}
+			} catch (Exception e) {
+			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		//driver.findElement(by).isDisplayed();
+		// driver.findElement(by).isDisplayed();
 
 		WebElement element = driver.findElement(by);
 
@@ -109,6 +130,11 @@ public class ActionsUtil {
 		case "tab":
 			element.sendKeys(Keys.TAB);
 			break;
+		case "":
+			break;
+		default:
+			assertThat("Tecla no mapeado", CoreMatchers.equalTo(tecla));
+			break;
 		}
 	}
 
@@ -119,7 +145,7 @@ public class ActionsUtil {
 			driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 			if (element.isDisplayed())
 				return true;
-		} catch (NoSuchElementException e) {
+		} catch (Exception e) {
 			return false;
 		}
 		return false;
@@ -236,8 +262,8 @@ public class ActionsUtil {
 				String aux = tdElement.getText();
 				tabla[rowNum][colNum] = aux;
 				colNum++;
-				if(aux != null && !aux.isEmpty()) {
-						containInfo = true;
+				if (aux != null && !aux.isEmpty()) {
+					containInfo = true;
 				}
 			}
 			if (containInfo) {
@@ -369,7 +395,7 @@ public class ActionsUtil {
 				element.click();
 			}
 		} else {
-			if (element.isSelected()&&element.isEnabled()) {
+			if (element.isSelected() && element.isEnabled()) {
 				element.click();
 			}
 		}
@@ -422,17 +448,30 @@ public class ActionsUtil {
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 	}
-	public static void slider(WebDriver driver, By by){
 
-		  int x=10;
-		    WebElement slider = driver.findElement(by);
-		    int width=slider.getSize().getWidth();
-		    Actions move = new Actions(driver);
-		    move.moveToElement(slider, ((width*x)/100), 0).click();
-		    move.build().perform();
-		    System.out.println("Slider moved");
+	public static void dragAndDrop(WebDriver driver, By byDraggable, By byDroppable) {
+		highlightElement(driver, byDraggable);
+		WebElement elementDrag = driver.findElement(byDraggable);
+		highlightElement(driver, byDroppable);
+		WebElement elementDrop = driver.findElement(byDroppable);
+		Actions dragAndDrop = new Actions(driver);
+		dragAndDrop.dragAndDrop(elementDrag, elementDrop).perform();
+	}
+
+	public static void dragAndDrop(WebDriver driver, By byElement, int x, int y) {
+		highlightElement(driver, byElement);
+		WebElement elementDrag = driver.findElement(byElement);
+		Actions dragAndDrop = new Actions(driver);
+		dragAndDrop.dragAndDropBy(elementDrag, x, y).perform();
+	}
+
+	public static void sleepSeconds(int sleep) {
+		for (int i = 0; i < sleep; i++) {
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+			}
 		}
-	
-	
+	}
 
 }

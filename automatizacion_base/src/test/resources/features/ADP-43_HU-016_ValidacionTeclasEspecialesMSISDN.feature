@@ -7,68 +7,36 @@ Feature: HU16_ValidacionTeclasEspecialesMSISND
   Para garantizar que se pueden utilizar las teclas especiales sobre dicho campo
 
   Scenario: Recarga de página con F5
-    Given Estoy en la página de inicio de compra paquetes y recargas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    When Doy clic en "Recarga"
-    When Doy clic en "Ingresa tu línea Tigo"
-    And presiono la tecla "F5"
-    Then la página se recarga
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
+    When doy clic en "Recarga"
+    And ingreso "" en el campo "Ingresa tu línea Tigo"
+    And Presiono la tecla "F5"
+    Then La página se recarga
 
   Scenario Outline: Borrar caracteres con backspace en el campo "Tu línea Tigo"
-    Given Estoy en la página de inicio de compra paquetes y recargas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    When Doy clic en "Recarga"
-    When Ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
-    And presiono la tecla "backspace"
-    Then el último caracter se borra
+    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
+    When doy clic en "Recarga"
+    And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
+    And Presiono la tecla <tecla1>
+    And Presiono la tecla <tecla2>
+    And Presiono la tecla <tecla3>
+    Then mostrará en el valor del campo "Ingresa tu línea Tigo" el texto <resultado>
 
     Examples: 
-      | msisdn      |
-      | "300"       |
-      | "301200"    |
-      | "30159874"  |
-      | "301623784" |
-
-  Scenario Outline: Borrar caracteres con suprimir en el campo "Tu línea Tigo"
-    Given Estoy en la página de inicio de compra paquetes y recargas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    When Doy clic en "Recarga"
-    When Ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
-    And presiono la tecla "inicio"
-    And presiono la tecla "suprimir"
-    Then el primer caracter se borra
-
-    Examples: 
-      | msisdn      |
-      | "300"       |
-      | "301200"    |
-      | "30159874"  |
-      | "301623784" |
-
-  Scenario Outline: Desplazarse con flecha a la izquierda en el campo "Tu línea Tigo"
-    Given Estoy en la página de inicio de compra paquetes y recargas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    When Doy clic en "Recarga"
-    When Ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
-    And presiono la tecla "flecha izquierda"
-    And presiono la tecla "suprimir"
-    Then el último caracter se borra
-
-    Examples: 
-      | msisdn      |
-      | "300"       |
-      | "301200"    |
-      | "30159874"  |
-      | "301623784" |
-
-  Scenario Outline: Desplazarse con flecha a la derecha en el campo "Tu línea Tigo"
-    Given Estoy en la página de inicio de compra paquetes y recargas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
-    When Doy clic en "Recarga"
-    When Ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
-    And presiono la tecla "inicio"
-    And presiono la tecla "flecha derecha"
-    And presiono la tecla "backspace"
-    Then el primer caracter se borra
-
-    Examples: 
-      | msisdn      |
-      | "300"       |
-      | "301200"    |
-      | "30159874"  |
-      | "301623784" |
+      | msisdn      | tecla1             | tecla2           | tecla3      | resultado      |
+      | "300"       | "inicio"           | "flecha derecha" | "backspace" | "(00"          |
+      | "301200"    | "inicio"           | "flecha derecha" | "backspace" | "(012) 00"     |
+      | "30159874"  | "inicio"           | "flecha derecha" | "backspace" | "(015) 987-4"  |
+      | "301623784" | "inicio"           | "flecha derecha" | "backspace" | "(016) 237-84" |
+      | "300"       | "inicio"           | "suprimir"       | ""          | "(00"          |
+      | "301200"    | "inicio"           | "suprimir"       | ""          | "(012) 00"     |
+      | "30159874"  | "inicio"           | "suprimir"       | ""          | "(015) 987-4"  |
+      | "301623784" | "inicio"           | "suprimir"       | ""          | "(016) 237-84" |
+      | "300"       | "backspace"        | ""               | ""          | "(30"          |
+      | "301200"    | "backspace"        | ""               | ""          | "(301) 20"     |
+      | "30159874"  | "backspace"        | ""               | ""          | "(301) 598-7"  |
+      | "301623784" | "backspace"        | ""               | ""          | "(301) 623-78" |
+      | "300"       | "flecha izquierda" | "suprimir"       | ""          | "(30"          |
+      | "301200"    | "flecha izquierda" | "suprimir"       | ""          | "(301) 20"     |
+      | "30159874"  | "flecha izquierda" | "suprimir"       | ""          | "(301) 598-7"  |
+      | "301623784" | "flecha izquierda" | "suprimir"       | ""          | "(301) 623-78" |
