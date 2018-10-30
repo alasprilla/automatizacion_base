@@ -74,7 +74,6 @@ Feature: HU003: Validación de email
       | "3043302450" | "ejemplo@dominio.com." |
       | "3043302450" | "ejemplo.@dominio."    |
 
-  @CasoFeliz
   Scenario Outline: Email correcto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"

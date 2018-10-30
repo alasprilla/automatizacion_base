@@ -32,9 +32,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		},
 
 
-		tags = {""}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
-				"junit:target/reports/junit/allcukes.xml", "json:target/reports/cukes.json" })
+		tags = {"@CasoFeliz"}, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+				"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {
-
 }

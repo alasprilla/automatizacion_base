@@ -11,7 +11,6 @@ Feature: SPIKE Adaptabilidad de datos
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M"
-    #Then adaptabilidad de datos "movil_msisdn" partiendo de "tiene o no tiene facturas"
     Then clasificar el dato <msisdn> en "movil_msisdn con facturas" o en "movil_msisdn sin facturas"
 
     Examples: 
@@ -29,10 +28,8 @@ Feature: SPIKE Adaptabilidad de datos
     And ingreso <documento> en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en el botón "Consultar H"
-    #Then adaptabilidad de datos "Hogar_numDocumento" partiendo de "tiene o no tiene facturas"
     Then clasificar el dato <documento> en "Hogar_numDocumento con facturas" o en "Hogar_numDocumento sin facturas"
 
-    #//Si no tiene el msj esta en letras blancas con fondo azul
     Examples: 
       | documento    |
       | "71770656"   |

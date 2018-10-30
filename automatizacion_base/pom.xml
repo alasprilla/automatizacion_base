@@ -96,6 +96,13 @@
 			<version>20180813</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>org.jacoco.agent</artifactId>
+			<version>0.8.2</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -108,6 +115,7 @@
 					<includes>
 						<include>**/RunnerTags.java</include>
 					</includes>
+					<forkMode>never</forkMode>
 				</configuration>
 			</plugin>
 
@@ -144,7 +152,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -162,27 +170,14 @@
 						</goals>
 					</execution>
 					<execution>
-						<id>default-prepare-agent-integration</id>
-						<goals>
-							<goal>prepare-agent-integration</goal>
-						</goals>
-					</execution>
-					<execution>
 						<id>report-aggregate</id>
-						<phase>prepare-package</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
 					</execution>
-					<execution>
-						<id>default-repot-integration</id>
-						<goals>
-							<goal>report-integration</goal>
-						</goals>
-					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
 				<artifactId>sonar-maven-plugin</artifactId>

@@ -36,7 +36,6 @@ Feature: HU009 CC válida en campo número de documento
       |      11 | "12345678901"  |
       |      12 | "123456789012" |
 
-  @CasoFeliz
   Scenario Outline: Ingreso de cédula válida
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
