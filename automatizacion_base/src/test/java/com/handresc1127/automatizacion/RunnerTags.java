@@ -25,15 +25,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 	//	"src/test/resources/features/ADP-29_HU-012_ValidacionCVV.feature",
 	//	"src/test/resources/features/ADP-31_HU-013_ValidacionEmailHogar.feature",
 	//	"src/test/resources/features/ADP-43_HU-016_ValidacionTeclasEspecialesMSISDN.feature",
-<<<<<<< HEAD
-		"src/test/resources/features/ADP-44_HU-017_NumerosNoValidosRecargaYPaquetes.feature",
-	//	"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature",
-
-=======
 	//	"src/test/resources/features/ADP-44_HU-017_NumerosNoValidosRecargaYPaquetes.feature",
 		"src/test/resources/features/ADP-47_HU-020_RecargaOtroValor.feature"
 	//	"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature"
->>>>>>> Capacitacion
 		},
 
 
