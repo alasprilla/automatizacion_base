@@ -161,6 +161,7 @@
 					<destFile>target/jacoco.exec</destFile>
 					<dataFile>target/jacoco.exec</dataFile>
 					<outputDirectory>target/reports/coverage/</outputDirectory>
+					<append>true</append>
 				</configuration>
 				<executions>
 					<execution>
@@ -171,6 +172,7 @@
 					</execution>
 					<execution>
 						<id>report-aggregate</id>
+						<phase>install</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
