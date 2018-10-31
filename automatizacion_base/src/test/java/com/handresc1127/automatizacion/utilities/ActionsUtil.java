@@ -46,9 +46,10 @@ public class ActionsUtil {
 		return objetosPage;
 	}
 	
-	public static String objetosPut(String key, By value){
+	public static void objetosPut(String key, By value){
 		objetosPage.put(key, value);
 	}
+	
 			
 	public static void highlightElement(WebDriver driver, By by) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
