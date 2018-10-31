@@ -46,7 +46,7 @@ public class ActionsUtil {
 		return objetosPage;
 	}
 	
-	public static void objetosPut(String key, By value){
+	public static String objetosPut(String key, By value){
 		objetosPage.put(key, value);
 	}
 			

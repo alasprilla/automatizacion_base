@@ -12,6 +12,7 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("ingresatulineatigo", By.id("recharge-line"));
 		ActionsUtil.objetosPut("correoelectronico" , By.id("edit-email"));
 		ActionsUtil.objetosPut("recargar", By.id("edit-button-recargar"));
+		ActionsUtil.objetosPut("3000", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[6]"));
 		ActionsUtil.objetosPut("otrovalor", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[6]"));
 		ActionsUtil.objetosPut("valorarecargar", By.id("edit-otro-valor"));
 		ActionsUtil.objetosPut("otrovalorcargado", By.xpath("//*[@id='other_value' and not(contains(@style,'none'))and not(contains(@style,'overflow'))]") );
