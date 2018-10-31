@@ -1,7 +1,7 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary : Email Hogar
 @issue:ADP-31, @Pasarela
-Feature: HU013: Validación de email Hogar
+Feature: HU013 Validación de email Hogar
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que la consulta se realice con un email válido
