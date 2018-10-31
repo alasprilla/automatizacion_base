@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-28
+@issue:ADP-28, @Pasarela
 Feature: HU011_IconoEnTC
 		Como Tigoune
 		Quiero pruebas automatizadas de la casuística en el ingreso de números de TC
@@ -13,7 +13,7 @@ Feature: HU011_IconoEnTC
     And doy clic en el botón "Consultar M"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario Outline: Ingreso de número de tarjeta de crédito Visa correcto
+  Scenario Outline: Pasarela - Icono tarjeta de crédito Visa
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso <Visa> en el campo "Número de tarjeta"
     And el campo "Icono Tarjeta" tiene el atributo "class" en el valor "visa"
@@ -23,7 +23,7 @@ Feature: HU011_IconoEnTC
       | "4357223863986989"  |
       | "4177250463817130"  |
 
-  Scenario Outline: Ingreso de número de tarjeta de crédito Mastercard correcto
+  Scenario Outline: Pasarela - Icono tarjeta de crédito Mastercard
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso <mastercard> en el campo "Número de tarjeta"
     And el campo "Icono Tarjeta" tiene el atributo "class" en el valor "mastercard"
@@ -33,7 +33,7 @@ Feature: HU011_IconoEnTC
     |"5511807769895870"|
     |"5121640864080995"|
     
-  Scenario Outline: Ingreso de número de tarjeta de crédito American Express correcto
+  Scenario Outline: Pasarela - Icono tarjeta de crédito American Express
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso <american> en el campo "Número de tarjeta"
     And el campo "Icono Tarjeta" tiene el atributo "class" en el valor "amex"
@@ -43,7 +43,7 @@ Feature: HU011_IconoEnTC
     |"378100434090066" |
     |"342321726862151" |
     
-  Scenario Outline: Ingreso de número de tarjeta de crédito Diners Club correcto
+  Scenario Outline: Pasarela - Icono tarjeta de crédito Diners Club
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso <diners> en el campo "Número de tarjeta"
     And el campo "Icono Tarjeta" tiene el atributo "class" en el valor "diners"

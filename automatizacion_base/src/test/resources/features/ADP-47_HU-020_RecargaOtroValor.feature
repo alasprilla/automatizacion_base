@@ -1,6 +1,6 @@
 #Author: Nelson Mesa
 #Keywords Summary :
-@issue:ADP-47
+@issue:ADP-47, @Recargas
 Feature: HU020 Recarga de otros valores
   
   
@@ -8,7 +8,7 @@ Feature: HU020 Recarga de otros valores
   Quiero realizar pruebas automatizadas sobre un valor no predeterminado en el formulario de paquetes y recargas
   Para garantizar que funcione correctamente el inicio del proceso de recarga
 
-  Scenario Outline: Ingreso de texto en el campo "Valor a recargar"
+  Scenario Outline: Recargas - Valor a recargar es texto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
@@ -24,7 +24,7 @@ Feature: HU020 Recarga de otros valores
       | "abc" |
       | "sdf" |
 
-  Scenario Outline: Valor menor a 2.999 en el campo "Valor a recargar"
+  Scenario Outline: Recargas - Valor a recargar menor a 2.999
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
@@ -42,7 +42,7 @@ Feature: HU020 Recarga de otros valores
       | "10"   |
       | "2999" |
 
-  Scenario Outline: Valor mayor a 200.000 en el campo "Valor a recargar"
+  Scenario Outline: Recargas - Valor a recargar mayor a 200.000
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
@@ -58,7 +58,7 @@ Feature: HU020 Recarga de otros valores
       | "200001"  |
       | "5000000" |
 
-  Scenario Outline: Valor en el rango 3.000 - 200.000 en el campo "Valor a recargar"
+  Scenario Outline: Recargas - Valor a recargar en el rango 3.000 - 200.000
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"

@@ -1,13 +1,13 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary : Email Hogar
-@issue:ADP-31
+@issue:ADP-31, @Pasarela
 Feature: HU013: Validación de email Hogar
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que la consulta se realice con un email válido
 
   #Parámetros: "@prueba.com", "@PRUEBA.COM", "@aquí.com", "@AQUÍ.COM"
-  Scenario Outline: Email sin usuario
+  Scenario Outline: Pasarela - Email Hogar sin usuario
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -27,7 +27,7 @@ Feature: HU013: Validación de email Hogar
       | "1078541256" | "@PRUEBA2.COM.co" |
 
   #Parámetros: "usuario", "usuario@", "USUARIO", "aquí", "aquí@", "AQUÍ@"
-  Scenario Outline: Email sin dominio
+  Scenario Outline: Pasarela - Email Hogar sin dominio
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -47,7 +47,7 @@ Feature: HU013: Validación de email Hogar
       | "1078541256" | "AQUÍ@"    |
 
   #Parámetros: "ejemplo@dominio.a", "ejemplo@dominio.com.a", "ejemplo@d.a", "ejemplo@d.com.a"
-  Scenario Outline: Email con dominio de primer nivel de solo un caracter
+  Scenario Outline: Pasarela - Email Hogar dominio invalido
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -65,7 +65,7 @@ Feature: HU013: Validación de email Hogar
       | "123453784" | "ejemplo@d.com.a"       |
 
   #Parámetros: "ejemplo.", "ejemplo.@", "ejemplo@.", "ejemplo@dominio.", "ejemplo@dominio.com."
-  Scenario Outline: Email terminado en punto (.)
+  Scenario Outline: Pasarela - Email Hogar terminado en punto (.)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -85,7 +85,7 @@ Feature: HU013: Validación de email Hogar
       | "1088354125" | "ejemplo.@dominio."    |
 
   #Parámetros: "ejemplo@ejemplo.com"
-  Scenario Outline: Email correcto
+  Scenario Outline: Pasarela - Email Hogar válido
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"

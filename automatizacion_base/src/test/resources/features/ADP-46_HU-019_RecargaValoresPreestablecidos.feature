@@ -1,6 +1,6 @@
 #Author: Nelson Mesa
 #Keywords Summary :
-@issue:ADP-46
+@issue:ADP-46, @Recargas
 
 Feature: HU019 Recarga de valores preestablecidos
 
@@ -8,7 +8,7 @@ Como Tigoune
 Quiero realizar pruebas automatizadas sobre la selección del valor en el formulario de paquetes y recargas
 Para garantizar que funcione correctamente el inicio del proceso de recarga
 
-  Scenario Outline: Ingreso de texto en el campo "Valor a recargar"
+  Scenario Outline: Recargas - Valor a recargar es texto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     And Espero 2 segundos

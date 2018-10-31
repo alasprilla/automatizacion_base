@@ -1,12 +1,12 @@
 #Author: Henry Andres Correa Correa
 #Keywords Summary : Cedula, Validacion, Documento
-@issue:ADP-26
+@issue:ADP-26, @Pasarela
 Feature: HU009 CC válida en campo número de documento
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que haya consistencia en los datos entre pantallas
 
-  Scenario: Ingreso de texto en el campo número de documento
+  Scenario: Pasarela - Documento es un texto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -15,14 +15,14 @@ Feature: HU009 CC válida en campo número de documento
     And el campo "label error documento" tiene el texto "El documento solo debe tener números"
     And el campo "label error documento" tiene el atributo "color" en el valor "rojo"
 
-  Scenario: Ingreso de documentos de más de 13 dígitos
+  Scenario: Pasarela - Documentos de más de 13 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso "12345678901234" en el campo "número de documento"
     Then mostrará en el valor del campo "número de documento" el texto "1234567890123"
 
-  Scenario Outline: Ingreso de documentos de N dígitos
+  Scenario Outline: Pasarela - Documentos de N dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -36,7 +36,7 @@ Feature: HU009 CC válida en campo número de documento
       |      11 | "12345678901"  |
       |      12 | "123456789012" |
 
-  Scenario Outline: Ingreso de cédula válida
+  Scenario Outline: Pasarela - Documento es una cédula válida
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
@@ -51,7 +51,7 @@ Feature: HU009 CC válida en campo número de documento
       | "71770656" | "El usuario no tiene facturas pendientes" |
       | "552716"   | "listado de facturas pendientes"          |
 
-  Scenario: Visualización de datos de servicios fijos con facturas pendientes
+  Scenario: Pasarela - Visualización de datos de factura de servicios fijos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"

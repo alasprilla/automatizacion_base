@@ -1,12 +1,12 @@
 #Author: Rigoberto Henao
 #Keywords Summary : Email
-@issue:ADP-14
-Feature: HU003: Validación de email
+@issue:ADP-14, @Pasarela
+Feature: HU003_ValidaciónDeEmail
   Como Tigoune 
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil 
   Para garantizar que la consulta se realice con un email válido
 
-  Scenario Outline: Email sin usuario
+  Scenario Outline: Pasarela - Email sin usuario
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
@@ -23,7 +23,7 @@ Feature: HU003: Validación de email
       | "3043302450" | "@prueba2.com.co" |
       | "3043302450" | "@PRUEBA2.COM.co" |
 
-  Scenario Outline: Email sin dominio
+  Scenario Outline: Pasarela - Email sin dominio
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
@@ -42,7 +42,7 @@ Feature: HU003: Validación de email
       | "3043302450" | "AQUÍ@ti"  |
       | "3043302450" | "AQUÍ@go"  |
 
-  Scenario Outline: Email con dominio de primer nivel de solo un caracter
+  Scenario Outline: Pasarela - Email con dominio invalido
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
@@ -57,7 +57,7 @@ Feature: HU003: Validación de email
       | "3043302450" | "ejemplo@d.a"           |
       | "3043302450" | "ejemplo@d.com.a"       |
 
-  Scenario Outline: Email terminado en punto (.)
+  Scenario Outline: Pasarela - Email terminado en punto (.)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
@@ -74,7 +74,7 @@ Feature: HU003: Validación de email
       | "3043302450" | "ejemplo@dominio.com." |
       | "3043302450" | "ejemplo.@dominio."    |
 
-  Scenario Outline: Email correcto
+  Scenario Outline: Pasarela - Email valido
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"

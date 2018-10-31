@@ -1,12 +1,12 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-23
+@issue:ADP-23, @Pasarela
 Feature: HU007 Validación número Invalido Celular
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil
   Para garantizar que no permita ingresar número de móvil no válidos en el formulario de consulta de facturas
 
-  Scenario Outline: Ingreso de texto en el campo Tu línea Tigo
+  Scenario Outline: Pasarela - Texto en el campo Tu línea Tigo
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <letras> en el campo "Tu línea Tigo"
     And el campo "Tu línea Tigo" tiene el texto ""
@@ -18,7 +18,7 @@ Feature: HU007 Validación número Invalido Celular
       | "abcdef"  |
       | "tigoUne" |
 
-  Scenario Outline: Ingreso de números de más de 10 dígitos
+  Scenario Outline: Pasarela - Tu línea tigo de más de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     Then mostrará en el valor del campo "Tu línea Tigo" el texto <resultado>
@@ -28,7 +28,7 @@ Feature: HU007 Validación número Invalido Celular
       | "31234567890123" | "(312) 345-6789" |
       | "36587589658749" | "(365) 875-8965" |
 
-  Scenario Outline: Ingreso de números de menos de 10 dígitos
+  Scenario Outline: Pasarela - Tu línea tigo de menos de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en "Titulo facturas moviles"
@@ -41,7 +41,7 @@ Feature: HU007 Validación número Invalido Celular
       | "312345" |
       | "365897" |
 
-  Scenario Outline: Ingreso de números que no comiencen con 3 ni con 5
+  Scenario Outline: Pasarela - Tu línea tigo no comienza con 3 ni con 5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     Then el botón "ConsultarM" esta "deshabilitado"

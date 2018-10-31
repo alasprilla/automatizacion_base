@@ -1,5 +1,5 @@
 #Author: Henry Andres Correa Correa
-@issue:ADP-27
+@issue:ADP-27, @Pasarela
 Feature: HU010 Validación de número de TC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC
@@ -12,20 +12,20 @@ Feature: HU010 Validación de número de TC
     And doy clic en el botón "ConsultarM"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario: Texto en el campo "Número de tarjeta"
+  Scenario: Pasarela - Número de tarjeta es un texto
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso "No númerico" en el campo "Número de tarjeta"
     Then el campo "Msg Error TC" tiene el texto "El número de tarjeta solo debe tener números"
     And el campo "Msg Error TC" tiene el atributo "color" en el valor "rojo"
 
-  Scenario: El campo "Número de tarjeta" de menos de 14 dígitos
+  Scenario: Pasarela - Número de tarjeta de menos de 14 dígitos
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso "1234567890123" en el campo "Número de tarjeta"
     And Presiono la tecla "Tab"
     Then el campo "Msg Error TC" tiene el texto "Debe ingresar una tarjeta de crédito valida."
     And el campo "Msg Error TC" tiene el atributo "color" en el valor "rojo"
 
-  Scenario: Ingreso de número de más de 19 dígitos
+  Scenario: Pasarela - Número de tarjeta de más de 19 dígitos
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso "123456789012345678901234" en el campo "Número de tarjeta"
     Then mostrará en el valor del campo "Número de tarjeta" el texto "1234567890123456789"

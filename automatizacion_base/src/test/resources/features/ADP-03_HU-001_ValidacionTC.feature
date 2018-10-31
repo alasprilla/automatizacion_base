@@ -2,7 +2,7 @@
 #Keywords Summary : tarjeta, crédito
 #Encoding: utf-8
 #Language: es
-@issue:ADP-3
+@issue:ADP-3, @Pasarela
 Feature: HU001_ValidacionTC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC
@@ -15,7 +15,7 @@ Feature: HU001_ValidacionTC
     And doy clic en el botón "Consultar M"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario Outline: Borrar caracteres con backspace en el campo "Número de tarjeta"
+  Scenario Outline: Pasarela - Borrar con backspace en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "backspace"
@@ -27,7 +27,7 @@ Feature: HU001_ValidacionTC
       | "548528654531"   | "5485 2865 453"    |
       | "54852865453140" | "5485 2865 4531 4" |
 
-  Scenario Outline: Borrar caracteres con suprimir en el campo "Número de tarjeta"
+  Scenario Outline: Pasarela - Borrar con suprimir en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "inicio"
@@ -39,7 +39,7 @@ Feature: HU001_ValidacionTC
       | "44852865"       | "4852 865"         |
       | "44852865453140" | "4852 8654 5314 0" |
 
-  Scenario Outline: Desplazarse con flecha a la izquierda en el campo "Número de tarjeta"
+  Scenario Outline: Pasarela - Desplazarse a la izquierda en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "flecha izquierda"
@@ -51,7 +51,7 @@ Feature: HU001_ValidacionTC
       | "34852"        | "3485"          |
       | "348528654531" | "3485 286545 3" |
 
-  Scenario Outline: Desplazarse con flecha a la derecha en el campo "Número de tarjeta"
+  Scenario Outline: Pasarela - Desplazarse a la derecha en el campo "Número de tarjeta"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     When ingreso <tc> en el campo "Número de tarjeta"
     And Presiono la tecla "inicio"

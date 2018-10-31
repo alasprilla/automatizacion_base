@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-51
+@issue:ADP-51, @Pasarela
 Feature: HU021 Pago Completo de Facturas Pendientes
 
   Background: seleccion medio de pago
@@ -10,7 +10,7 @@ Feature: HU021 Pago Completo de Facturas Pendientes
     And doy clic en el botón "Consultar M"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario Outline: Pago Completo con PSE
+  Scenario Outline: Pasarela - Pago Completo con PSE
     Given Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
     And selecciono "BANCO UNION COLOMBIANO" en el campo "Banco"
     And selecciono "N" en el campo "Tipo de Persona"

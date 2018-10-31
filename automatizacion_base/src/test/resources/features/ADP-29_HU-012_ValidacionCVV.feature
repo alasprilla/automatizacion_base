@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-29
+@issue:ADP-29, @Pasarela
 Feature: HU012_ValidacionCVV
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC
@@ -13,7 +13,7 @@ Feature: HU012_ValidacionCVV
     And doy clic en el botón "Consultar M"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario Outline: Texto en el campo "CVV"
+  Scenario Outline: Pasarela - CVV es un texto
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso "4357223863986989" en el campo "Número de tarjeta"
     When ingreso <letras> en el campo "CVV"
@@ -24,7 +24,7 @@ Feature: HU012_ValidacionCVV
       | "abcdef"  |
       | "tigoUne" |
 
-  Scenario Outline: Ingreso de número "CVV" con Visa, Mastercard y Diners
+  Scenario Outline: Pasarela - CVV de Visa, Mastercard y Diners (3 digitos)
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso <tarjeta> en el campo "Número de tarjeta"
     When ingreso <numero> en el campo "CVV"
@@ -36,7 +36,7 @@ Feature: HU012_ValidacionCVV
       | "Mastercard"     | "5511807769895870" | "6547" | "***"     |
       | "Diners"         | "38454807134064"   | "9375" | "***"     |
 
-  Scenario Outline: Ingreso de número "CVV" con American Express
+  Scenario Outline: Pasarela - CVV de American Express (4 digitos)
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso <tarjeta> en el campo "Número de tarjeta"
     When ingreso <numero> en el campo "CVV"

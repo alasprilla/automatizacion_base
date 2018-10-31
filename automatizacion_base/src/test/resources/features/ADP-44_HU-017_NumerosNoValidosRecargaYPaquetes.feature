@@ -1,13 +1,13 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-44
+@issue:ADP-44, @Paquetes
 Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
   
   Como Tigoune
   Quiero realizar pruebas automatizadas sobre el campo "Número Celular" en el formulario de paquetes y recargas
   Para garantizar que solo permita ingresar número válidos
 
-  Scenario Outline: Ingreso de texto en el campo "Ingresa tu línea Tigo"
+  Scenario Outline: Paquetes - Ingresa tu línea Tigo es texto
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <letras> en el campo "Ingresa tu línea Tigo"
@@ -18,7 +18,7 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
       | "abcdef"  |
       | "tigoUne" |
 
-  Scenario Outline: Ingreso de números de más de 10 dígitos
+  Scenario Outline: Paquetes - Ingresa tu línea Tigo de más de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
@@ -29,7 +29,7 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
       | "31234567890123" | "(312) 345-6789" |
       | "36587589658749" | "(365) 875-8965" |
 
-  Scenario Outline: Ingreso de números de menos de 10 dígitos
+  Scenario Outline: Paquetes - Ingresa tu línea Tigo de menos de 10 dígitos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
@@ -41,7 +41,7 @@ Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
       | "312345" | "prueba@prueba.com"   |
       | "365897" | "ejemplo@ejemplo.com" |
 
-  Scenario Outline: Ingreso de números que no comiencen con 3 ni con 5
+  Scenario Outline: Paquetes - Ingresa tu línea Tigo no comienza con 3 ni con 5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"

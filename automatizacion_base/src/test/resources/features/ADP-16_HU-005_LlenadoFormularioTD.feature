@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-16
+@issue:ADP-16, @Pasarela
 Feature: HU005_Llenado_Formulario_TD
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el llenado de formulario de TD
@@ -13,7 +13,7 @@ Feature: HU005_Llenado_Formulario_TD
     And doy clic en el botón "ConsultarM"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario Outline: Validación de campos de transacción PSE
+  Scenario Outline: Pasarela - Transacción PSE obligatoriedad de campos
     Given Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
     And selecciono <banco> en el campo "Banco"
     And selecciono <tipoPersona> en el campo "Tipo de Persona"

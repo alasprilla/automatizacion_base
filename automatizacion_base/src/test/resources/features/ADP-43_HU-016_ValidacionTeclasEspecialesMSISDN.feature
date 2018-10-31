@@ -1,19 +1,19 @@
 #Author: Alexandra Lasprilla
 #Keywords Summary : MSISDN
-@issue:ADP-43
+@issue:ADP-43, @Paquetes
 Feature: HU16_ValidacionTeclasEspecialesMSISND
   Como Tigoune
   Quiero realizar pruebas automatizadas sobre el campo "Número Celular" en el formulario de paquetes y recargas
   Para garantizar que se pueden utilizar las teclas especiales sobre dicho campo
 
-  Scenario: Recarga de página con F5
+  Scenario: Paquetes - Recarga de página con F5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso "" en el campo "Ingresa tu línea Tigo"
     And Presiono la tecla "F5"
     Then La página se recarga
 
-  Scenario Outline: Borrar caracteres con backspace en el campo "Tu línea Tigo"
+  Scenario Outline: Paquetes - Validación de teclas especiales campo "Tu línea Tigo"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"

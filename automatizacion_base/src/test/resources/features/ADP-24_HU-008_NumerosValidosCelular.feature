@@ -1,12 +1,12 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-24
+@issue:ADP-24, @Pasarela
 Feature: HU008 Validación número Celular
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil
   Para garantizar que se pueden utilizar las teclas especiales básicas en el formulario de consulta de facturas
 
-  Scenario Outline: Ingreso de número valido que no es Tigo
+  Scenario Outline: Pasarela - MSISDN válido que no es Tigo
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
@@ -22,7 +22,7 @@ Feature: HU008 Validación número Celular
       | "3150000000" | "casoexitoso@ti.go"     |
       | "3200000000" | "caso_exitoso@tigo.com" |
 
-  Scenario Outline: Ingreso de número válido Tigo sin facturas pendientes
+  Scenario Outline: PasPasarela - MSISDN válido Tigo sin facturas pendientes
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
@@ -37,7 +37,7 @@ Feature: HU008 Validación número Celular
       | "movil_msisdn sin facturas" | "ejemplo@pruebas.com" |
 
   @CasoFeliz
-  Scenario Outline: Ingreso de número válido Tigo con facturas pendientes
+  Scenario Outline: Pasarela - MSISDN válido Tigo con facturas pendientes
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
@@ -48,7 +48,7 @@ Feature: HU008 Validación número Celular
       | msisdn                      | email               |
       | "movil_msisdn con facturas" | "prueba@prueba.com" |
 
-  Scenario: Visualización de datos de línea Tigo con facturas pendientes
+  Scenario: Pasarela - Visualización de datos de línea Tigo con facturas pendientes
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "3004434877" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónicoM"
