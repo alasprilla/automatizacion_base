@@ -28,4 +28,20 @@ Feature: HU018 Validación números Validos Celular en Recargas y Paquetes
   And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
   And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
   And doy clic en "Recargar"
+  
+  Scenario Outline: Ingreso de número válido Tigo con un plan que permite recargas
+  Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
+  When doy clic en "Recarga"   
+  And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
+  And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
+  And doy clic en "Recargar"
+  Then llevará al formulario con el objeto "title-detail"
+  And el campo "Numero Celular" tiene el texto <Formato Celular>
+  And el campo "Fecha Facturacion" no está vacío
+  And el campo "Fecha límite de pago" no está vacío
+  
+  Examples: 
+      | msisdn       | Formato Celular   |
+      | "3003255454" | "(300) 325-5454"  | 
+      | "3016078288" | "(301) 607-8288"  |
       
