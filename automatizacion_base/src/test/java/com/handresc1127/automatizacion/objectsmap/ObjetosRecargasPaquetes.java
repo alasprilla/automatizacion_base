@@ -25,7 +25,9 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("15mil", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[3]"));
 		ActionsUtil.objetosPut("20mil", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[4]"));
 		ActionsUtil.objetosPut("30mil", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[5]"));
-	 
+		ActionsUtil.objetosPut("esperaunmomento", By.xpath("//*[@id='debt']/div/div/div[1]/div[2]/h2"));
+	    ActionsUtil.objetosPut("continuar", By.xpath("//*[@id=\'debt\']/div/div/div[3]/button[1]"));
+	    ActionsUtil.objetosPut("aumentarrecarga", By.xpath("//*[@id=\'debt\']/div/div/div[3]/button[2]"));
 		
 	}
 }
