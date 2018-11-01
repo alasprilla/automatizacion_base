@@ -22,5 +22,11 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("error", By.xpath("//*[@id='page']/div[1]/div/div/div/div"));
 		ActionsUtil.objetosPut("numerocelular", By.xpath("//*[@id='block-tigo-theme-content']/div/div[2]/div/div/div/div[1]/p[1]/b"));
 		ActionsUtil.objetosPut("fechafacturacion", By.xpath("//*[@id='block-tigo-theme-content']/div/div[2]/div/div/div/div[3]/div/div[1]/p[2]"));
+		
+		ActionsUtil.objetosPut("3mil", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[1]"));
+		ActionsUtil.objetosPut("6mil", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[2]"));
+		ActionsUtil.objetosPut("15mil",By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[3]"));
+		ActionsUtil.objetosPut("20mil",By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[4]"));
+		ActionsUtil.objetosPut("30mil",By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[5]"));
 	}
 }
