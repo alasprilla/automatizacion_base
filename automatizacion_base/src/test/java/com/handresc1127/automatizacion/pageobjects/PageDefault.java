@@ -157,7 +157,7 @@ public class PageDefault extends PageObject {
 	public void ArrastrarYSoltarXY(String objeto, String position) {
 		sharedObjet(objeto);
 		By byElement = getObjetoToCliked();
-		String pos[] = ActionsUtil.textoMinusculasSinEspacios(position).split(",");
+		String []pos = ActionsUtil.textoMinusculasSinEspacios(position).split(",");
 		int x = Integer.parseInt(pos[0]);
 		int y = Integer.parseInt(pos[1]);
 		ActionsUtil.dragAndDrop(getDriver(), byElement, x, y);

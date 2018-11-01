@@ -23,6 +23,10 @@ public class ActionsUtil {
 	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 	 */
 
+	private ActionsUtil() {
+		throw new IllegalStateException("Utility class");
+	}
+
 	static PropertiesLoader properties = PropertiesLoader.getInstance();
 
 	private static final long TIMEOUTS = (properties.getProperty("webdriver.timeouts.implicitlywait")) != null
@@ -31,19 +35,19 @@ public class ActionsUtil {
 
 	static HashMap<String, By> objetosPage = new HashMap<String, By>();
 
-	public static By getObjeto(String NombreObjeto) {
-		By retorno = objetosPage.get(NombreObjeto);
+	public static By getObjeto(String nombreObjeto) {
+		By retorno = objetosPage.get(nombreObjeto);
 		String valueContains = "Objeto no mapeado";
 		if (retorno == null)
-			valueContains = NombreObjeto;
+			valueContains = nombreObjeto;
 		assertThat("Objeto no mapeado", CoreMatchers.equalTo(valueContains));
 		return retorno;
 	}
 
-	public static void objetosPut(String key, By value){
+	public static void objetosPut(String key, By value) {
 		objetosPage.put(key, value);
 	}
-			
+
 	public static void highlightElement(WebDriver driver, By by) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (int second = 0; second <= 60; second++) {
@@ -56,6 +60,7 @@ public class ActionsUtil {
 			try {
 				Thread.sleep(100);
 			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
@@ -85,7 +90,8 @@ public class ActionsUtil {
 				Thread.sleep(15);
 				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
 				Thread.sleep(5);
-			} catch (Exception ex) {
+			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 
 		}
@@ -143,6 +149,7 @@ public class ActionsUtil {
 			if (element.isDisplayed())
 				return true;
 		} catch (Exception e) {
+			System.out.println("Excepción: "+ e.getMessage());
 			return false;
 		}
 		return false;
@@ -179,7 +186,8 @@ public class ActionsUtil {
 				element.sendKeys(character);
 				try {
 					Thread.sleep(5);
-				} catch (Exception ex) {
+				} catch (Exception e) {
+					System.out.println("Excepción: "+ e.getMessage());
 				}
 			}
 		}
@@ -189,13 +197,13 @@ public class ActionsUtil {
 		highlightElement(driver, by);
 		WebElement tableElement = driver.findElement(by);
 		List<WebElement> trCollection = tableElement.findElements(By.tagName("tr"));
-		String tabla[][] = new String[999][999];
+		String[][] tabla = new String[999][999];
 		int rowNum, colNum, colMax = 0;
 		rowNum = 0;
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (WebElement trElement : trCollection) {
 			List<WebElement> tdCollection = trElement.findElements(By.tagName("td"));
-			if (tdCollection.size() == 0) {
+			if (tdCollection.isEmpty()) {
 				tdCollection = trElement.findElements(By.tagName("th"));
 			}
 			if (tdCollection.size() > colMax)
@@ -209,7 +217,7 @@ public class ActionsUtil {
 		}
 		assertTrue(rowNum > 0);
 		assertTrue(colMax > 0);
-		String tablaReturn[][] = new String[rowNum][colMax];
+		String[][] tablaReturn = new String[rowNum][colMax];
 		for (int i = 0; i < rowNum; i++) {
 			System.arraycopy(tabla[i], 0, tablaReturn[i], 0, colMax);
 		}
@@ -222,7 +230,7 @@ public class ActionsUtil {
 		WebElement element = driver.findElement(by);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		List<WebElement> childCollection = element.findElements(By.xpath("./*"));
-		String tabla[][] = new String[999][999];
+		String[][] tabla = new String[999][999];
 		int rowNum, colNum, colMax = 0;
 		rowNum = 0;
 		boolean containInfo = false;
@@ -246,7 +254,7 @@ public class ActionsUtil {
 		}
 		assertTrue(rowNum > 0);
 		assertTrue(colMax > 0);
-		String tablaReturn[][] = new String[rowNum][colMax];
+		String[][] tablaReturn = new String[rowNum][colMax];
 		for (int i = 0; i < rowNum; i++) {
 			System.arraycopy(tabla[i], 0, tablaReturn[i], 0, colMax);
 		}
@@ -283,6 +291,7 @@ public class ActionsUtil {
 			element.findElement(By.xpath("..")).click();
 			element.findElement(By.xpath("../..")).click();
 		} catch (Exception e) {
+			System.out.println("Excepción: "+ e.getMessage());
 		}
 	}
 
@@ -411,10 +420,12 @@ public class ActionsUtil {
 					break;
 				}
 			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 			try {
 				Thread.sleep(100);
-			} catch (Exception ex) {
+			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 			if (brakeLoop)
 				break;
@@ -443,6 +454,7 @@ public class ActionsUtil {
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 		}
 	}
@@ -450,26 +462,29 @@ public class ActionsUtil {
 	public static int byShared(WebDriver driver, By objClass1, By objClass2) {
 		// TODO Auto-generated method stub
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
-		int retorno=0;
+		int retorno = 0;
 		for (int second = 0; second <= 60; second++) {
-			boolean flagBreak=false;
+			boolean flagBreak = false;
 			try {
 				driver.findElement(objClass1);
 				if (driver.findElement(objClass1).isDisplayed()) {
-					flagBreak=true;
-					retorno=1;
+					flagBreak = true;
+					retorno = 1;
 				}
 			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 			try {
 				driver.findElement(objClass2);
 				if (driver.findElement(objClass2).isDisplayed()) {
-					flagBreak=true;
-					retorno=2;
-					}
+					flagBreak = true;
+					retorno = 2;
+				}
 			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
-			if(flagBreak) break;
+			if (flagBreak)
+				break;
 			try {
 				Thread.sleep(100);
 			} catch (Exception e) {

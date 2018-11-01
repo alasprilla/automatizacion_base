@@ -30,7 +30,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-47_HU-020_RecargaOtroValor.feature",
 		"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature" },
 
-		tags = { "@CasoFeliz" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {

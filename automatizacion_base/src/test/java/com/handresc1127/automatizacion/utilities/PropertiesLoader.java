@@ -19,7 +19,8 @@ public class PropertiesLoader {
 
 		try {
 			properties.load(new FileInputStream("serenity.properties"));
-		} catch (Exception ex) {
+		} catch (Exception e) {
+			System.out.println("Excepción: "+ e.getMessage());
 		}
 		return properties;
 	}
