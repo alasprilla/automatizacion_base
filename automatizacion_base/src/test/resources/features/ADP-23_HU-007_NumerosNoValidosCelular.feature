@@ -32,9 +32,9 @@ Feature: HU007 Validación número Invalido Celular
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en "Titulo facturas moviles"
-    Then el botón "ConsultarM" esta "deshabilitado"
-    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es válida."
+    Then el campo "label error celular" tiene el texto "El número de línea que ingresaste no es válida."
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
+    And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
     Examples: 
       | msisdn   |
@@ -44,9 +44,9 @@ Feature: HU007 Validación número Invalido Celular
   Scenario Outline: Pasarela - Tu línea tigo no comienza con 3 ni con 5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
-    Then el botón "ConsultarM" esta "deshabilitado"
-    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo."
+    Then el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo."
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
+    And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
     Examples: 
       | msisdn       |

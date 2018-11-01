@@ -2,7 +2,6 @@
 #Keywords Summary : campos, tarjeta, credito, validacion
 #Encoding: utf-8
 #Language: es
-
 @issue:ADP-15, @Pasarela
 Feature: HU004_Llenado_Formulario_TC
   Como Tigoune
@@ -25,8 +24,10 @@ Feature: HU004_Llenado_Formulario_TC
     And ingreso "nombre" en el campo "Nombre"
     And selecciono "CC" en el campo "tipo"
     And ingreso "12345" en el campo "número de documento TC"
+    And ingreso "3000000000" en el campo "celular comprador"
     And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
-    Then el botón "Pagar" esta "deshabilitado"
+    And Espero 1 segundos
+    Then el campo "Pagar" tiene el atributo "disabled" en el valor "true"
     And doy clic en el botón "Cancelar TC"
 
   Scenario: Validación del campo "Fecha vencimiento" con año "AA"
@@ -38,8 +39,10 @@ Feature: HU004_Llenado_Formulario_TC
     And ingreso "nombre" en el campo "Nombre"
     And selecciono "CC" en el campo "tipo"
     And ingreso "12345" en el campo "número de documento TC"
+    And ingreso "3000000000" en el campo "celular comprador"
     And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
-    Then el botón "Pagar" esta "deshabilitado"
+    And Espero 1 segundos
+    Then el campo "Pagar" tiene el atributo "disabled" en el valor "true"
     And doy clic en el botón "Cancelar TC"
 
   Scenario: Validación del campo "Fecha vencimiento" con fecha inferior al día actual
@@ -52,7 +55,8 @@ Feature: HU004_Llenado_Formulario_TC
     And selecciono "CC" en el campo "tipo"
     And ingreso "12345" en el campo "número de documento TC"
     And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
-    Then el botón "Pagar" esta "deshabilitado"
+    And Espero 1 segundos
+    Then el campo "Pagar" tiene el atributo "disabled" en el valor "true"
     And doy clic en el botón "Cancelar TC"
 
   Scenario Outline: Validación del campo "Fecha vencimiento" correcto
@@ -64,11 +68,14 @@ Feature: HU004_Llenado_Formulario_TC
     And ingreso "approved" en el campo "Nombre"
     And selecciono "CC" en el campo "tipo"
     And ingreso "12345648" en el campo "número de documento TC"
+    And ingreso "3000000000" en el campo "celular comprador"
     And doy clic en el botón "Autorizo esta tarjeta para futuros pagos"
+    And Espero 2 segundos
     Then el campo "Pagar" tiene el atributo "class" en el valor "button--secondary"
     And doy clic en el botón "Cancelar TC"
 
     Examples: 
-      | mes  | ano    |
-      | "01" | "2019" |
-      | "11" | "2018" |
+      | mes        | ano          |
+      | "thisMM()" | "thisYYYY()" |
+      | "nextMM()" | "thisYYYY()" |
+      | "thisMM()" | "nextYYYY()" |

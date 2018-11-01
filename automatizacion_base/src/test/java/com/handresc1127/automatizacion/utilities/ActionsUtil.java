@@ -422,6 +422,7 @@ public class ActionsUtil {
 			}
 			try {
 				Thread.sleep(100);
+				System.out.print(".");
 			} catch (Exception e) {
 				System.out.println("Excepción: "+ e.getMessage());
 			}

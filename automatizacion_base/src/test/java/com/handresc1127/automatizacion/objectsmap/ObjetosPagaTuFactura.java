@@ -80,6 +80,8 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("movil_msisdnsinfacturas",By.xpath("//*[@id='alert_main' and @style='display: block;']"));
 		ActionsUtil.objetosPut("hogar_numdocumentoconfacturas",By.id("content_list_invoices"));
 		ActionsUtil.objetosPut("hogar_numdocumentosinfacturas",By.xpath("//*[@id='alert_main' and @style='display: block;']"));
+		ActionsUtil.objetosPut("celularcomprador",By.id("edit-buyer-phone"));
+		
 	}
 
 }

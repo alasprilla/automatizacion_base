@@ -6,16 +6,15 @@ Feature: HU013 Validación de email Hogar
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
   Para garantizar que la consulta se realice con un email válido
 
-  #Parámetros: "@prueba.com", "@PRUEBA.COM", "@aquí.com", "@AQUÍ.COM"
   Scenario Outline: Pasarela - Email Hogar sin usuario
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
     And ingreso <email> en el campo "Correo electrónico H"
-    Then el botón "ConsultarH" esta "deshabilitado"
-    And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
+    And el campo "Consultar H" tiene el atributo "disabled" en el valor "true"
 
     Examples: 
       | documento    | email             |
@@ -26,16 +25,15 @@ Feature: HU013 Validación de email Hogar
       | "1088021549" | "@prueba2.com.co" |
       | "1078541256" | "@PRUEBA2.COM.co" |
 
-  #Parámetros: "usuario", "usuario@", "USUARIO", "aquí", "aquí@", "AQUÍ@"
   Scenario Outline: Pasarela - Email Hogar sin dominio
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
     And ingreso <email> en el campo "Correo electrónico H"
-    Then el botón "ConsultarH" esta "deshabilitado"
-    And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
+    And el campo "Consultar H" tiene el atributo "disabled" en el valor "true"
 
     Examples: 
       | documento    | email      |
@@ -46,16 +44,15 @@ Feature: HU013 Validación de email Hogar
       | "1088021549" | "aquí@"    |
       | "1078541256" | "AQUÍ@"    |
 
-  #Parámetros: "ejemplo@dominio.a", "ejemplo@dominio.com.a", "ejemplo@d.a", "ejemplo@d.com.a"
   Scenario Outline: Pasarela - Email Hogar dominio invalido
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
     And ingreso <email> en el campo "Correo electrónico H"
-    Then el botón "ConsultarH" esta "deshabilitado"
-    And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
+    And el campo "Consultar H" tiene el atributo "disabled" en el valor "true"
 
     Examples: 
       | documento   | email                   |
@@ -64,16 +61,15 @@ Feature: HU013 Validación de email Hogar
       | "15859874"  | "ejemplo@d.a"           |
       | "123453784" | "ejemplo@d.com.a"       |
 
-  #Parámetros: "ejemplo.", "ejemplo.@", "ejemplo@.", "ejemplo@dominio.", "ejemplo@dominio.com."
   Scenario Outline: Pasarela - Email Hogar terminado en punto (.)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
     And ingreso <email> en el campo "Correo electrónico H"
-    Then el botón "ConsultarH" esta "deshabilitado"
-    And el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo H" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo H" tiene el atributo "color" en el valor "rojo"
+    And el campo "Consultar H" tiene el atributo "disabled" en el valor "true"
 
     Examples: 
       | documento    | email                  |
@@ -84,13 +80,13 @@ Feature: HU013 Validación de email Hogar
       | "1088021549" | "ejemplo@dominio.com." |
       | "1088354125" | "ejemplo.@dominio."    |
 
-  #Parámetros: "ejemplo@ejemplo.com"
   Scenario Outline: Pasarela - Email Hogar válido
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
     And ingreso <email> en el campo "Correo electrónico H"
+    And Espero 2 segundos
     Then El botón "ConsultarH" se habilita
 
     Examples: 

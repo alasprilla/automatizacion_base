@@ -19,7 +19,7 @@ public class DefDefault {
 	// Implementación: "ADP-3_HU-001-ValidacionTC"
 	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
 	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String objeto) {
-		pagePagaFact.esperarElementos("Formas de pago",">",3);
+		pagePagaFact.esperarElementos("Formas de pago", ">", 3);
 		pagePagaFact.clic(objeto);
 		pagePagaFact.elementoVisible("Forma Pago Seleccionada");
 	}
@@ -33,7 +33,7 @@ public class DefDefault {
 	public void doy_clic_en(String objeto) {
 		pagePagaFact.clic(objeto);
 	}
-	
+
 	@When("^doy clic forzado en \"([^\"]*)\"$")
 	public void doy_clic_forzado_en(String objeto) {
 		pagePagaFact.hardClic(objeto);
@@ -55,22 +55,6 @@ public class DefDefault {
 		pagePagaFact.clic(objeto);
 	}
 
-	//Está funcion puede ser reemplazada por la que compara el atributo
-	@Then("^el botón \"([^\"]*)\" esta \"([^\"]*)\"$")
-	public void el_botón_esta(String objeto, String estaDeshabilitado) {
-		boolean isDisable = false, isEnabled = false;
-		if (estaDeshabilitado.equals("deshabilitado")) {
-			isDisable = true;
-			pagePagaFact.compararAtributo(objeto, "disabled", String.valueOf(isDisable) );
-		}else if (estaDeshabilitado.equals("habilitado")){
-			isEnabled = true;
-			pagePagaFact.compararAtributo(objeto, "enabled",String.valueOf(isEnabled) );	
-		}else {
-			//Sí entra acá siempre fallará
-			pagePagaFact.compararTxt(objeto, estaDeshabilitado);
-		}
-	}
-
 	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
 	public void el_campo_tiene_el_texto(String objeto, String textoEsperado) {
 		pagePagaFact.compararTxt(objeto, textoEsperado);
@@ -83,7 +67,7 @@ public class DefDefault {
 
 	@Then("^El botón \"([^\"]*)\" se habilita$")
 	public void el_botón_se_habilita(String btnConsultar) {
-		pagePagaFact.compararAtributo(btnConsultar, "class","--active");
+		pagePagaFact.compararAtributo(btnConsultar, "class", "--active");
 	}
 
 	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
@@ -98,11 +82,11 @@ public class DefDefault {
 		pagePagaFact.compararAtributo(objeto, "value", valor);
 	}
 
-	//Esta funcion debe de reemplazarse por las 3 independientes
+	// Esta funcion debe de reemplazarse por las 3 independientes
 	@Then("^mostrará el \"([^\"]*)\"$")
 	public void mostrará_el(String texto) {
 		if (texto.contains("no tiene")) {
-			final String objeto="label facturas";
+			final String objeto = "label facturas";
 			pagePagaFact.compararTxt(objeto, texto);
 			pagePagaFact.compararAtributo(objeto, "color", "rgba(255, 255, 255, 1)");
 			pagePagaFact.compararAtributo(objeto, "background-color", "rgba(0, 200, 255, 1)");
@@ -113,42 +97,42 @@ public class DefDefault {
 
 	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
-	public void llevará_al_formulario_con_el_objeto(String objeto){
+	public void llevará_al_formulario_con_el_objeto(String objeto) {
 		pagePagaFact.elementoVisible(objeto);
 	}
 
 	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^el campo \"([^\"]*)\" comienza con el texto \"([^\"]*)\"$")
-	public void el_campo_comienza_con_el_texto(String objeto, String textoInicial){
-		pagePagaFact.compararTextoDeInicio(objeto,textoInicial);
+	public void el_campo_comienza_con_el_texto(String objeto, String textoInicial) {
+		pagePagaFact.compararTextoDeInicio(objeto, textoInicial);
 	}
 
 	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^el campo \"([^\"]*)\" no está vacío$")
-	public void el_campo_no_está_vacío(String objeto){
+	public void el_campo_no_está_vacío(String objeto) {
 		pagePagaFact.compararTextoNoVacio(objeto);
 	}
-	
-	//Ecommerce
+
+	// Ecommerce
 	@When("^arrastro el elemento \"([^\"]*)\" hasta el elemento \"([^\"]*)\"$")
 	public void arrastro_el_elemento_hasta_el_elemento(String objeto1, String objeto2) {
-		pagePagaFact.ArrastrarYSoltar(objeto1,objeto2);
+		pagePagaFact.ArrastrarYSoltar(objeto1, objeto2);
 	}
-	
-	//Ecommerce
+
+	// Ecommerce
 	@When("^arrastro el elemento \"([^\"]*)\" hasta la posición \"([^\"]*)\"$")
 	public void arrastro_el_elemento_hasta_la_posición(String objeto, String position) {
-		pagePagaFact.ArrastrarYSoltarXY(objeto,position);
+		pagePagaFact.ArrastrarYSoltarXY(objeto, position);
 	}
 
 	@When("^Espero (\\d+) segundos$")
 	public void espero_segundos(int sleep) {
-	    ActionsUtil.sleepSeconds(sleep);
+		ActionsUtil.sleepSeconds(sleep);
 	}
 
 	@Then("^clasificar el dato \"([^\"]*)\" en \"([^\"]*)\" o en \"([^\"]*)\"$")
 	public void clasificar_el_dato_en_o_en(String dataName, String dataClass1, String dataClass2) {
-	    pagePagaFact.clasificarDato(dataName, dataClass1,dataClass2);
+		pagePagaFact.clasificarDato(dataName, dataClass1, dataClass2);
 	}
 
 }

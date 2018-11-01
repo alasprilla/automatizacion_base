@@ -1,5 +1,6 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
@@ -39,10 +40,18 @@ public class PageDefault extends PageObject {
 	
 	public static void dataDefault(){
 		if(datosClasificados.isEmpty()) {
+		Calendar now = Calendar.getInstance();
 		datosClasificados.put("movil_msisdnconfacturas", "3043878232");
 		datosClasificados.put("movil_msisdnsinfacturas", "3003588240");
 		datosClasificados.put("hogar_numdocumentoconfacturas", "70507173");
 		datosClasificados.put("hogar_numdocumentosinfacturas", "71770656");
+		datosClasificados.put("thismm()", String.valueOf(now.get(Calendar.MONTH) + 1));
+		datosClasificados.put("thisyyyy()", String.valueOf(now.get(Calendar.YEAR)));
+		now.add(Calendar.MONTH, 1);
+		datosClasificados.put("nextmm()", String.valueOf(now.get(Calendar.MONTH) + 1));
+		now = Calendar.getInstance();
+		now.add(Calendar.YEAR, 1);
+		datosClasificados.put("nextyyyy()", String.valueOf(now.get(Calendar.YEAR)));
 		}
 	}
 
@@ -107,6 +116,7 @@ public class PageDefault extends PageObject {
 
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
+		item=dataGet(item);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
