@@ -149,7 +149,6 @@ public class ActionsUtil {
 			if (element.isDisplayed())
 				return true;
 		} catch (Exception e) {
-			System.out.println("Excepción: "+ e.getMessage());
 			return false;
 		}
 		return false;
@@ -420,7 +419,6 @@ public class ActionsUtil {
 					break;
 				}
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
 			}
 			try {
 				Thread.sleep(100);
@@ -472,7 +470,6 @@ public class ActionsUtil {
 					retorno = 1;
 				}
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
 			}
 			try {
 				driver.findElement(objClass2);
@@ -481,13 +478,13 @@ public class ActionsUtil {
 					retorno = 2;
 				}
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
 			}
 			if (flagBreak)
 				break;
 			try {
 				Thread.sleep(100);
 			} catch (Exception e) {
+				System.out.println("Excepción: "+ e.getMessage());
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
