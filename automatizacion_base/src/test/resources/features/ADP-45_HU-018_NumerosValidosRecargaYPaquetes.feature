@@ -27,12 +27,7 @@ Feature: HU018 Validación números Validos Celular en Recargas y Paquetes
   #Scenario: Ingreso de número válido Tigo con un plan que no permite recargas
   #Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
   #When doy clic en "Recarga"
-  #Escenario Pendiente ya que aun no han brindado información sobre un número de línea que no permita Recargas 
-  #Scenario: Ingreso de número válido Tigo con un plan que no permite recargas
-  #Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
-  #And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
-  #And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-  #And doy clic en "Recargar"
+
   
   Scenario: Ingreso de número válido Tigo con una linea suspendida
   Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
@@ -42,12 +37,7 @@ Feature: HU018 Validación números Validos Celular en Recargas y Paquetes
   And doy clic en "Recargar"  
   Then el campo "Mensaje Error Recarga" tiene el texto "Lo sentimos, tu línea se encuentra suspendida por robo o pérdida"
   And el campo "Mensaje Error Recarga" tiene el atributo "color" en el valor "rojo"
-  When doy clic en "Recarga" 
-  And ingreso "3008914224" en el campo "Ingresa tu línea Tigo"
-  And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-  And doy clic en "Recargar"  
-  Then el campo "Error" tiene el texto "Lo sentimos, tu línea se encuentra suspendida por robo o pérdida"
-  And el campo "Error" tiene el atributo "color" en el valor "rojo"
+ 
   
   Scenario Outline: Ingreso de número válido Tigo con un plan que permite recargas
   Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
