@@ -149,10 +149,4 @@ public class DefDefault {
 	    ActionsUtil.sleepSeconds(sleep);
 	}
 
-	@Given("^el campo \"([^\"]*)\" tiene el texto con el \"([^\"]*)\" de la recarga$")
-	public void el_campo_tiene_el_texto_con_el_de_la_recarga(String objeto, String textoEsperado) {
-		pagePagaFact.SumarDeudaYRecarga(objeto, textoEsperado);
-		
-	}
-
 }

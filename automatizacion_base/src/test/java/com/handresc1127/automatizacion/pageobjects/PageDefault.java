@@ -137,10 +137,4 @@ public class PageDefault extends PageObject {
 		ActionsUtil.dragAndDrop(getDriver(), byElement, x, y);
 	}
 	
-	public void SumarDeudaYRecarga(String objeto, String textoEsperado) {
-		sharedObjet(objeto);
-		
-		
-	}
-
 }

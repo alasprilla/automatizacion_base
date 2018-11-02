@@ -26,9 +26,10 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 	//	"src/test/resources/features/ADP-31_HU-013_ValidacionEmailHogar.feature",
 	//	"src/test/resources/features/ADP-43_HU-016_ValidacionTeclasEspecialesMSISDN.feature",
 	//	"src/test/resources/features/ADP-44_HU-017_NumerosNoValidosRecargaYPaquetes.feature",
-	    "src/test/resources/features/ADP-46_HU-019_RecargaValoresPreestablecidos.feature",	
-	//	"src/test/resources/features/ADP-47_HU-020_RecargaOtroValor.feature"
-	//	"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature"
+	//  "src/test/resources/features/ADP-46_HU-019_RecargaValoresPreestablecidos.feature",	
+	//	"src/test/resources/features/ADP-47_HU-020_RecargaOtroValor.feature",
+	//	"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature",
+        "src/test/resources/features/ADP-64_HU-022_IngresoNumeroValidoTigoDeudaPendiente.feature",
 		},
 
 
