@@ -16,6 +16,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import net.serenitybdd.core.pages.PageObject;
 
 public class ActionsUtil {
 
@@ -26,7 +30,7 @@ public class ActionsUtil {
 	private ActionsUtil() {
 		throw new IllegalStateException("Utility class");
 	}
-
+	private static final Logger LOGGER = LoggerFactory.getLogger(PageObject.class);
 	static PropertiesLoader properties = PropertiesLoader.getInstance();
 
 	private static final long TIMEOUTS = (properties.getProperty("webdriver.timeouts.implicitlywait")) != null
@@ -60,7 +64,7 @@ public class ActionsUtil {
 			try {
 				Thread.sleep(100);
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
+				LOGGER.error("Excepcion Sleep:", e);
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
@@ -91,7 +95,7 @@ public class ActionsUtil {
 				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
 				Thread.sleep(5);
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
+				LOGGER.error("Excepcion Sleep:", e);
 			}
 
 		}
@@ -186,7 +190,7 @@ public class ActionsUtil {
 				try {
 					Thread.sleep(5);
 				} catch (Exception e) {
-					System.out.println("Excepción: "+ e.getMessage());
+					LOGGER.error("Excepcion Sleep:", e);
 				}
 			}
 		}
@@ -290,7 +294,7 @@ public class ActionsUtil {
 			element.findElement(By.xpath("..")).click();
 			element.findElement(By.xpath("../..")).click();
 		} catch (Exception e) {
-			System.out.println("Excepción: "+ e.getMessage());
+			LOGGER.error("Excepcion Clic .. o ../..:", e);
 		}
 	}
 
@@ -422,9 +426,8 @@ public class ActionsUtil {
 			}
 			try {
 				Thread.sleep(100);
-				System.out.print(".");
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
+				LOGGER.error("Excepcion Sleep:", e);
 			}
 			if (brakeLoop)
 				break;
@@ -453,7 +456,7 @@ public class ActionsUtil {
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
+				LOGGER.error("Excepcion Sleep:", e);
 			}
 		}
 	}
@@ -485,7 +488,7 @@ public class ActionsUtil {
 			try {
 				Thread.sleep(100);
 			} catch (Exception e) {
-				System.out.println("Excepción: "+ e.getMessage());
+				LOGGER.error("Excepcion Sleep:", e);
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
