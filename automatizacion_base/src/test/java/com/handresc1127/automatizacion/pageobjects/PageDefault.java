@@ -3,6 +3,7 @@ package com.handresc1127.automatizacion.pageobjects;
 import org.openqa.selenium.By;
 
 import com.handresc1127.automatizacion.objectsmap.ObjetosEcommerce;
+import com.handresc1127.automatizacion.objectsmap.ObjetosMiCuenta;
 import com.handresc1127.automatizacion.objectsmap.ObjetosPagaTuFactura;
 import com.handresc1127.automatizacion.objectsmap.ObjetosRecargasPaquetes;
 import com.handresc1127.automatizacion.utilities.ActionsUtil;
@@ -17,6 +18,7 @@ public class PageDefault extends PageObject {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
 		new ObjetosEcommerce();
+		new ObjetosMiCuenta();
 	}
 
 	By objetoToAction;
