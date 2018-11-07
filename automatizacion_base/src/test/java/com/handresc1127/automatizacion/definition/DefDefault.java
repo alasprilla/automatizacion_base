@@ -14,6 +14,7 @@ public class DefDefault {
 	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
 		pagePagaFact.openAt(url);
+		pagePagaFact.irPagina(url);
 	}
 
 	// Implementación: "ADP-3_HU-001-ValidacionTC"

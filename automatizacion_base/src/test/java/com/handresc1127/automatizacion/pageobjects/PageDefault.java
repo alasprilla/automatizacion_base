@@ -56,7 +56,8 @@ public class PageDefault extends PageObject {
 	}
 
 	public void irPagina(String url) {
-		ActionsUtil.goToWebSide(getDriver(), url);
+		String urlActualizada=this.updateUrlWithBaseUrlIfDefined(url);
+		ActionsUtil.goToWebSide(getDriver(), urlActualizada);
 	}
 
 	public By getObjetoToCliked() {
