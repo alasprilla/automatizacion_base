@@ -26,6 +26,10 @@ public class PropertiesLoader {
 	public String getProperty(String prop) {
 		return properties.getProperty(prop);
 	}
+	
+	public void setProperty(String property, String value) {
+		properties.setProperty(property, value);
+	}
 
 	private static PropertiesLoader instance;
 	private static Properties properties = new Properties();
