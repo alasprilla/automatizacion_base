@@ -3,6 +3,7 @@ package com.handresc1127.automatizacion.pageobjects;
 import org.openqa.selenium.By;
 
 import com.handresc1127.automatizacion.objectsmap.ObjetosEcommerce;
+import com.handresc1127.automatizacion.objectsmap.ObjetosMiCuenta;
 import com.handresc1127.automatizacion.objectsmap.ObjetosPagaTuFactura;
 import com.handresc1127.automatizacion.objectsmap.ObjetosRecargasPaquetes;
 import com.handresc1127.automatizacion.utilities.ActionsUtil;
@@ -17,6 +18,7 @@ public class PageDefault extends PageObject {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
 		new ObjetosEcommerce();
+		new ObjetosMiCuenta();
 	}
 
 	By objetoToAction;
@@ -24,7 +26,7 @@ public class PageDefault extends PageObject {
 	public void irPagina(String url) {
 		ActionsUtil.goToWebSide(getDriver(), url);
 	}
-
+	
 	public By getObjetoToCliked() {
 		return objetoToAction;
 	}
@@ -135,6 +137,11 @@ public class PageDefault extends PageObject {
 		int x = Integer.parseInt(pos[0]);
 		int y = Integer.parseInt(pos[1]);
 		ActionsUtil.dragAndDrop(getDriver(), byElement, x, y);
+	}
+
+	public void compara(String direcccion) {
+		ActionsUtil.curretCompareURL(getDriver(), direcccion);
+		
 	}
 	
 }

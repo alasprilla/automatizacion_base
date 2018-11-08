@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
@@ -30,7 +31,6 @@ public class ActionsUtil {
 			? Long.parseLong(properties.getProperty("webdriver.timeouts.implicitlywait"))
 			: 10000L;
 
-
 	private static Dictionary<String, By> objetosPage = new Hashtable<String, By>();
 
 	public static By getObjeto(String NombreObjeto) {
@@ -45,12 +45,11 @@ public class ActionsUtil {
 	public static Dictionary<String, By> getDictionary() {
 		return objetosPage;
 	}
-	
-	public static void objetosPut(String key, By value){
+
+	public static void objetosPut(String key, By value) {
 		objetosPage.put(key, value);
 	}
-	
-			
+
 	public static void highlightElement(WebDriver driver, By by) {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (int second = 0; second <= 60; second++) {
@@ -473,6 +472,21 @@ public class ActionsUtil {
 			} catch (Exception e) {
 			}
 		}
+	}
+
+	public static void curretCompareURL(WebDriver driver, String direccion) {
+		driver.getWindowHandles();
+		Set<String> X = driver.getWindowHandles();
+		String[] handle = new String[999];
+		int i = 0;
+		for (String pestana1 : X) {
+			handle[i] = pestana1;
+			i++;
+		}
+		System.arraycopy(handle, 0, handle, 0, X.size());
+		driver.switchTo().window(handle[1]);
+		String currenturl = driver.getCurrentUrl();
+		assertEquals(direccion, currenturl);
 	}
 
 }
