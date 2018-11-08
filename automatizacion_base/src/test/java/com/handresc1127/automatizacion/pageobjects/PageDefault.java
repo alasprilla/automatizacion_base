@@ -1,10 +1,10 @@
 package com.handresc1127.automatizacion.pageobjects;
 
-import java.util.Calendar;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
 
+import com.handresc1127.automatizacion.objectsmap.DatosNegocio;
 import com.handresc1127.automatizacion.objectsmap.ObjetosEcommerce;
 import com.handresc1127.automatizacion.objectsmap.ObjetosPagaTuFactura;
 import com.handresc1127.automatizacion.objectsmap.ObjetosRecargasPaquetes;
@@ -20,44 +20,35 @@ public class PageDefault extends PageObject {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
 		new ObjetosEcommerce();
-		dataDefault();
+		if(datosDelNegocio.isEmpty()) {
+			new DatosNegocio();
+		}
 	}
 
 	By objetoToAction;
 	
-	static HashMap<String, String> datosClasificados = new HashMap<String, String>();
+	static HashMap<String, String> datosDelNegocio = new HashMap<String, String>();
 
 	public static String dataGet(String keyData) {
-		String retorno = datosClasificados.get(ActionsUtil.textoMinusculasSinEspacios(keyData));
+		String retorno = datosDelNegocio.get(ActionsUtil.textoMinusculasSinEspacios(keyData));
 		if (retorno == null)
 			retorno = keyData;
 		return retorno;
 	}
 
 	public static void dataPut(String key, String value){
-		datosClasificados.put(key, value);
+		datosDelNegocio.put(key, value);
 	}
 	
-	public static void dataDefault(){
-		if(datosClasificados.isEmpty()) {
-		Calendar now = Calendar.getInstance();
-		datosClasificados.put("movil_msisdnconfacturas", "3043878232");
-		datosClasificados.put("movil_msisdnsinfacturas", "3003588240");
-		datosClasificados.put("hogar_numdocumentoconfacturas", "70507173");
-		datosClasificados.put("hogar_numdocumentosinfacturas", "71770656");
-		datosClasificados.put("thismm()", String.valueOf(now.get(Calendar.MONTH) + 1));
-		datosClasificados.put("thisyyyy()", String.valueOf(now.get(Calendar.YEAR)));
-		now.add(Calendar.MONTH, 1);
-		datosClasificados.put("nextmm()", String.valueOf(now.get(Calendar.MONTH) + 1));
-		now = Calendar.getInstance();
-		now.add(Calendar.YEAR, 1);
-		datosClasificados.put("nextyyyy()", String.valueOf(now.get(Calendar.YEAR)));
-		}
-	}
-
 	public void irPagina(String url) {
 		String urlActualizada=this.updateUrlWithBaseUrlIfDefined(url);
 		ActionsUtil.goToWebSide(getDriver(), urlActualizada);
+	}
+	
+	public void establecerBaseURL(String url) {
+		String realUrl = dataGet(ActionsUtil.textoMinusculasSinEspacios(url));
+		this.setDefaultBaseUrl(realUrl);
+		ActionsUtil.setProperty("webdriver.base.url",realUrl);
 	}
 
 	public By getObjetoToCliked() {

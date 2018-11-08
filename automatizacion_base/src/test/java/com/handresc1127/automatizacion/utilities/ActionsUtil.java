@@ -30,14 +30,13 @@ public class ActionsUtil {
 	private ActionsUtil() {
 		throw new IllegalStateException("Utility class");
 	}
-	private static final Logger LOGGER = LoggerFactory.getLogger(PageObject.class);
-	static PropertiesLoader properties = PropertiesLoader.getInstance();
-
-	private static final long TIMEOUTS = (properties.getProperty("webdriver.timeouts.implicitlywait")) != null
-			? Long.parseLong(properties.getProperty("webdriver.timeouts.implicitlywait"))
-			: 10000L;
-
+	
 	static HashMap<String, By> objetosPage = new HashMap<String, By>();
+	static PropertiesLoader properties = PropertiesLoader.getInstance();
+	private static final Logger LOGGER = LoggerFactory.getLogger(PageObject.class);
+	private static final long TIMEOUTS = (getProperty("webdriver.timeouts.implicitlywait")) != null
+			? Long.parseLong(getProperty("webdriver.timeouts.implicitlywait"))
+			: 10000L;
 
 	public static By getObjeto(String nombreObjeto) {
 		By retorno = objetosPage.get(nombreObjeto);
@@ -50,6 +49,18 @@ public class ActionsUtil {
 
 	public static void objetosPut(String key, By value) {
 		objetosPage.put(key, value);
+	}
+	
+	public static void setProperty(String property, String url) {
+		properties.setProperty(property, url);
+		System.out.println("setPropiedad: "+  properties.getProperty(property));
+	}
+	
+	public static String getProperty(String property) {
+		String retorno=properties.getProperty(property);
+		System.out.println("getPropiedad: "+  retorno);
+		System.out.println("getsysPro= " + System.getProperty("property"));
+		return retorno;
 	}
 
 	public static void highlightElement(WebDriver driver, By by) {
@@ -494,5 +505,4 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return retorno;
 	}
-
 }
