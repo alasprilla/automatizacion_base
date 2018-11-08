@@ -1,7 +1,5 @@
 package com.handresc1127.automatizacion.pageobjects;
 
-import java.util.HashMap;
-
 import org.openqa.selenium.By;
 
 import com.handresc1127.automatizacion.objectsmap.DatosNegocio;
@@ -20,25 +18,9 @@ public class PageDefault extends PageObject {
 		new ObjetosPagaTuFactura();
 		new ObjetosRecargasPaquetes();
 		new ObjetosEcommerce();
-		if(datosDelNegocio.isEmpty()) {
-			new DatosNegocio();
-		}
 	}
 
 	By objetoToAction;
-	
-	static HashMap<String, String> datosDelNegocio = new HashMap<String, String>();
-
-	public static String dataGet(String keyData) {
-		String retorno = datosDelNegocio.get(ActionsUtil.textoMinusculasSinEspacios(keyData));
-		if (retorno == null)
-			retorno = keyData;
-		return retorno;
-	}
-
-	public static void dataPut(String key, String value){
-		datosDelNegocio.put(key, value);
-	}
 	
 	public void irPagina(String url) {
 		String urlActualizada=this.updateUrlWithBaseUrlIfDefined(url);
@@ -46,9 +28,10 @@ public class PageDefault extends PageObject {
 	}
 	
 	public void establecerBaseURL(String url) {
-		String realUrl = dataGet(ActionsUtil.textoMinusculasSinEspacios(url));
-		this.setDefaultBaseUrl(realUrl);
+		String realUrl = DatosNegocio.dataGet(ActionsUtil.textoMinusculasSinEspacios(url));
 		ActionsUtil.setProperty("webdriver.base.url",realUrl);
+		System.out.println("Cambiando Base a :"+realUrl);
+		this.setDefaultBaseUrl(realUrl);
 	}
 
 	public By getObjetoToCliked() {
@@ -108,13 +91,15 @@ public class PageDefault extends PageObject {
 
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
-		item=dataGet(item);
+		item=DatosNegocio.dataGet(item);
+		//item=dataGet(item);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
 	public void validarEscribir(String objeto, String txtIngresado) {
 		sharedObjet(objeto);
-		txtIngresado=dataGet(txtIngresado);
+		txtIngresado=DatosNegocio.dataGet(txtIngresado);
+		//txtIngresado=dataGet(txtIngresado);
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), txtIngresado);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
@@ -172,9 +157,11 @@ public class PageDefault extends PageObject {
 		By objClass2 = getObjetoToCliked();
 		int indexClass=ActionsUtil.byShared(getDriver(),objClass1,objClass2);
 		if(indexClass==1) {
-			dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
+			//dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
 		}else if(indexClass==2) {
-			dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
+			//dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
 		}
 		
 	}
