@@ -11,29 +11,58 @@ Feature: HU005_Modulo Consulta Tu Visita
     #Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     #When ingreso "42767842" en el campo "Ingresa tu documento"
     
-  Scenario: Mi Cuenta - Ingreso documento válido sin agenda
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When ingreso "43921358" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
-    Then el campo "label error documento" tiene el texto "Los sentimos, en el momento no tienes una visita programada"
+  #Scenario: Mi Cuenta - Ingreso documento válido sin agenda
+    #Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    #When ingreso "43921358" en el campo "Ingresa tu documento"
+    #And doy clic en el botón "Consultar"
+    #Then el campo "label error documento" tiene el texto "Los sentimos, en el momento no tienes una visita programada"
+    #
+  #Scenario: Mi Cuenta -  Ingreso documento inválido
+    #Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    #When ingreso "000" en el campo "Ingresa tu documento"
+    #And doy clic en el botón "Consultar"
+    #Then el campo "label error documento" tiene el texto "El documento ingresado no es válido. Verifícalo e intenta de nuevo."
     
-  Scenario: Mi Cuenta -  Ingreso documento inválido
+  #Scenario Outline: Mi Cuenta -  Validación tipo de documento CC
+    #Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    #And selecciono "CC" en el campo "Tipo"
+    #When ingreso <valor> en el campo "Ingresa tu documento"
+    #And el campo "Consultar" tiene el atributo "disabled" en el valor "true"    
+    #Examples: 
+      #| valor   |
+      #| "abcd"  | 
+      #| "*/*/"  | 
+      #
+   #Scenario Outline: Mi Cuenta -  Validación tipo de documento NIT
+    #Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    #And selecciono "NIT" en el campo "Tipo"
+    #When ingreso <valor> en el campo "Ingresa tu documento"
+    #And el campo "Consultar" tiene el atributo "disabled" en el valor "true"    
+    #Examples: 
+      #| valor   |
+      #| "abcd"  | 
+      #| "*/*/"  | 
+      #
+   #Scenario Outline: Mi Cuenta -  Validación tipo de documento CE
+    #Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    #And selecciono "CE" en el campo "Tipo"
+    #When ingreso <valor> en el campo "Ingresa tu documento"
+    #And el campo "Consultar" tiene el atributo "disabled" en el valor "true"    
+    #Examples: 
+      #| valor   |
+      #| "%€"    | 
+      #| "*/*"   | 
+      
+   Scenario Outline: Mi Cuenta -  Validación tipo de documento PS
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When ingreso "000" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
-    Then el campo "label error documento" tiene el texto "El documento ingresado no es válido. Verifícalo e intenta de nuevo."
-    
-  Scenario Outline: Mi Cuenta -  Validación tipo de documento CC
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And selecciono "CC" en el campo "Tipo"
+    #And selecciono "PS" en el campo "Tipo"
     When ingreso <valor> en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
-    Then el campo "label error documento" tiene el texto "El documento ingresado no es válido. Verifícalo e intenta de nuevo."
-    
+    And el campo "Consultar" tiene el atributo "disabled" en el valor "true"
     Examples: 
       | valor   |
-      | "abcd"  | 
+      | "%€"    | 
       | "*/*/"  | 
+      
     
 
     
