@@ -4,6 +4,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.awt.Dimension;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
@@ -472,6 +473,13 @@ public class ActionsUtil {
 			} catch (Exception e) {
 			}
 		}
+	}
+	
+	public static void resolucion(WebDriver driver,String x, String y) {
+		//driver.set_window_position(x,y);
+		//driver.set_window_size(300, 500);
+		Dimension d = new Dimension(420,600);
+		driver.manage().window().setSize(d);
 	}
 
 }
