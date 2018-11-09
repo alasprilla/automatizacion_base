@@ -23,17 +23,15 @@ public class PageDefault extends PageObject {
 	By objetoToAction;
 	
 	public void irPagina(String url) {
-		String urlActualizada=this.updateUrlWithBaseUrlIfDefined(url);
+		String urlActualizada=ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
 		ActionsUtil.goToWebSide(getDriver(), urlActualizada);
 	}
 	
-	public void establecerBaseURL(String url) {
+	public void setBaseURL(String url) {
 		String realUrl = DatosNegocio.dataGet(ActionsUtil.textoMinusculasSinEspacios(url));
-		ActionsUtil.setProperty("webdriver.base.url",realUrl);
-		System.out.println("Cambiando Base a :"+realUrl);
-		this.setDefaultBaseUrl(realUrl);
+		ActionsUtil.setBaseUrl(realUrl);
 	}
-
+	
 	public By getObjetoToCliked() {
 		return objetoToAction;
 	}

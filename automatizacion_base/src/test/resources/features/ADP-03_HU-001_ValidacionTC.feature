@@ -3,13 +3,13 @@
 #Encoding: utf-8
 #Language: es
 @issue:ADP-3, @Pasarela
-Feature: HU001_ValidacionTC
+Feature: HU001 Validación TC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC
   Para garantizar que se pueden utilizar las teclas especiales básicas en el campo "Número de tarjeta"
 
   Background: seleccion medio de pago
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M"

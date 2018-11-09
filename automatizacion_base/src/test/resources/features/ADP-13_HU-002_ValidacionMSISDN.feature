@@ -1,19 +1,19 @@
 #Author: Rigoberto Henao
 #Keywords Summary : MSISDN
 @issue:ADP-13, @Pasarela
-Feature: HU002_ValidacionMSISDN
+Feature: HU002 Validación Teclas Especiales MSISDN
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil
   Para garantizar que se pueden utilizar las teclas especiales básicas en el formulario de consulta de facturas
 
   Scenario: Pasarela - Recarga de página tu línea tigo con F5
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "Tu línea Tigo"
     And Presiono la tecla "F5"
     Then La página se recarga
 
   Scenario Outline: Pasarela - Validación teclas especiales campo "Tu línea Tigo"
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And Presiono la tecla <tecla1>
     And Presiono la tecla <tecla2>
