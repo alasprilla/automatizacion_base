@@ -1,7 +1,7 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
 @issue:ADP-16, @Pasarela
-Feature: HU005_Llenado_Formulario_TD
+Feature: HU005 Llenado formulario TD
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el llenado de formulario de TD
   Para acelerar el proceso de desarrollo y garantizar integridad

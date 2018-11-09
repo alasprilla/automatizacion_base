@@ -1,7 +1,7 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
 @issue:ADP-29, @Pasarela
-Feature: HU012_ValidacionCVV
+Feature: HU012 Validaciósn CVV
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC
   Para garantizar que se ingresa un CVV con la longitud y el tipo correctos

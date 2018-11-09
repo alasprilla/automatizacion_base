@@ -3,7 +3,7 @@
 #Encoding: utf-8
 #Language: es
 @issue:ADP-15, @Pasarela
-Feature: HU004_Llenado_Formulario_TC
+Feature: HU004 Llenado formulario TC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el llenado de formulario de TC
   Para acelerar el proceso de desarrollo y garantizar integridad
