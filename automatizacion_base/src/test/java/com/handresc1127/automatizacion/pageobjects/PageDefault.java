@@ -143,4 +143,8 @@ public class PageDefault extends PageObject {
 		ActionsUtil.resolucion(getDriver(),x,y);
 	}
 
+	public void tamanoNavegador(String ancho, String alto) {
+		ActionsUtil.resolucionNavegador(getDriver(),ancho,alto);
+	}
+
 }

@@ -16,6 +16,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -484,6 +486,13 @@ public class ActionsUtil {
 		//Dimension d = new Dimension(420,600);
 		//driver.manage().window().setSize(d);
 
+	}
+
+	public static void resolucionNavegador(WebDriver driver, String ancho, String alto) {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--window-size="+ancho+","+alto);
+		//ChromeDriver driver = new ChromeDriver(options);
+		ChromeDriver driver1 = new ChromeDriver(options); 
 	}
 
 }
