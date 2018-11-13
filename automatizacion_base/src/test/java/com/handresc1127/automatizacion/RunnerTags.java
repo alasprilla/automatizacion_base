@@ -29,8 +29,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 	//	"src/test/resources/features/ADP-45_HU-018_NumerosValidosRecargaYPaquetes.feature",		
 	//	"src/test/resources/features/ADP-47_HU-020_RecargaOtroValor.feature"
 	//	"src/test/resources/features/ADP-51_HU-021_PagoCompleto.feature"
-			"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature"	
-		//"src/test/resources/features/ADP-67_HU-002_RegistroEnMiCuenta.feature"	
+	//	"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature"	
+	//	"src/test/resources/features/ADP-67_HU-002_RegistroEnMiCuenta.feature"	
+		"src/test/resources/features/ADP-63_SolapamientoDeCampos.feature"	
 		},
 
 

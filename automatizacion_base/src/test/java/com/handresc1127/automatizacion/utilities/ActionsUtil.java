@@ -4,7 +4,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.awt.Dimension;
 import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
@@ -12,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.hamcrest.CoreMatchers;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -476,10 +476,14 @@ public class ActionsUtil {
 	}
 	
 	public static void resolucion(WebDriver driver,String x, String y) {
-		//driver.set_window_position(x,y);
-		//driver.set_window_size(300, 500);
-		Dimension d = new Dimension(420,600);
+		int ancho = Integer.parseInt(x);
+		int alto = Integer.parseInt(y);
+		Dimension d = new Dimension(ancho, alto);
 		driver.manage().window().setSize(d);
+		//driver.set_window_size(300, 500);
+		//Dimension d = new Dimension(420,600);
+		//driver.manage().window().setSize(d);
+
 	}
 
 }

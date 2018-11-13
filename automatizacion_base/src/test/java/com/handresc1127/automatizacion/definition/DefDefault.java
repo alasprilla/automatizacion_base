@@ -151,8 +151,9 @@ public class DefDefault {
 
 	//Implementación: SPIKE Solapamiento de campos 
 	@When("^se quiere visualizar con resolucion \"([^\"]*)\" x \"([^\"]*)\"$")
-	public void se_quiere_visualizar_con_resolucion_x(String X, String Y) {
-		ActionsUtil.resolucion(X,Y);
+	public void se_quiere_visualizar_con_resolucion_x(String x, String y) {
+		pagePagaFact.tamano(x,y);
+		
 	}
 
 }

@@ -139,4 +139,8 @@ public class PageDefault extends PageObject {
 		ActionsUtil.dragAndDrop(getDriver(), byElement, x, y);
 	}
 
+	public void tamano(String x, String y) {
+		ActionsUtil.resolucion(getDriver(),x,y);
+	}
+
 }
