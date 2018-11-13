@@ -20,6 +20,7 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("consultar", By.xpath("//*[@id=\'findagenda\']/div[2]/div[2]/button"));
 		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id=\'query-container\']/section/div[1]/span[2]"));
 		ActionsUtil.objetosPut("visitaspendientes", By.xpath("//*[@id=\'schedule-visits-container\']/div[2]/div[1]/div/p"));
+		ActionsUtil.objetosPut("consultasPQR", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
 	}
 	
 }
