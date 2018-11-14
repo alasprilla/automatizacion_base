@@ -18,6 +18,7 @@ public class PropertiesLoader {
 	private Properties load() {
 		try {
 			properties.load(new FileInputStream("serenity.properties"));
+			properties.load(new FileInputStream("target/maven.properties"));
 		} catch (Exception e) {
 		}
 		return properties;

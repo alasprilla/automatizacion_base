@@ -18,6 +18,8 @@
 		<tags></tags>
 		<parallel.tests></parallel.tests>
 		<webdriver.base.url></webdriver.base.url>
+		<baseURL1></baseURL1>
+		<baseURL2></baseURL2>
 	</properties>
 
 	<repositories>
@@ -106,6 +108,24 @@
 	</dependencies>
 	<build>
 		<plugins>
+		
+		<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>write-project-properties</goal>
+						</goals>
+						<configuration>
+							<outputFile>${project.build.directory}/maven.properties</outputFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
