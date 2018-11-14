@@ -155,11 +155,6 @@ public class DefDefault {
 		pagePagaFact.tamano(x,y);
 		
 	}
-	//Implementación: SPIKE Solapamiento de campos
-	@When("^el tamaño del navegador es \"([^\"]*)\" por \"([^\"]*)\"$")
-	public void el_tamaño_del_navegador_es_por(String ancho, String alto) {
-		pagePagaFact.tamanoNavegador(ancho,alto);
-		
-	}
+
 
 }
