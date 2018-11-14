@@ -8,66 +8,20 @@ Feature: HU005_Barra Regulatoria
 
   Scenario: Consulta/Radica PQR para UNE
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When ingreso "42767842" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
-    Then llevará al formulario con el objeto "Visitas Pendientes"
+    When doy clic en "Consulta PQR UNE"
+    Then llevará al formulario con el objeto "PQR UNE"
 
-  Scenario: Mi Cuenta - Ingreso documento válido sin agenda
+  Scenario: Consulta/Radica PQR Tigo
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When ingreso "43921358" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
-    Then el campo "label error documento" tiene el texto "Los sentimos, en el momento no tienes una visita programada"
+    When doy clic en "Consulta PQR TIGO"
+    Then llevará al formulario con el objeto "PQR TIGO"
 
-  Scenario: Mi Cuenta -  Ingreso documento inválido
+  Scenario: Consulta ante la SIC
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When ingreso "000" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
-    Then el campo "label error documento" tiene el texto "El documento ingresado no es válido. Verifícalo e intenta de nuevo."
-
-  Scenario Outline: Mi Cuenta -  Validación tipo de documento CC
+    When doy clic en "Consulta SIC"
+    Then llevará al formulario con el objeto "SIC"
+    
+  Scenario: Conoce nuestras Tiendas
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And doy clic en "Tipo"
-    And doy clic en "Tipo Ul CC"
-    When ingreso <valor> en el campo "Ingresa tu documento"
-    And el campo "Consultar" tiene el atributo "disabled" en el valor "true"
-
-    Examples: 
-      | valor  |
-      | "abcd" |
-      | "*/*/" |
-
-  Scenario Outline: Mi Cuenta -  Validación tipo de documento NIT
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And doy clic en "Tipo"
-    And doy clic en "Tipo Ul NIT"
-    When ingreso <valor> en el campo "Ingresa tu documento"
-    And el campo "Consultar" tiene el atributo "disabled" en el valor "true"
-
-    Examples: 
-      | valor  |
-      | "abcd" |
-      | "*/*/" |
-
-  Scenario Outline: Mi Cuenta -  Validación tipo de documento CE
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And doy clic en "Tipo"
-    And doy clic en "Tipo Ul CE"
-    When ingreso <valor> en el campo "Ingresa tu documento"
-    And el campo "Consultar" tiene el atributo "disabled" en el valor "true"
-
-    Examples: 
-      | valor |
-      | "%€"  |
-      | "*/*" |
-
-  Scenario Outline: Mi Cuenta -  Validación tipo de documento PS
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And doy clic en "Tipo"
-    And doy clic en "Tipo Ul PS"
-    When ingreso <valor> en el campo "Ingresa tu documento"
-    And el campo "Consultar" tiene el atributo "disabled" en el valor "true"
-
-    Examples: 
-      | valor  |
-      | "%€"   |
-      | "*/*/" |
+    When doy clic en "Nuestras Tiendas"
+    Then llevará al formulario con el objeto "tiendas"
