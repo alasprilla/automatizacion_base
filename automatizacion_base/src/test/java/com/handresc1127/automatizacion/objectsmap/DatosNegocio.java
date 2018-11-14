@@ -8,7 +8,7 @@ import com.handresc1127.automatizacion.utilities.ActionsUtil;
 public final class DatosNegocio {
 	
 	
-	private static final HashMap<String, String> datosDelNegocio = new HashMap<String, String>();
+	private static final HashMap<String, String> datosDelNegocio = new HashMap<>();
 	static {
 		Calendar now = Calendar.getInstance();
 		dataPut("paginapagodefacturas", ActionsUtil.getProperty("baseURL1"));

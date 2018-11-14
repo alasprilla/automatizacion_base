@@ -4,7 +4,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -33,8 +32,8 @@ public class ActionsUtil {
 	private ActionsUtil() {
 		throw new IllegalStateException("Utility class");
 	}
-	
-	static HashMap<String, By> objetosPage = new HashMap<String, By>();
+
+	static HashMap<String, By> objetosPage = new HashMap<>();
 	static PropertiesLoader properties = PropertiesLoader.getInstance();
 	private static final Logger LOGGER = LoggerFactory.getLogger(PageObject.class);
 	private static final long TIMEOUTS = (getProperty("webdriver.timeouts.implicitlywait")) != null
@@ -53,13 +52,13 @@ public class ActionsUtil {
 	public static void objetosPut(String key, By value) {
 		objetosPage.put(key, value);
 	}
-	
+
 	public static void setProperty(String property, String url) {
 		properties.setProperty(property, url);
 	}
-	
+
 	public static String getProperty(String property) {
-		String retorno=properties.getProperty(property);
+		String retorno = properties.getProperty(property);
 		return retorno;
 	}
 
@@ -505,63 +504,60 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return retorno;
 	}
-	
+
 	//// Base URL
 	private static String baseURL;
-	
+
 	public static String getBaseUrl() {
 		return baseURL;
 	}
-	
+
 	public static void setBaseUrl(String base) {
 		try {
 			new URL(base);
-			baseURL=base;
-		}catch(Exception e){
-			baseURL=null;
+			baseURL = base;
+		} catch (Exception e) {
+			baseURL = null;
 		}
 	}
-	
+
 	public static String updateUrlWithBaseUrlIfDefined(final String startingUrl) {
-        String baseUrl = baseURL;
-        if ((baseUrl != null) && (!StringUtils.isEmpty(baseUrl))) {
-            return replaceHost(startingUrl, baseUrl);
-        } else {
-            return startingUrl;
-        }
-    }
-	
+		String baseUrl = baseURL;
+		if ((baseUrl != null) && (!StringUtils.isEmpty(baseUrl))) {
+			return replaceHost(startingUrl, baseUrl);
+		} else {
+			return startingUrl;
+		}
+	}
+
 	private static String replaceHost(final String starting, final String base) {
 
-        String updatedUrl = starting;
-        try {
-            URL startingUrl = new URL(starting);
-            URL baseUrl = new URL(base);
+		String updatedUrl = starting;
+		try {
+			URL startingUrl = new URL(starting);
+			URL baseUrl = new URL(base);
 
-            String startingHostComponent = hostComponentFrom(startingUrl.getProtocol(),
-                    startingUrl.getHost(),
-                    startingUrl.getPort());
-            String baseHostComponent = hostComponentFrom(baseUrl.getProtocol(),
-                    baseUrl.getHost(),
-                    baseUrl.getPort());
-            updatedUrl = starting.replaceFirst(startingHostComponent, baseHostComponent);
-        } catch (MalformedURLException e) {
-            LOGGER.error("Failed to analyse default page URL: Starting URL: {}, Base URL: {}", starting, base);
-            LOGGER.error("URL analysis failed with exception:", e);
-        }
+			String startingHostComponent = hostComponentFrom(startingUrl.getProtocol(), startingUrl.getHost(),
+					startingUrl.getPort());
+			String baseHostComponent = hostComponentFrom(baseUrl.getProtocol(), baseUrl.getHost(), baseUrl.getPort());
+			updatedUrl = starting.replaceFirst(startingHostComponent, baseHostComponent);
+		} catch (Exception e) {
+			LOGGER.error("Failed to analyse default page URL: Starting URL: {}, Base URL: {}", starting, base);
+			LOGGER.error("URL analysis failed with exception:", e);
+		}
 
-        return updatedUrl;
-    }
-	
+		return updatedUrl;
+	}
+
 	private static String hostComponentFrom(final String protocol, final String host, final int port) {
-        StringBuilder hostComponent = new StringBuilder(protocol);
-        hostComponent.append("://");
-        hostComponent.append(host);
-        if (port > 0) {
-            hostComponent.append(":");
-            hostComponent.append(port);
-        }
-        return hostComponent.toString();
-    }
-	
+		StringBuilder hostComponent = new StringBuilder(protocol);
+		hostComponent.append("://");
+		hostComponent.append(host);
+		if (port > 0) {
+			hostComponent.append(":");
+			hostComponent.append(port);
+		}
+		return hostComponent.toString();
+	}
+
 }
