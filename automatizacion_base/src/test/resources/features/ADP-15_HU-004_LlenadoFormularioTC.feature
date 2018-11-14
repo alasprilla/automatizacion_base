@@ -2,7 +2,7 @@
 #Keywords Summary : campos, tarjeta, credito, validacion
 #Encoding: utf-8
 #Language: es
-@issue:ADP-15, @Pasarela
+@issue:ADP-15 @Pasarela
 Feature: HU004 Llenado formulario TC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el llenado de formulario de TC

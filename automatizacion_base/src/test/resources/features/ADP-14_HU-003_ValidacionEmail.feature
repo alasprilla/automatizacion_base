@@ -1,6 +1,6 @@
 #Author: Rigoberto Henao
 #Keywords Summary : Email
-@issue:ADP-14, @Pasarela
+@issue:ADP-14 @Pasarela
 Feature: HU003 Validación de Email
   Como Tigoune 
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil 

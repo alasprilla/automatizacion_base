@@ -1,6 +1,6 @@
 #Author: Jose David Moreno Serrano - Karen Perez
 #Keywords Summary :
-@issue:ADP-45, @Recargas
+@issue:ADP-45 @Recargas
 Feature: HU018 Validación números Validos Celular en Recargas y Paquetes
   
   Como Tigoune

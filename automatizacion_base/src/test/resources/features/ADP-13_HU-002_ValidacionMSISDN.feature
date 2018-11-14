@@ -1,6 +1,6 @@
 #Author: Rigoberto Henao
 #Keywords Summary : MSISDN
-@issue:ADP-13, @Pasarela
+@issue:ADP-13 @Pasarela
 Feature: HU002 Validación Teclas Especiales MSISDN
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil

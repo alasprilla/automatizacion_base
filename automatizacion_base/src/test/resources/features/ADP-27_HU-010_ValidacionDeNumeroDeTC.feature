@@ -1,5 +1,5 @@
 #Author: Henry Andres Correa Correa
-@issue:ADP-27, @Pasarela
+@issue:ADP-27 @Pasarela
 Feature: HU010 Validación de número de TC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC

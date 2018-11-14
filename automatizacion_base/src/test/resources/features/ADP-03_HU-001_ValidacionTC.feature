@@ -2,7 +2,7 @@
 #Keywords Summary : tarjeta, crédito
 #Encoding: utf-8
 #Language: es
-@issue:ADP-3, @Pasarela
+@issue:ADP-3 @Pasarela
 Feature: HU001 Validación TC
   Como Tigoune
   Quiero pruebas automatizadas de la casuística en el ingreso de números de TC

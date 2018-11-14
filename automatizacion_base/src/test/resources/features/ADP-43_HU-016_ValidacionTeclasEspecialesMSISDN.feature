@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla
 #Keywords Summary : MSISDN
-@issue:ADP-43, @Paquetes
+@issue:ADP-43 @Paquetes
 Feature: HU016 Validación Teclas Especiales MSISND
   Como Tigoune
   Quiero realizar pruebas automatizadas sobre el campo "Número Celular" en el formulario de paquetes y recargas

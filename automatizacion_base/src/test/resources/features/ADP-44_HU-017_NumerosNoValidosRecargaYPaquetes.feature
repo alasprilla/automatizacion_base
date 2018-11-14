@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-44, @Paquetes
+@issue:ADP-44 @Paquetes
 Feature: HU017 Validación número Invalido Celular en Recargas y Paquetes
   
   Como Tigoune

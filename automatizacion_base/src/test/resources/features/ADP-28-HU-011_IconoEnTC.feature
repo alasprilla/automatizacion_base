@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-28, @Pasarela
+@issue:ADP-28 @Pasarela
 Feature: HU011 Icono en TC
 		Como Tigoune
 		Quiero pruebas automatizadas de la casuística en el ingreso de números de TC

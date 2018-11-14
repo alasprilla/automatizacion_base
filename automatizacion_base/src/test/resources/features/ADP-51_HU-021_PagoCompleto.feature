@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-51, @Pasarela
+@issue:ADP-51 @Pasarela
 Feature: HU021 Pago Completo de Facturas Pendientes
 
   Background: seleccion medio de pago

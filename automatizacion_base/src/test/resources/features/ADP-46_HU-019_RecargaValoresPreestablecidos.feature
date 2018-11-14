@@ -1,6 +1,6 @@
 #Author: Nelson Mesa
 #Keywords Summary :
-@issue:ADP-46, @Recargas
+@issue:ADP-46 @Recargas
 
 Feature: HU019 Recarga de valores preestablecidos
 

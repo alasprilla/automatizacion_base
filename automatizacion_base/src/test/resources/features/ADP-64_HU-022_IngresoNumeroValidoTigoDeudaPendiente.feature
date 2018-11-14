@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-64, @Recargas
+@issue:ADP-64 @Recargas
 Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
   
   Como Tigoune

@@ -1,6 +1,6 @@
 #Author: Nelson Mesa
 #Keywords Summary :
-@issue:ADP-47, @Recargas
+@issue:ADP-47 @Recargas
 Feature: HU020 Recarga de otros valores
   
   

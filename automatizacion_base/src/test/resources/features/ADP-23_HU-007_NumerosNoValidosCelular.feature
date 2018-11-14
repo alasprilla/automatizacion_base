@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-23, @Pasarela
+@issue:ADP-23 @Pasarela
 Feature: HU007 Validación número Invalido Celular
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil

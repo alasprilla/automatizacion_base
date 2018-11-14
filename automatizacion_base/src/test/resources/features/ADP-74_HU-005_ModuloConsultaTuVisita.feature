@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-74, @MiCuenta
+@issue:ADP-74 @MiCuenta
 Feature: HU005_Modulo Consulta Tu Visita
   Y0 como usuario de mi cuenta Tigo 
   Quiero ingresar al módulo de consulta tu visita

@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary :
-@issue:ADP-24, @Pasarela
+@issue:ADP-24 @Pasarela
 Feature: HU008 Validación número Celular
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio móvil

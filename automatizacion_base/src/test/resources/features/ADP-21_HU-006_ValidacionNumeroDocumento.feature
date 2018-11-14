@@ -1,6 +1,6 @@
 #Author: Alexandra Lasprilla Cardona
 #Keywords Summary : Validacion Documento
-@issue:ADP-21, @Pasarela
+@issue:ADP-21 @Pasarela
 Feature: HU006 Validación número documento
   Como Tigoune
   Quiero realizar pruebas automatizadas de la consulta de facturas del servicio fijo
