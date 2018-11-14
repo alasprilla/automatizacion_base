@@ -52,6 +52,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("autorizoestatarjetaparafuturospagos", By.xpath("//*[@id='edit-authorized']/div/div/label[1]"));
 		ActionsUtil.objetosPut("primerpagototal", By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]"));
 		ActionsUtil.objetosPut("title-detail", By.id("title-detail"));
+		ActionsUtil.objetosPut("seleccionmediodepago", By.id("tigoune-payment-method-title"));
 		ActionsUtil.objetosPut("numerodelproducto", By.id("product-number"));
 		ActionsUtil.objetosPut("fechalimitedepago", By.xpath(
 				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div"));
