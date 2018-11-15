@@ -23,7 +23,13 @@ public class DefDefault {
 		pagePagaFact.setBaseURL(baseURL);
 		estoy_en_la_página_de_inicio_de_pago_de_facturas(url);
 	}
-
+	
+	@Then("^lo llevará a la página \"([^\"]*)\"$")
+	public void lo_llevará_a_la_página(String direccion) {
+		pagePagaFact.compara(direccion);
+		
+	}
+	
 	// Implementación: "ADP-3_HU-001-ValidacionTC"
 	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
 	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String objeto) {

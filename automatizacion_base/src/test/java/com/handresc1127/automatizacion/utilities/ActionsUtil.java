@@ -573,6 +573,19 @@ public class ActionsUtil {
 			hostComponent.append(port);
 		}
 		return hostComponent.toString();
+	public static void curretCompareURL(WebDriver driver, String direccion) {
+		driver.getWindowHandles();
+		Set<String> X = driver.getWindowHandles();
+		String[] handle = new String[999];
+		int i = 0;
+		for (String pestana1 : X) {
+			handle[i] = pestana1;
+			i++;
+		}
+		System.arraycopy(handle, 0, handle, 0, X.size());
+		driver.switchTo().window(handle[1]);
+		String currenturl = driver.getCurrentUrl();
+		assertEquals(direccion, currenturl);
 	}
 
 }

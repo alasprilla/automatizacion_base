@@ -168,4 +168,9 @@ public class PageDefault extends PageObject {
 
 	}
 
+	public void compara(String direcccion) {
+		ActionsUtil.curretCompareURL(getDriver(), direcccion);
+		
+	}
+	
 }
