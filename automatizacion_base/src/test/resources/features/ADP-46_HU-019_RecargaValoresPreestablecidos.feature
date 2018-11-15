@@ -17,7 +17,7 @@ Para garantizar que funcione correctamente el inicio del proceso de recarga
     And  doy clic en el botón <valor>
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Recargar"
-    Then llevará al formulario con el objeto "title-detail"
+    Then llevará al formulario con el objeto "Titulo Detalle"
     And el campo "valor" tiene el texto <valorformato>
 
      Examples:  

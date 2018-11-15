@@ -18,7 +18,7 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("recargadesde", By.xpath("//*[@id=\'other_value\']/div/div/div[2]"));
 		ActionsUtil.objetosPut("labelerrorcelularrecargas",By.xpath("//*[@id=\'container_recharge\']/div[1]/div/div[1]/div/p"));
 		ActionsUtil.objetosPut("valor", By.xpath("//*[@id=\'block-tigo-theme-content\']/div/div[2]/div/div/div/div[1]/p[3]"));
-		ActionsUtil.objetosPut("title-detail", By.id("tigoune-payment-method-title"));
+		ActionsUtil.objetosPut("titulodetalle", By.id("tigoune-payment-method-title"));
 		
 		ActionsUtil.objetosPut("3mil",  By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[1]"));
 		ActionsUtil.objetosPut("6mil",  By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/div/li[2]"));

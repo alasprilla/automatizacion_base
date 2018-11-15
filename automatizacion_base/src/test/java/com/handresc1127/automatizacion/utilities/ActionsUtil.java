@@ -50,7 +50,22 @@ public class ActionsUtil {
 	}
 
 	public static void objetosPut(String key, By value) {
+		String validacionKey="Objeto mapeado en objectsmap";
+		By valueKey=objetosPage.get(key);
+		if(valueKey!=null) {
+			validacionKey="El objeto "+key+" ya fue mapeado: "+valueKey;
+			objetosPage = new HashMap<>();
+		}
+		assertThat("Objeto mapeado en objectsmap", CoreMatchers.equalTo(validacionKey));
 		objetosPage.put(key, value);
+	}
+	
+	public static boolean objetosIsEmpty() {
+		if(objetosPage.isEmpty()) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	public static void setProperty(String property, String url) {

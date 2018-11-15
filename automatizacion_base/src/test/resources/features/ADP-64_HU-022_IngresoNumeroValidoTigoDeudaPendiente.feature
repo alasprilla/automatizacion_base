@@ -37,7 +37,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     And doy clic en "recargar"
     Then llevará al formulario con el objeto "Espera un momento"
     And doy clic en "Continuar"
-    Then llevará al formulario con el objeto "title-detail"
+    Then llevará al formulario con el objeto "Titulo Detalle"
     And el campo "valor" tiene el texto <valorformato>
 
     Examples: 
@@ -57,7 +57,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     And llevará al formulario con el objeto "otro valor cargado"
     And Espero 1 segundos
     And doy clic en "recargar"
-    Then llevará al formulario con el objeto "title-detail"
+    Then llevará al formulario con el objeto "Titulo Detalle"
 
     Examples: 
       | valor  | 

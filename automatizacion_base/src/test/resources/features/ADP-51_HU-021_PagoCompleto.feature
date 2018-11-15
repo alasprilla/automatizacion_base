@@ -8,7 +8,7 @@ Feature: HU021 Pago Completo de Facturas Pendientes
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M"
-    Then llevará al formulario con el objeto "title-detail"
+    Then llevará al formulario con el objeto "Titulo Detalle"
 
   Scenario Outline: Pasarela - Pago Completo con PSE
     Given Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
@@ -27,7 +27,7 @@ Feature: HU021 Pago Completo de Facturas Pendientes
     And ingreso "27/09/2018" en el campo "BankProcessDate"
     And ingreso "12365478" en el campo "authorizationID"
     And doy clic en el botón "Return"
-    Then llevará al formulario con el objeto "title-detail"
+    Then llevará al formulario con el objeto "Titulo Detalle"
 
     Examples: 
       | estado     |

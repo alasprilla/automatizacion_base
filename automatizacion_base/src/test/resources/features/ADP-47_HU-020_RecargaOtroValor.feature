@@ -68,7 +68,7 @@ Feature: HU020 Recarga de otros valores
     And ingreso <valor> en el campo "Valor a recargar"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
     And doy clic en "recargar"
-    Then llevará al formulario con el objeto "title-detail"
+    Then llevará al formulario con el objeto "Titulo Detalle"
     And el campo "Valor" tiene el texto <valorFormato>
 
     Examples: 

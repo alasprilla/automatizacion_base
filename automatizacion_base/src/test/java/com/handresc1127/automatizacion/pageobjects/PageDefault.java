@@ -16,24 +16,26 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class PageDefault extends PageObject {
 
 	public PageDefault() {
-		new ObjetosPagaTuFactura();
-		new ObjetosRecargasPaquetes();
-		new ObjetosEcommerce();
-		new ObjetosMiCuenta();
+		if (ActionsUtil.objetosIsEmpty()) {
+			new ObjetosPagaTuFactura();
+			new ObjetosRecargasPaquetes();
+			new ObjetosEcommerce();
+			new ObjetosMiCuenta();
+		}
 	}
 
 	By objetoToAction;
-	
+
 	public void irPagina(String url) {
-		String urlActualizada=ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
+		String urlActualizada = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
 		ActionsUtil.goToWebSide(getDriver(), urlActualizada);
 	}
-	
+
 	public void setBaseURL(String url) {
 		String realUrl = DatosNegocio.dataGet(ActionsUtil.textoMinusculasSinEspacios(url));
 		ActionsUtil.setBaseUrl(realUrl);
 	}
-	
+
 	public By getObjetoToCliked() {
 		return objetoToAction;
 	}
@@ -91,15 +93,15 @@ public class PageDefault extends PageObject {
 
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
-		item=DatosNegocio.dataGet(item);
-		//item=dataGet(item);
+		item = DatosNegocio.dataGet(item);
+		// item=dataGet(item);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
 	public void validarEscribir(String objeto, String txtIngresado) {
 		sharedObjet(objeto);
-		txtIngresado=DatosNegocio.dataGet(txtIngresado);
-		//txtIngresado=dataGet(txtIngresado);
+		txtIngresado = DatosNegocio.dataGet(txtIngresado);
+		// txtIngresado=dataGet(txtIngresado);
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), txtIngresado);
 		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
@@ -144,7 +146,7 @@ public class PageDefault extends PageObject {
 	public void ArrastrarYSoltarXY(String objeto, String position) {
 		sharedObjet(objeto);
 		By byElement = getObjetoToCliked();
-		String []pos = ActionsUtil.textoMinusculasSinEspacios(position).split(",");
+		String[] pos = ActionsUtil.textoMinusculasSinEspacios(position).split(",");
 		int x = Integer.parseInt(pos[0]);
 		int y = Integer.parseInt(pos[1]);
 		ActionsUtil.dragAndDrop(getDriver(), byElement, x, y);
@@ -155,15 +157,15 @@ public class PageDefault extends PageObject {
 		By objClass1 = getObjetoToCliked();
 		sharedObjet(dataClass2);
 		By objClass2 = getObjetoToCliked();
-		int indexClass=ActionsUtil.byShared(getDriver(),objClass1,objClass2);
-		if(indexClass==1) {
-			//dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
-			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
-		}else if(indexClass==2) {
-			//dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
-			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
+		int indexClass = ActionsUtil.byShared(getDriver(), objClass1, objClass2);
+		if (indexClass == 1) {
+			// dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1), dataValue);
+		} else if (indexClass == 2) {
+			// dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2), dataValue);
 		}
-		
+
 	}
 
 }

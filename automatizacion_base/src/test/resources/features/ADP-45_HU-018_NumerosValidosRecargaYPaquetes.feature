@@ -45,7 +45,7 @@ Feature: HU018 Validación números Validos Celular en Recargas y Paquetes
   And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
   And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
   And doy clic en "Recargar"
-  Then llevará al formulario con el objeto "title-detail"
+  Then llevará al formulario con el objeto "Titulo Detalle"
   And el campo "Numero Celular" tiene el texto <Formato Celular>
   And el campo "Fecha Facturacion" no está vacío
   

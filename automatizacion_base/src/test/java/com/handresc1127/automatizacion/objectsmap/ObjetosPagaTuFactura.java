@@ -15,7 +15,6 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("labelerrorcelular", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
 		ActionsUtil.objetosPut("labelerrorcorreo", By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span"));
 		ActionsUtil.objetosPut("labelerrorcorreoh", By.xpath("//*[@id=\'content_right_forms_unified\']/div/span"));
-		ActionsUtil.objetosPut("consultarh", By.xpath("//*[contains(@id,'edit-consult-')]"));
 		ActionsUtil.objetosPut("consultarh", By.id("edit-consult-home"));
 		ActionsUtil.objetosPut("consultarm", By.id("edit-consult"));
 		ActionsUtil.objetosPut("labelfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
@@ -48,7 +47,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("mm", By.id("edit-buyer-card-month-expiration"));
 		ActionsUtil.objetosPut("aa", By.id("edit-buyer-card-year-expiration"));
 		ActionsUtil.objetosPut("nombre", By.id("edit-ccname"));
-		ActionsUtil.objetosPut("tipo", By.id("edit-buyer-document-type"));
+		ActionsUtil.objetosPut("tipocc", By.id("edit-buyer-document-type"));
 		ActionsUtil.objetosPut("numerodedocumentotc", By.id("edit-buyer-document"));
 		ActionsUtil.objetosPut("autorizoestatarjetaparafuturospagos",
 				By.xpath("//*[@id='edit-authorized']/div/div/label[1]"));
