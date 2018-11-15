@@ -3,27 +3,27 @@
 @issue:ADP-66, @MiCuenta
 Feature: HU001 Validar Ingreso
   
-		Como usuario de mi cuenta Tigo
-		Quiero ingresar a mi cuenta
-		Para gestionar portafolio
+  Como usuario de mi cuenta Tigo
+  Quiero ingresar a mi cuenta
+  Para gestionar portafolio
 
-  Scenario: Loguin desde el botón ingresar
+  Scenario: Mi Cuenta- Loguin desde el botón ingresar
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     Then llevará al formulario con el objeto "Crea tu cuenta"
-    
-  Scenario: Loguin desde el botón descúbrelo ya
+
+  Scenario: Mi Cuenta- Loguin desde el botón descúbrelo ya
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Descúbrelo ya"
     Then llevará al formulario con el objeto "Crea tu cuenta"
-    
-  Scenario: Loguin desde el botón ingresar a mi cuenta
+
+  Scenario: Mi Cuenta-Loguin desde el botón ingresar a mi cuenta
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar a Mi Cuenta"
     And doy clic en "Iniciar Sesión"
-    Then llevará al formulario con el objeto "Crea tu cuenta" 
-    
-  Scenario: Loguin desde el botón cambiar mi clave
+    Then llevará al formulario con el objeto "Crea tu cuenta"
+
+  Scenario: Mi Cuenta- Loguin desde el botón cambiar mi clave
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Cambiar mi clave"
     Then llevará al formulario con el objeto "Crea tu cuenta"
