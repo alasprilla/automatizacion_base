@@ -11,12 +11,12 @@ Feature: Responsive de Pantallas de Pasarela de pagos
     And se quiere visualizar con resolucion <X> x <Y>
 
     Examples: 
-      | X     | Y      |
-      | "320" | "480"  |
-      | "600" | "1024" |
-      | "768" | "1024" |
-      | "640" | "960"  |
-      | "720" | "1280" |
+      | X     | Y       |
+      | "320" | "480"   |
+      | "600" | "1024"  |
+      | "768" | "1024"  |
+      | "640" | "960"   |
+      | "720" | "1280"  |
 
   Scenario Outline: Pasarela - Responsive Pantalla 2 Seccion Móvil "Resumen de tu Transacción"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
