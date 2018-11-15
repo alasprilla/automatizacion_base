@@ -26,6 +26,14 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("iniciarsesion", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/ul/li/a"));
 		ActionsUtil.objetosPut("cambiarmiclave", By.xpath("//*[@id=\'main-content\']/div[2]/div[7]/div/div/div/div/div[2]/a"));
+		ActionsUtil.objetosPut("consultasPQRUNE", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
+		ActionsUtil.objetosPut("PQRUNE", By.xpath("/html/body/div[4]/div/div/div/div[1]/h3"));
+		ActionsUtil.objetosPut("consultaPQRTIGO", By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[2]/p/a"));
+		ActionsUtil.objetosPut("PQRTIGO", By.xpath("//*[@id='formInicioPqr:panelBotonesInicio']/thead/tr/th/span"));
+		ActionsUtil.objetosPut("consultaSIC", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[3]/p/a"));
+		ActionsUtil.objetosPut("SIC", By.xpath("//*[@id=\'contenido_medio\']/div[1]/h1"));
+		ActionsUtil.objetosPut("nuestrastiendas", By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[4]/p/a"));
+	    ActionsUtil.objetosPut("tiendas", By.xpath("/html/body/content/div[2]/div/section[1]/div/div/h3"));
 	}
 	
 }
