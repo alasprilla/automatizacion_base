@@ -22,7 +22,7 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("consultar", By.xpath("//*[@id=\'findagenda\']/div[2]/div[2]/button"));
 		ActionsUtil.objetosPut("mensajeerrordocumento", By.xpath("//*[@id=\'query-container\']/section/div[1]/span[2]"));
 		ActionsUtil.objetosPut("visitaspendientes", By.xpath("//*[@id=\'schedule-visits-container\']/div[2]/div[1]/div/p"));
-		ActionsUtil.objetosPut("consultaspqr", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
+		ActionsUtil.objetosPut("consultapqr", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
 		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("iniciarsesion", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/ul/li/a"));
 		ActionsUtil.objetosPut("cambiarmiclave", By.xpath("//*[@id=\'main-content\']/div[2]/div[7]/div/div/div/div/div[2]/a"));
