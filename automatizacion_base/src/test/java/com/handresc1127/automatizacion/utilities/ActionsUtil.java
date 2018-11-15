@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
@@ -576,19 +577,19 @@ public class ActionsUtil {
 		return hostComponent.toString();
 	}
 	
-	public static void curretCompareURL(WebDriver driver, String direccion) {
+	public static void curretCompareURL(WebDriver driver, String urlExpected) {
 		driver.getWindowHandles();
-		Set<String> X = driver.getWindowHandles();
+		Set<String> currentHandlers = driver.getWindowHandles();
 		String[] handle = new String[999];
 		int i = 0;
-		for (String pestana1 : X) {
-			handle[i] = pestana1;
+		for (String pestana : currentHandlers) {
+			handle[i] = pestana;
 			i++;
 		}
-		System.arraycopy(handle, 0, handle, 0, X.size());
-		driver.switchTo().window(handle[1]);
+		handle= Arrays.copyOf(handle, i);
+		driver.switchTo().window(handle[handle.length-1]);
 		String currenturl = driver.getCurrentUrl();
-		assertEquals(direccion, currenturl);
+		assertEquals(urlExpected, currenturl);
 	}
 
 }
