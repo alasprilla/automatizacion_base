@@ -33,6 +33,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-64_HU-022_IngresoNumeroValidoTigoDeudaPendiente.feature",
 		"src/test/resources/features/ADP-67_HU-002_RegistroEnMiCuenta.feature",
 		"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature" },
+		"src/test/resources/features/ADP-66_HU-001_ValidarIngreso.feature"
 
 		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
