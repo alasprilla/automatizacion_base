@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
@@ -573,6 +574,8 @@ public class ActionsUtil {
 			hostComponent.append(port);
 		}
 		return hostComponent.toString();
+	}
+	
 	public static void curretCompareURL(WebDriver driver, String direccion) {
 		driver.getWindowHandles();
 		Set<String> X = driver.getWindowHandles();
