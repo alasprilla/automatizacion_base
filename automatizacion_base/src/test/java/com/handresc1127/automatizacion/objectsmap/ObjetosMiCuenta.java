@@ -9,6 +9,8 @@ public class ObjetosMiCuenta {
 	public ObjetosMiCuenta () {
 		
 		ActionsUtil.objetosPut("ingresar", By.xpath("//*[@id=\'main-content\']/div[2]/div[2]/div/div/div/section/div[3]/a[2]"));
+		//ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/a"));
+		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("registrarme", By.xpath("//*[@id='main-content']/div[2]/div[2]/div/div/div/section/div[3]/a[1]"));
 		ActionsUtil.objetosPut("creatucuenta", By.xpath("/html/body/div[2]/div/div[1]/h5"));
 		ActionsUtil.objetosPut("tipodocumentomitigo", By.xpath("//*[@id=\"t_document\"]/div/div/input"));
@@ -25,7 +27,6 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("consultapqr", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
 		ActionsUtil.objetosPut("consultapqrtigo", By.xpath("//*[@id=\"main-content\"]/div[2]/div[9]/div/div/div/div/div/div/div/div[2]/p/a"));
 		ActionsUtil.objetosPut("consultapqrune", By.xpath("//*[@id=\"main-content\"]/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
-		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("iniciarsesion", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/ul/li/a"));
 		ActionsUtil.objetosPut("cambiarmiclave", By.xpath("//*[@id=\'main-content\']/div[2]/div[7]/div/div/div/div/div[2]/a"));
 		ActionsUtil.objetosPut("consultaspqrune", By.xpath("//*[@id=\'main-content\']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
