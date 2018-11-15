@@ -1,6 +1,6 @@
 #Author: Nelson Mesa
 #Keywords Summary :
-@issue:ADP-70
+@issue:ADP-70 @MiCuenta
 
 Feature: HU003 Funcionalidades Mi cuenta Anónimo
 
