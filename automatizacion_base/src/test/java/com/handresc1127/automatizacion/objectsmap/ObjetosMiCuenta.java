@@ -9,6 +9,14 @@ public class ObjetosMiCuenta {
 	public ObjetosMiCuenta () {
 		
 		ActionsUtil.objetosPut("ingresar", By.xpath("//*[@id=\'main-content\']/div[2]/div[2]/div/div/div/section/div[3]/a[2]"));
+		ActionsUtil.objetosPut("correomicuenta", By.id("idEmail"));
+		ActionsUtil.objetosPut("validar", By.id("continueBtn"));
+		ActionsUtil.objetosPut("contrasena", By.id("password"));
+		ActionsUtil.objetosPut("continuarmicuenta", By.xpath("/html/body/div[2]/div/form/div[3]/button"));
+		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id=\'block-accountsblock-2\']/div/div/div/div/div/span"));
+		ActionsUtil.objetosPut("msisdnmicuenta", By.xpath("//*[@id='lines']/li[3]/div"));
+		ActionsUtil.objetosPut("resumen", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[1]/a"));
+		ActionsUtil.objetosPut("cambiateya", By.id("action_Cámbiate ya"));
 		//ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id=\'top_menu_aside\']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("registrarme", By.xpath("//*[@id='main-content']/div[2]/div[2]/div/div/div/section/div[3]/a[1]"));
