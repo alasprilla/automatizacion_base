@@ -159,10 +159,8 @@ public class PageDefault extends PageObject {
 		By objClass2 = getObjetoToCliked();
 		int indexClass = ActionsUtil.byShared(getDriver(), objClass1, objClass2);
 		if (indexClass == 1) {
-			// dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1),dataValue);
 			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1), dataValue);
 		} else if (indexClass == 2) {
-			// dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2),dataValue);
 			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2), dataValue);
 		}
 
