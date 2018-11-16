@@ -52,20 +52,20 @@ public class ActionsUtil {
 	}
 
 	public static void objetosPut(String key, By value) {
-		String validacionKey="Objeto mapeado en objectsmap";
-		By valueKey=objetosPage.get(key);
-		if(valueKey!=null) {
-			validacionKey="El objeto "+key+" ya fue mapeado: "+valueKey;
+		String validacionKey = "Objeto mapeado en objectsmap";
+		By valueKey = objetosPage.get(key);
+		if (valueKey != null) {
+			validacionKey = "El objeto " + key + " ya fue mapeado: " + valueKey;
 			objetosPage = new HashMap<>();
 		}
 		assertThat("Objeto mapeado en objectsmap", CoreMatchers.equalTo(validacionKey));
 		objetosPage.put(key, value);
 	}
-	
+
 	public static boolean objetosIsEmpty() {
-		if(objetosPage.isEmpty()) {
+		if (objetosPage.isEmpty()) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
@@ -576,8 +576,13 @@ public class ActionsUtil {
 		}
 		return hostComponent.toString();
 	}
-	
+
 	public static void curretCompareURL(WebDriver driver, String urlExpected) {
+		String currenturl = driver.getCurrentUrl();
+		assertEquals(urlExpected, currenturl);
+	}
+
+	public static void switchWindowsTab(WebDriver driver, int indexTab) {
 		driver.getWindowHandles();
 		Set<String> currentHandlers = driver.getWindowHandles();
 		String[] handle = new String[999];
@@ -586,10 +591,23 @@ public class ActionsUtil {
 			handle[i] = pestana;
 			i++;
 		}
-		handle= Arrays.copyOf(handle, i);
-		driver.switchTo().window(handle[handle.length-1]);
-		String currenturl = driver.getCurrentUrl();
-		assertEquals(urlExpected, currenturl);
+		handle = Arrays.copyOf(handle, i);
+		if (indexTab > 99) {
+			driver.switchTo().window(handle[handle.length - 1]);
+		} else {
+			driver.switchTo().window(handle[indexTab-1]);
+		}
+		driver.findElement(By.xpath("//*"));
+	}
+	
+	public static void closeCurrentWindowsTab(WebDriver driver) {
+		driver.getWindowHandles();
+		Set<String> currentHandlers = driver.getWindowHandles();
+		if(currentHandlers.size()>1) {
+			By by=By.tagName("body");
+			ejecutarScript(driver,"window.close();", by);
+			switchWindowsTab(driver, 1);
+		}
 	}
 
 }

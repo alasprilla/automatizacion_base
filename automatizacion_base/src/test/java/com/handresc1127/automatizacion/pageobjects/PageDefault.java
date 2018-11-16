@@ -171,5 +171,28 @@ public class PageDefault extends PageObject {
 	public void comparUrlActual(String urlEsperada) {
 		ActionsUtil.curretCompareURL(getDriver(), urlEsperada);
 	}
-	
+
+	public void cambiarPestana(String tabPosition) {
+		int indexTab;
+		try {
+			indexTab=Integer.parseInt(tabPosition);
+		}
+		catch(Exception e) {
+			indexTab=0;
+		}
+		if(indexTab==0) {
+			switch(ActionsUtil.textoMinusculasSinEspacios(tabPosition) ){
+			case "primera": indexTab=1; break;
+			case "segunda": indexTab=2; break;
+			case "tercera": indexTab=3; break;
+			default: indexTab=100; break;
+			}
+		}
+		ActionsUtil.switchWindowsTab(getDriver(), indexTab);
+	}
+
+	public void cerrarPestanaActual() {
+		ActionsUtil.closeCurrentWindowsTab(getDriver());
+	}
+
 }

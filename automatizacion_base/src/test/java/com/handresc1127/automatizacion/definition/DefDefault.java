@@ -110,19 +110,27 @@ public class DefDefault {
 		}
 	}
 
-	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
 	public void llevará_al_formulario_con_el_objeto(String objeto) {
 		pagePagaFact.elementoVisible(objeto);
 	}
+	
+	@When("^voy a la pestaña \"([^\"]*)\"$")
+	public void voy_a_la_pestaña(String tabPosition) {
+		pagePagaFact.cambiarPestana(tabPosition);
+	}
+	
+	@Then("^cerrar pestaña$")
+	public void cerrar_pestaña() {
+		pagePagaFact.cerrarPestanaActual();
+	}
 
-	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
+
 	@Then("^el campo \"([^\"]*)\" comienza con el texto \"([^\"]*)\"$")
 	public void el_campo_comienza_con_el_texto(String objeto, String textoInicial) {
 		pagePagaFact.compararTextoDeInicio(objeto, textoInicial);
 	}
 
-	// Implementación: "ADP-26_HU-009_ValidacionEnCampoNumeroDocumento"
 	@Then("^el campo \"([^\"]*)\" no está vacío$")
 	public void el_campo_no_está_vacío(String objeto) {
 		pagePagaFact.compararTextoNoVacio(objeto);
