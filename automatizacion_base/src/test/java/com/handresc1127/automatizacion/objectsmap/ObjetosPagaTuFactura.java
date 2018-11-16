@@ -16,6 +16,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("labelerrorcorreo", By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span"));
 		ActionsUtil.objetosPut("labelerrorcorreoh", By.xpath("//*[@id=\'content_right_forms_unified\']/div/span"));
 		ActionsUtil.objetosPut("consultarh", By.id("edit-consult-home"));
+		ActionsUtil.objetosPut("seleccionmediodepago", By.id("tigoune-payment-method-title"));
 		ActionsUtil.objetosPut("consultarm", By.id("edit-consult"));
 		ActionsUtil.objetosPut("consultarhclic", By.xpath("//*[@id='edit-consult-home' and (not(@disabled='disabled'))]"));
 		ActionsUtil.objetosPut("consultarmclic", By.xpath("//*[@id='edit-consult' and (not(@disabled='disabled'))]"));
