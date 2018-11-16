@@ -192,5 +192,8 @@ public class PageDefault extends PageObject {
 	public void cerrarPestanaActual() {
 		ActionsUtil.closeCurrentWindowsTab(getDriver());
 	}
-
+ 
+	public void tamano(String x, String y) {
+	ActionsUtil.resolucion(getDriver(),x,y);
+}
 }

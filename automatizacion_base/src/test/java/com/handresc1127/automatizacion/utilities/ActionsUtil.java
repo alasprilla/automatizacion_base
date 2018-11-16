@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.lang3.StringUtils;
 import org.hamcrest.CoreMatchers;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -598,5 +599,15 @@ public class ActionsUtil {
 			switchWindowsTab(driver, 1);
 		}
 	}
+	
+	public static void resolucion(WebDriver driver,String x, String y) {
+
+		int ancho = Integer.parseInt(x);
+		int alto = Integer.parseInt(y);
+		Dimension d = new Dimension(ancho, alto);
+		driver.manage().window().setSize(d);
+
+
+}
 
 }
