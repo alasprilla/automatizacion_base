@@ -101,9 +101,9 @@ public class PageDefault extends PageObject {
 	public void validarEscribir(String objeto, String txtIngresado) {
 		sharedObjet(objeto);
 		txtIngresado = DatosNegocio.dataGet(txtIngresado);
-		// txtIngresado=dataGet(txtIngresado);
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), txtIngresado);
-		ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
+		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), "tab");
+		//ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
 
 	public void validarPagRecargada() {

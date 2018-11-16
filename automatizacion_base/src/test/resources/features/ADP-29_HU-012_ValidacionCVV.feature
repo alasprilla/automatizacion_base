@@ -10,7 +10,7 @@ Feature: HU012 Validaciósn CVV
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M"
+    And doy clic en el botón "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"
 
   Scenario Outline: Pasarela - CVV es un texto

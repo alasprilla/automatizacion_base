@@ -12,7 +12,7 @@ Feature: HU001 Validación TC
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M"
+    And doy clic en el botón "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"
 
   Scenario Outline: Pasarela - Borrar con backspace en el campo "Número de tarjeta"
