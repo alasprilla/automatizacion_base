@@ -27,9 +27,7 @@ import net.serenitybdd.core.pages.PageObject;
 
 public class ActionsUtil {
 
-	/*
-	 * Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
-	 */
+	// Expresiones Regulares para los features \"([^\"]*)\" (\\d+) \"(.*?)\"
 
 	private ActionsUtil() {
 		throw new IllegalStateException("Utility class");
@@ -98,9 +96,7 @@ public class ActionsUtil {
 		// driver.findElement(by).isDisplayed();
 
 		WebElement element = driver.findElement(by);
-
 		String originalStyle = element.getAttribute("style");
-
 		String modifyStyle = "border: 3px solid green;";
 		if (originalStyle.contains("border:")) {
 			int indexInicio = 7 + originalStyle.indexOf("border:");
@@ -113,7 +109,6 @@ public class ActionsUtil {
 		} else {
 			modifyStyle = modifyStyle + " " + originalStyle;
 		}
-
 		for (int i = 0; i < 2; i++) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			try {
@@ -136,9 +131,7 @@ public class ActionsUtil {
 	}
 
 	public static void presionarTecla(WebDriver driver, By by, String tecla) {
-
 		WebElement element = driver.findElement(by);
-
 		switch (ActionsUtil.textoMinusculasSinEspacios(tecla)) {
 		case "f5":
 			element.sendKeys(Keys.F5);
@@ -210,7 +203,6 @@ public class ActionsUtil {
 			highlightElement(driver, by);
 			WebElement element = driver.findElement(by);
 			element.clear();
-
 			for (int i = 0; i < text.length(); i++) {
 				String character = text.substring(i, i + 1);
 				element.sendKeys(character);
@@ -489,7 +481,6 @@ public class ActionsUtil {
 	}
 
 	public static int byShared(WebDriver driver, By objClass1, By objClass2) {
-		// TODO Auto-generated method stub
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		int retorno = 0;
 		for (int second = 0; second <= 60; second++) {
@@ -548,7 +539,6 @@ public class ActionsUtil {
 	}
 
 	private static String replaceHost(final String starting, final String base) {
-
 		String updatedUrl = starting;
 		try {
 			URL startingUrl = new URL(starting);
@@ -562,7 +552,6 @@ public class ActionsUtil {
 			LOGGER.error("Failed to analyse default page URL: Starting URL: {}, Base URL: {}", starting, base);
 			LOGGER.error("URL analysis failed with exception:", e);
 		}
-
 		return updatedUrl;
 	}
 
@@ -595,17 +584,17 @@ public class ActionsUtil {
 		if (indexTab > 99) {
 			driver.switchTo().window(handle[handle.length - 1]);
 		} else {
-			driver.switchTo().window(handle[indexTab-1]);
+			driver.switchTo().window(handle[indexTab - 1]);
 		}
 		driver.findElement(By.xpath("//*"));
 	}
-	
+
 	public static void closeCurrentWindowsTab(WebDriver driver) {
 		driver.getWindowHandles();
 		Set<String> currentHandlers = driver.getWindowHandles();
-		if(currentHandlers.size()>1) {
-			By by=By.tagName("body");
-			ejecutarScript(driver,"window.close();", by);
+		if (currentHandlers.size() > 1) {
+			By by = By.tagName("body");
+			ejecutarScript(driver, "window.close();", by);
 			switchWindowsTab(driver, 1);
 		}
 	}
