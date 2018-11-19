@@ -2,6 +2,7 @@ package com.handresc1127.automatizacion.utilities;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URL;
@@ -181,9 +182,15 @@ public class ActionsUtil {
 				return true;
 		} catch (Exception e) {
 			return false;
+			
 		}
 		return false;
 	}
+	
+	public static void noExiste(WebDriver driver, By objeto) {
+		assertFalse(existsElement(driver, objeto));
+	}
+	
 
 	public static String textoMinusculasSinEspacios(String texto) {
 		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
@@ -391,6 +398,11 @@ public class ActionsUtil {
 		assertThat(valorObtenido, !valorObtenido.isEmpty());
 	}
 
+	public static void compareTextEmpty(WebDriver driver, By by) {
+		String valorObtenido = getText(driver, by);
+		assertThat(valorObtenido, valorObtenido.contains(valorObtenido));
+	}
+	
 	public static void compareAtributo(WebDriver driver, By by, String atributo, String valorEsperado) {
 		String valorObtenido = getAttribute(driver, by, atributo);
 		if (valorObtenido.isEmpty())

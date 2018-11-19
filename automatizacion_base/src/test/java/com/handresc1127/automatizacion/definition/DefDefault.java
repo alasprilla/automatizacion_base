@@ -149,5 +149,11 @@ public class DefDefault {
 	public void clasificar_el_dato_en_o_en(String dataName, String dataClass1, String dataClass2) {
 		pagePagaFact.clasificarDato(dataName, dataClass1, dataClass2);
 	}
+	
+
+	@Then("^el campo \"([^\"]*)\" no existe$")
+	public void el_campo_no_existe(String objeto) {
+		pagePagaFact.TextoNoExiste(objeto);
+	}
 
 }

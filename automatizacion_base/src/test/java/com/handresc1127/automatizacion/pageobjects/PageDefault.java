@@ -124,6 +124,11 @@ public class PageDefault extends PageObject {
 		sharedObjet(objeto);
 		ActionsUtil.compareTextNotEmpty(getDriver(), getObjetoToCliked());
 	}
+	
+	public void TextoNoExiste(String objeto) {
+		sharedObjet(objeto);
+		ActionsUtil.noExiste(getDriver(), getObjetoToCliked());
+	}
 
 	public void hardClic(String objeto) {
 		sharedObjet(objeto);
