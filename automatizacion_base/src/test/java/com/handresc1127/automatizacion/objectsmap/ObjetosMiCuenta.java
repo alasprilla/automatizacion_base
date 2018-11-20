@@ -22,14 +22,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("cambiarcuenta", By.xpath("//*[@id='addNew']"));
 		ActionsUtil.objetosPut("resumen", By.xpath("((//ul)[8])//*[contains(text(),'Resumen')]"));
 		ActionsUtil.objetosPut("cambiateya", By.id("action_Cámbiate ya"));
-		ActionsUtil.objetosPut("mejorarplan", By.id("main-content"));
-		ActionsUtil.objetosPut("ultimas24horas", By.xpath("//*[@id='dropdownMenu']/option[2]"));
-		ActionsUtil.objetosPut("intervalodetiempo", By.id("dropdownMenu"));
-		ActionsUtil.objetosPut("borrardatos", By.id("clearBrowsingDataConfirm"));
 		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
-		//ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("mejorarplan", By.xpath("//*[@id='compras-noplan-container']/h3"));
-		
 		ActionsUtil.objetosPut("detalleplan", By.xpath("//*[@id='compras-noplan-container']/p"));
 		ActionsUtil.objetosPut("plan5.1", By.id("modalCambiaPlan739"));
 		ActionsUtil.objetosPut("plan5.2", By.id("modalCambiaPlan740"));
