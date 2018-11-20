@@ -28,8 +28,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("ultimas24horas", By.xpath("//*[@id='dropdownMenu']/option[2]"));
 		ActionsUtil.objetosPut("intervalodetiempo", By.id("dropdownMenu"));
 		ActionsUtil.objetosPut("borrardatos", By.id("clearBrowsingDataConfirm"));
-		//ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
-		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
+		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
+		//ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("registrarme", By.xpath("//*[@id='main-content']/div[2]/div[2]/div/div/div/section/div[3]/a[1]"));
 		ActionsUtil.objetosPut("creatucuenta", By.xpath("/html/body/div[2]/div/div[1]/h5"));
 		ActionsUtil.objetosPut("tipodocumentomitigo", By.xpath("//*[@id='t_document']/div/div/input"));
