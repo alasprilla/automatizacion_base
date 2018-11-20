@@ -14,10 +14,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("contrasena", By.id("password"));
 		ActionsUtil.objetosPut("continuarmicuenta", By.xpath("/html/body/div[2]/div/form/div[3]/button"));
 		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span"));
-		//ActionsUtil.objetosPut("lineapruebasjuanca", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Juanca')])[2]"));
 		ActionsUtil.objetosPut("lineapruebasjuanca", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[11]"));
 		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]"));
-		//ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Ana')])[2]"));
 		ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[9]"));
 		ActionsUtil.objetosPut("usuario", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("cerrarsesion", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/ul/li[2]/a"));
@@ -30,6 +28,13 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("borrardatos", By.id("clearBrowsingDataConfirm"));
 		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
 		//ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
+		ActionsUtil.objetosPut("mejorarplan", By.xpath("//*[@id='compras-noplan-container']/h3"));
+		
+		ActionsUtil.objetosPut("detalleplan", By.xpath("//*[@id='compras-noplan-container']/p"));
+		ActionsUtil.objetosPut("plan5.1", By.id("modalCambiaPlan739"));
+		ActionsUtil.objetosPut("plan5.2", By.id("modalCambiaPlan740"));
+		ActionsUtil.objetosPut("plan5.3", By.id("modalCambiaPlan741"));
+		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("registrarme", By.xpath("//*[@id='main-content']/div[2]/div[2]/div/div/div/section/div[3]/a[1]"));
 		ActionsUtil.objetosPut("creatucuenta", By.xpath("/html/body/div[2]/div/div[1]/h5"));
 		ActionsUtil.objetosPut("tipodocumentomitigo", By.xpath("//*[@id='t_document']/div/div/input"));

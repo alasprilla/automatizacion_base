@@ -616,5 +616,8 @@ public class ActionsUtil {
 
 
 }
+	public static void borrarCookies(WebDriver driver) {
+		driver.manage().deleteAllCookies();
+	}
 
 }

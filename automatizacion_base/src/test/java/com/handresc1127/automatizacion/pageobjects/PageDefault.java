@@ -201,4 +201,8 @@ public class PageDefault extends PageObject {
 	public void tamano(String x, String y) {
 	ActionsUtil.resolucion(getDriver(),x,y);
 }
+	public void borraCookies() {
+		ActionsUtil.borrarCookies(getDriver());
+	}
+	
 }
