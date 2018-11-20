@@ -6,45 +6,14 @@ Feature: Responsive de Pantallas de Pasarela de pagos
   Quiero realizar pruebas automatizadas en la página de Paga tu Factura
   Para garantizar la correcta visualización del diseño de la página
 
-  Scenario Outline: Pasarela - Responsive Pantalla 1 Seccion Hogar
+  Scenario Outline: Pasarela - Responsive Seccion Hogar (Tarjeta Crédito)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Hogar"
-
-    Examples: 
-      | X     | Y      |
-      | "320" | "480"  |
-      | "600" | "1024" |
-      | "768" | "1024" |
-      | "640" | "960"  |
-      | "720" | "1280" |
-
-  Scenario Outline: Pasarela - Responsive Pantalla 2 Seccion Hogar "Resumen de tu Transacción"
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en el botón "Consultar H clic"
-    And se quiere visualizar con resolucion <X> x <Y>
-    Then llevará al formulario con el objeto "title-detail"
-
-    Examples: 
-      | X     | Y      |
-      | "320" | "480"  |
-      | "600" | "1024" |
-      | "768" | "1024" |
-      | "640" | "960"  |
-      | "720" | "1280" |
-
-  Scenario Outline: Pasarela - Responsive Pantalla 3 Seccion Hogar "Pago por Tarjeta de Crédito"
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When doy clic en "HOGAR"
-    And selecciono "CC" en el campo "Tipo de documento"
-    And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
-    And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
-    And doy clic en el botón "Consultar H clic"
-    And se quiere visualizar con resolucion <X> x <Y>
     Then llevará al formulario con el objeto "title-detail"
     And Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
 
@@ -56,14 +25,14 @@ Feature: Responsive de Pantallas de Pasarela de pagos
       | "640" | "960"  |
       | "720" | "1280" |
 
-  Scenario Outline: Pasarela - Responsive Pantalla 4 Seccion Hogar "Pago por Tarjeta Debito"
+Scenario Outline: Pasarela - Responsive Seccion Hogar (Tarjeta Debito)
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When doy clic en "HOGAR"
+    And se quiere visualizar con resolucion <X> x <Y>
+    When doy clic en "Hogar"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en el botón "Consultar H clic"
-    And se quiere visualizar con resolucion <X> x <Y>
     Then llevará al formulario con el objeto "title-detail"
     And Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
 
@@ -74,3 +43,4 @@ Feature: Responsive de Pantallas de Pasarela de pagos
       | "768" | "1024" |
       | "640" | "960"  |
       | "720" | "1280" |
+
