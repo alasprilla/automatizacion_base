@@ -176,5 +176,10 @@ public class PageDefault extends PageObject {
 	public void comparUrlActual(String urlEsperada) {
 		ActionsUtil.curretCompareURL(getDriver(), urlEsperada);
 	}
+
+	public void borraCookies() {
+		ActionsUtil.borrarCookies(getDriver());
+	}
+	
 	
 }

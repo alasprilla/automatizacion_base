@@ -155,5 +155,10 @@ public class DefDefault {
 	public void el_campo_no_existe(String objeto) {
 		pagePagaFact.TextoNoExiste(objeto);
 	}
+	
+	@Then("^se borran cookies del navegador$")
+	public void se_borran_cookies_del_navegador() {
+		pagePagaFact.borraCookies();
+	}
 
 }

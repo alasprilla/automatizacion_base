@@ -604,4 +604,8 @@ public class ActionsUtil {
 		assertEquals(urlExpected, currenturl);
 	}
 
+	public static void borrarCookies(WebDriver driver) {
+		driver.manage().deleteAllCookies();
+	}
+
 }
