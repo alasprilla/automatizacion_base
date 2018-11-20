@@ -6,6 +6,12 @@ Feature: HU006_CambioDePlanMenuResumen
   Yo como usuario de mi cuenta Tigo 
   Quiero ingresar al menú resumen
   Para realizar el cambio de plan.
+  
+    Background: Borrar Datos de Navegación 
+    Given Estoy en la página de inicio de pago de facturas "chrome://settings/clearBrowserData"
+    And doy clic en "Intervalo de tiempo"
+    And doy clic en "Ultimas 24 horas"
+    And doy clic en el botón "Borrar Datos"
 
   Scenario: Mi Cuenta - Cámbiate ya en Resumen de línea móvil con plan 5.1
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
@@ -18,7 +24,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Linea Pruebas Juanca"
     And doy clic forzado en "Resumen"
     And doy clic en "Cambiate Ya"
-    #Then el campo "" tiene el texto "Mejorar Plan. Tenemos el plan perfecto para ti. Activalo en nuestro chat en línea."
+    Then el campo "Mejorar Plan" tiene el texto "Mejorar Plan. Tenemos el plan perfecto para ti. Activalo en nuestro chat en línea."
     And doy clic en "Usuario"
     And doy clic en "Cerrar Sesion"
     
@@ -51,6 +57,6 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Linea Hibrido Ana"
     And doy clic en el botón "Resumen"
     And doy clic en el botón "Cambiate Ya"
-    #Then el campo "" tiene el texto "mostrará las opciones de los planes pospago 5.1, 5.2 y 5.3"
+    Then el campo "Mejorar Plan" tiene el texto "mostrará las opciones de los planes pospago 5.1, 5.2 y 5.3"
     And doy clic en "Usuario"
     And doy clic en "Cerrar Sesion"
