@@ -21,7 +21,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
   Scenario Outline: Pasarela - Responsive Pantalla 2 Seccion Móvil "Resumen de tu Transacción"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "Movil"
-    And ingreso "3043302450" en el campo "Tu línea Tigo"
+    And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M clic"
     And se quiere visualizar con resolucion <X> x <Y>
@@ -38,7 +38,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
   Scenario Outline: Pasarela - Responsive Pantalla 3 Seccion Móvil "Pago por Tarjeta de Crédito"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "Movil"
-    And ingreso "3043302450" en el campo "Tu línea Tigo"
+    And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M clic"
     And se quiere visualizar con resolucion <X> x <Y>
@@ -56,7 +56,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
   Scenario Outline: Pasarela - Responsive Pantalla 4 Seccion Móvil "Pago por Tarjeta Debito"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "Movil"
-    And ingreso "3043302450" en el campo "Tu línea Tigo"
+    And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M clic"
     And se quiere visualizar con resolucion <X> x <Y>
