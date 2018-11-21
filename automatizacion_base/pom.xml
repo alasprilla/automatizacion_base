@@ -132,6 +132,7 @@
 				<version>2.22.1</version>
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
+					<forkMode>once</forkMode>
 					<includes>
 						<include>**/RunnerTags.java</include>
 					</includes>
