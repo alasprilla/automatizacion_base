@@ -35,7 +35,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 //		"src/test/resources/features/ADP-67_HU-002_RegistroEnMiCuenta.feature",
 //		"src/test/resources/features/ADP-70_HU-003_FuncionalidadMicuentaAnonimo.feature",
 //		"src/test/resources/features/ADP-71_HU-004_BarraRegulatoria.feature",
-		"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature" },
+//		"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature"
+		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature" },
 		
 
 		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
