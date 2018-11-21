@@ -28,7 +28,6 @@ Feature: HU006_CambioDePlanMenuResumen
   Scenario: Mi Cuenta - Cámbiate ya en Resumen de línea móvil prepago
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en el botón "Ingresar"
-    And doy clic en "Cambiar cuenta"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en el botón "Validar"
     And ingreso "pruebas2018" en el campo "Contrasena"
@@ -39,25 +38,16 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Resumen"
     Then el campo "Cambiate Ya" no existe 
 
-  Scenario Outline: Mi Cuenta - Cámbiate ya en resumen de línea móvil con plan Empleados
+  Scenario: Mi Cuenta - Cámbiate ya en resumen de línea móvil con plan Empleados
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And se borran cookies del navegador 
     When doy clic en el botón "Ingresar"
-    And doy clic en "Cambiar cuenta"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en el botón "Validar"
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN"
+    And Espero 2 segundos
     And doy clic en "Linea Hibrido Ana"
     And doy clic en el botón "Resumen"
     And doy clic en el botón "Cambiate Ya"
-    Then llevará al formulario con el objeto <Planes>
-    And doy clic en "Usuario"
-    And doy clic en "Cerrar Sesion"
-
-    Examples: 
-    | Planes     |
-    |"Plan 5.1"  |
-    |"Plan 5.2"  |
-    |"Plan 5.3"  |
+    Then llevará al formulario con el objeto "Planes"
