@@ -23,11 +23,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("resumen", By.xpath("((//ul)[8])//*[contains(text(),'Resumen')]"));
 		ActionsUtil.objetosPut("cambiateya", By.id("action_Cámbiate ya"));
 		ActionsUtil.objetosPut("mejorarplan", By.xpath("//*[@id='compras-noplan-container']/h3"));
-		
+		ActionsUtil.objetosPut("planes", By.xpath("//*[@id='main-content']/div[2]"));
 		ActionsUtil.objetosPut("detalleplan", By.xpath("//*[@id='compras-noplan-container']/p"));
-		ActionsUtil.objetosPut("plan5.1", By.id("modalCambiaPlan739"));
-		ActionsUtil.objetosPut("plan5.2", By.id("modalCambiaPlan740"));
-		ActionsUtil.objetosPut("plan5.3", By.id("modalCambiaPlan741"));
 		ActionsUtil.objetosPut("ingresaramicuenta", By.xpath("//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("registrarme", By.xpath("//*[@id='main-content']/div[2]/div[2]/div/div/div/section/div[3]/a[1]"));
 		ActionsUtil.objetosPut("creatucuenta", By.xpath("/html/body/div[2]/div/div[1]/h5"));

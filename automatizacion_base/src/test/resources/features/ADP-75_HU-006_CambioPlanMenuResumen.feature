@@ -38,7 +38,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Resumen"
     Then el campo "Cambiate Ya" no existe 
 
-  Scenario Outline: Mi Cuenta - Cámbiate ya en resumen de línea móvil con plan Empleados
+  Scenario: Mi Cuenta - Cámbiate ya en resumen de línea móvil con plan Empleados
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en el botón "Ingresar"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
@@ -50,10 +50,4 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Linea Hibrido Ana"
     And doy clic en el botón "Resumen"
     And doy clic en el botón "Cambiate Ya"
-    Then llevará al formulario con el objeto <Planes>
-
-    Examples: 
-    | Planes     |
-    |"Plan 5.1"  |
-    |"Plan 5.2"  |
-    |"Plan 5.3"  |
+    Then llevará al formulario con el objeto "Planes"
