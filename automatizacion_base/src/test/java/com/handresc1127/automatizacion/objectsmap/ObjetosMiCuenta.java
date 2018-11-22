@@ -59,8 +59,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("comprar", By.xpath("//*[@id='block-bannerdepromocionesrecargasypaquetes']/div/div[2]/div[1]/div[1]/div/li/div/a"));
 	    ActionsUtil.objetosPut("ultimafacturapdf", By.id("action_Última factura PDF"));
 	    ActionsUtil.objetosPut("lineacasaana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[14]"));
-	    ActionsUtil.objetosPut("servicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[5]/a"));
-	    ActionsUtil.objetosPut("productoscontratados", By.xpath("//*[@id='main-content']/div[2]/div/div/section/div/div/div"));
+	    ActionsUtil.objetosPut("servicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[2]/a"));
+	    ActionsUtil.objetosPut("productoscontratados", By.xpath("//*[@id='main-content']/div[2]/div/div/section/div/div/div/div[1]/div[1]/div/div[2]/div"));
 	}
 	
 }
