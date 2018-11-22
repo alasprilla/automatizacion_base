@@ -160,5 +160,9 @@ public class DefDefault {
 	public void se_borran_cookies_del_navegador() {
 		pagePagaFact.borraCookies();
 	}
+	
+	@Then("^realizará la descarga de la factura$")
+	public void realizará_la_descarga_de_la_factura() {
+	}
 
 }
