@@ -16,7 +16,6 @@ Feature: HU017_AgregarTarjetaServiciosFijos
     And doy clic en el botón "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN"
     And doy clic en "Linea Pruebas Juanca"
-    #And Espero 2 segundos
     And doy clic en "Seleccion MSISDN"
     And doy clic en "Linea Casa Ana"
     And doy clic en el botón "Agregar Tarjeta"
