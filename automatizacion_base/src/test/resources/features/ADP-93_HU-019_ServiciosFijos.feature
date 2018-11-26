@@ -17,6 +17,7 @@ Para realizar consultas y transacciones
     And doy clic en "Seleccion MSISDN"
     And doy clic en "Linea Pruebas Juanca"
     And Espero 2 segundos
+    And doy clic en "Seleccion MSISDN"
     And doy clic en "Linea Casa Ana"
     And doy clic en "Servicios"
     Then llevará al formulario con el objeto "Productos Contratados"
