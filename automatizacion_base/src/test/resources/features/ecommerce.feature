@@ -28,5 +28,11 @@ Feature: Prueba de Adherencia Ecommerce
     When Espero 2 segundos
     Then llevará al formulario con el objeto "title page-title" 
     And el campo "title page-title" tiene el texto "Activa tu SIM en 1 paso"
-   
+    And doy clic en "Expedición"
+    And doy clic en "año"
+    And Espero 2 segundos
+    And doy clic en el botón "Activar"
+    And doy clic en "Continuar Activación"
+    And doy clic en "Tómate una fotografía"
+    
     
