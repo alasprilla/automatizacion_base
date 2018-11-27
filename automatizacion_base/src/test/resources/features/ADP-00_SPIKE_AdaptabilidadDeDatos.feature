@@ -36,3 +36,4 @@ Feature: SPIKE Adaptabilidad de datos
       | "70507173"   |
       | "70031392"   |
       | "1035422732" |
+      | "552716"     |

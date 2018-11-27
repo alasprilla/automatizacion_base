@@ -47,15 +47,15 @@ Feature: HU009 CC válida en campo número de documento
 
     #//Si no tiene el msj esta en letras blancas con fondo azul
     Examples: 
-      | documento  | estadoFacturas                            |
-      | "71770656" | "El usuario no tiene facturas pendientes" |
-      | "552716"   | "listado de facturas pendientes"          |
+      | documento                         | estadoFacturas                            |
+      | "Hogar_numDocumento sin facturas" | "El usuario no tiene facturas pendientes" |
+      | "Hogar_numDocumento con facturas" | "listado de facturas pendientes"          |
 
   Scenario: Pasarela - Visualización de datos de factura de servicios fijos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
-    And ingreso "552716" en el campo "número de documento"
+    And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en el botón "Consultar H clic"
     And doy clic en "primer Pago total"

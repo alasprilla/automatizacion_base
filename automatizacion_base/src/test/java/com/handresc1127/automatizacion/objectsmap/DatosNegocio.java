@@ -15,7 +15,7 @@ public final class DatosNegocio {
 		dataPut("paginamicuentatigo", ActionsUtil.getProperty("baseURL2"));
 		dataPut("movil_msisdnconfacturas", "3043878232");
 		dataPut("movil_msisdnsinfacturas", "3003588240");
-		dataPut("hogar_numdocumentoconfacturas", "70507173");
+		dataPut("hogar_numdocumentoconfacturas", "552716");
 		dataPut("hogar_numdocumentosinfacturas", "71770656");
 		dataPut("thismm()", String.valueOf(now.get(Calendar.MONTH) + 1));
 		dataPut("thisyyyy()", String.valueOf(now.get(Calendar.YEAR)));
