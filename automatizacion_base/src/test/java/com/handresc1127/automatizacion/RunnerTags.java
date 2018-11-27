@@ -40,6 +40,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature",
 		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature"},
 		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		tags = { "@Pasarela" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {
