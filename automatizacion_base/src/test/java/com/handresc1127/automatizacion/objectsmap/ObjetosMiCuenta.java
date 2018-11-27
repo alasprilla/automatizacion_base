@@ -14,7 +14,9 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("contrasena", By.id("password"));
 		ActionsUtil.objetosPut("continuarmicuenta", By.xpath("/html/body/div[2]/div/form/div[3]/button"));
 		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span"));
+		ActionsUtil.objetosPut("seleccionmsisdnjenkins", By.xpath("//*[@id='account-mobile-selector']/div[1]"));
 		ActionsUtil.objetosPut("lineapruebasjuanca", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[11]"));
+		ActionsUtil.objetosPut("lineapruebasjuancajenkins", By.xpath("//*[@id='lines']/li[3]"));
 		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]"));
 		ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[9]"));
 		ActionsUtil.objetosPut("usuario", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
