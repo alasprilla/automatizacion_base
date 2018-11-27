@@ -38,8 +38,12 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-70_HU-003_FuncionalidadMicuentaAnonimo.feature",
 		"src/test/resources/features/ADP-71_HU-004_BarraRegulatoria.feature",
 		"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature",
-		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature" }, tags = {
-				"" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature",
+		"src/test/resources/features/ADP-90_HU-017_AgregarTarjetaServiciosFijos.feature",
+		"src/test/resources/features/ADP-93_HU-019_ServiciosFijos.feature",
+		"src/test/resources/features/ADP-92_ResponsiveDePantallasRecargas.feature"}, 
+
+tags = {"" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 						"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {
