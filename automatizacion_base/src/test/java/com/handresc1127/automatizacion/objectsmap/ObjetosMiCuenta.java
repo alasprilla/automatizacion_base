@@ -63,6 +63,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("lineacasaana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[14]"));
 	    ActionsUtil.objetosPut("servicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[2]"));
 	    ActionsUtil.objetosPut("productoscontratados", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section/div/div/div"));
+	    ActionsUtil.objetosPut("agregartarjeta", By.id("action_Agregar tarjeta"));
+	    ActionsUtil.objetosPut("agregartarjetadecredito", By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/h2"));
 	}
 	
 }

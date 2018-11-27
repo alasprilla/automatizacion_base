@@ -13,6 +13,7 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("recargar", By.id("edit-button-recargar"));
 		ActionsUtil.objetosPut("otrovalor", By.xpath("//*[@id='container_recharge' and not(contains(@style,'none'))]/div[1]/div/div[2]/div/ul/div/li[6]"));
 		ActionsUtil.objetosPut("valorarecargar", By.xpath("//*[@id='edit-otro-valor' and not(contains(@style,'none'))and not(contains(@style,'overflow'))]"));
+		ActionsUtil.objetosPut("listavalor", By.xpath("//*[@id='container_recharge']/div[1]/div/div[2]/div/ul/li/div[2]"));
 		ActionsUtil.objetosPut("otrovalorcargado", By.xpath("//*[@id='other_value']/div/div/div[1]/label"));
 		ActionsUtil.objetosPut("labelerrorvalorrecargas", By.xpath("//*[@id='other_value']/div/div/div[1]/p"));
 		ActionsUtil.objetosPut("recargadesde", By.xpath("//*[@id=\'other_value\']/div/div/div[2]"));
