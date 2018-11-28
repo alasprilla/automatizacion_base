@@ -97,6 +97,18 @@ job("Pasarela_pagos") {
 		}
 	}
 
+	configure {
+		node->
+		node / builders << 'hudson.plugins.sonar.SonarRunnerBuilder' {
+			project('')
+			properties('project.settings=metis/sonarMetis.properties')
+			javaOpts('')
+			additionalArguments('')
+			jdk('')
+			task('')
+		}
+	}
+	
 	publishers {
 		configure {
 			node->
@@ -128,6 +140,5 @@ job("Pasarela_pagos") {
 			healthScaleFactor(1.0)
 			allowEmptyResults(false)
 		}
-
 	}
 }
