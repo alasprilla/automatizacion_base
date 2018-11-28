@@ -101,7 +101,7 @@ job("Pasarela_pagos") {
 		node->
 		node / builders << 'hudson.plugins.sonar.SonarRunnerBuilder' {
 			project('')
-			properties('project.settings=metis/sonarMetis.properties')
+			properties('project.settings=metis/sonarSelfcare.properties')
 			javaOpts('')
 			additionalArguments('')
 			jdk('')
