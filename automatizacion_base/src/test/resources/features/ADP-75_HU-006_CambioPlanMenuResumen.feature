@@ -31,7 +31,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Validar"
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
-    And doy clic en "Seleccion MSISDN"
+    And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea Hibrido Mariana"
     And doy clic en el botón "Resumen"
@@ -44,7 +44,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Validar"
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
-    And doy clic en "Seleccion MSISDN"
+    And doy clic en "Seleccion MSISDN" si es visible
     And Espero 2 segundos
     And doy clic en "Linea Hibrido Ana"
     And doy clic en el botón "Resumen"
