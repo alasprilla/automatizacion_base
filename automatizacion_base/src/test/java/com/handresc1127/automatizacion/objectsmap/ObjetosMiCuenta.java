@@ -15,9 +15,9 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("continuarmicuenta", By.xpath("/html/body/div[2]/div/form/div[3]/button"));
 //		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span"));
 		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
-		ActionsUtil.objetosPut("lineapruebasjuanca", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[11]"));
-		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]"));
-		ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[9]"));
+		ActionsUtil.objetosPut("lineapruebasjuanca", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[11]|//*[@id='lines']/li[3]/a/div[1]"));
+		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]|//*[@id='lines']/li[2]/a/div/div[2]"));
+		ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[9]|//*[@id='lines']/li[1]/div/div[1]"));
 		ActionsUtil.objetosPut("usuario", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("cerrarsesion", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/ul/li[2]/a"));
 		ActionsUtil.objetosPut("cambiarcuenta", By.xpath("//*[@id='addNew']"));
@@ -61,7 +61,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("realizarregistrodeequipo", By.xpath("/html/body/content/div[2]/div/div/section/div/div/div/div/div/div/a"));
 	    
 	    ActionsUtil.objetosPut("ultimafacturapdf", By.id("action_Última factura PDF"));
-	    ActionsUtil.objetosPut("lineacasaana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[14]"));
+	    ActionsUtil.objetosPut("lineacasaana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[14]|//*[@id=\"lines\"]/li[7]/a/div/div[2]"));
 	    ActionsUtil.objetosPut("servicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[2]"));
 	    ActionsUtil.objetosPut("productoscontratados", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section/div/div/div"));
 	    ActionsUtil.objetosPut("agregartarjeta", By.id("action_Agregar tarjeta"));

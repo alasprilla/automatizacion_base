@@ -18,7 +18,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Pruebas Juanca"
+    And doy clic en "Linea Pruebas Juanca" si es visible
     And doy clic forzado en "Resumen"
     And doy clic en "Cambiate Ya"
     Then el campo "Mejorar Plan" tiene el texto "Mejorar Plan"
@@ -33,7 +33,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Mariana"
+    And doy clic en "Linea Hibrido Mariana" si es visible
     And doy clic en el botón "Resumen"
     Then el campo "Cambiate Ya" no existe 
 
@@ -46,7 +46,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 2 segundos
-    And doy clic en "Linea Hibrido Ana"
+    And doy clic en "Linea Hibrido Ana" si es visible
     And doy clic en el botón "Resumen"
     And doy clic en el botón "Cambiate Ya"
     Then llevará al formulario con el objeto "Planes"

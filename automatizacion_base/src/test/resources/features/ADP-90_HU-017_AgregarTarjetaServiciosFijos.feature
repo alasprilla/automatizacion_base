@@ -15,9 +15,9 @@ Feature: HU017_AgregarTarjetaServiciosFijos
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Pruebas Juanca"
-    And doy clic en "Seleccion MSISDN"
-    And doy clic en "Linea Casa Ana"
+    And doy clic en "Linea Pruebas Juanca" si es visible
+    And doy clic en "Seleccion MSISDN" si es visible
+    And doy clic en "Linea Casa Ana" si es visible
     And doy clic en el botón "Agregar Tarjeta"
     Then llevará al formulario con el objeto "Agregar tarjeta de crédito"
     
