@@ -13,7 +13,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("validar", By.id("continueBtn"));
 		ActionsUtil.objetosPut("contrasena", By.id("password"));
 		ActionsUtil.objetosPut("continuarmicuenta", By.xpath("/html/body/div[2]/div/form/div[3]/button"));
-		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span"));
+//		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span"));
+		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
 		ActionsUtil.objetosPut("lineapruebasjuanca", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[11]"));
 		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]"));
 		ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[9]"));

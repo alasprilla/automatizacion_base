@@ -54,7 +54,17 @@ public class PageDefault extends PageObject {
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
+	
+	public void hardClic(String objeto) {
+		sharedObjet(objeto);
+		ActionsUtil.ejecutarScript(getDriver(), "arguments[0].click();", getObjetoToCliked());
+	}
 
+	public void clicSiVisible(String objetos) {
+		sharedObjet(objetos);
+		ActionsUtil.clicIfDisplayed(getDriver(), getObjetoToCliked());
+	}
+	
 	public void tieneHijos(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
@@ -130,11 +140,6 @@ public class PageDefault extends PageObject {
 		ActionsUtil.noExiste(getDriver(), getObjetoToCliked());
 	}
 
-	public void hardClic(String objeto) {
-		sharedObjet(objeto);
-		ActionsUtil.ejecutarScript(getDriver(), "arguments[0].click();", getObjetoToCliked());
-	}
-
 	public void esperarElementos(String objeto, String condicion, int cantidad) {
 		sharedObjet(objeto);
 		ActionsUtil.waitForXElements(getDriver(), getObjetoToCliked(), condicion, cantidad);
@@ -204,5 +209,5 @@ public class PageDefault extends PageObject {
 	public void borraCookies() {
 		ActionsUtil.borrarCookies(getDriver());
 	}
-	
+
 }

@@ -17,13 +17,12 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en el botón "Validar"
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
-    And doy clic en "Seleccion MSISDN"
+    And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Pruebas Juanca"
     And doy clic forzado en "Resumen"
     And doy clic en "Cambiate Ya"
     Then el campo "Mejorar Plan" tiene el texto "Mejorar Plan"
     Then el campo "Detalle Plan" tiene el texto "Tenemos el plan perfecto para ti. Activalo en nuestro chat en línea."
-
     
   Scenario: Mi Cuenta - Cámbiate ya en Resumen de línea móvil prepago
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"

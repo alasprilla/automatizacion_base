@@ -53,6 +53,17 @@ public class DefDefault {
 	public void doy_clic_forzado_en(String objeto) {
 		pagePagaFact.hardClic(objeto);
 	}
+	
+	@When("^doy clic en el botón \"([^\"]*)\"$")
+	public void doy_clic_en_el_botón(String objeto) {
+		pagePagaFact.clic(objeto);
+	}
+	
+	@When("^doy clic en \"([^\"]*)\" si es visible$")
+	public void doy_clic_en_si_es_visible(String objetos) {
+	    pagePagaFact.clicSiVisible(objetos);
+	}
+
 
 	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String item, String objeto) {
@@ -63,11 +74,6 @@ public class DefDefault {
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void ingreso_en_el_campo(String txtIngresado, String objeto) {
 		pagePagaFact.validarEscribir(objeto, txtIngresado);
-	}
-
-	@When("^doy clic en el botón \"([^\"]*)\"$")
-	public void doy_clic_en_el_botón(String objeto) {
-		pagePagaFact.clic(objeto);
 	}
 
 	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")

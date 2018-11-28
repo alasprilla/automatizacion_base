@@ -176,15 +176,14 @@ public class ActionsUtil {
 				return true;
 		} catch (Exception e) {
 			return false;
-			
+
 		}
 		return false;
 	}
-	
+
 	public static void noExiste(WebDriver driver, By objeto) {
 		assertFalse(existsElement(driver, objeto));
 	}
-	
 
 	public static String textoMinusculasSinEspacios(String texto) {
 		String original = "áàäéèëíìïóòöúùuñÁÀÄÉÈËÍÌÏÓÒÖÚÙÜÑçÇ";
@@ -329,6 +328,22 @@ public class ActionsUtil {
 		highlightElement(driver, by);
 		WebElement element = driver.findElement(by);
 		element.click();
+	}
+
+	public static void clicIfDisplayed(WebDriver driver, By by) {
+		boolean wasCicked=false;
+		List<WebElement> elementsToClicked = driver.findElements(by);
+		for (WebElement element : elementsToClicked) {
+			try {
+				if (element.isDisplayed()) {
+					element.click();
+					wasCicked=true;
+					break;
+				}
+			} catch (Exception e) {
+			}
+		}
+		assertTrue("No se clickeo ningún elemento "+by, wasCicked);
 	}
 
 	public static void selectText(WebDriver driver, By by, String option) {
@@ -606,16 +621,16 @@ public class ActionsUtil {
 			switchWindowsTab(driver, 1);
 		}
 	}
-	
-	public static void resolucion(WebDriver driver,String x, String y) {
+
+	public static void resolucion(WebDriver driver, String x, String y) {
 
 		int ancho = Integer.parseInt(x);
 		int alto = Integer.parseInt(y);
 		Dimension d = new Dimension(ancho, alto);
 		driver.manage().window().setSize(d);
 
+	}
 
-}
 	public static void borrarCookies(WebDriver driver) {
 		driver.manage().deleteAllCookies();
 	}
