@@ -1,7 +1,7 @@
 #Author:Jose David Moreno 
 #Keywords Summary :
 @issue:ADP-71, @MiCuenta
-Feature: HU005_Barra Regulatoria
+Feature: HU004_Barra Regulatoria
   Y0 como usuario de mi cuenta Tigo 
   Quiero ingresar a la barra regulatoria
   Para estar informado de las PQR reportadas

@@ -10,7 +10,7 @@ Feature: HU002_Registro En Mi Cuenta
 
   Scenario: Mi Cuenta - Registro en Mi Cuenta
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When doy clic en "Consulta PQR"
+    When doy clic en "Registrarme"
     Then llevará al formulario con el objeto "Crea Tu Cuenta"
 
  
