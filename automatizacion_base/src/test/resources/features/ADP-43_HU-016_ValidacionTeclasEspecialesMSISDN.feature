@@ -6,14 +6,14 @@ Feature: HU016 Validación Teclas Especiales MSISND
   Quiero realizar pruebas automatizadas sobre el campo "Número Celular" en el formulario de paquetes y recargas
   Para garantizar que se pueden utilizar las teclas especiales sobre dicho campo
 
-  Scenario: Paquetes - Recarga de página con F5
+  Scenario: Recargas - Recarga de página con F5
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso "" en el campo "Ingresa tu línea Tigo"
     And Presiono la tecla "F5"
     Then La página se recarga
 
-  Scenario Outline: Paquetes - Validación de teclas especiales campo "Tu línea Tigo"
+  Scenario Outline: Recargas - Validación de teclas especiales campo "Tu línea Tigo"
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
