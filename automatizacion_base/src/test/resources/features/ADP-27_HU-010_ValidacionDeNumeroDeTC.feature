@@ -6,7 +6,7 @@ Feature: HU010 Validación de número de TC
   Para garantizar que se ingrese una tarjeta de crédito válida
 
   Background: seleccion medio de pago
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M clic"

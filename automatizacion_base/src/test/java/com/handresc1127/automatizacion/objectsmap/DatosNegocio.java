@@ -12,6 +12,7 @@ public final class DatosNegocio {
 	static {
 		Calendar now = Calendar.getInstance();
 		dataPut("paginapagodefacturas", ActionsUtil.getProperty("baseURL1"));
+		dataPut("paginapaquetes", ActionsUtil.getProperty("baseURL1"));
 		dataPut("paginamicuentatigo", ActionsUtil.getProperty("baseURL2"));
 		dataPut("movil_msisdnconfacturas", "3043878232");
 		dataPut("movil_msisdnsinfacturas", "3003588240");

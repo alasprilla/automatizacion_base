@@ -1,4 +1,4 @@
-#Author: Jose David Moreno 
+#Author: Jose David Moreno
 #Keywords Summary : Registro, crédito
 #Encoding: utf-8
 #Language: es
@@ -9,8 +9,6 @@ Feature: HU002_Registro En Mi Cuenta
   Para gestionar mis servicios.
 
   Scenario: Mi Cuenta - Registro en Mi Cuenta
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Registrarme"
     Then llevará al formulario con el objeto "Crea Tu Cuenta"
-
- 

@@ -3,12 +3,12 @@
 @issue:ADP-93 @MiCuenta
 Feature: HU019_ServiciosFijos
   
-Yo como usuario de mi cuenta Tigo 
-Quiero ingresar a mis servicios fijos
-Para realizar consultas y transacciones
+  Yo como usuario de mi cuenta Tigo 
+  Quiero ingresar a mis servicios fijos
+  Para realizar consultas y transacciones
 
   Scenario: Mi Cuenta - Productos contratados
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en el botón "Ingresar"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en el botón "Validar"
@@ -20,5 +20,3 @@ Para realizar consultas y transacciones
     And doy clic en "Linea Casa Ana" si es visible
     And doy clic en "Servicios"
     Then llevará al formulario con el objeto "Productos Contratados"
-    
-

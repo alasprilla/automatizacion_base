@@ -7,7 +7,7 @@ Feature: Responsive de Pantallas de Recargas
   Para garantizar la correcta visualización del diseño de la página
 
   Scenario Outline: Recargas - Recarga Valor Preestablecido seleccionando Tarjeta de Crédito
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Recarga"
     And ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
@@ -25,7 +25,7 @@ Feature: Responsive de Pantallas de Recargas
       | "720" | "1280" |
 
   Scenario Outline: Recargas - Recarga Valor Preestablecido seleccionando Tarjeta de Debito
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Recarga"
     And ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
@@ -43,7 +43,7 @@ Feature: Responsive de Pantallas de Recargas
       | "720" | "1280" |
 
   Scenario Outline: Recargas - Recarga Otro Valor seleccionando Tarjeta de Crédito
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Recarga"
     And ingreso "3043605513" en el campo "Ingresa tu línea Tigo"
@@ -64,7 +64,7 @@ Feature: Responsive de Pantallas de Recargas
       | "720" | "1280" |
 
   Scenario Outline: Recargas - Recarga Otro Valor seleccionando Tarjeta de Debito
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Recarga"
     And ingreso "3043605513" en el campo "Ingresa tu línea Tigo"

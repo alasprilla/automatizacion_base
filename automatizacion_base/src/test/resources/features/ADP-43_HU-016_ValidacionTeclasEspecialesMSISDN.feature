@@ -7,14 +7,14 @@ Feature: HU016 Validación Teclas Especiales MSISND
   Para garantizar que se pueden utilizar las teclas especiales sobre dicho campo
 
   Scenario: Recargas - Recarga de página con F5
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso "" en el campo "Ingresa tu línea Tigo"
     And Presiono la tecla "F5"
     Then La página se recarga
 
   Scenario Outline: Recargas - Validación de teclas especiales campo "Tu línea Tigo"
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa tu línea Tigo"
     And Presiono la tecla <tecla1>

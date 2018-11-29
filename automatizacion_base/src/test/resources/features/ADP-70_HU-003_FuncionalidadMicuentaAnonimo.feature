@@ -7,7 +7,7 @@ Feature: HU003 Funcionalidades Mi cuenta Anónimo
   ingresar a las funcionalidades del home para realizar diferentes transacciones
 
   Scenario: Paga tus facturas
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Paga tus facturas"
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "movil"
@@ -15,7 +15,7 @@ Feature: HU003 Funcionalidades Mi cuenta Anónimo
     And cerrar pestaña
 
   Scenario: Recargas y paquetes
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Recargas y paquetes"
     And Espero 3 segundos
     And voy a la pestaña "ultima"
@@ -24,7 +24,7 @@ Feature: HU003 Funcionalidades Mi cuenta Anónimo
     And cerrar pestaña
 
   Scenario: Registra tu equipo
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Registra tu equipo"
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "realizar registro de equipo"
@@ -32,7 +32,7 @@ Feature: HU003 Funcionalidades Mi cuenta Anónimo
     And cerrar pestaña
 
   Scenario: Repone tu SIM
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Repone tu SIM"
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "repone"

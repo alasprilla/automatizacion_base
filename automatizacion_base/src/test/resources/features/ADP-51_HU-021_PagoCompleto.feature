@@ -4,7 +4,7 @@
 Feature: HU021 Pago Completo de Facturas Pendientes
 
   Background: seleccion medio de pago
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en el botón "Consultar M clic"

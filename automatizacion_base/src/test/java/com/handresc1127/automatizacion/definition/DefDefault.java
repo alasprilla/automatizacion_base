@@ -11,7 +11,7 @@ public class DefDefault {
 
 	PageDefault pagePagaFact;
 
-	@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
+	//@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
 		String realUrl=ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
 		pagePagaFact.openAt(realUrl);

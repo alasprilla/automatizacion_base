@@ -8,7 +8,7 @@ Feature: HU017_AgregarTarjetaServiciosFijos
   Para programar el pago de mis facturas de servicios fijos
 
   Scenario: Mi Cuenta - Formulario agregar tarjeta
-    Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
+    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en el botón "Ingresar"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en el botón "Validar"
@@ -20,5 +20,3 @@ Feature: HU017_AgregarTarjetaServiciosFijos
     And doy clic en "Linea Casa Ana" si es visible
     And doy clic en el botón "Agregar Tarjeta"
     Then llevará al formulario con el objeto "Agregar tarjeta de crédito"
-    
-

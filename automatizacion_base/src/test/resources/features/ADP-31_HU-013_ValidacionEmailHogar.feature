@@ -7,7 +7,7 @@ Feature: HU013 Validación de email Hogar
   Para garantizar que la consulta se realice con un email válido
 
   Scenario Outline: Pasarela - Email Hogar sin usuario
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
@@ -26,7 +26,7 @@ Feature: HU013 Validación de email Hogar
       | "1078541256" | "@PRUEBA2.COM.co" |
 
   Scenario Outline: Pasarela - Email Hogar sin dominio
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
@@ -45,7 +45,7 @@ Feature: HU013 Validación de email Hogar
       | "1078541256" | "AQUÍ@"    |
 
   Scenario Outline: Pasarela - Email Hogar dominio invalido
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
@@ -62,7 +62,7 @@ Feature: HU013 Validación de email Hogar
       | "123453784" | "ejemplo@d.com.a"       |
 
   Scenario Outline: Pasarela - Email Hogar terminado en punto (.)
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
@@ -81,7 +81,7 @@ Feature: HU013 Validación de email Hogar
       | "1088354125" | "ejemplo.@dominio."    |
 
   Scenario Outline: Pasarela - Email Hogar válido
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"

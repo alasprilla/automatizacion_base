@@ -9,7 +9,7 @@ Quiero realizar pruebas automatizadas sobre la selección del valor en el formul
 Para garantizar que funcione correctamente el inicio del proceso de recarga
 
   Scenario Outline: Recargas - Validación valores preestablecidos
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
     When doy clic en "Recarga"
     And Espero 2 segundos
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"

@@ -7,7 +7,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
   Para garantizar la correcta visualización del diseño de la página
 
   Scenario Outline: Pasarela - Responsive Seccion Móvil "Pago por Tarjeta de Crédito"
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Movil"
     And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
@@ -25,7 +25,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
       | "720" | "1280" |
 
   Scenario Outline: Pasarela - Responsive Seccion Móvil "Pago por Tarjeta Debito"
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     And se quiere visualizar con resolucion <X> x <Y>
     When doy clic en "Movil"
     And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"

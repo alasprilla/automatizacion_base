@@ -7,7 +7,7 @@ Feature: HU007 Validación número Invalido Celular
   Para garantizar que no permita ingresar número de móvil no válidos en el formulario de consulta de facturas
 
   Scenario Outline: Pasarela - Texto en el campo Tu línea Tigo
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <letras> en el campo "Tu línea Tigo"
     And el campo "Tu línea Tigo" tiene el texto ""
     And el campo "label error celular" tiene el texto "El número de línea solo debe tener números"
@@ -19,17 +19,17 @@ Feature: HU007 Validación número Invalido Celular
       | "tigoUne" |
 
   Scenario Outline: Pasarela - Tu línea tigo de más de 10 dígitos
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     Then mostrará en el valor del campo "Tu línea Tigo" el texto <resultado>
 
     Examples: 
-      | msisdn           | resultado    |
+      | msisdn           | resultado        |
       | "31234567890123" | "(312) 345-6789" |
       | "36587589658749" | "(365) 875-8965" |
 
   Scenario Outline: Pasarela - Tu línea tigo de menos de 10 dígitos
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en "Titulo facturas moviles"
     Then el campo "label error celular" tiene el texto "El número de línea que ingresaste no es válida."
@@ -42,7 +42,7 @@ Feature: HU007 Validación número Invalido Celular
       | "365897" |
 
   Scenario Outline: Pasarela - Tu línea tigo no comienza con 3 ni con 5
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     Then el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo."
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
