@@ -1,6 +1,6 @@
 #Author: Henry Andrés Correa Correa
 #Keywords Summary : Datos, Adaptabilidad, Movil, Hogar, Tigo
-@issue:ADP-61 @CasoFeliz @Pasarela @Recargas @Paquetes
+@issue:ADP-61 @CasoFeliz @Pasarela @Paquetes
 Feature: SPIKE Adaptabilidad de datos
   Como automatizador de pruebas
   Quiero que mis datos esten clasificados por el criterio facturas pendientes
