@@ -7,7 +7,7 @@ Feature: HU021 Pago Completo de Facturas Pendientes
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M clic"
+    And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "Titulo Detalle"
 
   Scenario Outline: Pasarela - Pago Completo con PSE
@@ -18,15 +18,15 @@ Feature: HU021 Pago Completo de Facturas Pendientes
     And selecciono "CC" en el campo "Tipo D"
     And ingreso "1234567896" en el campo "Número de documento D"
     And Presiono la tecla "tab"
-    And doy clic en el botón "Pagar D"
+    And doy clic en "Pagar D"
     And Espero 10 segundos
     And llevará al formulario con el objeto "Email PSE"
     And ingreso "pruebas@yopmail.com" en el campo "Email PSE"
-    And doy clic en el botón "Ir al Banco"
-    And doy clic en el botón "Debug"
+    And doy clic en "Ir al Banco"
+    And doy clic en "Debug"
     And ingreso "27/09/2018" en el campo "BankProcessDate"
     And ingreso "12365478" en el campo "authorizationID"
-    And doy clic en el botón "Return"
+    And doy clic en "Return"
     Then llevará al formulario con el objeto "Titulo Detalle"
 
     Examples: 

@@ -12,7 +12,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     When doy clic en "Recarga"
     And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-    And doy clic en el botón "3Mil"
+    And doy clic en "3Mil"
     And doy clic en "recargar"
     Then llevará al formulario con el objeto "Espera un momento"
 
@@ -33,7 +33,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     When doy clic en "Recarga"
     And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-    And doy clic en el botón <valor>
+    And doy clic en <valor>
     And doy clic en "recargar"
     Then llevará al formulario con el objeto "Espera un momento"
     And doy clic en "Continuar"
@@ -50,7 +50,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     When doy clic en "Recarga"
     And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
-    And doy clic en el botón <valor>
+    And doy clic en <valor>
     And doy clic en "recargar"
     Then llevará al formulario con el objeto "Espera un momento"
     And doy clic en "Aumentar Recarga"

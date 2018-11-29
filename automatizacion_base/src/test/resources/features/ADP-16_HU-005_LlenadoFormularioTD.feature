@@ -10,7 +10,7 @@ Feature: HU005 Llenado formulario TD
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M clic"
+    And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"
 
   Scenario Outline: Pasarela - Transacción PSE obligatoriedad de campos
@@ -22,7 +22,7 @@ Feature: HU005 Llenado formulario TD
     And ingreso <numeroDoc> en el campo "Número de documento D"
     And Presiono la tecla "tab"
     Then el campo "Pagar D" tiene el atributo "class" en el valor <estadoBotonPagar>
-    And doy clic en el botón "Cancelar PSE"
+    And doy clic en "Cancelar PSE"
 
     Examples: 
       | campo a validar           | banco    | tipoPersona | nombresApellidos    | tipoDoc | numeroDoc   | estadoBotonPagar    |

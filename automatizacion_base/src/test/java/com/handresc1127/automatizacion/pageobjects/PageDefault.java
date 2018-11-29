@@ -104,7 +104,6 @@ public class PageDefault extends PageObject {
 	public void seleccionar(String objeto, String item) {
 		sharedObjet(objeto);
 		item = DatosNegocio.dataGet(item);
-		// item=dataGet(item);
 		ActionsUtil.selectContains(getDriver(), getObjetoToCliked(), item);
 	}
 
@@ -113,7 +112,6 @@ public class PageDefault extends PageObject {
 		txtIngresado = DatosNegocio.dataGet(txtIngresado);
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), txtIngresado);
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), "tab");
-		//ActionsUtil.clicParent(getDriver(), getObjetoToCliked());
 	}
 
 	public void validarPagRecargada() {
@@ -135,7 +133,7 @@ public class PageDefault extends PageObject {
 		ActionsUtil.compareTextNotEmpty(getDriver(), getObjetoToCliked());
 	}
 	
-	public void TextoNoExiste(String objeto) {
+	public void textoNoExiste(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.noExiste(getDriver(), getObjetoToCliked());
 	}
@@ -145,7 +143,7 @@ public class PageDefault extends PageObject {
 		ActionsUtil.waitForXElements(getDriver(), getObjetoToCliked(), condicion, cantidad);
 	}
 
-	public void ArrastrarYSoltar(String objeto1, String objeto2) {
+	public void arrastrarYSoltar(String objeto1, String objeto2) {
 		sharedObjet(objeto1);
 		By obj1 = getObjetoToCliked();
 		sharedObjet(objeto2);
@@ -153,7 +151,7 @@ public class PageDefault extends PageObject {
 		ActionsUtil.dragAndDrop(getDriver(), obj1, obj2);
 	}
 
-	public void ArrastrarYSoltarXY(String objeto, String position) {
+	public void arrastrarYSoltarXY(String objeto, String position) {
 		sharedObjet(objeto);
 		By byElement = getObjetoToCliked();
 		String[] pos = ActionsUtil.textoMinusculasSinEspacios(position).split(",");
@@ -203,7 +201,7 @@ public class PageDefault extends PageObject {
 		ActionsUtil.closeCurrentWindowsTab(getDriver());
 	}
  
-	public void tamano(String x, String y) {
+	public void cambiarResolucion(String x, String y) {
 	ActionsUtil.resolucion(getDriver(),x,y);
 }
 	public void borraCookies() {

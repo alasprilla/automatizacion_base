@@ -11,9 +11,9 @@ public class DefDefault {
 
 	PageDefault pagePagaFact;
 
-	//@Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
+	// @Given("^Estoy en la página de inicio de pago de facturas \"([^\"]*)\"$")
 	public void estoy_en_la_página_de_inicio_de_pago_de_facturas(String url) {
-		String realUrl=ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
+		String realUrl = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
 		pagePagaFact.openAt(realUrl);
 		pagePagaFact.irPagina(realUrl);
 	}
@@ -23,14 +23,20 @@ public class DefDefault {
 		pagePagaFact.setBaseURL(baseURL);
 		estoy_en_la_página_de_inicio_de_pago_de_facturas(url);
 	}
-	
+
 	@Then("^lo llevará a la página \"([^\"]*)\"$")
 	public void lo_llevará_a_la_página(String url) {
-		String realUrl=ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
+		String realUrl = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
 		pagePagaFact.comparUrlActual(realUrl);
-		
 	}
-	
+
+	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
+	// Esto se puede cambiar por otra función que ya existe esperar por un elemento
+	@Then("^La página se recarga$")
+	public void la_página_se_recarga() {
+		pagePagaFact.validarPagRecargada();
+	}
+
 	// Implementación: "ADP-3_HU-001-ValidacionTC"
 	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
 	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String objeto) {
@@ -53,22 +59,15 @@ public class DefDefault {
 	public void doy_clic_forzado_en(String objeto) {
 		pagePagaFact.hardClic(objeto);
 	}
-	
-	@When("^doy clic en el botón \"([^\"]*)\"$")
-	public void doy_clic_en_el_botón(String objeto) {
-		pagePagaFact.clic(objeto);
-	}
-	
+
 	@When("^doy clic en \"([^\"]*)\" si es visible$")
 	public void doy_clic_en_si_es_visible(String objetos) {
-	    pagePagaFact.clicSiVisible(objetos);
+		pagePagaFact.clicSiVisible(objetos);
 	}
-
 
 	@When("^selecciono \"([^\"]*)\" en el campo \"([^\"]*)\"$")
 	public void selecciono_la_opción_en_el_campo_Tipo_de_documento(String item, String objeto) {
 		pagePagaFact.seleccionar(objeto, item);
-
 	}
 
 	@When("^ingreso \"([^\"]*)\" en el campo \"([^\"]*)\"$")
@@ -84,18 +83,6 @@ public class DefDefault {
 	@Then("^el campo \"([^\"]*)\" tiene el atributo \"([^\"]*)\" en el valor \"([^\"]*)\"$")
 	public void el_campo_tiene_el_atributo_en_el_valor(String objeto, String atributo, String valorEsperado) {
 		pagePagaFact.compararAtributo(objeto, atributo, valorEsperado);
-	}
-
-	@Then("^El botón \"([^\"]*)\" se habilita$")
-	public void el_botón_se_habilita(String btnConsultar) {
-		pagePagaFact.compararAtributo(btnConsultar, "class", "--active");
-	}
-
-	// Implementación: " ADP-13_HU-002-ValidacionMSISDN"
-	// Esto se puede cambiar por otra función que ya existe esperar por un elemento
-	@Then("^La página se recarga$")
-	public void la_página_se_recarga() {
-		pagePagaFact.validarPagRecargada();
 	}
 
 	@Then("^mostrará en el valor del campo \"([^\"]*)\" el texto \"([^\"]*)\"$")
@@ -116,22 +103,6 @@ public class DefDefault {
 		}
 	}
 
-	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
-	public void llevará_al_formulario_con_el_objeto(String objeto) {
-		pagePagaFact.elementoVisible(objeto);
-	}
-	
-	@When("^voy a la pestaña \"([^\"]*)\"$")
-	public void voy_a_la_pestaña(String tabPosition) {
-		pagePagaFact.cambiarPestana(tabPosition);
-	}
-	
-	@Then("^cerrar pestaña$")
-	public void cerrar_pestaña() {
-		pagePagaFact.cerrarPestanaActual();
-	}
-
-
 	@Then("^el campo \"([^\"]*)\" comienza con el texto \"([^\"]*)\"$")
 	public void el_campo_comienza_con_el_texto(String objeto, String textoInicial) {
 		pagePagaFact.compararTextoDeInicio(objeto, textoInicial);
@@ -142,16 +113,36 @@ public class DefDefault {
 		pagePagaFact.compararTextoNoVacio(objeto);
 	}
 
+	@Then("^el campo \"([^\"]*)\" no existe$")
+	public void el_campo_no_existe(String objeto) {
+		pagePagaFact.textoNoExiste(objeto);
+	}
+
+	@Then("^llevará al formulario con el objeto \"([^\"]*)\"$")
+	public void llevará_al_formulario_con_el_objeto(String objeto) {
+		pagePagaFact.elementoVisible(objeto);
+	}
+
+	@When("^voy a la pestaña \"([^\"]*)\"$")
+	public void voy_a_la_pestaña(String tabPosition) {
+		pagePagaFact.cambiarPestana(tabPosition);
+	}
+
+	@Then("^cerrar pestaña$")
+	public void cerrar_pestaña() {
+		pagePagaFact.cerrarPestanaActual();
+	}
+
 	// Ecommerce
 	@When("^arrastro el elemento \"([^\"]*)\" hasta el elemento \"([^\"]*)\"$")
 	public void arrastro_el_elemento_hasta_el_elemento(String objeto1, String objeto2) {
-		pagePagaFact.ArrastrarYSoltar(objeto1, objeto2);
+		pagePagaFact.arrastrarYSoltar(objeto1, objeto2);
 	}
 
 	// Ecommerce
 	@When("^arrastro el elemento \"([^\"]*)\" hasta la posición \"([^\"]*)\"$")
 	public void arrastro_el_elemento_hasta_la_posición(String objeto, String position) {
-		pagePagaFact.ArrastrarYSoltarXY(objeto, position);
+		pagePagaFact.arrastrarYSoltarXY(objeto, position);
 	}
 
 	@When("^Espero (\\d+) segundos$")
@@ -164,20 +155,14 @@ public class DefDefault {
 		pagePagaFact.clasificarDato(dataName, dataClass1, dataClass2);
 	}
 
-	@Then("^el campo \"([^\"]*)\" no existe$")
-	public void el_campo_no_existe(String objeto) {
-		pagePagaFact.TextoNoExiste(objeto);
-	}
-	
 	@Then("^se borran cookies del navegador$")
 	public void se_borran_cookies_del_navegador() {
 		pagePagaFact.borraCookies();
 	}
 
-	//Implementación: SPIKE Solapamiento de campos 
+	// Implementación: SPIKE Solapamiento de campos
 	@When("^se quiere visualizar con resolucion \"([^\"]*)\" x \"([^\"]*)\"$")
 	public void se_quiere_visualizar_con_resolucion_x(String x, String y) {
-		pagePagaFact.tamano(x,y);
-		
+		pagePagaFact.cambiarResolucion(x, y);
 	}
 }

@@ -13,7 +13,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
-    And doy clic en el botón "Consultar H clic"
+    And doy clic en "Consultar H clic"
     And doy clic en "primer Pago total"
     Then llevará al formulario con el objeto "title-detail"
     And Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
@@ -33,7 +33,7 @@ Scenario Outline: Pasarela - Responsive Seccion Hogar (Tarjeta Debito)
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
-    And doy clic en el botón "Consultar H clic"
+    And doy clic en "Consultar H clic"
     And doy clic en "primer Pago total"
     Then llevará al formulario con el objeto "title-detail"
     And Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado

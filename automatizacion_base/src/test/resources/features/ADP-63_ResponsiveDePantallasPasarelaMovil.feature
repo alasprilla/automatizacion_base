@@ -12,7 +12,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
     When doy clic en "Movil"
     And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M clic"
+    And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "Seleccion medio de pago"
     And Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
 
@@ -30,7 +30,7 @@ Feature: Responsive de Pantallas de Pasarela de pagos
     When doy clic en "Movil"
     And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M clic"
+    And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "Seleccion medio de pago"
     And Estoy en la página de selección de formas de pago con el tipo "Debito Bancario PSE" seleccionado
 

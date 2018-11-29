@@ -87,7 +87,7 @@ Feature: HU013 Validación de email Hogar
     And ingreso <documento> en el campo "número de documento"
     And ingreso <email> en el campo "Correo electrónico H"
     And Espero 2 segundos
-    Then El botón "ConsultarH" se habilita
+    Then el campo "ConsultarH" tiene el atributo "class" en el valor "--active"
 
     Examples: 
       | documento  | email                   |

@@ -9,19 +9,19 @@ Feature: HU005_Modulo Consulta Tu Visita
   Scenario: Mi Cuenta - Ingreso documento válido con agenda
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When ingreso "42767842" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
+    And doy clic en "Consultar"
     Then llevará al formulario con el objeto "Visitas Pendientes"
 
   Scenario: Mi Cuenta - Ingreso documento válido sin agenda
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When ingreso "43921358" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
+    And doy clic en "Consultar"
     Then el campo "Mensaje Error Documento" tiene el texto "Los sentimos, en el momento no tienes una visita programada"
 
   Scenario: Mi Cuenta -  Ingreso documento inválido
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When ingreso "000" en el campo "Ingresa tu documento"
-    And doy clic en el botón "Consultar"
+    And doy clic en "Consultar"
     Then el campo "Mensaje Error Documento" tiene el texto "El documento ingresado no es válido. Verifícalo e intenta de nuevo."
 
   Scenario Outline: Mi Cuenta -  Validación tipo de documento CC

@@ -10,7 +10,7 @@ Feature: SPIKE Adaptabilidad de datos
     Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Consultar M clic"
+    And doy clic en "Consultar M clic"
     Then clasificar el dato <msisdn> en "movil_msisdn con facturas" o en "movil_msisdn sin facturas"
 
     Examples: 
@@ -27,7 +27,7 @@ Feature: SPIKE Adaptabilidad de datos
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
-    And doy clic en el botón "Consultar H clic"
+    And doy clic en "Consultar H clic"
     Then clasificar el dato <documento> en "Hogar_numDocumento con facturas" o en "Hogar_numDocumento sin facturas"
 
     Examples: 
