@@ -15,7 +15,7 @@ Feature: Responsive de Pantallas de Mi Cuenta
     And doy clic en "Personaliza red Wifi"
     When doy clic en "Ingresar"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
-    And doy clic en el botón "Validar"
+    And doy clic forzado en "Validar"
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en el botón "Continuar Mi Cuenta"
     
