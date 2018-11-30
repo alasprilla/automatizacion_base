@@ -33,7 +33,6 @@ Feature: HU008 Validación número Celular
 
     Examples: 
       | msisdn                      | email                 |
-      | "3003849685"                | "prueba@prueba.com"   |
       | "movil_msisdn sin facturas" | "ejemplo@pruebas.com" |
 
   @CasoFeliz
