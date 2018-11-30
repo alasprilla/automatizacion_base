@@ -8,7 +8,9 @@ Feature: HU005_Modulo Consulta Tu Visita
 
   Scenario: Mi Cuenta - Ingreso documento válido con agenda
     Given Estoy en la página de inicio de pago de facturas "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When ingreso "42767842" en el campo "Ingresa tu documento"
+    And doy clic en "Tipo Documento miTigo"
+    And doy clic en "Tipo Ul NIT"
+    When ingreso "900092385" en el campo "Ingresa tu documento"
     And doy clic en el botón "Consultar"
     Then llevará al formulario con el objeto "Visitas Pendientes"
 
