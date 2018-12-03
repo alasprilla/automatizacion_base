@@ -59,13 +59,20 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("repone", By.xpath("//*[@id='group-header-0']/div[1]/div/div/h2/span"));
 	    ActionsUtil.objetosPut("comprar", By.xpath("//*[@id='block-bannerdepromocionesrecargasypaquetes']/div/div[2]/div[1]/div[1]/div/li/div/a"));
 	    ActionsUtil.objetosPut("realizarregistrodeequipo", By.xpath("/html/body/content/div[2]/div/div/section/div/div/div/div/div/div/a"));
-	    
 	    ActionsUtil.objetosPut("ultimafacturapdf", By.id("action_Última factura PDF"));
 	    ActionsUtil.objetosPut("lineacasaana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[14]|//*[@id=\"lines\"]/li[7]/a/div/div[2]"));
 	    ActionsUtil.objetosPut("servicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[2]"));
 	    ActionsUtil.objetosPut("productoscontratados", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section/div/div/div"));
 	    ActionsUtil.objetosPut("agregartarjeta", By.id("action_Agregar tarjeta"));
 	    ActionsUtil.objetosPut("agregartarjetadecredito", By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/h2"));
+	    ActionsUtil.objetosPut("facturacion", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[2]/a"));
+	    ActionsUtil.objetosPut("modificar", By.xpath("//*[@id='action_Modificar']"));
+	    ActionsUtil.objetosPut("electronica", By.xpath("//*[@id=\'edit-container\']/div[1]/label"));
+	    ActionsUtil.objetosPut("correo", By.id("//*[@id='edit-email']"));
+	    ActionsUtil.objetosPut("ok", By.id("edit-submit"));
+	    ActionsUtil.objetosPut("tusdatosdefacturacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
+	    ActionsUtil.objetosPut("impresa", By.xpath("//*[@id='edit-container']/div[3]/label"));
+	    ActionsUtil.objetosPut("activatufacturaelectronica", By.xpath("//*[@id='action_Activa tu factura electrónica']"));
 	}
 	
 }
