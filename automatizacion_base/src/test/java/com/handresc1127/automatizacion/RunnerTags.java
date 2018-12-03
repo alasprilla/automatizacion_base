@@ -33,6 +33,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-64_HU-022_IngresoNumeroValidoTigoDeudaPendiente.feature",
 		"src/test/resources/features/ADP-63_ResponsiveDePantallasPasarelaMovil.feature",
 		"src/test/resources/features/ADP-63_ResponsiveDePantallasPasarelaHogar.feature",
+		"src/test/resources/features/ADP-89_ResponsiveDePantallasMiCuenta.feature",
+		"src/test/resources/features/ADP-92_ResponsiveDePantallasRecargas.feature",
 		"src/test/resources/features/ADP-66_HU-001_ValidarIngreso.feature",
 		"src/test/resources/features/ADP-67_HU-002_RegistroEnMiCuenta.feature",
 		"src/test/resources/features/ADP-70_HU-003_FuncionalidadMicuentaAnonimo.feature",
