@@ -625,4 +625,20 @@ public class ActionsUtil {
 		driver.manage().deleteAllCookies();
 	}
 
+	public static void openNewTab(WebDriver driver, By by) {
+		WebElement element = driver.findElement(by);
+		element.sendKeys(Keys.chord(Keys.CONTROL, "t"));
+		System.out.println("1");
+		sleepSeconds(3);
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.chord(Keys.CONTROL, "t"));
+		System.out.println("2");
+		sleepSeconds(3);
+		  driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"\t");
+		  driver.switchTo().defaultContent(); 
+		  System.out.println("3");sleepSeconds(3);
+		  String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL,"t");
+		  driver.findElement(By.cssSelector("body")).sendKeys(selectLinkOpeninNewTab);
+		  System.out.println("4");sleepSeconds(3);
+	}
+
 }

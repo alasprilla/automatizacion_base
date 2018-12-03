@@ -24,7 +24,7 @@ public class PageDefault extends PageObject {
 		}
 	}
 
-	By objetoToAction;
+	By objetoToAction=By.xpath("/html/body");
 
 	public void irPagina(String url) {
 		String urlActualizada = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
@@ -219,6 +219,10 @@ public class PageDefault extends PageObject {
 
 	public void borraCookies() {
 		ActionsUtil.borrarCookies(getDriver());
+	}
+
+	public void nuevaPestana() {
+		ActionsUtil.openNewTab(getDriver(),getObjetoToCliked());
 	}
 
 }

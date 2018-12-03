@@ -20,7 +20,7 @@ Feature: Prueba de Adherencia Ecommerce
         #
     @Ecommerce
     Scenario: Demostración de ecommerce
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/activate?msisdn=3018927656&imsi=732111173644059"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/activate?msisdn=3018927656&imsi=732111173644059"
     When Espero 3 segundos
     When llevará al formulario con el objeto "title page-title"
     And ingreso "nhmesa@indracompany.com" en el campo "Correo electrónico M"
