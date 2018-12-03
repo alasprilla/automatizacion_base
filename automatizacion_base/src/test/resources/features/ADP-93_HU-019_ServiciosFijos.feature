@@ -15,7 +15,7 @@ Feature: HU019_ServiciosFijos
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Pruebas Juanca" si es visible
+    And doy clic en "Linea Arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Casa Ana" si es visible
     And doy clic en "Servicios"
