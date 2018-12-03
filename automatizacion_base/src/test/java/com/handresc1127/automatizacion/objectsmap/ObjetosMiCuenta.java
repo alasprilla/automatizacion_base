@@ -68,6 +68,14 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("agregartarjeta", By.id("action_Agregar tarjeta"));
 	    ActionsUtil.objetosPut("agregartarjetadecredito", By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/h2"));
 	    ActionsUtil.objetosPut("personalizaredwifi", By.xpath("//*[@id='query-container']/section/div/h3"));
+	    ActionsUtil.objetosPut("facturacion", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[1]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[1]/a"));
+	    ActionsUtil.objetosPut("modificarfacturacion", By.id("action_Modificar"));
+	    ActionsUtil.objetosPut("documento", By.xpath("//*[@id='edit-container']/div[1]/div/div/div"));
+	    ActionsUtil.objetosPut("cc", By.xpath("//*[@id='edit-container']/div[1]/div/div/div/ul/li[1]"));
+	    ActionsUtil.objetosPut("numerodocumento", By.id("edit-document-number"));
+	    ActionsUtil.objetosPut("correoelectronicofijo", By.id("edit-email"));
+	    ActionsUtil.objetosPut("ok", By.id("edit-submit"));
+	    ActionsUtil.objetosPut("mensajeconfirmacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	}
 	
 }
