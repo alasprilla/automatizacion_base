@@ -170,4 +170,13 @@ public class DefDefault {
 	public void se_quiere_visualizar_con_resolucion_x(String x, String y) {
 		pagePagaFact.cambiarResolucion(x, y);
 	}
+	
+	@When("^abro en el navegador el archivo \"([^\"]*)\"$")
+	public void abro_en_el_navegador_el_archivo(String archivo) {
+		pagePagaFact.nuevaPestana();
+		//pagePagaFact.irPagina(url);
+		
+	}
+	
+	
 }
