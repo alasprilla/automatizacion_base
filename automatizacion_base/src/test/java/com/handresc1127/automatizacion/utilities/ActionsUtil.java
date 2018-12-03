@@ -88,11 +88,7 @@ public class ActionsUtil {
 					break;
 			} catch (Exception e) {
 			}
-			try {
-				Thread.sleep(100);
-			} catch (Exception e) {
-				LOGGER.error("Excepcion Sleep:", e);
-			}
+			sleep(100);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		// driver.findElement(by).isDisplayed();
@@ -113,15 +109,10 @@ public class ActionsUtil {
 		}
 		for (int i = 0; i < 2; i++) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			try {
-				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, modifyStyle);
-				Thread.sleep(15);
-				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
-				Thread.sleep(5);
-			} catch (Exception e) {
-				LOGGER.error("Excepcion Sleep:", e);
-			}
-
+			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, modifyStyle);
+			sleep(15);
+			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
+			sleep(5);
 		}
 	}
 
@@ -213,11 +204,7 @@ public class ActionsUtil {
 			for (int i = 0; i < text.length(); i++) {
 				String character = text.substring(i, i + 1);
 				element.sendKeys(character);
-				try {
-					Thread.sleep(5);
-				} catch (Exception e) {
-					LOGGER.error("Excepcion Sleep:", e);
-				}
+				sleep(5);
 			}
 		}
 	}
@@ -331,19 +318,19 @@ public class ActionsUtil {
 	}
 
 	public static void clicIfDisplayed(WebDriver driver, By by) {
-		boolean wasCicked=false;
+		boolean wasCicked = false;
 		List<WebElement> elementsToClicked = driver.findElements(by);
 		for (WebElement element : elementsToClicked) {
 			try {
 				if (element.isDisplayed()) {
 					element.click();
-					wasCicked=true;
+					wasCicked = true;
 					break;
 				}
 			} catch (Exception e) {
 			}
 		}
-		assertTrue("No se clickeo ningún elemento "+by, wasCicked);
+		assertTrue("No se clickeo ningún elemento " + by, wasCicked);
 	}
 
 	public static void selectText(WebDriver driver, By by, String option) {
@@ -466,11 +453,7 @@ public class ActionsUtil {
 				}
 			} catch (Exception e) {
 			}
-			try {
-				Thread.sleep(100);
-			} catch (Exception e) {
-				LOGGER.error("Excepcion Sleep:", e);
-			}
+			sleep(100);
 			if (brakeLoop)
 				break;
 		}
@@ -494,13 +477,7 @@ public class ActionsUtil {
 	}
 
 	public static void sleepSeconds(int sleep) {
-		for (int i = 0; i < sleep; i++) {
-			try {
-				Thread.sleep(1000);
-			} catch (Exception e) {
-				LOGGER.error("Excepcion Sleep:", e);
-			}
-		}
+		sleep(1000 * sleep);
 	}
 
 	public static int byShared(WebDriver driver, By objClass1, By objClass2) {
@@ -524,13 +501,10 @@ public class ActionsUtil {
 				}
 			} catch (Exception e) {
 			}
-			if (flagBreak)
+			if (flagBreak) {
 				break;
-			try {
-				Thread.sleep(100);
-			} catch (Exception e) {
-				LOGGER.error("Excepcion Sleep:", e);
 			}
+			sleep(100);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return retorno;
@@ -633,6 +607,14 @@ public class ActionsUtil {
 
 	public static void borrarCookies(WebDriver driver) {
 		driver.manage().deleteAllCookies();
+	}
+
+	private static void sleep(long timeMiliSeconds) {
+		try {
+			Thread.sleep(timeMiliSeconds);
+		} catch (Exception e) {
+			LOGGER.error("Excepcion Sleep:", e);
+		}
 	}
 
 }

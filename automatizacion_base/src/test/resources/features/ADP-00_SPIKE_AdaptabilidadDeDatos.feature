@@ -7,7 +7,7 @@ Feature: SPIKE Adaptabilidad de datos
   Para que el robot tome el dato que necesite y no tenga errores
 
   Scenario Outline: Adaptabilidad tu linea tigo
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en "Consultar M clic"
@@ -22,7 +22,7 @@ Feature: SPIKE Adaptabilidad de datos
       | "3003588240" |
 
   Scenario Outline: Adaptabilidad hogares
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
