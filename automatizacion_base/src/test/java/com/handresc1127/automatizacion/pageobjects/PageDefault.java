@@ -54,7 +54,7 @@ public class PageDefault extends PageObject {
 		sharedObjet(objeto);
 		ActionsUtil.clic(getDriver(), getObjetoToCliked());
 	}
-	
+
 	public void hardClic(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.ejecutarScript(getDriver(), "arguments[0].click();", getObjetoToCliked());
@@ -64,13 +64,18 @@ public class PageDefault extends PageObject {
 		sharedObjet(objetos);
 		ActionsUtil.clicIfDisplayed(getDriver(), getObjetoToCliked());
 	}
-	
+
 	public void tieneHijos(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.getTableDiv(getDriver(), getObjetoToCliked());
 	}
 
 	public void presionarTecla(String tecla) {
+		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
+	}
+	
+	public void presionarTecla(String tecla,String objeto) {
+		sharedObjet(objeto);
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
 
@@ -132,7 +137,7 @@ public class PageDefault extends PageObject {
 		sharedObjet(objeto);
 		ActionsUtil.compareTextNotEmpty(getDriver(), getObjetoToCliked());
 	}
-	
+
 	public void textoNoExiste(String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.noExiste(getDriver(), getObjetoToCliked());
@@ -181,17 +186,24 @@ public class PageDefault extends PageObject {
 	public void cambiarPestana(String tabPosition) {
 		int indexTab;
 		try {
-			indexTab=Integer.parseInt(tabPosition);
+			indexTab = Integer.parseInt(tabPosition);
+		} catch (Exception e) {
+			indexTab = 0;
 		}
-		catch(Exception e) {
-			indexTab=0;
-		}
-		if(indexTab==0) {
-			switch(ActionsUtil.textoMinusculasSinEspacios(tabPosition) ){
-			case "primera": indexTab=1; break;
-			case "segunda": indexTab=2; break;
-			case "tercera": indexTab=3; break;
-			default: indexTab=100; break;
+		if (indexTab == 0) {
+			switch (ActionsUtil.textoMinusculasSinEspacios(tabPosition)) {
+			case "primera":
+				indexTab = 1;
+				break;
+			case "segunda":
+				indexTab = 2;
+				break;
+			case "tercera":
+				indexTab = 3;
+				break;
+			default:
+				indexTab = 100;
+				break;
 			}
 		}
 		ActionsUtil.switchWindowsTab(getDriver(), indexTab);
@@ -200,10 +212,11 @@ public class PageDefault extends PageObject {
 	public void cerrarPestanaActual() {
 		ActionsUtil.closeCurrentWindowsTab(getDriver());
 	}
- 
+
 	public void cambiarResolucion(String x, String y) {
-	ActionsUtil.resolucion(getDriver(),x,y);
-}
+		ActionsUtil.resolucion(getDriver(), x, y);
+	}
+
 	public void borraCookies() {
 		ActionsUtil.borrarCookies(getDriver());
 	}

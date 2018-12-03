@@ -88,7 +88,7 @@ public class ActionsUtil {
 					break;
 			} catch (Exception e) {
 			}
-			sleep(100);
+			sleepMiliseconds(100);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		// driver.findElement(by).isDisplayed();
@@ -110,9 +110,9 @@ public class ActionsUtil {
 		for (int i = 0; i < 2; i++) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, modifyStyle);
-			sleep(15);
+			sleepMiliseconds(15);
 			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
-			sleep(5);
+			sleepMiliseconds(5);
 		}
 	}
 
@@ -149,6 +149,14 @@ public class ActionsUtil {
 			break;
 		case "tab":
 			element.sendKeys(Keys.TAB);
+			break;
+		case "avanzarpagina":
+			element.sendKeys(Keys.PAGE_DOWN);
+			sleepSeconds(1);
+			break;
+		case "retrocederpagina":
+			element.sendKeys(Keys.PAGE_UP);
+			sleepSeconds(1);
 			break;
 		case "":
 			break;
@@ -204,7 +212,7 @@ public class ActionsUtil {
 			for (int i = 0; i < text.length(); i++) {
 				String character = text.substring(i, i + 1);
 				element.sendKeys(character);
-				sleep(5);
+				sleepMiliseconds(5);
 			}
 		}
 	}
@@ -453,7 +461,7 @@ public class ActionsUtil {
 				}
 			} catch (Exception e) {
 			}
-			sleep(100);
+			sleepMiliseconds(100);
 			if (brakeLoop)
 				break;
 		}
@@ -477,7 +485,15 @@ public class ActionsUtil {
 	}
 
 	public static void sleepSeconds(int sleep) {
-		sleep(1000 * sleep);
+		sleepMiliseconds(1000 * sleep);
+	}
+	
+	public static void sleepMiliseconds(long timeMiliSeconds) {
+		try {
+			Thread.sleep(timeMiliSeconds);
+		} catch (Exception e) {
+			LOGGER.error("Excepcion Sleep:", e);
+		}
 	}
 
 	public static int byShared(WebDriver driver, By objClass1, By objClass2) {
@@ -504,7 +520,7 @@ public class ActionsUtil {
 			if (flagBreak) {
 				break;
 			}
-			sleep(100);
+			sleepMiliseconds(100);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return retorno;
@@ -607,14 +623,6 @@ public class ActionsUtil {
 
 	public static void borrarCookies(WebDriver driver) {
 		driver.manage().deleteAllCookies();
-	}
-
-	private static void sleep(long timeMiliSeconds) {
-		try {
-			Thread.sleep(timeMiliSeconds);
-		} catch (Exception e) {
-			LOGGER.error("Excepcion Sleep:", e);
-		}
 	}
 
 }

@@ -49,6 +49,11 @@ public class DefDefault {
 	public void presiono_la_tecla(String tecla) {
 		pagePagaFact.presionarTecla(tecla);
 	}
+	
+	@When("^Presiono la tecla \"([^\"]*)\" sobre \"([^\"]*)\"$")
+	public void presiono_la_tecla_sobre(String tecla, String objeto) {
+		pagePagaFact.presionarTecla(tecla,objeto);
+	}
 
 	@When("^doy clic en \"([^\"]*)\"$")
 	public void doy_clic_en(String objeto) {
