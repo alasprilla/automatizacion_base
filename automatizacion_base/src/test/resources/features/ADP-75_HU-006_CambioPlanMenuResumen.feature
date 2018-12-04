@@ -19,7 +19,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Hibrido" si es visible
-    And doy clic forzado en "Resumen"
+    And doy clic en "Resumen" si es visible
     And doy clic en "Cambiate Ya"
     Then el campo "Mejorar Plan" tiene el texto "Mejorar Plan"
     Then el campo "Detalle Plan" tiene el texto "Tenemos el plan perfecto para ti. Activalo en nuestro chat en línea."
@@ -34,7 +34,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea Hibrido Mariana" si es visible
-    And doy clic en "Resumen"
+    And doy clic en "Resumen" si es visible
     Then el campo "Cambiate Ya" no existe
 
   Scenario: Mi Cuenta - Cámbiate ya en resumen de línea móvil con plan Empleados
@@ -47,6 +47,6 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 2 segundos
     And doy clic en "Linea Hibrido Ana" si es visible
-    And doy clic en "Resumen"
+    And doy clic en "Resumen" si es visible
     And doy clic en "Cambiate Ya"
     Then llevará al formulario con el objeto "Planes"
