@@ -76,6 +76,15 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("correoelectronicofijo", By.id("edit-email"));
 	    ActionsUtil.objetosPut("ok", By.id("edit-submit"));
 	    ActionsUtil.objetosPut("mensajeconfirmacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
+	    ActionsUtil.objetosPut("mejoraplan", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[9]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[9]/a"));
+	    ActionsUtil.objetosPut("pospago5.3", By.xpath("//*[@id=\"compras-container\"]/section/h2"));
+	    ActionsUtil.objetosPut("pospago5.2", By.xpath("//*[@id=\"compras-container\"]/section/h2"));
+	    ActionsUtil.objetosPut("pospago5.1", By.xpath("//*[@id=\"compras-container\"]/section/h2"));
+	    ActionsUtil.objetosPut("impresa", By.xpath("//*[@id='edit-container']/div[3]/label"));
+	    ActionsUtil.objetosPut("activatufacturaelectronica", By.xpath("//*[@id='action_Activa tu factura electrónica']"));
+	    ActionsUtil.objetosPut("tusdatosdefacturacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
+	    ActionsUtil.objetosPut("electronica", By.xpath("//*[@id=\'edit-container\']/div[1]/label"));
+	    ActionsUtil.objetosPut("administrarservicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[7]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[7]/a"));
 	}
 	
 }
