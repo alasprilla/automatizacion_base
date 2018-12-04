@@ -21,7 +21,7 @@ PARA para recibir mi factura en mi correo electrónico
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "lineapruebasjuanca" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "linea hibrido ana" si es visible
+    And doy clic en "Arma tu plan pruebas" si es visible
     And doy clic en "facturacion"
     And doy clic en "Activa tu factura electrónica"
     And doy clic en "impresa"
@@ -41,7 +41,7 @@ PARA para recibir mi factura en mi correo electrónico
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "lineapruebasjuanca" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "linea hibrido ana" si es visible
+    And doy clic en "Arma tu plan pruebas" si es visible
     And doy clic en "facturacion"
     And doy clic en "Modificar"
     And doy clic en "Electronica"
