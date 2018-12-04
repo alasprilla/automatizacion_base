@@ -176,6 +176,8 @@ public class DefDefault {
 	@When("^abro en el navegador el archivo \"([^\"]*)\"$")
 	public void abro_en_el_navegador_el_archivo(String archivo) {
 		pagePagaFact.nuevaPestana();
+		pagePagaFact.cambiarPestana("ultima");
+		pagePagaFact.abrirArchivo(archivo);
 		//pagePagaFact.irPagina(url);
 	}
 	

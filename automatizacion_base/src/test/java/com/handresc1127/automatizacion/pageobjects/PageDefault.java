@@ -1,5 +1,8 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.openqa.selenium.By;
 
 import com.handresc1127.automatizacion.objectsmap.DatosNegocio;
@@ -222,6 +225,21 @@ public class PageDefault extends PageObject {
 
 	public void nuevaPestana() {
 		ActionsUtil.openNewTab(getDriver(),getObjetoToCliked());
+	}
+
+	public void abrirArchivo(String archivo) {
+		String homePath=System.getProperty("user.home");
+		Path downloadPath=Paths.get(System.getProperty("user.home"), "Downloads");
+		String currentPath=System.getProperty("user.dir");
+		currentPath="file:///"+currentPath+'\\'+archivo;
+		homePath="file:///"+homePath+'\\'+archivo;
+		String downloadsPath="file:///"+downloadPath+'\\'+archivo;
+		ActionsUtil.goToWebSide(getDriver(), currentPath);
+		ActionsUtil.sleepSeconds(4);
+		ActionsUtil.goToWebSide(getDriver(), homePath);
+		ActionsUtil.sleepSeconds(4);
+		ActionsUtil.goToWebSide(getDriver(), downloadsPath);
+		ActionsUtil.sleepSeconds(4);
 	}
 
 }
