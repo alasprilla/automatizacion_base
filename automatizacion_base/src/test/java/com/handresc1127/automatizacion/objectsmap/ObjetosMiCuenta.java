@@ -16,7 +16,7 @@ public class ObjetosMiCuenta {
 //		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span"));
 		ActionsUtil.objetosPut("seleccionmsisdn", By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
 		ActionsUtil.objetosPut("lineaarmatuplan", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[13]|(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'')])[10]"));
-		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]|//*[@id='lines']/li[2]/a/div/div[2]"));
+		ActionsUtil.objetosPut("lineahibridomariana", By.xpath("(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'Mariana')])[2]|(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'')])[6]"));
 		ActionsUtil.objetosPut("lineahibridoana", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[9]|(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'')])[1]"));
 		ActionsUtil.objetosPut("lineahibrido", By.xpath("(((//*[@id='lines'])//a[contains(@href,'')]))[12]|(((((//*[@id='lines'])//a[contains(@href,'')])))//*[contains(text(),'')])[9]"));
 		ActionsUtil.objetosPut("usuario", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
@@ -85,6 +85,13 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("tusdatosdefacturacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("electronica", By.xpath("//*[@id=\'edit-container\']/div[1]/label"));
 	    ActionsUtil.objetosPut("administrarservicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[7]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[7]/a"));
+	    ActionsUtil.objetosPut("saldos", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[3]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[3]/a"));
+	    ActionsUtil.objetosPut("recargarmicuenta", By.id("action_Recargar"));
+	    ActionsUtil.objetosPut("transferir", By.id("action_Transferir"));
+	    ActionsUtil.objetosPut("montoacompartir", By.id("edit-value-transfer"));
+	    ActionsUtil.objetosPut("numerodeldestinatario", By.id("edit-line-transfer"));
+	    ActionsUtil.objetosPut("confirmartransferencia", By.xpath("//*[contains(@id,'edit-next--')]"));
+	    ActionsUtil.objetosPut("mensajetransferencia", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	}
 	
 }
