@@ -116,7 +116,6 @@ public class PageDefault extends PageObject {
 		sharedObjet(objeto);
 		txtIngresado = DatosNegocio.dataGet(txtIngresado);
 		ActionsUtil.setTextFieldSlowly(getDriver(), getObjetoToCliked(), txtIngresado);
-		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), "tab");
 	}
 
 	public void validarPagRecargada() {
