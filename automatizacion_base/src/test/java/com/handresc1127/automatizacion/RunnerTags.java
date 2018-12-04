@@ -41,6 +41,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-71_HU-004_BarraRegulatoria.feature",
 		"src/test/resources/features/ADP-74_HU-005_ModuloConsultaTuVisita.feature",
 		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature",
+		"src/test/resources/features/ADP-83_HU-012_FacturaDigital.feature",
+		"src/test/resources/features/ADP-86_HU-015_MejoraTuPlan.feature",
 		"src/test/resources/features/ADP-90_HU-017_AgregarTarjetaServiciosFijos.feature",
 		"src/test/resources/features/ADP-91_HU-018_CambioDatosFacturacionServiciosFijos.feature",
 		"src/test/resources/features/ADP-93_HU-019_ServiciosFijos.feature",
