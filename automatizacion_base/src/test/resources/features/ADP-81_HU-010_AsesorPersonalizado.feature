@@ -15,8 +15,10 @@ Para realizar consultas acerca de mis servicios
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Hibrido" si es visible
+    And Espero 1 segundos
+    And doy clic en "No Linea Hibrido Ana" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
+    And Espero 1 segundos
     And doy clic en "Linea Hibrido Ana" si es visible
     And doy clic en "Resumen" si es visible
     And doy clic en "Consultar a mi asesor"

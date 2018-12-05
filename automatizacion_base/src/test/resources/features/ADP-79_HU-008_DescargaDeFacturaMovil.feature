@@ -19,7 +19,7 @@ Feature: HU008_DescargaDeFacturaMovil
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Arma tu plan" si es visible
+    And doy clic en "No Linea Hibrido Ana" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea Hibrido Ana" si es visible
@@ -38,7 +38,7 @@ Feature: HU008_DescargaDeFacturaMovil
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Arma tu plan" si es visible
+    And doy clic en "No Linea Hibrido Ana" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea Hibrido Ana" si es visible

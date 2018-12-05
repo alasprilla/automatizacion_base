@@ -15,8 +15,10 @@ Feature: HU018_CambioDatosFacturacionServiciosFijos
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Arma tu Plan" si es visible
+    And Espero 1 segundos
+    And doy clic en "No Linea Casa Ana" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
+    And Espero 1 segundos
     And doy clic en "Linea Casa Ana" si es visible
     And doy clic forzado en "Facturación"
     And doy clic en "Modificar Facturación"

@@ -2,6 +2,7 @@ package com.handresc1127.automatizacion.pageobjects;
 
 import static org.junit.Assert.assertFalse;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -240,6 +241,7 @@ public class PageDefault extends PageObject {
 
 		By chromeErrFile = By.xpath("//*[@id=\"error-information-popup-content\"]/div[2]");
 		boolean errorOpen = false;
+		File  file;
 		ActionsUtil.goToWebSide(getDriver(), currentPath);
 		ActionsUtil.sleepSeconds(1);
 		errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
@@ -247,16 +249,29 @@ public class PageDefault extends PageObject {
 			ActionsUtil.goToWebSide(getDriver(), homePath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		}else {
+			file = new File(currentPath.replace("file:///", ""));
+			file.delete();
 		}
 		if (errorOpen) {
 			ActionsUtil.goToWebSide(getDriver(), downloadsPath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		}else {
+			file = new File(homePath.replace("file:///", ""));
+			file.delete();
 		}
 		if (errorOpen) {
 			ActionsUtil.goToWebSide(getDriver(), dDiskDownloadsPath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		}else {
+			file = new File(downloadsPath.replace("file:///", ""));
+			file.delete();
+		}
+		if(!errorOpen) {
+			file = new File(dDiskDownloadsPath.replace("file:///", ""));
+			file.delete();
 		}
 		assertFalse("No se logró abrir el archivo "+archivo,errorOpen);
 	}
