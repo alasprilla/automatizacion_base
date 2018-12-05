@@ -74,6 +74,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("tusdatosdefacturacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("impresa", By.xpath("//*[@id='edit-container']/div[3]/label"));
 	    ActionsUtil.objetosPut("activatufacturaelectronica", By.xpath("//*[@id='action_Activa tu factura electrónica']"));
+	    ActionsUtil.objetosPut("consultaasesor", By.xpath("//*[@id=\"asesor-container\"]/section/div/a"));
 	}
 	
 }
