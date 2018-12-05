@@ -20,4 +20,5 @@ Feature: HU010_AsesorPersonalizado
     And doy clic en "linea hibrido ana" si es visible
     And doy clic en "resumen"
     And doy clic en "Consulta asesor"
+    And voy a la pestaña "ultima"
     Then lo llevará a la página "https://ayuda.tigoune.co/hc/es/requests/new?ticket_form_id=360000251614"
