@@ -18,7 +18,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Hibrido Ana" si es visible
+    And doy clic en "Linea arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Resumen" si es visible
@@ -34,7 +34,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Hibrido Ana" si es visible
+    And doy clic en "Linea arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Hibrido Mariana" si es visible
     And doy clic en "Resumen" si es visible
@@ -48,7 +48,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Hibrido" si es visible
+    And doy clic en "Linea arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Hibrido Ana" si es visible
     And doy clic en "Resumen" si es visible
