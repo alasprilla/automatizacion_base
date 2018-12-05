@@ -33,6 +33,6 @@ public class ObjetosRecargasPaquetes {
 	
 		ActionsUtil.objetosPut("numerocelular", By.xpath("//*[@id='block-tigo-theme-content']/div/div[2]/div/div/div/div[1]/p[1]/b"));
 		ActionsUtil.objetosPut("fechafacturacion", By.xpath("//*[@id='block-tigo-theme-content']/div/div[2]/div/div/div/div[3]/div/div[1]/p[2]"));
-		
+		ActionsUtil.objetosPut("adelantasaldo", By.id("recharge-line"));
 	}
 }
