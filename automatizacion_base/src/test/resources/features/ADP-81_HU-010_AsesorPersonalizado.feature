@@ -17,7 +17,7 @@ Feature: HU010_AsesorPersonalizado
     And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea Pruebas Juanca" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea Casa Ana" si es visible
+    And doy clic en "Arma tu plan pruebas" si es visible
     And doy clic en "resumen"
     And doy clic en "Consultar a mi asesor"
     Then lo llevará a la página "https://ayuda.tigoune.co/hc/es/requests/new?ticket_form_id=360000251614"
