@@ -175,7 +175,6 @@ public class ActionsUtil {
 				return true;
 		} catch (Exception e) {
 			return false;
-
 		}
 		return false;
 	}
@@ -624,10 +623,4 @@ public class ActionsUtil {
 	public static void borrarCookies(WebDriver driver) {
 		driver.manage().deleteAllCookies();
 	}
-
-	public static void openNewTab(WebDriver driver, By by) {
-		WebElement element = driver.findElement(by);
-		element.sendKeys(Keys.chord(Keys.CONTROL, "t"));
-	}
-
 }

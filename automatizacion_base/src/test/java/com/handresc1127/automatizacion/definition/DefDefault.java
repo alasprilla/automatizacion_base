@@ -178,7 +178,6 @@ public class DefDefault {
 		pagePagaFact.nuevaPestana();
 		pagePagaFact.cambiarPestana("ultima");
 		pagePagaFact.abrirArchivo(archivo);
-		//pagePagaFact.irPagina(url);
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.handresc1127.automatizacion.pageobjects;
 
+import static org.junit.Assert.assertFalse;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -27,7 +29,7 @@ public class PageDefault extends PageObject {
 		}
 	}
 
-	By objetoToAction=By.xpath("/html/body");
+	By objetoToAction = By.xpath("/html/body");
 
 	public void irPagina(String url) {
 		String urlActualizada = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
@@ -76,8 +78,8 @@ public class PageDefault extends PageObject {
 	public void presionarTecla(String tecla) {
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
-	
-	public void presionarTecla(String tecla,String objeto) {
+
+	public void presionarTecla(String tecla, String objeto) {
 		sharedObjet(objeto);
 		ActionsUtil.presionarTecla(getDriver(), getObjetoToCliked(), tecla);
 	}
@@ -224,22 +226,39 @@ public class PageDefault extends PageObject {
 	}
 
 	public void nuevaPestana() {
-		ActionsUtil.openNewTab(getDriver(),getObjetoToCliked());
+		ActionsUtil.ejecutarScript(getDriver(), "window.open()", getObjetoToCliked());
 	}
 
 	public void abrirArchivo(String archivo) {
-		String homePath=System.getProperty("user.home");
-		Path downloadPath=Paths.get(System.getProperty("user.home"), "Downloads");
-		String currentPath=System.getProperty("user.dir");
-		currentPath="file:///"+currentPath+'\\'+archivo;
-		homePath="file:///"+homePath+'\\'+archivo;
-		String downloadsPath="file:///"+downloadPath+'\\'+archivo;
+		String homePath = System.getProperty("user.home");
+		Path downloadPath = Paths.get(System.getProperty("user.home"), "Downloads");
+		String currentPath = System.getProperty("user.dir");
+		currentPath = "file:///" + currentPath + '\\' + archivo;
+		homePath = "file:///" + homePath + '\\' + archivo;
+		String downloadsPath = "file:///" + downloadPath + '\\' + archivo;
+		String dDiskDownloadsPath = "file:///D:/Downloads" + '\\' + archivo;
+
+		By chromeErrFile = By.xpath("//*[@id=\"error-information-popup-content\"]/div[2]");
+		boolean errorOpen = false;
 		ActionsUtil.goToWebSide(getDriver(), currentPath);
-		ActionsUtil.sleepSeconds(4);
-		ActionsUtil.goToWebSide(getDriver(), homePath);
-		ActionsUtil.sleepSeconds(4);
-		ActionsUtil.goToWebSide(getDriver(), downloadsPath);
-		ActionsUtil.sleepSeconds(4);
+		ActionsUtil.sleepSeconds(1);
+		errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		if (errorOpen) {
+			ActionsUtil.goToWebSide(getDriver(), homePath);
+			ActionsUtil.sleepSeconds(1);
+			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		}
+		if (errorOpen) {
+			ActionsUtil.goToWebSide(getDriver(), downloadsPath);
+			ActionsUtil.sleepSeconds(1);
+			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		}
+		if (errorOpen) {
+			ActionsUtil.goToWebSide(getDriver(), dDiskDownloadsPath);
+			ActionsUtil.sleepSeconds(1);
+			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		}
+		assertFalse("No se logró abrir el archivo "+archivo,errorOpen);
 	}
 
 }
