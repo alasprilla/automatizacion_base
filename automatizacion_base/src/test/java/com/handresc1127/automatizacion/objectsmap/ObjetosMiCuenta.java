@@ -92,6 +92,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("numerodeldestinatario", By.id("edit-line-transfer"));
 	    ActionsUtil.objetosPut("confirmartransferencia", By.xpath("//*[contains(@id,'edit-next--')]"));
 	    ActionsUtil.objetosPut("mensajetransferencia", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
+	    ActionsUtil.objetosPut("pagarfactura", By.id("action_Pagar"));
+	    ActionsUtil.objetosPut("pagartufactura", By.xpath("//*[@id='main-content']/section/div/div/h2"));
 	}
 	
 }
