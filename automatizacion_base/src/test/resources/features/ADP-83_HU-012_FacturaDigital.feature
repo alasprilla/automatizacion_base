@@ -18,9 +18,9 @@ PARA para recibir mi factura en mi correo electrónico
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea arma tu Plan" si es visible
-    And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea hibrido ana" si es visible
+    And doy clic en "Seleccion MSISDN" si es visible
+    And doy clic en "Linea arma tu Plan" si es visible
     And doy clic en "Facturacion" si es visible
     And doy clic en "Activa tu factura electrónica"
     And doy clic en "Impresa"
@@ -37,9 +37,9 @@ PARA para recibir mi factura en mi correo electrónico
     And ingreso "pruebas2018" en el campo "Contrasena"
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
-    And doy clic en "Linea arma tu Plan" si es visible
-    And doy clic en "Seleccion MSISDN" si es visible
     And doy clic en "Linea hibrido ana" si es visible
+    And doy clic en "Seleccion MSISDN" si es visible
+    And doy clic en "Linea arma tu Plan" si es visible
     And doy clic en "Facturacion" si es visible
     And doy clic en "Modificar Facturación"
     And doy clic en "Electronica"

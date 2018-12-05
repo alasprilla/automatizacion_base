@@ -43,6 +43,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature",
 		"src/test/resources/features/ADP-78_HU-007_PagarFacturaMovilMenuResumen.feature",
 		"src/test/resources/features/ADP-79_HU-008_DescargaDeFacturaMovil.feature",
+		"src/test/resources/features/ADP-81_HU-010_AsesorPersonalizado.feature",
 		"src/test/resources/features/ADP-83_HU-012_FacturaDigital.feature",
 		"src/test/resources/features/ADP-84_HU-013_SaldosEnDinero.feature",
 		"src/test/resources/features/ADP-86_HU-015_MejoraTuPlan.feature",

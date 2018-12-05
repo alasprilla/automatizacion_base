@@ -93,6 +93,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("mensajetransferencia", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("pagarfactura", By.id("action_Pagar"));
 	    ActionsUtil.objetosPut("pagartufactura", By.xpath("//*[@id='main-content']/section/div/div/h2"));
+	    ActionsUtil.objetosPut("consultaramiasesor", By.xpath("//*[@id='asesor-container']/section/div/a"));
 	}
 	
 }
