@@ -11,6 +11,7 @@ Feature: HU005_Modulo Consulta Tu Visita
     And doy clic en "Tipo Documento miTigo"
     And doy clic en "Tipo Ul NIT"
     When ingreso "900092385" en el campo "Ingresa tu documento"
+    And doy clic en "Menú Inferior"
     And doy clic en "Consultar"
     Then llevará al formulario con el objeto "Visitas Pendientes"
 
