@@ -8,10 +8,10 @@ Feature: Adelanta Saldo
   Para garantizar que permita realizar el proceso de transacción de Adelanta Saldo
 
   Scenario: Recargas - Visualización de opción adelanta saldo como medio de pago
-    Given Estoy en la página de inicio de pago de facturas "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?he=1"
+    Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
     When ingreso "3002774442" en el campo "Ingresa tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
-    And doy clic en el botón "Recargar"
+    And doy clic en "Recargar"
     Then llevará al formulario con el objeto "Titulo Detalle"
     And doy clic en "Adelanta Saldo"
