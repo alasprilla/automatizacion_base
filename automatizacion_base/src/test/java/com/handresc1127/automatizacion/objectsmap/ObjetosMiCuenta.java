@@ -25,6 +25,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("nolineahibrido", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Hibrido - Pruebas (Naty)'))])"));
 		ActionsUtil.objetosPut("lineacasaana", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Casa Ana')])"));
 		ActionsUtil.objetosPut("nolineacasaana", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Casa Ana'))])"));
+		ActionsUtil.objetosPut("lineahibridojuanca", 	By.xpath("((//*[@id='lines'])//a[contains(.,'Hibrido - Pruebas (Juanca)')])"));
+		ActionsUtil.objetosPut("nolineahibridojuanca", 	By.xpath("((//*[@id='lines'])//a[not(contains(.,'Hibrido - Pruebas (Juanca)'))])"));
 		
 		ActionsUtil.objetosPut("usuario", 				By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("cerrarsesion", 			By.xpath("//*[@id='top_menu_aside']/nav/ul/li/ul/li[2]/a"));

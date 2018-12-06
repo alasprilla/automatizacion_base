@@ -23,6 +23,7 @@ PARA para recibir mi factura en mi correo electrónico
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea arma tu Plan" si es visible
+    And Espero 2 segundos
     And doy clic en "Facturacion" si es visible
     And doy clic en "Activa tu factura electrónica"
     And doy clic en "Impresa"
@@ -44,6 +45,7 @@ PARA para recibir mi factura en mi correo electrónico
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea arma tu Plan" si es visible
+    And Espero 2 segundos
     And doy clic en "Facturacion" si es visible
     And doy clic en "Modificar Facturación"
     And doy clic en "Electronica"
