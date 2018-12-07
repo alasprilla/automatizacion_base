@@ -42,7 +42,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And Espero 1 segundos
     And doy clic en "Linea Hibrido Mariana" si es visible
     And doy clic en "Resumen" si es visible
-    Then el campo "Cambiate Ya" no existe
+    Then el campo "Mejora Plan" no existe
 
   Scenario: Mi Cuenta - Cámbiate ya en resumen de línea móvil con plan Empleados
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"

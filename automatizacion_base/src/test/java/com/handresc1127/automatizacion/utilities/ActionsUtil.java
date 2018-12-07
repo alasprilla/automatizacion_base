@@ -179,8 +179,44 @@ public class ActionsUtil {
 		return false;
 	}
 
+	public static boolean existsElement(WebDriver driver, WebElement element) {
+		try {
+			if (element.isDisplayed())
+				return true;
+		} catch (Exception e) {
+			return false;
+		}
+		return false;
+	}
+
 	public static void noExiste(WebDriver driver, By objeto) {
-		assertFalse(existsElement(driver, objeto));
+		boolean existAny = false;
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+		List<WebElement> elementsThatNotExists = driver.findElements(objeto);
+		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
+		for (WebElement element : elementsThatNotExists) {
+			if (existsElement(driver, element)) {
+				existAny = true;
+
+				String originalStyle = element.getAttribute("style");
+				String modifyStyle = "border: 3px solid green;";
+				if (originalStyle.contains("border:")) {
+					int indexInicio = 7 + originalStyle.indexOf("border:");
+					String aux = originalStyle.substring(indexInicio);
+					int indexFin = indexInicio + aux.indexOf(';');
+					String strInicial = originalStyle.substring(0, originalStyle.indexOf("border:"));
+					String strMedio = "border: 3px solid green";
+					String strFinal = originalStyle.substring(indexFin);
+					modifyStyle = strInicial + strMedio + strFinal;
+				} else {
+					modifyStyle = modifyStyle + " " + originalStyle;
+				}
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, modifyStyle);
+				break;
+			}
+		}
+		assertFalse("Se encontro el elemento " + objeto, existAny);
 	}
 
 	public static String textoMinusculasSinEspacios(String texto) {
@@ -486,7 +522,7 @@ public class ActionsUtil {
 	public static void sleepSeconds(int sleep) {
 		sleepMiliseconds(1000 * sleep);
 	}
-	
+
 	public static void sleepMiliseconds(long timeMiliSeconds) {
 		try {
 			Thread.sleep(timeMiliSeconds);

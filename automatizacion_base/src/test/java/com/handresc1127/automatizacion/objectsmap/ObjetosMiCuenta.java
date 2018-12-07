@@ -85,7 +85,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("correoelectronicofijo", By.id("edit-email"));
 	    ActionsUtil.objetosPut("ok", By.id("edit-submit"));
 	    ActionsUtil.objetosPut("mensajeconfirmacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
-	    ActionsUtil.objetosPut("mejoraplan", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[9]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[9]/a"));
+	    ActionsUtil.objetosPut("mejoraplan", By.xpath("//*[contains(@href,'mejora-tu-plan')]"));
 	    ActionsUtil.objetosPut("pospago5.3", By.xpath("//*[@id=\"compras-container\"]/section/h2"));
 	    ActionsUtil.objetosPut("pospago5.2", By.xpath("//*[@id=\"compras-container\"]/section/h2"));
 	    ActionsUtil.objetosPut("pospago5.1", By.xpath("//*[@id=\"compras-container\"]/section/h2"));
