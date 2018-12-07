@@ -21,6 +21,7 @@ Feature: HU007 Validación número Invalido Celular
   Scenario Outline: Pasarela - Tu línea tigo de más de 10 dígitos
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When ingreso <msisdn> en el campo "Tu línea Tigo"
+    And Presiono la tecla "Tab"
     Then mostrará en el valor del campo "Tu línea Tigo" el texto <resultado>
 
     Examples: 
