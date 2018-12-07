@@ -30,6 +30,7 @@ Feature: HU004_Barra Regulatoria
 
   Scenario: Conoce nuestras Tiendas
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
+    And Presiono la tecla "Avanzar Página" sobre "Nuestras Tiendas"
     When doy clic en "Nuestras Tiendas"
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "tiendas"
