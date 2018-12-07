@@ -33,7 +33,6 @@ PARA para recibir mi factura en mi correo electrónico
 
   Scenario: Cambio a facturación Impresa
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
-    And se quiere visualizar con resolucion "850" x "1000"
     When doy clic en "Ingresar"
     And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo mi Cuenta"
     And doy clic en "Validar"
