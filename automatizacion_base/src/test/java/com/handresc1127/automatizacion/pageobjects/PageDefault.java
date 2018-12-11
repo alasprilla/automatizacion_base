@@ -241,7 +241,7 @@ public class PageDefault extends PageObject {
 		currentPath = "file:///" + currentPath + '\\' + archivo;
 		homePath = "file:///" + homePath + '\\' + archivo;
 		String downloadsPath = "file:///" + downloadPath + '\\' + archivo;
-		String dDiskDownloadsPath = "file:///D:/Downloads" + '\\' + archivo;
+		String dDiskDownloadsPath = "file:///D:\\Downloads" + '\\' + archivo;
 
 		By chromeErrFile = By.xpath("//*[@id=\"error-information-popup-content\"]/div[2]");
 		boolean errorOpen = false;
@@ -273,11 +273,17 @@ public class PageDefault extends PageObject {
 		if(!errorOpen) {
 			file = new File(dDiskDownloadsPath.replace("file:///", ""));
 		}
+		LOGGER.info("HOME: "+homePath);
+		LOGGER.info("CURRENT: "+currentPath);
+		LOGGER.info("DOWNLOAD: "+downloadsPath);
+		LOGGER.info("D: "+dDiskDownloadsPath);
+		LOGGER.info("Hubo error al abrir el archivo: "+errorOpen);
 		LOGGER.info("Nombre del archivo que se desea abrir: "+archivo);
 		LOGGER.info("Ruta del archivo que se desea abrir: "+file);
 		LOGGER.info("Hubo error al abrir el archivo: "+errorOpen);
 		assertFalse("No se logró abrir el archivo "+archivo,errorOpen);
-		assertTrue("No se logró abrir el archivo "+file,file.delete());
+		if(file!=null)
+			assertTrue("No se logró borrar el archivo "+file,file.delete());
 	}
 
 }
