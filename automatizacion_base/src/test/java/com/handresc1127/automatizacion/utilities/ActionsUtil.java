@@ -520,7 +520,7 @@ public class ActionsUtil {
 	}
 
 	public static void sleepSeconds(int sleep) {
-		sleepMiliseconds(1000 * sleep);
+		sleepMiliseconds(1000L * sleep);
 	}
 
 	public static void sleepMiliseconds(long timeMiliSeconds) {
