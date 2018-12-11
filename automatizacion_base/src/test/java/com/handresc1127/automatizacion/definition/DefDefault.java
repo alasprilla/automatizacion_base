@@ -27,8 +27,6 @@ public class DefDefault {
 	@Then("^lo llevará a la página \"([^\"]*)\"$")
 	public void lo_llevará_a_la_página(String url) {
 		String realUrl = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
-		System.out.println("url.:"+url);
-		System.out.println("realUrl:"+realUrl);
 		pagePagaFact.comparUrlActual(realUrl);
 	}
 

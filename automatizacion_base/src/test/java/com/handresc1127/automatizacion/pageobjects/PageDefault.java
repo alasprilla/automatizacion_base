@@ -8,6 +8,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.openqa.selenium.By;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.handresc1127.automatizacion.objectsmap.DatosNegocio;
 import com.handresc1127.automatizacion.objectsmap.ObjetosEcommerce;
@@ -32,6 +34,7 @@ public class PageDefault extends PageObject {
 	}
 
 	By objetoToAction = By.xpath("/html/body");
+	private static final Logger LOGGER = LoggerFactory.getLogger(PageObject.class);
 
 	public void irPagina(String url) {
 		String urlActualizada = ActionsUtil.updateUrlWithBaseUrlIfDefined(url);
@@ -270,6 +273,9 @@ public class PageDefault extends PageObject {
 		if(!errorOpen) {
 			file = new File(dDiskDownloadsPath.replace("file:///", ""));
 		}
+		LOGGER.info("Nombre del archivo que se desea abrir: "+archivo);
+		LOGGER.info("Ruta del archivo que se desea abrir: "+file);
+		LOGGER.info("Hubo error al abrir el archivo: "+errorOpen);
 		assertFalse("No se logró abrir el archivo "+archivo,errorOpen);
 		assertTrue("No se logró abrir el archivo "+file,file.delete());
 	}
