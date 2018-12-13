@@ -36,21 +36,26 @@ Feature: HU009 CC válida en campo número de documento
       |      11 | "12345678901"  |
       |      12 | "123456789012" |
 
-  Scenario Outline: Pasarela - Documento es una cédula válida
+  Scenario: Pasarela - Documento cedula válida sin facturas
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
-    And ingreso <documento> en el campo "número de documento"
+    And ingreso "Hogar_numDocumento sin facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en "Consultar H clic"
-    Then mostrará el <estadoFacturas>
+    Then el campo "label facturas" tiene el texto "El usuario no tiene facturas pendientes"
+    And el campo "label facturas" tiene el atributo "color" en el valor "rgba(255, 255, 255, 1)"
+    And el campo "label facturas" tiene el atributo "background-color" en el valor "rgba(0, 200, 255, 1)"
 
-    #//Si no tiene el msj esta en letras blancas con fondo azul
-    Examples: 
-      | documento                         | estadoFacturas                            |
-      | "Hogar_numDocumento sin facturas" | "El usuario no tiene facturas pendientes" |
-      | "Hogar_numDocumento con facturas" | "listado de facturas pendientes"          |
-
+  Scenario: Pasarela - Documento cedula válida con facturas
+    Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
+    When doy clic en "HOGAR"
+    And selecciono "CC" en el campo "Tipo de documento"
+    And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
+    And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
+    And doy clic en "Consultar H clic"
+    Then llevará al formulario con el objeto "list facturas"
+  
   Scenario: Pasarela - Visualización de datos de factura de servicios fijos
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"

@@ -95,19 +95,6 @@ public class DefDefault {
 		pagePagaFact.compararAtributo(objeto, "value", valor);
 	}
 
-	// Esta funcion debe de reemplazarse por las 3 independientes
-	@Then("^mostrará el \"([^\"]*)\"$")
-	public void mostrará_el(String texto) {
-		if (texto.contains("no tiene")) {
-			final String objeto = "label facturas";
-			pagePagaFact.compararTxt(objeto, texto);
-			pagePagaFact.compararAtributo(objeto, "color", "rgba(255, 255, 255, 1)");
-			pagePagaFact.compararAtributo(objeto, "background-color", "rgba(0, 200, 255, 1)");
-		} else {
-			pagePagaFact.tieneHijos("list facturas");
-		}
-	}
-
 	@Then("^el campo \"([^\"]*)\" comienza con el texto \"([^\"]*)\"$")
 	public void el_campo_comienza_con_el_texto(String objeto, String textoInicial) {
 		pagePagaFact.compararTextoDeInicio(objeto, textoInicial);
