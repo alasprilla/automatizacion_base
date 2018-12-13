@@ -48,5 +48,5 @@ Para resolver las fallas presentadas
     And doy clic en "Soporte Tecnico"
     And doy clic en "tienda"
     And voy a la pestaña "ultima"
-    And lo llevará a la página "https://ayuda.tigoune.co/hc/es/sections/115001850127-Equipos"
+    And lo llevará a la página "https://www.tigo.com.co/tiendas"
     And cerrar pestaña
