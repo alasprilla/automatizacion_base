@@ -107,7 +107,6 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("menuinferior", By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div"));
 	    ActionsUtil.objetosPut("soportetecnico", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[13]/a"));
 	    ActionsUtil.objetosPut("centrodeayuda", By.xpath("//*[@id=\'action_CENTRO DE AYUDA\']"));
-	    ActionsUtil.objetosPut("tiendas", By.xpath("//*[@id=\'action_TIENDAS\']"));
-	}
+		}
 	
 }
