@@ -164,10 +164,10 @@ public class DefDefault {
 		pagePagaFact.cambiarPestana("ultima");
 		pagePagaFact.abrirArchivo(archivo);
 	}
-<<<<<<< HEAD
-	
+
 	@Given("^obtener el otp del correo \"([^\"]*)\" y la contraseña \"([^\"]*)\" y guardarlo en \"([^\"]*)\"$")
-	public void obtener_el_otp_del_correo_y_la_contraseña_y_guardarlo_en(String correo, String pas, String codigoVerificacion) {
+	public void obtener_el_otp_del_correo_y_la_contraseña_y_guardarlo_en(String correo, String pas,
+			String codigoVerificacion) {
 		pagePagaFact.nuevaPestana();
 		pagePagaFact.cambiarPestana("ultima");
 		estoy_en_la_página_de_inicio_de_pago_de_facturas("https://app.mysms.com");
@@ -181,7 +181,5 @@ public class DefDefault {
 		pagePagaFact.cambiarPestana("segunda");
 		pagePagaFact.obtenerSubString("ultimomensaje", 0, 4, codigoVerificacion);
 	}
-=======
 
->>>>>>> Mejoras esteticas
 }
