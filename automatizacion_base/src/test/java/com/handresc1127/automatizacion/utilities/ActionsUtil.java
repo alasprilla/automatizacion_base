@@ -616,8 +616,8 @@ public class ActionsUtil {
 
 	public static void curretCompareURL(WebDriver driver, String urlExpected) {
 		String currenturl = driver.getCurrentUrl();
-			urlExpected=urlExpected.split("\\?")[0];
-			currenturl=currenturl.split("\\?")[0];
+		urlExpected = urlExpected.split("\\?")[0];
+		currenturl = currenturl.split("\\?")[0];
 		assertEquals(urlExpected, currenturl);
 	}
 

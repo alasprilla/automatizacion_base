@@ -49,10 +49,10 @@ public class DefDefault {
 	public void presiono_la_tecla(String tecla) {
 		pagePagaFact.presionarTecla(tecla);
 	}
-	
+
 	@When("^Presiono la tecla \"([^\"]*)\" sobre \"([^\"]*)\"$")
 	public void presiono_la_tecla_sobre(String tecla, String objeto) {
-		pagePagaFact.presionarTecla(tecla,objeto);
+		pagePagaFact.presionarTecla(tecla, objeto);
 	}
 
 	@When("^doy clic en \"([^\"]*)\"$")
@@ -157,13 +157,14 @@ public class DefDefault {
 	public void se_quiere_visualizar_con_resolucion_x(String x, String y) {
 		pagePagaFact.cambiarResolucion(x, y);
 	}
-	
+
 	@When("^abro en el navegador el archivo \"([^\"]*)\"$")
 	public void abro_en_el_navegador_el_archivo(String archivo) {
 		pagePagaFact.nuevaPestana();
 		pagePagaFact.cambiarPestana("ultima");
 		pagePagaFact.abrirArchivo(archivo);
 	}
+<<<<<<< HEAD
 	
 	@Given("^obtener el otp del correo \"([^\"]*)\" y la contraseña \"([^\"]*)\" y guardarlo en \"([^\"]*)\"$")
 	public void obtener_el_otp_del_correo_y_la_contraseña_y_guardarlo_en(String correo, String pas, String codigoVerificacion) {
@@ -180,4 +181,7 @@ public class DefDefault {
 		pagePagaFact.cambiarPestana("segunda");
 		pagePagaFact.obtenerSubString("ultimomensaje", 0, 4, codigoVerificacion);
 	}
+=======
+
+>>>>>>> Mejoras esteticas
 }
