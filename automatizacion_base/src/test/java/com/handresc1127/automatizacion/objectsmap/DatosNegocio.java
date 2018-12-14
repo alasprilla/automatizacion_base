@@ -39,7 +39,7 @@ public final class DatosNegocio {
 	}
 
 	public static void dataPut(String key, String value){
-		datosDelNegocio.put(key, value);
+		datosDelNegocio.put(ActionsUtil.textoMinusculasSinEspacios(key),value);
 	}
 	
 }

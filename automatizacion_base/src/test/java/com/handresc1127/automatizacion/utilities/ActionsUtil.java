@@ -661,4 +661,8 @@ public class ActionsUtil {
 	public static void borrarCookies(WebDriver driver) {
 		driver.manage().deleteAllCookies();
 	}
+	
+	public static String getSubString(WebDriver driver, By by, int strInit, int strEnd) {
+		return getText(driver, by).substring(strInit,strEnd);
+	}
 }

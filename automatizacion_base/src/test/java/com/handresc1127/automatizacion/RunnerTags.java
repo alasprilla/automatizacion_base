@@ -51,7 +51,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-90_HU-017_AgregarTarjetaServiciosFijos.feature",
 		"src/test/resources/features/ADP-91_HU-018_CambioDatosFacturacionServiciosFijos.feature",
 		"src/test/resources/features/ADP-93_HU-019_ServiciosFijos.feature",
-		"src/test/resources/features/ADP-92_ResponsiveDePantallasRecargas.feature"}, 
+		"src/test/resources/features/ADP-92_ResponsiveDePantallasRecargas.feature",
+		"src/test/resources/features/ADP-101_PruebaAdherenciaDePaquetes.feature"}, 
 
 tags = {"" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 						"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })

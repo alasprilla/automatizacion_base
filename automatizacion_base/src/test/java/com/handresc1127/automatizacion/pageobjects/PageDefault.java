@@ -286,4 +286,9 @@ public class PageDefault extends PageObject {
 			assertTrue("No se logró borrar el archivo "+file,file.delete());
 	}
 
+	public void obtenerSubString(String objeto, int ini, int fin,String storage) {
+		sharedObjet(objeto);
+		String subString =ActionsUtil.getSubString(getDriver(),getObjetoToCliked(),ini,fin);
+		DatosNegocio.dataPut(storage, subString);
+	}
 }

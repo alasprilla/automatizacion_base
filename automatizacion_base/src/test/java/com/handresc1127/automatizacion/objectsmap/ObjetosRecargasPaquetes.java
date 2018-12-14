@@ -34,5 +34,35 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("numerocelular", By.xpath("//*[@id='block-tigo-theme-content']/div/div[2]/div/div/div/div[1]/p[1]/b"));
 		ActionsUtil.objetosPut("fechafacturacion", By.xpath("//*[@id='block-tigo-theme-content']/div/div[2]/div/div/div/div[3]/div/div[1]/p[2]"));
 		ActionsUtil.objetosPut("adelantasaldo", By.xpath("//*[@id='payment-method-type-label-advance-balance']/label/div[1]/div[1]"));
+		//Paquetes
+		ActionsUtil.objetosPut("paquetes", By.xpath("//*[@id='tap_selector']/div[1]"));
+		ActionsUtil.objetosPut("ingresatulineatigopaquetes", By.id("numlinsin"));
+		ActionsUtil.objetosPut("flechaatras", By.xpath("//*[@id='tab_navegar']/div[1]/div[2]/div[2]/a[1]"));
+		ActionsUtil.objetosPut("flechasiguiente", By.xpath("//*[@id='tab_navegar']/div[1]/div[2]/div[2]/a[2]"));
+		ActionsUtil.objetosPut("comprar600mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[1]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar350mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[2]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar2gb30dias", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[3]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar40mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[4]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar100mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[5]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar2gb15dias", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[6]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar150mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[7]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar120mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[8]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar1gb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[9]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar50mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[10]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("comprar500mb", By.xpath("//*[@id='tab_navegar']/div[1]/div[1]/ul/li[11]/div/div[2]/div/a"));
+		ActionsUtil.objetosPut("continuarcomprapaquete", By.id("bt-regsinbal"));
+		ActionsUtil.objetosPut("vamosaverificartusdatos", By.xpath("//*[@id='mod_regnumber']/div[3]/h2"));
+		ActionsUtil.objetosPut("codigoverificacion", By.id("cod_act"));
+		ActionsUtil.objetosPut("continuarverificacion", By.id("bt-contver"));
+		ActionsUtil.objetosPut("correoverificacion", By.id("emailpackages"));
+		ActionsUtil.objetosPut("estoyseguro", By.id("bt-buyconfirmation"));
+		//Objetos para obtener el otp por medio de la app MySMS
+		ActionsUtil.objetosPut("correogmail", By.id("identifierId"));
+		ActionsUtil.objetosPut("siguiente", By.xpath("//*[@id='identifierNext']/content/span"));
+		ActionsUtil.objetosPut("siguientec", By.xpath("//*[@id='passwordNext']/content/span"));
+		ActionsUtil.objetosPut("contrasenagmail", By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
+		ActionsUtil.objetosPut("login", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/table/tbody/tr[3]/td/button[1]/div/div"));
+		ActionsUtil.objetosPut("iniciarcongmail", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/table/tbody/tr[3]/td/div[1]/table/tbody/tr[1]/td/div[1]/div[1]/div[2]"));
+		ActionsUtil.objetosPut("ultimomensaje", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/div[4]/div/div[2]/div/div[3]/div/div[2]/div/div[3]/div/div[2]/div[1]/div/div/div[1]/span/span[2]"));	
 	}
 }

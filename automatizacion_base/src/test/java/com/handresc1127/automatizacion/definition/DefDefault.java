@@ -165,5 +165,19 @@ public class DefDefault {
 		pagePagaFact.abrirArchivo(archivo);
 	}
 	
-	
+	@Given("^obtener el otp del correo \"([^\"]*)\" y la contraseña \"([^\"]*)\" y guardarlo en \"([^\"]*)\"$")
+	public void obtener_el_otp_del_correo_y_la_contraseña_y_guardarlo_en(String correo, String pas, String codigoVerificacion) {
+		pagePagaFact.nuevaPestana();
+		pagePagaFact.cambiarPestana("ultima");
+		estoy_en_la_página_de_inicio_de_pago_de_facturas("https://app.mysms.com");
+		doy_clic_en("login");
+		doy_clic_en("iniciarcongmail");
+		pagePagaFact.cambiarPestana("ultima");
+		ingreso_en_el_campo(correo, "correogmail");
+		doy_clic_en("siguiente");
+		ingreso_en_el_campo(pas, "contrasenagmail");
+		doy_clic_en("siguientec");
+		pagePagaFact.cambiarPestana("segunda");
+		pagePagaFact.obtenerSubString("ultimomensaje", 0, 4, codigoVerificacion);
+	}
 }
