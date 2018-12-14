@@ -7,8 +7,8 @@ import com.handresc1127.automatizacion.utilities.ActionsUtil;
 public class ObjetosPagaTuFactura {
 
 	public ObjetosPagaTuFactura() {
-		ActionsUtil.objetosPut("hogar", By.id("edit-radios-0"));
-		ActionsUtil.objetosPut("movil", By.id("edit-radios-1"));
+		ActionsUtil.objetosPut("hogar", By.xpath("//*[@id='edit-radios']/div[1]/label"));
+		ActionsUtil.objetosPut("movil", By.xpath("//*[@id='edit-radios']/div[2]/label"));
 		ActionsUtil.objetosPut("numerodedocumento", By.id("edit-document"));
 		ActionsUtil.objetosPut("tulineatigo", By.id("edit-candidate-number"));
 		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
