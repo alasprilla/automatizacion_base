@@ -8,7 +8,8 @@ Feature: SPIKE Adaptabilidad de datos
 
   Scenario Outline: Adaptabilidad tu linea tigo
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en "Consultar M clic"
     Then clasificar el dato <msisdn> en "movil_msisdn con facturas" o en "movil_msisdn sin facturas"

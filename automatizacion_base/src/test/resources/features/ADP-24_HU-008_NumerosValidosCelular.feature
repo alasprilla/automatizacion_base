@@ -8,7 +8,8 @@ Feature: HU008 Validación número Celular
 
   Scenario Outline: Pasarela - MSISDN válido que no es Tigo
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
     And doy clic en "Consultar M clic"
     Then el campo "mensaje sin facturas" tiene el texto "No hemos encontrado facturas pendientes para este número de línea."
@@ -24,7 +25,8 @@ Feature: HU008 Validación número Celular
 
   Scenario Outline: PasPasarela - MSISDN válido Tigo sin facturas pendientes
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
     And doy clic en "Consultar M clic"
     Then el campo "mensaje sin facturas" tiene el texto "No hemos encontrado facturas pendientes para este número de línea."
@@ -38,7 +40,8 @@ Feature: HU008 Validación número Celular
   @CasoFeliz
   Scenario Outline: Pasarela - MSISDN válido Tigo con facturas pendientes
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
     And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"
@@ -49,7 +52,8 @@ Feature: HU008 Validación número Celular
 
   Scenario: Pasarela - Visualización de datos de línea Tigo con facturas pendientes
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso "3004434877" en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso "3004434877" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónicoM"
     And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"

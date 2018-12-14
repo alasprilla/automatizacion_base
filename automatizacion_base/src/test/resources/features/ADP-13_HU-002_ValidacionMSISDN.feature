@@ -14,7 +14,8 @@ Feature: HU002 Validación Teclas Especiales MSISDN
 
   Scenario Outline: Pasarela - Validación teclas especiales campo "Tu línea Tigo"
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And Presiono la tecla <tecla1>
     And Presiono la tecla <tecla2>
     And Presiono la tecla <tecla3>

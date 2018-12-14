@@ -8,7 +8,8 @@ Feature: HU003 Validación de Email
 
   Scenario Outline: Pasarela - Email sin usuario
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
@@ -25,7 +26,8 @@ Feature: HU003 Validación de Email
 
   Scenario Outline: Pasarela - Email sin dominio
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
@@ -44,7 +46,8 @@ Feature: HU003 Validación de Email
 
   Scenario Outline: Pasarela - Email con dominio invalido
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
@@ -59,7 +62,8 @@ Feature: HU003 Validación de Email
 
   Scenario Outline: Pasarela - Email terminado en punto (.)
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
@@ -76,7 +80,8 @@ Feature: HU003 Validación de Email
 
   Scenario Outline: Pasarela - Email valido
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso <msisdn> en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     And Espero 1 segundos
     Then el campo "ConsultarM" tiene el atributo "class" en el valor "--active"

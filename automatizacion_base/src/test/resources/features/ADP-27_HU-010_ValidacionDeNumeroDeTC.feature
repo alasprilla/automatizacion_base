@@ -7,7 +7,8 @@ Feature: HU010 Validación de número de TC
 
   Background: seleccion medio de pago
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
+    When doy clic en "Movil"
+    And ingreso "movil_msisdn con facturas" en el campo "Tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico M"
     And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"
