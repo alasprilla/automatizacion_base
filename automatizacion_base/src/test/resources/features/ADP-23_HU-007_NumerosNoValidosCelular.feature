@@ -11,7 +11,7 @@ Feature: HU007 Validación número Invalido Celular
     When doy clic en "Movil"
     And ingreso <letras> en el campo "Tu línea Tigo"
     And el campo "Tu línea Tigo" tiene el texto ""
-    And el campo "label error celular" tiene el texto "El número de línea solo debe tener números"
+    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo"
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
 
     Examples: 
@@ -36,7 +36,7 @@ Feature: HU007 Validación número Invalido Celular
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And doy clic en "Titulo facturas moviles"
-    Then el campo "label error celular" tiene el texto "El número de línea que ingresaste no es válida."
+    Then el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo."
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
     And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
