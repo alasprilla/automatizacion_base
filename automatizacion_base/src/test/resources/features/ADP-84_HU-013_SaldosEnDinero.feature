@@ -13,16 +13,17 @@ Feature: HU013_SaldosEnDinero
   Scenario: Mi Cuenta - Realizar recargas
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
-    And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
+    And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "pruebas2018" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido Ana" si es visible
+    And doy clic en "No Linea Arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Ana" si es visible
+    And doy clic en "Linea Arma tu Plan" si es visible
     And doy clic en "Saldos" si es visible
     And doy clic en "Recargar Mi Cuenta"
     Then llevará al formulario con el objeto "recarga"
@@ -31,16 +32,17 @@ Feature: HU013_SaldosEnDinero
   Scenario: Mi Cuenta - Transferir saldo
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
-    And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
+    And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "pruebas2018" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "No Linea Hibrido Mariana" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Mariana" si es visible
+    And doy clic en "No Linea Arma tu Plan" si es visible
     And doy clic en "Saldos" si es visible
     And doy clic en "Transferir"
     And ingreso "501" en el campo "Monto a Compartir"
