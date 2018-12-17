@@ -11,7 +11,7 @@ Feature: HU003 Validación de Email
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
-    Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo" tiene el texto "El correo electrónico no es correcto. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
     And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
@@ -29,7 +29,7 @@ Feature: HU003 Validación de Email
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
-    Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo" tiene el texto "El correo electrónico no es correcto. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
     And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
@@ -49,7 +49,7 @@ Feature: HU003 Validación de Email
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
-    Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo" tiene el texto "El correo electrónico no es correcto. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
     And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
@@ -65,7 +65,7 @@ Feature: HU003 Validación de Email
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
-    Then el campo "label error correo" tiene el texto "El correo electrónico que ingresaste no es válido. Verifícalo e intenta de nuevo."
+    Then el campo "label error correo" tiene el texto "El correo electrónico no es correcto. Verifícalo e intenta de nuevo."
     And el campo "label error correo" tiene el atributo "color" en el valor "rojo"
     And el campo "Consultar M" tiene el atributo "disabled" en el valor "true"
 
@@ -84,7 +84,7 @@ Feature: HU003 Validación de Email
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     And Espero 1 segundos
-    Then el campo "ConsultarM" tiene el atributo "class" en el valor "--active"
+    Then el campo "Consultar M" tiene el atributo "class" en el valor "--active"
 
     Examples: 
       | msisdn       | email                   |
