@@ -13,7 +13,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("tulineatigo", By.id("edit-candidate-number"));
 		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
 		ActionsUtil.objetosPut("labelerrorcelular", By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
-		ActionsUtil.objetosPut("labelerrorcorreo", By.xpath("//*[@id='content_right_forms_unified']/div/div[1]/span"));
+		ActionsUtil.objetosPut("labelerrorcorreo", By.xpath("//*[@id='content_right_mobile_unified']/div/div[1]/span"));
 		ActionsUtil.objetosPut("labelerrorcorreoh", By.xpath("//*[@id=\'content_right_forms_unified\']/div/span"));
 		ActionsUtil.objetosPut("consultarh", By.id("edit-consult-home"));
 		ActionsUtil.objetosPut("seleccionmediodepago", By.id("tigoune-payment-method-title"));
