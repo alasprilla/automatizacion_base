@@ -18,12 +18,13 @@ Para resolver las fallas presentadas
     And doy clic en "siguiente"
     And ingreso "Colombia2019" en el campo "Contrasena Gmail"
     And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No linea hibrido juanca" si es visible
+    And doy clic en "No linea hibrido" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea hibridojuanca" si es visible
+    And doy clic en "Linea hibrido" si es visible
     And doy clic en "Resumen" si es visible
     And doy clic en "Soporte Tecnico"
     And doy clic en "Centro de Ayuda"
@@ -40,12 +41,13 @@ Para resolver las fallas presentadas
     And doy clic en "siguiente"
     And ingreso "Colombia2019" en el campo "Contrasena Gmail"
     And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No linea hibrido juanca" si es visible
+    And doy clic en "No linea hibrido" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea hibridojuanca" si es visible
+    And doy clic en "Linea hibrido" si es visible
     And doy clic en "Resumen" si es visible
     And doy clic en "Soporte Tecnico"
     And doy clic en "tienda"

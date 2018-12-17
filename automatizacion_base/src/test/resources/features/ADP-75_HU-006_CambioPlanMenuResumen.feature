@@ -18,7 +18,6 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "siguiente"
     And ingreso "Colombia2019" en el campo "Contrasena Gmail"
     And doy clic en "Siguiente C"
-    #And doy clic en "Continuar Mi Cuenta"
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
@@ -36,8 +35,10 @@ Feature: HU006_CambioDePlanMenuResumen
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "Colombia2019" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "No Linea Prepago" si es visible
@@ -52,8 +53,10 @@ Feature: HU006_CambioDePlanMenuResumen
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "Colombia2019" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "No Linea Hibrido" si es visible
