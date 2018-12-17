@@ -19,11 +19,11 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("seleccionmediodepago", By.id("tigoune-payment-method-title"));
 		ActionsUtil.objetosPut("consultarm", By.id("edit-consult"));
 		ActionsUtil.objetosPut("consultarhclic", By.xpath("//*[@id='edit-consult-home' and (not(@disabled='disabled'))]"));
-		ActionsUtil.objetosPut("consultarmclic", By.xpath("//*[@id='edit-consult' and (not(@disabled='disabled'))]"));
+		ActionsUtil.objetosPut("consultarmclic", By.xpath("//*[@id='edit-consult-mobile' and (not(@disabled='disabled'))]"));
 		ActionsUtil.objetosPut("labelfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
 		ActionsUtil.objetosPut("listfacturas", By.xpath("//*[@id='content_list_invoices']"));
-		ActionsUtil.objetosPut("correoelectronicom", By.id("edit-email"));
-		ActionsUtil.objetosPut("correoelectronicoh", By.id("edit-email-fijo"));
+		ActionsUtil.objetosPut("correoelectronicom", By.id("edit-email-mobile"));
+		ActionsUtil.objetosPut("correoelectronicoh", By.id("edit-email-home"));
 		ActionsUtil.objetosPut("mensajedeerrormsisdn",
 				By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
 		ActionsUtil.objetosPut("mensajesinfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
