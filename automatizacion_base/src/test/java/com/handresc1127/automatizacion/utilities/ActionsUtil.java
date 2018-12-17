@@ -391,7 +391,7 @@ public class ActionsUtil {
 		WebElement element = driver.findElement(by);
 		String valueComboBox = element.getText();
 		assertThat(valueComboBox, CoreMatchers.containsString(valueContains));
-		String values[] = valueComboBox.split("\n");
+		String []  values= valueComboBox.split("\n");
 		int index = 0;
 		for (int i = 0; i < values.length; i++) {
 			if (values[i].contains(valueContains)) {
