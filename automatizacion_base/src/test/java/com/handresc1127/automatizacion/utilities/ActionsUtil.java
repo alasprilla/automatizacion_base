@@ -87,11 +87,11 @@ public class ActionsUtil {
 			sleepMiliseconds(100);
 		}
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
-		// driver.findElement(by).isDisplayed();
 
 		WebElement element = driver.findElement(by);
 		String originalStyle = element.getAttribute("style");
 		String modifyStyle = "border: 3px solid green;";
+		String comandoExecute= "arguments[0].setAttribute('style', arguments[1]);";
 		if (originalStyle.contains("border:")) {
 			int indexInicio = 7 + originalStyle.indexOf("border:");
 			String aux = originalStyle.substring(indexInicio);
@@ -105,9 +105,9 @@ public class ActionsUtil {
 		}
 		for (int i = 0; i < 2; i++) {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, modifyStyle);
+			js.executeScript(comandoExecute, element, modifyStyle);
 			sleepMiliseconds(15);
-			js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, originalStyle);
+			js.executeScript(comandoExecute, element, originalStyle);
 			sleepMiliseconds(5);
 		}
 	}
