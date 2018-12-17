@@ -253,8 +253,9 @@ public class ActionsUtil {
 		WebElement tableElement = driver.findElement(by);
 		List<WebElement> trCollection = tableElement.findElements(By.tagName("tr"));
 		String[][] tabla = new String[999][999];
-		int rowNum, colNum, colMax = 0;
-		rowNum = 0;
+		int rowNum=0; 
+		int colNum;
+		int colMax = 0;
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		for (WebElement trElement : trCollection) {
 			List<WebElement> tdCollection = trElement.findElements(By.tagName("td"));
@@ -286,8 +287,9 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
 		List<WebElement> childCollection = element.findElements(By.xpath("./*"));
 		String[][] tabla = new String[999][999];
-		int rowNum, colNum, colMax = 0;
-		rowNum = 0;
+		int rowNum=0; 
+		int colNum;
+		int colMax = 0;
 		boolean containInfo = false;
 		for (WebElement childElement : childCollection) {
 			List<WebElement> grandChildCollection = childElement.findElements(By.xpath("./*"));
