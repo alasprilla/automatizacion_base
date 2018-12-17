@@ -13,16 +13,18 @@ Feature: HU007_PagarFacturaMovilMenuResumen
   Scenario: Mi Cuenta - Pago factura línea pospago
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
-    And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
+    And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "pruebas2018" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido Ana" si es visible
+    And doy clic en "No Linea Hibrido" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Ana" si es visible
+    And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Resumen" si es visible
     And doy clic en "Pagar Factura"
     Then llevará al formulario con el objeto "Pagar tu Factura"
@@ -30,15 +32,17 @@ Feature: HU007_PagarFacturaMovilMenuResumen
   Scenario: Mi Cuenta - Pago de factura línea prepago
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
-    And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
+    And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "pruebas2018" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido Mariana" si es visible
+    And doy clic en "No Linea Prepago" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Mariana" si es visible
+    And doy clic en "Linea Prepago" si es visible
     And doy clic en "Resumen" si es visible
     Then el campo "Pagar Factura" no existe

@@ -10,15 +10,18 @@ Feature: HU019_ServiciosFijos
   Scenario: Mi Cuenta - Productos contratados
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
-    And ingreso "lopezanamaria1@hotmail.com" en el campo "Correo Mi Cuenta"
+    #And se quiere visualizar con resolucion "800" x "900"
+    And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
-    And ingreso "pruebas2018" en el campo "Contrasena"
-    And doy clic en "Continuar Mi Cuenta"
+    And doy clic en "siguiente"
+    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
+    And doy clic en "Siguiente C"
+    And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Casa Ana" si es visible
+    And doy clic en "No Linea fija" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Casa Ana" si es visible
+    And doy clic en "Linea Fija" si es visible
     And doy clic en "Servicios"
     Then llevará al formulario con el objeto "Productos Contratados"

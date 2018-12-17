@@ -19,14 +19,14 @@ Feature: HU008_DescargaDeFacturaMovil
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido Ana" si es visible
+    And doy clic en "No Linea Hibrido" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Ana" si es visible
+    And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Resumen" si es visible
     And doy clic en "Ultima Factura Pdf"
     And Espero 15 segundos
-    When abro en el navegador el archivo "8917610352.pdf"
+    When abro en el navegador el archivo "8949411062.pdf"
     And cerrar pestaña
 
   Scenario: Mi Cuenta - Descarga de factura en menú facturación
@@ -38,12 +38,12 @@ Feature: HU008_DescargaDeFacturaMovil
     And doy clic en "Continuar Mi Cuenta"
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido Ana" si es visible
+    And doy clic en "No Linea arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido Ana" si es visible
+    And doy clic en "Linea arma tu Plan" si es visible
     And doy clic en "Facturacion" si es visible
     And doy clic en "Ultima Factura Pdf"
     And Espero 15 segundos
-    When abro en el navegador el archivo "8917610352.pdf"
+    When abro en el navegador el archivo "8949411062.pdf"
     And cerrar pestaña
