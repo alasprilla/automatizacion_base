@@ -8,7 +8,8 @@ Feature: HU002 Validación Teclas Especiales MSISDN
 
   Scenario: Pasarela - Recarga de página tu línea tigo con F5
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
-    When doy clic en "Tu línea Tigo"
+    When doy clic en "Movil" 
+    And doy clic en "Tu línea Tigo"
     And Presiono la tecla "F5"
     Then La página se recarga
 
