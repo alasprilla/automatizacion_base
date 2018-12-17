@@ -175,7 +175,7 @@ public class ActionsUtil {
 		return false;
 	}
 
-	public static boolean existsElement(WebDriver driver, WebElement element) {
+	public static boolean existsElement(WebElement element) {
 		try {
 			if (element.isDisplayed())
 				return true;
@@ -191,7 +191,7 @@ public class ActionsUtil {
 		List<WebElement> elementsThatNotExists = driver.findElements(objeto);
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		for (WebElement element : elementsThatNotExists) {
-			if (existsElement(driver, element)) {
+			if (existsElement(element)) {
 				existAny = true;
 
 				String originalStyle = element.getAttribute("style");
