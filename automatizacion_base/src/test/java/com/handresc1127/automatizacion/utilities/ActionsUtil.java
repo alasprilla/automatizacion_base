@@ -63,11 +63,7 @@ public class ActionsUtil {
 	}
 
 	public static boolean objetosIsEmpty() {
-		if (objetosPage.isEmpty()) {
-			return true;
-		} else {
-			return false;
-		}
+		return objetosPage.isEmpty();
 	}
 
 	public static void setProperty(String property, String url) {
