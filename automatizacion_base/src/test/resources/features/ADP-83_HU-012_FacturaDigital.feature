@@ -31,7 +31,7 @@ PARA para recibir mi factura en mi correo electrónico
     And doy clic en "Impresa"
     And doy clic en "OK"
     And Espero 4 segundos
-    Then el campo "Tus datos de facturación" tiene el texto "Tus datos de facturación se han modificado correctamente."
+    Then el campo "Mensaje Confirmación" tiene el texto "Tus datos de facturación se han modificado correctamente."
 
   Scenario: Cambio a facturación Impresa
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
@@ -54,4 +54,4 @@ PARA para recibir mi factura en mi correo electrónico
     And doy clic en "Electronica"
     And doy clic en "OK"
     And Espero 4 segundos
-    Then el campo "Tus datos de facturación" tiene el texto "Tus datos de facturación se han modificado correctamente."
+    Then el campo "Mensaje Confirmación" tiene el texto "Tus datos de facturación se han modificado correctamente."

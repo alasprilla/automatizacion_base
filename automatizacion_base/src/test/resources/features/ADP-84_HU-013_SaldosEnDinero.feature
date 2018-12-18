@@ -51,4 +51,4 @@ Feature: HU013_SaldosEnDinero
     And ingreso "3006541273" en el campo "Número del destinatario"
     And doy clic en "OK"
     And doy clic en "Confirmar Transferencia"
-    Then el campo "Mensaje Transferencia" tiene el texto "La transferencia de saldo ha sido exitosa."
+    Then el campo "Mensaje Confirmación" tiene el texto "La transferencia de saldo ha sido exitosa."
