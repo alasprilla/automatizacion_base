@@ -48,8 +48,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 //	    "src/test/resources/features/ADP-82_HU-011_AgregarTarjetaServiciosMoviles.feature",	
 //		"src/test/resources/features/ADP-83_HU-012_FacturaDigital.feature",
 //		"src/test/resources/features/ADP-84_HU-013_SaldosEnDinero.feature",
-		"src/test/resources/features/ADP-85_HU-014_SoporteTecnico.feature",
+//		"src/test/resources/features/ADP-85_HU-014_SoporteTecnico.feature",
 //		"src/test/resources/features/ADP-86_HU-015_MejoraTuPlan.feature",
+		"src/test/resources/features/ADP-87_HU-016_DescargaFacturaServiciosFijos.feature"
 //		"src/test/resources/features/ADP-90_HU-017_AgregarTarjetaServiciosFijos.feature",
 //		"src/test/resources/features/ADP-91_HU-018_CambioDatosFacturacionServiciosFijos.feature",
 //		"src/test/resources/features/ADP-93_HU-019_ServiciosFijos.feature",

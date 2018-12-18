@@ -100,7 +100,7 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("soportetecnico", By.xpath("(*//a[contains(.,'Soporte técnico')])"));
 	    ActionsUtil.objetosPut("centrodeayuda", By.xpath("//*[@id=\'action_CENTRO DE AYUDA\']"));
 	    ActionsUtil.objetosPut("tienda", By.xpath("//*[@id=\'action_TIENDAS\']"));
-	    ActionsUtil.objetosPut("consumos", By.xpath("(*//a[contains(.,'Consumos')])"));
+	    ActionsUtil.objetosPut("historicopdf", By.xpath("//*[@id='main-content']/div[2]/div[3]/div/section[1]/div/div/div/table/tbody/tr[1]/td[4]/div/a"));
 	}
 	
 }
