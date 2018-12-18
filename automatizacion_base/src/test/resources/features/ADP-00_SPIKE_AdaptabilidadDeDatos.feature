@@ -12,7 +12,7 @@ Feature: SPIKE Adaptabilidad de datos
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
     And doy clic en "Consultar M clic"
-    Then clasificar el dato <msisdn> en "movil_msisdn con facturas" o en "movil_msisdn sin facturas"
+    Then clasificar el dato <msisdn> en "movil_msisdn con facturas" o en "Linea sin facturas"
 
     Examples: 
       | msisdn       |
@@ -29,7 +29,7 @@ Feature: SPIKE Adaptabilidad de datos
     And ingreso <documento> en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en "Consultar H clic"
-    Then clasificar el dato <documento> en "Hogar_numDocumento con facturas" o en "Hogar_numDocumento sin facturas"
+    Then clasificar el dato <documento> en "Hogar_numDocumento con facturas" o en "Linea sin facturas"
 
     Examples: 
       | documento    |

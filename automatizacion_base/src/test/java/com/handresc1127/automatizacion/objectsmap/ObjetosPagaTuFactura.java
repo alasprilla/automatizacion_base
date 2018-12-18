@@ -20,13 +20,12 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("consultarm", By.id("edit-consult-mobile"));
 		ActionsUtil.objetosPut("consultarhclic", By.xpath("//*[@id='edit-consult-home' and (not(@disabled='disabled'))]"));
 		ActionsUtil.objetosPut("consultarmclic", By.xpath("//*[@id='edit-consult-mobile' and (not(@disabled='disabled'))]"));
-		ActionsUtil.objetosPut("labelfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
+		ActionsUtil.objetosPut("lineasinfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
 		ActionsUtil.objetosPut("listfacturas", By.xpath("//*[@id='content_list_invoices']"));
 		ActionsUtil.objetosPut("correoelectronicom", By.id("edit-email-mobile"));
 		ActionsUtil.objetosPut("correoelectronicoh", By.id("edit-email-home"));
 		ActionsUtil.objetosPut("mensajedeerrormsisdn",
 				By.xpath("//*[@id='content_left_forms_unified']/div/div[1]/span"));
-		ActionsUtil.objetosPut("mensajesinfacturas", By.xpath("//*[@id='alert_main' and @style='display: block;']"));
 		ActionsUtil.objetosPut("tipodedocumento", By.id("edit-document-type"));
 		ActionsUtil.objetosPut("tarjetadecredito", By.id("payment-method-type-label-credit-payu"));
 		ActionsUtil.objetosPut("numerodetarjeta", By.id("edit-cardnumber"));
@@ -80,9 +79,7 @@ public class ObjetosPagaTuFactura {
 				"\"//*[@id='content_list_invoices' or @id='payment-method-type-label-credit-payu' or (@id='alert_main' and @style='display: block;')]\""));
 
 		ActionsUtil.objetosPut("movil_msisdnconfacturas",By.id("payment-method-type-label-credit-payu"));
-		ActionsUtil.objetosPut("movil_msisdnsinfacturas",By.xpath("//*[@id='alert_main' and @style='display: block;']"));
 		ActionsUtil.objetosPut("hogar_numdocumentoconfacturas",By.id("content_list_invoices"));
-		ActionsUtil.objetosPut("hogar_numdocumentosinfacturas",By.xpath("//*[@id='alert_main' and @style='display: block;']"));
 		ActionsUtil.objetosPut("celularcomprador",By.id("edit-buyer-phone"));
 		
 	}

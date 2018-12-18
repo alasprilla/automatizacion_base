@@ -29,13 +29,13 @@ Feature: HU008 Validación número Celular
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
     And doy clic en "Consultar M clic"
-    Then el campo "mensaje sin facturas" tiene el texto "No hemos encontrado facturas pendientes para este número de línea."
-    And el campo "mensaje sin facturas" tiene el atributo "background" en el valor "azul"
-    And el campo "mensaje sin facturas" tiene el atributo "color" en el valor "blanco"
+    Then el campo "Linea sin facturas" tiene el texto "No hemos encontrado facturas pendientes para este número de línea."
+    And el campo "Linea sin facturas" tiene el atributo "background" en el valor "azul"
+    And el campo "Linea sin facturas" tiene el atributo "color" en el valor "blanco"
 
     Examples: 
       | msisdn                      | email                 |
-      | "movil_msisdn sin facturas" | "ejemplo@pruebas.com" |
+      | "Linea sin facturas"        | "ejemplo@pruebas.com" |
 
   @CasoFeliz
   Scenario Outline: Pasarela - MSISDN válido Tigo con facturas pendientes
