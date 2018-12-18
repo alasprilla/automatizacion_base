@@ -10,7 +10,6 @@ Feature: HU019_ServiciosFijos
   Scenario: Mi Cuenta - Productos contratados
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
-    #And se quiere visualizar con resolucion "800" x "900"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
     And doy clic en "siguiente"

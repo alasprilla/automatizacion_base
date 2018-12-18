@@ -18,7 +18,6 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "siguiente"
     And ingreso "Colombia2019" en el campo "Contrasena Gmail"
     And doy clic en "Siguiente C"
-    #And doy clic en "Continuar Mi Cuenta"
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos

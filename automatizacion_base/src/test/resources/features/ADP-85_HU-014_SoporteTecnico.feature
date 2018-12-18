@@ -25,8 +25,9 @@ Para resolver las fallas presentadas
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea hibrido" si es visible
-    And doy clic en "Resumen" si es visible
-    And doy clic en "Soporte Tecnico"
+    And doy clic en "Administrar Servicios" si es visible
+    And doy clic en "Mejora Plan" si es visible
+    And doy clic en "Soporte Tecnico" si es visible
     And doy clic en "Centro de Ayuda"
     And voy a la pestaña "ultima"
     And lo llevará a la página "https://ayuda.tigoune.co/hc/es/sections/115001850127-Equipos"
@@ -49,7 +50,9 @@ Para resolver las fallas presentadas
     And Espero 1 segundos
     And doy clic en "Linea hibrido" si es visible
     And doy clic en "Resumen" si es visible
-    And doy clic en "Soporte Tecnico"
+    And doy clic en "Administrar Servicios" si es visible
+    And doy clic en "Mejora Plan" si es visible
+    And doy clic en "Soporte Tecnico" si es visible
     And doy clic en "tienda"
     And voy a la pestaña "ultima"
     And lo llevará a la página "https://www.tigo.com.co/tiendas"
