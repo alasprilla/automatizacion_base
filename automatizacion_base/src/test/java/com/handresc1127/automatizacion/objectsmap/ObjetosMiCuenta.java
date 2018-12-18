@@ -47,12 +47,10 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("consultar", By.xpath("//*[@id='findagenda']/div[2]/div[2]/button"));
 		ActionsUtil.objetosPut("mensajeerrordocumento", By.xpath("//*[@id='query-container']/section/div[1]/span[2]"));
 		ActionsUtil.objetosPut("visitaspendientes", By.xpath("//*[@id='schedule-visits-container']/div[2]/div[1]/div/p"));
-		ActionsUtil.objetosPut("consultapqr", 		By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
 		ActionsUtil.objetosPut("consultapqrtigo", 	By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[2]/p/a"));
 		ActionsUtil.objetosPut("consultapqrune", 	By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
 		ActionsUtil.objetosPut("iniciarsesion", By.xpath("//*[@id='top_menu_aside']/nav/ul/li/ul/li/a|//*[@id='account-mobile-menu']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("cambiarmiclave", By.xpath("//*[@id='main-content']/div[2]/div[7]/div/div/div/div/div[2]/a"));
-		ActionsUtil.objetosPut("consultaspqrune", By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[1]/p/a"));
 		ActionsUtil.objetosPut("pqrune", By.id("iframePQR"));
 		ActionsUtil.objetosPut("pqrtigo", By.xpath("//*[@id='formInicioPqr:panelBotonesInicio']/thead/tr/th/span"));
 		ActionsUtil.objetosPut("consultasic", By.xpath("//*[@id='main-content']/div[2]/div[9]/div/div/div/div/div/div/div/div[3]/p/a"));
@@ -70,7 +68,6 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("ultimafacturapdf", By.id("action_Última factura PDF"));
 	    
 	    ActionsUtil.objetosPut("servicios", By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[2]/a"));
-	    //ActionsUtil.objetosPut("servicios", By.xpath("//*[contains(@href,'servicios')]"));
 	    ActionsUtil.objetosPut("productoscontratados", By.xpath("//*[@id='main-content']/div[2]/div/div/section/div/div/div"));
 	    ActionsUtil.objetosPut("agregartarjeta", By.id("action_Agregar tarjeta"));
 	    ActionsUtil.objetosPut("agregartarjetadecredito", By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/h2"));
@@ -84,12 +81,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("ok", By.id("edit-submit"));
 	    ActionsUtil.objetosPut("mensajeconfirmacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("mejoraplan", By.xpath("//*[contains(@href,'mejora-tu-plan')]"));
-	    ActionsUtil.objetosPut("pospago5.3", By.xpath("//*[@id='compras-container']/section/h2"));
-	    ActionsUtil.objetosPut("pospago5.2", By.xpath("//*[@id='compras-container']/section/h2"));
-	    ActionsUtil.objetosPut("pospago5.1", By.xpath("//*[@id='compras-container']/section/h2"));
 	    ActionsUtil.objetosPut("impresa", By.xpath("//*[@id='edit-container']/div[3]/label"));
 	    ActionsUtil.objetosPut("activatufacturaelectronica", By.xpath("//*[@id='action_Activa tu factura electrónica']"));
-	    ActionsUtil.objetosPut("tusdatosdefacturacion", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("electronica", By.xpath("//*[@id=\'edit-container\']/div[1]/label"));
 	    ActionsUtil.objetosPut("administrarservicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[7]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[7]/a"));
 	    ActionsUtil.objetosPut("saldos", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[3]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[3]/a"));
@@ -98,7 +91,6 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("montoacompartir", By.id("edit-value-transfer"));
 	    ActionsUtil.objetosPut("numerodeldestinatario", By.id("edit-line-transfer"));
 	    ActionsUtil.objetosPut("confirmartransferencia", By.xpath("//*[contains(@id,'edit-next--')]"));
-	    ActionsUtil.objetosPut("mensajetransferencia", By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("pagarfactura", By.id("action_Pagar"));
 	    ActionsUtil.objetosPut("pagartufactura", By.xpath("//*[@id='main-content']/section/div/div/h2"));
 	    ActionsUtil.objetosPut("consultaramiasesor", By.xpath("//*[@id='asesor-container']/section/div/a"));

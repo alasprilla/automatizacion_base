@@ -10,7 +10,7 @@ PARA escoger el que más se ajusta a mis necesidades
     Background: Borrar Datos de Navegacion 
     And se borran cookies del navegador
 
-  Scenario Outline: Mejora tu plan
+  Scenario: Mejora tu plan
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -27,10 +27,4 @@ PARA escoger el que más se ajusta a mis necesidades
     And doy clic en "Linea hibrido" si es visible
     And doy clic en "Administrar Servicios" si es visible
     And doy clic en "Mejora Plan" si es visible
-    Then llevará al formulario con el objeto <Plan>
-    
-    Examples:
-    |   Plan      |
-    |"Pospago 5.3"| 
-    |"Pospago 5.2"|
-    |"Pospago 5.1"|
+    Then llevará al formulario con el objeto "Planes"
