@@ -10,7 +10,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
   Scenario: Recargas - Ingreso de número válido Tigo con deuda pendiente seleccionando valor mínimo de recargas
     Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
-    And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
+    And ingreso "msisdn con deuda" en el campo "Ingresa tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
     And doy clic en "3Mil"
     And doy clic en "recargar"
@@ -19,7 +19,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
   Scenario: Recargas - Ingreso de número válido Tigo con deuda pendiente seleccionando la opción de otro valor
     Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
-    And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
+    And ingreso "msisdn con deuda" en el campo "Ingresa tu línea Tigo"
     And doy clic en "otro valor"
     And Espero 1 segundos
     And doy clic en "otro valor"
@@ -31,7 +31,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
   Scenario Outline: Recargas - Ingreso de número válido Tigo con deuda pendiente seleccionando continuar
     Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
-    And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
+    And ingreso "msisdn con deuda" en el campo "Ingresa tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
     And doy clic en <valor>
     And doy clic en "recargar"
@@ -48,7 +48,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
   Scenario Outline: Recargas - Ingreso de número válido Tigo con deuda pendiente seleccionando Aumentar Recarga
     Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
     When doy clic en "Recarga"
-    And ingreso "3008911502" en el campo "Ingresa tu línea Tigo"
+    And ingreso "msisdn con deuda" en el campo "Ingresa tu línea Tigo"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico"
     And doy clic en <valor>
     And doy clic en "recargar"

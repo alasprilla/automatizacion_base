@@ -22,6 +22,8 @@ public final class DatosNegocio {
 		dataPut("movil_msisdnsinfacturas", "3003588240");
 		dataPut("hogar_numdocumentoconfacturas", "552716");
 		dataPut("hogar_numdocumentosinfacturas", "71770656");
+		dataPut("msisdncondeuda", "3008911502");
+		dataPut("msisdnsindeuda", "3008812932");
 		dataPut("thismm()", String.valueOf(now.get(Calendar.MONTH) + 1));
 		dataPut("thisyyyy()", String.valueOf(now.get(Calendar.YEAR)));
 		now.add(Calendar.MONTH, 1);

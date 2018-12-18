@@ -63,6 +63,10 @@ public class ObjetosRecargasPaquetes {
 		ActionsUtil.objetosPut("contrasenagmail", By.xpath("//*[@id='password']/div[1]/div/div[1]/input"));
 		ActionsUtil.objetosPut("login", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/table/tbody/tr[3]/td/button[1]/div/div"));
 		ActionsUtil.objetosPut("iniciarcongmail", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/table/tbody/tr[3]/td/div[1]/table/tbody/tr[1]/td/div[1]/div[1]/div[2]"));
-		ActionsUtil.objetosPut("ultimomensaje", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/div[4]/div/div[2]/div/div[3]/div/div[2]/div/div[3]/div/div[2]/div[1]/div/div/div[1]/span/span[2]"));	
+		ActionsUtil.objetosPut("ultimomensaje", By.xpath("/html/body/div[4]/div[2]/div/div[2]/div/div[4]/div/div[2]/div/div[3]/div/div[2]/div/div[3]/div/div[2]/div[1]/div/div/div[1]/span/span[2]"));
+		
+		ActionsUtil.objetosPut("msisdncondeuda", By.xpath("//*[@id='debt']/div/div/div[1]/div[3]/div[2]/span"));
+		ActionsUtil.objetosPut("msisdnsindeuda", By.id("tigoune-payment-method-title"));
+		
 	}
 }
