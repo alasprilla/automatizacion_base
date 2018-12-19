@@ -41,10 +41,10 @@ Feature: HU013_SaldosEnDinero
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido Mariana" si es visible
+    And doy clic en "No Linea Prepago" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Arma tu Plan" si es visible
+    And doy clic en "Linea Prepago" si es visible
     And doy clic en "Saldos" si es visible
     And doy clic en "Transferir"
     And ingreso "501" en el campo "Monto a Compartir"

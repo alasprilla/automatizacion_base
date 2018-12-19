@@ -85,7 +85,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("activatufacturaelectronica", By.xpath("//*[@id='action_Activa tu factura electrónica']"));
 	    ActionsUtil.objetosPut("electronica", By.xpath("//*[@id=\'edit-container\']/div[1]/label"));
 	    ActionsUtil.objetosPut("administrarservicios", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[7]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[7]/a"));
-	    ActionsUtil.objetosPut("saldos", By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[3]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[3]/a"));
+	    ActionsUtil.objetosPut("saldos", By.xpath("(*//a[contains(.,'Saldos')])"));
 	    ActionsUtil.objetosPut("recargarmicuenta", By.id("action_Recargar"));
 	    ActionsUtil.objetosPut("transferir", By.id("action_Transferir"));
 	    ActionsUtil.objetosPut("montoacompartir", By.id("edit-value-transfer"));
