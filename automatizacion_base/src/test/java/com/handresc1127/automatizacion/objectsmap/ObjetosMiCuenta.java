@@ -9,7 +9,7 @@ public class ObjetosMiCuenta {
 	public ObjetosMiCuenta () {
 		
 		
-		
+		/*------------------------------------------- PANTALLA 1 ---------------------------------------------------*/
 		ActionsUtil.objetosPut("ingresaramicuenta", 		By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a|//*[@id='account-mobile-selector']"));
 		ActionsUtil.objetosPut("iniciarsesion", 			By.xpath("//*[@id='top_menu_aside']/nav/ul/li/ul/li/a|//*[@id='account-mobile-menu']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("ingresar", 					By.xpath("//*[@id='main-content']/div[2]/div[2]/div/div/div/section/div[3]/a[2]"));
@@ -25,6 +25,20 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("consultapqrtigo", 			By.xpath("//*[contains(@href,'/GestionPqrOnLineWEB')]"));
 		ActionsUtil.objetosPut("consultasic", 				By.xpath("//*[contains(@href,'/consultaCUNSIC')]"));
 		ActionsUtil.objetosPut("nuestrastiendas", 			By.xpath("//*[contains(@href,'/tiendas')]"));
+		/*----------------------------------------------------------------------------------------------------------*/
+		/*------------------------------------------- PANTALLA 2 ---------------------------------------------------*/
+		/*----------------------------------------------------------------------------------------------------------*/
+		ActionsUtil.objetosPut("seleccionmsisdn", 			By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
+		ActionsUtil.objetosPut("lineaarmatuplan1", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Arma tu Plan - Mi linea Tigo')])[3]"));
+		ActionsUtil.objetosPut("nolineaarmatuplan1", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Arma tu Plan - Mi linea Tigo'))])"));
+		ActionsUtil.objetosPut("lineaarmatuplan", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Arma tu Plan - Mi linea Tigo')])[4]"));
+		ActionsUtil.objetosPut("nolineaarmatuplan", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Arma tu Plan - Mi linea Tigo'))])"));
+		ActionsUtil.objetosPut("lineaprepago", 	        	By.xpath("((//*[@id='lines'])//a[contains(.,'Prepago - Mi linea Tigo')])"));
+		ActionsUtil.objetosPut("nolineaprepago", 	  	  	By.xpath("((//*[@id='lines'])//a[not(contains(.,'Prepago - Mi linea Tigo'))])"));
+		ActionsUtil.objetosPut("lineahibrido",   			By.xpath("((//*[@id='lines'])//a[contains(.,'Hibrido - Mi linea Tigo')])"));
+		ActionsUtil.objetosPut("nolineahibrido", 			By.xpath("((//*[@id='lines'])//a[not(contains(.,'Hibrido - Mi linea Tigo'))])"));
+		ActionsUtil.objetosPut("lineafija",            	 	By.xpath("((//*[@id='lines'])//a[contains(.,'CL 61 # 56 - 51 IN 1701')])"));
+		ActionsUtil.objetosPut("nolineafija",           	By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 61 # 56 - 51 IN 1701'))])"));
 		/*----------------------------------------------------------------------------------------------------------*/
 		
 		ActionsUtil.objetosPut("correomicuenta", 			By.id("idEmail"));
@@ -48,16 +62,6 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("montoacompartir", 			By.id("edit-value-transfer"));
 	    ActionsUtil.objetosPut("numerodeldestinatario", 	By.id("edit-line-transfer"));
 	    ActionsUtil.objetosPut("numerodocumento", 			By.id("edit-document-number"));
-		ActionsUtil.objetosPut("seleccionmsisdn", 			By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
-		ActionsUtil.objetosPut("lineaarmatuplan1", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Arma tu Plan - Mi linea Tigo')])[3]"));
-		ActionsUtil.objetosPut("lineaarmatuplan", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Arma tu Plan - Mi linea Tigo')])[4]"));
-		ActionsUtil.objetosPut("nolineaarmatuplan", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Arma tu Plan - Mi linea Tigo'))])"));
-		ActionsUtil.objetosPut("lineaprepago", 	        	By.xpath("((//*[@id='lines'])//a[contains(.,'Prepago - Mi linea Tigo')])"));
-		ActionsUtil.objetosPut("nolineaprepago", 	  	  	By.xpath("((//*[@id='lines'])//a[not(contains(.,'Prepago - Mi linea Tigo'))])"));
-		ActionsUtil.objetosPut("lineahibrido",   			By.xpath("((//*[@id='lines'])//a[contains(.,'Hibrido - Mi linea Tigo')])"));
-		ActionsUtil.objetosPut("nolineahibrido", 			By.xpath("((//*[@id='lines'])//a[not(contains(.,'Hibrido - Mi linea Tigo'))])"));
-		ActionsUtil.objetosPut("lineafija",            	 	By.xpath("((//*[@id='lines'])//a[contains(.,'CL 61 # 56 - 51 IN 1701')])"));
-		ActionsUtil.objetosPut("nolineafija",           	By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 61 # 56 - 51 IN 1701'))])"));
 		ActionsUtil.objetosPut("usuario", 					By.xpath("//*[@id='top_menu_aside']/nav/ul/li/a"));
 		ActionsUtil.objetosPut("cerrarsesion", 				By.xpath("//*[@id='top_menu_aside']/nav/ul/li/ul/li[2]/a"));
 		ActionsUtil.objetosPut("resumen", 					By.xpath("(*//a[contains(.,'Resumen')])"));
