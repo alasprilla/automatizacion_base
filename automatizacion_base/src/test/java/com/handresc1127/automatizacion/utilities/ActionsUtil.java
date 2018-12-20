@@ -121,6 +121,16 @@ public class ActionsUtil {
 
 	public static void presionarTecla(WebDriver driver, By by, String tecla) {
 		WebElement element = driver.findElement(by);
+		List<WebElement> elementsToClicked = driver.findElements(by);
+		for (WebElement element_ : elementsToClicked) {
+			try {
+				if (element_.isDisplayed()) {
+					element=element_;
+					break;
+				}
+			} catch (Exception e) {
+			}
+		}
 		switch (ActionsUtil.textoMinusculasSinEspacios(tecla)) {
 		case "f5":
 			element.sendKeys(Keys.F5);

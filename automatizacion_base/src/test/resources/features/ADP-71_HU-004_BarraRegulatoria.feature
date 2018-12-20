@@ -8,14 +8,14 @@ Feature: HU004_Barra Regulatoria
 
   Scenario: Consulta/Radica PQR para UNE
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When doy clic en "Consulta PQR UNE"
+    When doy clic en "Consulta PQR UNE" si es visible
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "PQR UNE"
     And cerrar pestaña
 
   Scenario: Consulta/Radica PQR Tigo
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When doy clic en "Consulta PQR TIGO"
+    When doy clic en "Consulta PQR TIGO" si es visible
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "PQR TIGO"
     And cerrar pestaña
@@ -23,7 +23,7 @@ Feature: HU004_Barra Regulatoria
   Scenario: Consulta ante la SIC
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When Presiono la tecla "Avanzar Página" sobre "Consulta SIC"
-    And doy clic en "Consulta SIC"
+    And doy clic en "Consulta SIC" si es visible
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "SIC"
     And cerrar pestaña
@@ -31,7 +31,7 @@ Feature: HU004_Barra Regulatoria
   Scenario: Conoce nuestras Tiendas
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     And Presiono la tecla "Avanzar Página" sobre "Nuestras Tiendas"
-    When doy clic en "Nuestras Tiendas"
+    When doy clic en "Nuestras Tiendas" si es visible
     And voy a la pestaña "ultima"
     Then llevará al formulario con el objeto "tiendas"
     And cerrar pestaña
