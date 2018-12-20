@@ -104,6 +104,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("administrarservicios", 		By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[7]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[7]/a"));
 	    ActionsUtil.objetosPut("servicios",					By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[2]/a"));
 		ActionsUtil.objetosPut("realizarregistrodeequipo", 	By.xpath("/html/body/content/div[2]/div/div/section/div/div/div/div/div/div/a"));
+	    ActionsUtil.objetosPut("referenciadepago", By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div/div[5]/div"));
 	}
 	
 }
