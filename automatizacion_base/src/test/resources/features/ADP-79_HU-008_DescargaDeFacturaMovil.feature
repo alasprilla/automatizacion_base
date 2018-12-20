@@ -26,9 +26,11 @@ Feature: HU008_DescargaDeFacturaMovil
     And Espero 1 segundos
     And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Resumen" si es visible
+    And guardo el texto de "Referencia de pago" como "txt referencia de pago"
+    And concateno "txt referencia de pago" con ".pdf" y se guarda en "txt referencia de pago"
     And doy clic en "Ultima Factura Pdf"
     And Espero 15 segundos
-    When abro en el navegador el archivo "8949411062.pdf"
+    When abro en el navegador el archivo "txt referencia de pago"
     And cerrar pestaña
 
   Scenario: Mi Cuenta - Descarga de factura en menú facturación
@@ -45,9 +47,11 @@ Feature: HU008_DescargaDeFacturaMovil
     And doy clic en "No Linea arma tu Plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea arma tu Plan" si es visible
+    And doy clic en "Linea arma tu Plan 1" si es visible
     And doy clic en "Facturacion" si es visible
+    And guardo el texto de "Referencia de pago" como "txt referencia de pago"
+    And concateno "txt referencia de pago" con ".pdf" y se guarda en "txt referencia de pago"
     And doy clic en "Ultima Factura Pdf"
     And Espero 15 segundos
-    When abro en el navegador el archivo "8949411062.pdf"
+    When abro en el navegador el archivo "txt referencia de pago"
     And cerrar pestaña

@@ -235,6 +235,7 @@ public class PageDefault extends PageObject {
 	}
 
 	public void abrirArchivo(String archivo) {
+		archivo = DatosNegocio.dataGet(archivo);
 		String homePath = System.getProperty("user.home");
 		Path downloadPath = Paths.get(System.getProperty("user.home"), "Downloads");
 		String currentPath = System.getProperty("user.dir");
@@ -249,30 +250,35 @@ public class PageDefault extends PageObject {
 		ActionsUtil.goToWebSide(getDriver(), currentPath);
 		ActionsUtil.sleepSeconds(1);
 		errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+		if (!errorOpen) {
+			file = new File(currentPath.replace("file:///", ""));
+		}
 		if (errorOpen) {
 			ActionsUtil.goToWebSide(getDriver(), homePath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-		}else {
-			file = new File(currentPath.replace("file:///", ""));
+			if (!errorOpen){
+				file = new File(homePath.replace("file:///", ""));
+			}
 		}
 		if (errorOpen) {
 			ActionsUtil.goToWebSide(getDriver(), downloadsPath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-		}else {
-			file = new File(homePath.replace("file:///", ""));
+			if (!errorOpen){
+				file = new File(downloadsPath.replace("file:///", ""));
+			}
 		}
+		
 		if (errorOpen) {
 			ActionsUtil.goToWebSide(getDriver(), dDiskDownloadsPath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-		}else {
-			file = new File(downloadsPath.replace("file:///", ""));
+			if(!errorOpen) {
+				file = new File(dDiskDownloadsPath.replace("file:///", ""));
+			}
 		}
-		if(!errorOpen) {
-			file = new File(dDiskDownloadsPath.replace("file:///", ""));
-		}
+
 		LOGGER.info("HOME: "+homePath);
 		LOGGER.info("CURRENT: "+currentPath);
 		LOGGER.info("DOWNLOAD: "+downloadsPath);
@@ -290,5 +296,20 @@ public class PageDefault extends PageObject {
 		sharedObjet(objeto);
 		String subString =ActionsUtil.getSubString(getDriver(),getObjetoToCliked(),ini,fin);
 		DatosNegocio.dataPut(storage, subString);
+	}
+
+	public void guardarString(String objeto, String datokey) {
+		sharedObjet(objeto);
+		String datoValue = ActionsUtil.getText(getDriver(), getObjetoToCliked());
+		if (datoValue.isEmpty()) {
+			datoValue = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
+		}
+		DatosNegocio.dataPut(datokey, datoValue);
+	}
+
+	public void concatenar(String string1, String string2, String datakey) {
+		string1 = DatosNegocio.dataGet(string1);
+		string2 = DatosNegocio.dataGet(string2);
+		DatosNegocio.dataPut(datakey, string1 + string2);
 	}
 }

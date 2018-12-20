@@ -181,5 +181,15 @@ public class DefDefault {
 		pagePagaFact.cambiarPestana("segunda");
 		pagePagaFact.obtenerSubString("ultimomensaje", 0, 4, codigoVerificacion);
 	}
+	
+	@Given("^guardo el texto de \"([^\"]*)\" como \"([^\"]*)\"$")
+	public void guardo_el_texto_de_como(String objeto, String dato) {
+		pagePagaFact.guardarString(objeto,dato);
+	}
 
+	@Given("^concateno \"([^\"]*)\" con \"([^\"]*)\" y se guarda en \"([^\"]*)\"$")
+	public void concateno_con_y_se_guarda_en(String string1, String string2, String datakey) {
+		
+		pagePagaFact.concatenar(string1,string2,datakey);
+	}
 }
