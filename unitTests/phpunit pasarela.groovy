@@ -7,7 +7,7 @@ job("phpunit pasarela") {
 				name('metis')
 				url('ssh://git@code.tigocloud.net/diffusion/137/metis.git')
 				credentials("e220c410-6ce3-4c0c-b7bc-1a14eeeb1d6c")
-				branch("*/master")
+				branch("*/dev")
               	extensions {
               		relativeTargetDirectory('metis')
               	}
@@ -18,7 +18,7 @@ job("phpunit pasarela") {
 				name('transaccionales-co')
 				url('ssh://git@code.tigocloud.net/diffusion/TRXCO/transaccionales-co.git')
 				credentials("e220c410-6ce3-4c0c-b7bc-1a14eeeb1d6c")
-				branch("*/master")
+				branch("*/dev")
               	extensions {
               		relativeTargetDirectory('transaccionales-co')
               	}
@@ -29,7 +29,7 @@ job("phpunit pasarela") {
 				name('tigoselfcareregional')
 				url('ssh://git@code.tigocloud.net/diffusion/84/tigoselfcareregional.git')
 				credentials("e220c410-6ce3-4c0c-b7bc-1a14eeeb1d6c")
-				branch("*/master")
+				branch("*/dev")
               	extensions {
               		relativeTargetDirectory('tigoselfcareregional')
               	}
