@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- TODO set checkForUnintentionallyCoveredCode="true" once https://www.drupal.org/node/2626832 is resolved. -->
+<!-- PHPUnit expects functional tests to be run with either a privileged user
+ or your current system user. See core/tests/README.md and
+ https://www.drupal.org/node/2116263 for details.
+-->
+<phpunit bootstrap="tests/bootstrap.php" colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutChangesToGlobalState="false"
+         checkForUnintentionallyCoveredCode="false">
+  <!-- TODO set printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter" once
+   https://youtrack.jetbrains.com/issue/WI-24808 is resolved. Drupal provides a
+   result printer that links to the html output results for functional tests.
+   Unfortunately, this breaks the output of PHPStorm's PHPUnit runner. However, if
+   using the command line you can add
+   - -printer="\Drupal\Tests\Listeners\HtmlOutputPrinter" to use it (note there
+   should be no spaces between the hyphens).
+  -->
+  <php>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
+    <!-- Set error reporting to E_ALL. -->
+    <ini name="error_reporting" value="32767"/>
+    <!-- Do not limit the amount of memory tests take to run. -->
+    <ini name="memory_limit" value="-1"/>
+    <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
+    <env name="SIMPLETEST_BASE_URL" value=""/>
+    <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
+    <env name="SIMPLETEST_DB" value="mysql://root:toor@localhost/transaccional"/>
+    <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
+    <env name="BROWSERTEST_OUTPUT_DIRECTORY" value=""/>
+  </php>
+  <testsuites>
+    <testsuite name="unit">
+      <file>./tests/TestSuites/UnitTestSuite.php</file>
+    </testsuite>
+    <testsuite name="kernel">
+      <file>./tests/TestSuites/KernelTestSuite.php</file>
+    </testsuite>
+    <testsuite name="functional">
+      <file>./tests/TestSuites/FunctionalTestSuite.php</file>
+    </testsuite>
+    <testsuite name="functional-javascript">
+      <file>./tests/TestSuites/FunctionalJavascriptTestSuite.php</file>
+    </testsuite>
+  </testsuites>
+  <listeners>
+    <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener">
+    </listener>
+    <!--<listener class="\Drupal\Tests\Listeners\DrupalStandardsListener">
+    </listener>
+    <listener class="\Drupal\Tests\Listeners\DrupalComponentTestListener">
+    </listener>-->
+  </listeners>
+  <!-- Filter for coverage reports. -->
+  <filter>
+    <whitelist>
+      <directory>./includes</directory>
+      <directory>./lib</directory>
+      <directory>./modules</directory>
+      <directory>../modules</directory>
+      <directory>../sites</directory>
+      <!-- By definition test classes have no tests. -->
+      <exclude>
+        <directory suffix="Test.php">./</directory>
+        <directory suffix="TestBase.php">./</directory>
+        <directory suffix=".php">.</directory>
+        <directory suffix=".php">../modules/contrib/</directory>
+        <directory suffix=".php">../modules/custom/example_module/</directory>
+        <directory suffix=".php">../modules/custom/footer_simple/</directory>
+        <directory suffix=".php">../modules/custom/gulp-tasks/</directory>
+        <directory suffix=".php">../modules/custom/recaptcha/</directory>
+        <directory suffix=".php">../modules/custom/storage_front/</directory>
+        <directory suffix=".php">../modules/custom/tigo/</directory>
+        <directory suffix=".php">../modules/custom/tigo_activation/</directory>
+        <directory suffix=".php">../modules/custom/tigo_helpers/</directory>
+        <directory suffix=".php">../modules/custom/tigo_logs/</directory>
+        <directory suffix=".php">../modules/custom/tigo_paquete/</directory>
+        <directory suffix=".php">../modules/custom/tigo_recharge/</directory>
+        <directory suffix=".php">../modules/custom/tigo_vtex_api/</directory>
+        <directory suffix=".php">../modules/custom/tigo_vtex_manage_orders/</directory>
+        <directory suffix=".php">../modules/custom/tigoapi/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_clicktocall/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_coverage_map/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_enrichment/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_invoice_home/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_payment_mobile/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_paymentgateway/</directory>
+        <directory suffix=".php">../modules/custom/tigoune_segment/</directory>
+        <directory suffix=".php">../modules/custom/tigo_recargas_paquetes</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_api_payu</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_channels</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_fulfillment</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_gateway</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_gateway_soap_client</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_credit_card</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_debit_card</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_other_pay_methods</directory>
+        <directory suffix=".php">../modules/custom/tigoune_transactions/tigoune_utils</directory>
+        <directory suffix=".php">../profiles</directory>
+        <directory suffix=".php">../sites</directory>
+        <directory suffix=".php">../themes</directory>
+        <directory suffix=".php">../vendor</directory>
+      </exclude>
+    </whitelist>
+  </filter>
+  <groups>
+    <include>
+      <group>tigoune_tokenization</group>
+      <group>tigoune_otp</group>
+      <group>tigoune_pay_nequi</group>
+      <group>tigoune_payment_unified</group>
+    </include>
+  </groups>
+  <logging>
+    <log type="coverage-html" target="../../outPut/codeCoverage" charset="UTF-8"
+         yui="true" highlight="true"
+         lowUpperBound="50" highLowerBound="80"/>
+  </logging>
+</phpunit>
