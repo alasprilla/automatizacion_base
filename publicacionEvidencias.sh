@@ -48,7 +48,7 @@ ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'rm -rf /var/www/metis/atd
 ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'mv /var/www/metis/atdd/1/* /var/www/metis/atdd/2/'
 ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'mkdir -p /var/www/metis/atdd/1'
 ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'rm -rf /var/www/metis/atdd/1/*'
-chmod --recursive a+r /var/www/metis/atdd/*
+ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'chmod --recursive a+r /var/www/metis/atdd/*'
 
 echo ""
 echo ""
