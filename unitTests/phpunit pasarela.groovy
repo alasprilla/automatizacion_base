@@ -45,7 +45,9 @@ job("phpunit pasarela") {
 
 
 	steps {
-      shell('chmod a+x metis/unitTests/ejecucionUnitTests.sh')
+	  shell('chmod a+x metis/unitTests/ejecucionUnitTests_transaccionales.sh')
+      shell('metis/unitTests/ejecucionUnitTests.sh')
+      shell('chmod a+x metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
       shell('metis/unitTests/ejecucionUnitTests.sh')
     }
 	
