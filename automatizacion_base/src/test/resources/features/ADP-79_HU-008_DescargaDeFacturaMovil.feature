@@ -44,7 +44,7 @@ Feature: HU008_DescargaDeFacturaMovil
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea arma tu Plan" si es visible
+    And doy clic en "No Linea arma tu Plan 1" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea arma tu Plan 1" si es visible

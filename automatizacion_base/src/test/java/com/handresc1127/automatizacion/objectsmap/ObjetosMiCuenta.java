@@ -29,10 +29,10 @@ public class ObjetosMiCuenta {
 		/*------------------------------------------- PANTALLA 2 ---------------------------------------------------*/
 		/*----------------------------------------------------------------------------------------------------------*/
 		ActionsUtil.objetosPut("seleccionmsisdn", 			By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
-		ActionsUtil.objetosPut("lineaarmatuplan1", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Arma tu Plan - Mi linea Tigo')])[3]"));
-		ActionsUtil.objetosPut("nolineaarmatuplan1", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Arma tu Plan - Mi linea Tigo'))])"));
-		ActionsUtil.objetosPut("lineaarmatuplan", 			By.xpath("((//*[@id='lines'])//a[contains(.,'Arma tu Plan - Mi linea Tigo')])[4]"));
-		ActionsUtil.objetosPut("nolineaarmatuplan", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'Arma tu Plan - Mi linea Tigo'))])"));
+		ActionsUtil.objetosPut("lineaarmatuplan1", 			By.xpath("((//*[@id='lines'])//a[contains(.,'3008819838')])"));
+		ActionsUtil.objetosPut("nolineaarmatuplan1", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'3008819838'))])"));
+		ActionsUtil.objetosPut("lineaarmatuplan", 			By.xpath("((//*[@id='lines'])//a[contains(.,'3008913170')])"));
+		ActionsUtil.objetosPut("nolineaarmatuplan", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'3008913170'))])"));
 		ActionsUtil.objetosPut("lineaprepago", 	        	By.xpath("((//*[@id='lines'])//a[contains(.,'Prepago - Mi linea Tigo')])"));
 		ActionsUtil.objetosPut("nolineaprepago", 	  	  	By.xpath("((//*[@id='lines'])//a[not(contains(.,'Prepago - Mi linea Tigo'))])"));
 		ActionsUtil.objetosPut("lineahibrido",   			By.xpath("((//*[@id='lines'])//a[contains(.,'Hibrido - Mi linea Tigo')])"));
