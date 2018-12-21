@@ -114,8 +114,9 @@
     </include>
   </groups>
   <logging>
-    <log type="coverage-html" target="../../outPut/codeCoverage" charset="UTF-8"
-         yui="true" highlight="true"
-         lowUpperBound="50" highLowerBound="80"/>
+    <log type="coverage-html" target="../../outPut/transaccionales-co/codeCoverage" charset="UTF-8"
+         yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+	<log type="coverage-clover" target="../../outPut/transaccionales-co/codeCoverage/coverage.xml"/>
+     <log type="junit" target="../../outPut/transaccionales-co/codeCoverage/logfile.xml"/>
   </logging>
 </phpunit>
