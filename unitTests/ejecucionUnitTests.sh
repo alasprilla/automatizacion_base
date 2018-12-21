@@ -16,7 +16,7 @@ echo "##################################N@o£X£&%o£££É#####################
 echo "######################################æë£ë§N###################################" 
 echo "###############################################################################" 
 echo ""
-ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'cp metis\unitTests\phpunit_transaccionales.xml transaccionales-co/core/phpunit.xml'
+ssh -i ../../Metis-WebReports.priv metis@190.248.48.5 'cp metis/unitTests/phpunit_transaccionales.xml transaccionales-co/core/phpunit.xml'
 
 echo ""
 echo ""
