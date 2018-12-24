@@ -104,7 +104,24 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("administrarservicios", 		By.xpath("/html/body/div[3]/div[2]/div/div/nav/div/div/ul/li[7]/a|/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[7]/a"));
 	    ActionsUtil.objetosPut("servicios",					By.xpath("/html/body/div[3]/header/div[2]/div/div/nav/div/div/div/div[1]/div/div[2]/a"));
 		ActionsUtil.objetosPut("realizarregistrodeequipo", 	By.xpath("/html/body/content/div[2]/div/div/section/div/div/div/div/div/div/a"));
-	    ActionsUtil.objetosPut("referenciadepago", By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div/div[5]/div"));
+	    ActionsUtil.objetosPut("referenciadepago",          By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div/div[5]/div"));
+	    ActionsUtil.objetosPut("consumos",                  By.xpath("//*[contains(@href,'consumos')]"));
+	    ActionsUtil.objetosPut("fechayhora",                By.xpath("//*[@id='eee1e42e-841e-449b-b8b7-2c52039d5531']/table/thead/tr/th[1]"));
+	    ActionsUtil.objetosPut("dia", 	                    By.xpath("//*[@id='eee1e42e-841e-449b-b8b7-2c52039d5531']/table/thead/tr/th[2]"));
+	    ActionsUtil.objetosPut("consumo", 	                By.xpath("//*[@id='eee1e42e-841e-449b-b8b7-2c52039d5531']/table/thead/tr/th[3]"));
+	    ActionsUtil.objetosPut("fechainicialllamadas",      By.id("edit-date-from"));
+	    ActionsUtil.objetosPut("fechafinalllamadas",        By.id("edit-date-till"));
+	    ActionsUtil.objetosPut("diadelcalendariollamadas",  By.xpath("//*[contains(a,'03')]"));
+	    ActionsUtil.objetosPut("diadelcalendariofinalllamadas", By.xpath("/html/body/div[6]/div/div/div[3]/div[1]/table/tbody/tr[4]/td[5]"));
+	    ActionsUtil.objetosPut("okfecha",                   By.xpath("//*[contains(@class,'dtp-btn-ok')]"));
+	    ActionsUtil.objetosPut("okfechafinal",              By.xpath("/html/body/div[6]/div/div[2]/button[4]"));
+	    ActionsUtil.objetosPut("verllamadas",               By.id("edit-send"));
+	    ActionsUtil.objetosPut("vermensajes",               By.id("edit-send--2"));
+	    ActionsUtil.objetosPut("fechayhorallamadas",        By.xpath("//*[@id='1f51b09e-e764-43e7-bc57-28a6aec0fb9f']/table/thead/tr/th[1]"));
+	    ActionsUtil.objetosPut("fechayhoramensajes",        By.xpath("//*[@id='2a3307a1-264f-4e52-b7fe-12ccd8c689df']/table/thead/tr/th[1]"));
+	    ActionsUtil.objetosPut("destinollamadas",           By.xpath("//*[@id='1f51b09e-e764-43e7-bc57-28a6aec0fb9f']/table/thead/tr/th[2]"));
+	    ActionsUtil.objetosPut("destinomensajes",           By.xpath("//*[@id='2a3307a1-264f-4e52-b7fe-12ccd8c689df']/table/thead/tr/th[2]"));
+	    ActionsUtil.objetosPut("duracionllamadas",          By.xpath("//*[@id='1f51b09e-e764-43e7-bc57-28a6aec0fb9f']/table/thead/tr/th[3]"));
 	}
 	
 }
