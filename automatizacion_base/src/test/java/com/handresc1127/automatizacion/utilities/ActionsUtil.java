@@ -626,6 +626,7 @@ public class ActionsUtil {
 		String currenturl = driver.getCurrentUrl();
 		urlExpected = urlExpected.split("\\?")[0];
 		currenturl = currenturl.split("\\?")[0];
+		currenturl=replaceHost(currenturl, urlExpected);
 		assertEquals(urlExpected, currenturl);
 	}
 
