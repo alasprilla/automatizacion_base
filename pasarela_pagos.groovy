@@ -71,7 +71,6 @@ job("Pasarela_pagos") {
       shell('chmod a+x metis/publicacionEvidencias.sh')
 	  shell('chmod a+x metis/unitTests/ejecucionUnitTests_transaccionales.sh')
 	  shell('chmod a+x metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
-	  
       shell('metis/publicacionEvidencias.sh')
       shell('metis/unitTests/ejecucionUnitTests_transaccionales.sh')
       shell('metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
