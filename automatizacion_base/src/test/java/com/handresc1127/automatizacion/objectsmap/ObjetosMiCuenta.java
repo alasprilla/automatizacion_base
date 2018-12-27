@@ -106,9 +106,9 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("realizarregistrodeequipo", 	By.xpath("/html/body/content/div[2]/div/div/section/div/div/div/div/div/div/a"));
 	    ActionsUtil.objetosPut("referenciadepago",          By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div/div[5]/div"));
 	    ActionsUtil.objetosPut("consumos",                  By.xpath("//*[contains(@href,'consumos')]"));
-	    ActionsUtil.objetosPut("fechayhora",                By.xpath("//*[@id='eee1e42e-841e-449b-b8b7-2c52039d5531']/table/thead/tr/th[1]"));
-	    ActionsUtil.objetosPut("dia", 	                    By.xpath("//*[@id='eee1e42e-841e-449b-b8b7-2c52039d5531']/table/thead/tr/th[2]"));
-	    ActionsUtil.objetosPut("consumo", 	                By.xpath("//*[@id='eee1e42e-841e-449b-b8b7-2c52039d5531']/table/thead/tr/th[3]"));
+	    ActionsUtil.objetosPut("fechayhoradatos",           By.xpath("//*[contains(text(),'Datos')]/..//*[contains(text(),'Fecha y Hora')]"));
+	    ActionsUtil.objetosPut("diadatos", 	                By.xpath("//*[contains(text(),'Datos')]/..//*[contains(text(),'Día')]"));
+	    ActionsUtil.objetosPut("consumodatos", 	            By.xpath("//*[contains(text(),'Datos')]/..//*[contains(text(),'Consumo')]"));
 	    ActionsUtil.objetosPut("fechainicialllamadas",      By.id("edit-date-from"));
 	    ActionsUtil.objetosPut("fechafinalllamadas",        By.id("edit-date-till"));
 	    ActionsUtil.objetosPut("diadelcalendariollamadas",  By.xpath("//*[contains(a,'03')]"));
@@ -117,11 +117,13 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("okfechafinal",              By.xpath("/html/body/div[6]/div/div[2]/button[4]"));
 	    ActionsUtil.objetosPut("verllamadas",               By.id("edit-send"));
 	    ActionsUtil.objetosPut("vermensajes",               By.id("edit-send--2"));
-	    ActionsUtil.objetosPut("fechayhorallamadas",        By.xpath("//*[@id='1f51b09e-e764-43e7-bc57-28a6aec0fb9f']/table/thead/tr/th[1]"));
-	    ActionsUtil.objetosPut("fechayhoramensajes",        By.xpath("//*[@id='2a3307a1-264f-4e52-b7fe-12ccd8c689df']/table/thead/tr/th[1]"));
-	    ActionsUtil.objetosPut("destinollamadas",           By.xpath("//*[@id='1f51b09e-e764-43e7-bc57-28a6aec0fb9f']/table/thead/tr/th[2]"));
-	    ActionsUtil.objetosPut("destinomensajes",           By.xpath("//*[@id='2a3307a1-264f-4e52-b7fe-12ccd8c689df']/table/thead/tr/th[2]"));
-	    ActionsUtil.objetosPut("duracionllamadas",          By.xpath("//*[@id='1f51b09e-e764-43e7-bc57-28a6aec0fb9f']/table/thead/tr/th[3]"));
+	    ActionsUtil.objetosPut("fechayhorallamadas",        By.xpath("//*[contains(text(),'LLamadas')]/..//*[contains(text(),'Fecha y Hora')]"));
+	    ActionsUtil.objetosPut("fechayhoramensajes",        By.xpath("//*[contains(text(),'Mensajes')]/..//*[contains(text(),'Fecha y Hora')]"));
+	    ActionsUtil.objetosPut("destinollamadas",           By.xpath("//*[contains(text(),'LLamadas')]/..//*[contains(text(),'Destino')]"));
+	    ActionsUtil.objetosPut("destinomensajes",           By.xpath("//*[contains(text(),'Mensajes')]/..//*[contains(text(),'Destino')]"));
+	    ActionsUtil.objetosPut("duracionllamadas",          By.xpath("//*[contains(text(),'LLamadas')]/..//*[contains(text(),'Duración')]"));
+	    ActionsUtil.objetosPut("mesanteriorfechainicial",   By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div[1]"));
+	    ActionsUtil.objetosPut("mesanteriorfechafinal",     By.xpath("/html/body/div[6]/div/div[1]/div[1]/div[1]/div[1]"));
 	}
 	
 }
