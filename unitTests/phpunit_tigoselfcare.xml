@@ -65,15 +65,17 @@
         <directory suffix="Test.php">./</directory>
         <directory suffix="TestBase.php">./</directory>
         <directory suffix=".php">.</directory>
-        <directory suffix=".php">../modules/contrib/</directory>
-        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/home_co/</directory>
-        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/tigoapi_process_co/</directory>
-        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/tol_co/</directory>
-        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/tigoune_scheduling/src/libs/</directory>
 		<directory suffix=".php">../profiles</directory>
         <directory suffix=".php">../sites</directory>
         <directory suffix=".php">../themes</directory>
         <directory suffix=".php">../vendor</directory>
+        <directory suffix=".php">../modules/contrib/</directory>
+		<!-- 
+		<directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/home_co/</directory>
+        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/tigoapi_process_co/</directory>
+        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/tol_co/</directory>
+        <directory suffix=".php">../sites/tigoselfcareregional.co/modules/custom/tigoune_scheduling/src/libs/</directory>
+		-->
       </exclude>
      </whitelist>
   </filter>
