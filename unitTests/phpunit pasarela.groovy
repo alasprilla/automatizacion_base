@@ -51,4 +51,28 @@ job("phpunit pasarela") {
       shell('metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
     }
 	
+	configure {
+		node->
+		node / builders << 'hudson.plugins.sonar.SonarRunnerBuilder' {
+			project('')
+			properties('project.settings=metis/sonarTransaccionales.properties')
+			javaOpts('')
+			additionalArguments('')
+			jdk('')
+			task('')
+		}
+	}
+
+	configure {
+		node->
+		node / builders << 'hudson.plugins.sonar.SonarRunnerBuilder' {
+			project('')
+			properties('project.settings=metis/sonarSelfcare.properties')
+			javaOpts('')
+			additionalArguments('')
+			jdk('')
+			task('')
+		}
+	}
+	
 }
