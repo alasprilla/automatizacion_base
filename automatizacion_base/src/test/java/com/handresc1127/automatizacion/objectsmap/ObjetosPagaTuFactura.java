@@ -8,7 +8,7 @@ public class ObjetosPagaTuFactura {
 
 	public ObjetosPagaTuFactura() {
 		ActionsUtil.objetosPut("hogar", By.xpath("//*[@id='edit-radios']/div[1]/label"));
-		ActionsUtil.objetosPut("movil", By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[1]/div/div/div[2]/p"));
+		ActionsUtil.objetosPut("movil", By.xpath("//*[@id='edit-radios']/div[2]/label"));
 		ActionsUtil.objetosPut("numerodedocumento", By.id("edit-document"));
 		ActionsUtil.objetosPut("tulineatigo", By.id("edit-candidate-number"));
 		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
