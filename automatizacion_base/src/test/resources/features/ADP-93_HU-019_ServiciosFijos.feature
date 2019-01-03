@@ -22,5 +22,5 @@ Feature: HU019_ServiciosFijos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
-    And doy clic en "Servicios"
+    And doy clic en "Servicios" si es visible
     Then llevará al formulario con el objeto "Productos Contratados"
