@@ -431,6 +431,7 @@ public class ActionsUtil {
 
 	public static void compareText(WebDriver driver, By by, String valorEsperado) {
 		String valorObtenido = getText(driver, by);
+		valorEsperado=valorEsperado.replace("\\\"", "\"");
 		assertEquals(valorEsperado, valorObtenido);
 	}
 

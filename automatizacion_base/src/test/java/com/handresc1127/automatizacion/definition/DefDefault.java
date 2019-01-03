@@ -80,7 +80,7 @@ public class DefDefault {
 		pagePagaFact.validarEscribir(objeto, txtIngresado);
 	}
 
-	@Then("^el campo \"([^\"]*)\" tiene el texto \"([^\"]*)\"$")
+	@Then("^el campo \"([^\"]*)\" tiene el texto \"(.*)\"$")
 	public void el_campo_tiene_el_texto(String objeto, String textoEsperado) {
 		pagePagaFact.compararTxt(objeto, textoEsperado);
 	}
