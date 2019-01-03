@@ -8,8 +8,7 @@
 <phpunit bootstrap="tests/bootstrap.php" colors="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
-         beStrictAboutChangesToGlobalState="false"
-         checkForUnintentionallyCoveredCode="false">
+         beStrictAboutChangesToGlobalState="true">
   <!-- TODO set printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter" once
    https://youtrack.jetbrains.com/issue/WI-24808 is resolved. Drupal provides a
    result printer that links to the html output results for functional tests.
@@ -48,10 +47,10 @@
   <listeners>
     <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener">
     </listener>
-    <!--<listener class="\Drupal\Tests\Listeners\DrupalStandardsListener">
+    <listener class="\Drupal\Tests\Listeners\DrupalListener">
     </listener>
-    <listener class="\Drupal\Tests\Listeners\DrupalComponentTestListener">
-    </listener>-->
+	
+	
   </listeners>
   <!-- Filter for coverage reports. -->
   <filter>
@@ -116,9 +115,9 @@
     </include>
   </groups>
   <logging>
-    <log type="coverage-html" target="../../outPut/transaccionales-co/codeCoverage" charset="UTF-8"
-         yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
-	<log type="coverage-clover" target="../../outPut/transaccionales-co/codeCoverage/coverage.xml"/>
+     <log type="coverage-html" target="../../outPut/transaccionales-co/codeCoverage" charset="UTF-8"
+          yui="true" highlight="true" lowUpperBound="50" highLowerBound="80"/>
+	 <log type="coverage-clover" target="../../outPut/transaccionales-co/codeCoverage/coverage.xml"/>
      <log type="junit" target="../../outPut/transaccionales-co/codeCoverage/logfile.xml"/>
   </logging>
 </phpunit>
