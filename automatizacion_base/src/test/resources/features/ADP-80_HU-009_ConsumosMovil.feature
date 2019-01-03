@@ -51,7 +51,6 @@ Feature: HU009_ConsumosMovil
     And doy clic en "Linea Arma tu Plan" si es visible
     And doy clic en "Consumos" si es visible
     And doy clic en "Fecha Inicial Llamadas"
-    And doy clic en "Mes Anterior Fecha Inicial"
     And doy clic en "Día del Calendario Llamadas"
     And doy clic en "Ok fecha"
     And doy clic en "Fecha Final Llamadas"
@@ -110,7 +109,6 @@ Scenario Outline: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calend
     And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Consumos" si es visible
     And doy clic en "Fecha Inicial Llamadas"
-    And doy clic en "Mes Anterior Fecha Inicial"
     And doy clic en "Día del Calendario Llamadas"
     And doy clic en "Ok fecha"
     And doy clic en "Fecha Final Llamadas"
