@@ -58,7 +58,8 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-93_HU-019_ServiciosFijos.feature",
 		"src/test/resources/features/ADP-92_ResponsiveDePantallasRecargas.feature",
 		"src/test/resources/features/ADP-109_HU-024_DetallesServiciosFijos.feature",
-		"src/test/resources/features/ADP-101_PruebaAdherenciaDePaquetes.feature"}, 
+		"src/test/resources/features/ADP-101_PruebaAdherenciaDePaquetes.feature",
+		"src/test/resources/features/ADP-108_HU023_CambiarDMZ.feature"}, 
 
 tags = {"" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 						"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
