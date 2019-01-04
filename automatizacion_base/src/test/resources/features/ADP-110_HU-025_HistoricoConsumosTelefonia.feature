@@ -21,10 +21,10 @@ Para conocer el detalle de los consumos del servicio de telefonía
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea fija" si es visible
+    And doy clic en "No Linea fija con Telefono" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Fija" si es visible
+    And doy clic en "Linea Fija con Telefono" si es visible
     And doy clic en "Servicios" si es visible 
     And doy clic en "Producto Telefonia detalles"
     And doy clic en "Historico de Consumo"
@@ -41,12 +41,12 @@ Para conocer el detalle de los consumos del servicio de telefonía
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea fija" si es visible
+    And doy clic en "No Linea fija con Telefono" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Fija" si es visible
+    And doy clic en "Linea Fija con Telefono" si es visible
     And doy clic en "Servicios" si es visible 
     And doy clic en "Producto Telefonia detalles"
     And doy clic en "Historico de Consumo"
-    And doy clic en "Ver detalle" 
+    And doy clic en "Ver detalle" si es visible
    Then llevará al formulario con el objeto "Fecha consumo"

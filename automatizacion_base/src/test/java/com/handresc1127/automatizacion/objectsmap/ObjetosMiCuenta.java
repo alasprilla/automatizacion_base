@@ -39,6 +39,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("nolineahibrido", 			By.xpath("((//*[@id='lines'])//a[not(contains(.,'Hibrido - Mi linea Tigo'))])"));
 		ActionsUtil.objetosPut("lineafija",            	 	By.xpath("((//*[@id='lines'])//a[contains(.,'CL 61 # 56 - 51 IN 1701')])"));
 		ActionsUtil.objetosPut("nolineafija",           	By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 61 # 56 - 51 IN 1701'))])"));
+		ActionsUtil.objetosPut("lineafijacontelefono",  	By.xpath("((//*[@id='lines'])//a[contains(.,'CL 65 SUR # 42 B - 14 IN 1610')])"));
+		ActionsUtil.objetosPut("nolineafijacontelefono",    By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 65 SUR # 42 B - 14 IN 1610'))])"));
 		/*----------------------------------------------------------------------------------------------------------*/
 		/*--------------------------------------- menu options -----------------------------------------------------*/
 		ActionsUtil.objetosPut("resumen", 					By.xpath("(*//a[contains(.,'Resumen')])"));
@@ -142,9 +144,9 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("estadocadapqr",	 			By.xpath("//*[@id='pqr-container']//*[@ng-repeat='pqr in pqrs']"));
 	    ActionsUtil.objetosPut("estadospqrs",	 			By.xpath("//*[@id='pqr-container']"));
 //Pendientes por xpath
-	    ActionsUtil.objetosPut("detalleconsumo",            By.xpath("//*[@id='detalle-consumo']"));
-	    ActionsUtil.objetosPut("verdetalle",                By.xpath("//*[@id='ver-detalle']"));
-	    ActionsUtil.objetosPut("fechaconsumo",              By.xpath("//*[@id='fecha-consumo']"));
+	    ActionsUtil.objetosPut("detalleconsumo",            By.xpath("//*[@id='table_group_month']"));
+	    ActionsUtil.objetosPut("verdetalle",                By.xpath("//*[@id='table_group_month']//*[contains(@value,'Ver Detalle')]"));
+	    ActionsUtil.objetosPut("fechaconsumo",              By.xpath("//*[@id='table_group_day']/form/div[1]/table/tbody/tr[1]/td[1]/div/span"));
 	}
 	
 }
