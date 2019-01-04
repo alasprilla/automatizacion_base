@@ -48,5 +48,6 @@ Para conocer el detalle de los consumos del servicio de telefonía
     And doy clic en "Servicios" si es visible 
     And doy clic en "Producto Telefonia detalles"
     And doy clic en "Historico de Consumo"
+    Then llevará al formulario con el objeto "Detalle consumo" 
     And doy clic en "Ver detalle" si es visible
-   Then llevará al formulario con el objeto "Fecha consumo"
+   	Then llevará al formulario con el objeto "Fecha consumo"
