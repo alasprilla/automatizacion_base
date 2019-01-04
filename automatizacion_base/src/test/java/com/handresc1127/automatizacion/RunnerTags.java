@@ -61,7 +61,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-101_PruebaAdherenciaDePaquetes.feature",
 		"src/test/resources/features/ADP-108_HU-023_CambiarDMZ.feature",
 		"src/test/resources/features/ADP-110_HU-025_HistoricoConsumosTelefonia.feature",
-		"src/test/resources/features/ADP-111_HU-026_Consulta de PQR.feature" },
+		"src/test/resources/features/ADP-111_HU-026_ConsultaDePQR.feature" },
 
 		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
