@@ -1,6 +1,6 @@
 #Author: Henry Andres Correa Correa
 #Keywords Summary :
-@issue:ADP-108 @MiCuenta @Debug
+@issue:ADP-108 @MiCuenta
 Feature: HU023_CambiarDMZ
   
   YO como usuario de mi cuenta Tigo 
