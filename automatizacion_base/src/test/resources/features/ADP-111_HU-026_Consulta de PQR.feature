@@ -24,5 +24,6 @@ Feature: HU026_Consulta de PQR
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
     And doy clic en "Consulta PQR" si es visible
-		Then llevará al formulario con el objeto "Estados PQR"
-  
+    And Espero 1 segundos
+		Then llevará al formulario con el objeto "Estados PQRs"
+		And Espero a que el numero de elementos de "Estado cada pqr" sea ">=" que 1

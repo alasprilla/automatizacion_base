@@ -139,7 +139,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("informaciondedispositivos", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/span"));
 	    ActionsUtil.objetosPut("productotelefoniadetalles", By.xpath("//*[@class='product telefonia']//*[@id='action_Detalles']"));
 	    ActionsUtil.objetosPut("historicodeconsumo",        By.xpath("//*[contains(@href,'/hogar/servicios/historico/consumo/')]"));
-	    ActionsUtil.objetosPut("estadospqr",	 				By.xpath("//*[@id='pqr-container']"));
+	    ActionsUtil.objetosPut("estadocadapqr",	 			By.xpath("//*[@id='pqr-container']//*[@ng-repeat='pqr in pqrs']"));
+	    ActionsUtil.objetosPut("estadospqrs",	 			By.xpath("//*[@id='pqr-container']"));
 	}
 	
 }

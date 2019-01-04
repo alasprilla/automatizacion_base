@@ -37,10 +37,15 @@ public class DefDefault {
 		pagePagaFact.validarPagRecargada();
 	}
 
+	@Given("^Espero a que el numero de elementos de \"([^\"]*)\" sea \"([^\"]*)\" que (\\d+)$")
+	public void espero_a_que_el_numero_de_elementos_de_sea_que(String objeto, String condicion, int cantidad) {
+		pagePagaFact.esperarElementos(objeto, condicion, cantidad);
+	}
+
 	// Implementación: "ADP-3_HU-001-ValidacionTC"
 	@Given("^Estoy en la página de selección de formas de pago con el tipo \"([^\"]*)\" seleccionado$")
 	public void estoy_en_la_página_de_selección_de_formas_de_pago_con_el_tipo_seleccionado(String objeto) {
-		pagePagaFact.esperarElementos("Formas de pago", ">", 3);
+		espero_a_que_el_numero_de_elementos_de_sea_que("Formas de pago", ">", 3);
 		pagePagaFact.clic(objeto);
 		pagePagaFact.elementoVisible("Forma Pago Seleccionada");
 	}
@@ -181,15 +186,15 @@ public class DefDefault {
 		pagePagaFact.cambiarPestana("segunda");
 		pagePagaFact.obtenerSubString("ultimomensaje", 0, 4, codigoVerificacion);
 	}
-	
+
 	@Given("^guardo el texto de \"([^\"]*)\" como \"([^\"]*)\"$")
 	public void guardo_el_texto_de_como(String objeto, String dato) {
-		pagePagaFact.guardarString(objeto,dato);
+		pagePagaFact.guardarString(objeto, dato);
 	}
 
 	@Given("^concateno \"([^\"]*)\" con \"([^\"]*)\" y se guarda en \"([^\"]*)\"$")
 	public void concateno_con_y_se_guarda_en(String string1, String string2, String datakey) {
-		
-		pagePagaFact.concatenar(string1,string2,datakey);
+
+		pagePagaFact.concatenar(string1, string2, datakey);
 	}
 }
