@@ -28,7 +28,7 @@ Para conocer el detalle de los consumos del servicio de telefonía
     And doy clic en "Servicios" si es visible 
     And doy clic en "Producto Telefonia detalles"
     And doy clic en "Historico de Consumo"
-   Then llevará al formulario con el objeto "mostrará el card con el detalle de los minutos consumidos en los últimos 3 meses" *Pendiente por Xpath*
+   Then llevará al formulario con el objeto "Detalle consumo" 
    
     Scenario: Mi Cuenta - Detalle del Histórico de consumos
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
@@ -48,5 +48,5 @@ Para conocer el detalle de los consumos del servicio de telefonía
     And doy clic en "Servicios" si es visible 
     And doy clic en "Producto Telefonia detalles"
     And doy clic en "Historico de Consumo"
-    And doy clic en "Ver detalle"     *Pendiente por Xpath*
-   Then llevará al formulario con el objeto "mostrará el histórico de consumo detallado con fecha y cantidad de minutos consumidos"  *Pendiente por Xpath*
+    And doy clic en "Ver detalle" 
+   Then llevará al formulario con el objeto "Fecha consumo"

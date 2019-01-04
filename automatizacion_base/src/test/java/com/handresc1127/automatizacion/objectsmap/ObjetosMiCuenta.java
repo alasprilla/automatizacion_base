@@ -141,6 +141,10 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("historicodeconsumo",        By.xpath("//*[contains(@href,'/hogar/servicios/historico/consumo/')]"));
 	    ActionsUtil.objetosPut("estadocadapqr",	 			By.xpath("//*[@id='pqr-container']//*[@ng-repeat='pqr in pqrs']"));
 	    ActionsUtil.objetosPut("estadospqrs",	 			By.xpath("//*[@id='pqr-container']"));
+//Pendientes por xpath
+	    ActionsUtil.objetosPut("detalleconsumo",            By.xpath("//*[@id='detalle-consumo']"));
+	    ActionsUtil.objetosPut("verdetalle",                By.xpath("//*[@id='ver-detalle']"));
+	    ActionsUtil.objetosPut("fechaconsumo",              By.xpath("//*[@id='fecha-consumo']"));
 	}
 	
 }
