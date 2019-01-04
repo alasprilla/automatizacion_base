@@ -136,6 +136,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("numerosuscripcionproducto", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/div[1]/div[2]/div/div[2]/span"));
 	    ActionsUtil.objetosPut("direccionubicacionproducto",By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/div[2]/div/div[1]/span"));
 	    ActionsUtil.objetosPut("informaciondedispositivos", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/span"));
+	    ActionsUtil.objetosPut("productotelefoniadetalles", By.xpath("//*[@class='product telefonia']//*[@id='action_Detalles']"));
+	    ActionsUtil.objetosPut("historicodeconsumo",        By.xpath("//*[contains(@href,'/hogar/servicios/historico/consumo/')]"));
 	}
 	
 }
