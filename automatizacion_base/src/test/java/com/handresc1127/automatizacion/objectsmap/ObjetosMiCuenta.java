@@ -46,6 +46,7 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("saldos", 					By.xpath("//*[contains(@href,'/movil/saldos')]"));
 		ActionsUtil.objetosPut("servicios",					By.xpath("//*[contains(@href,'/hogar/servicios')]"));
 	    ActionsUtil.objetosPut("administrarservicios", 		By.xpath("//*[contains(@href,'/miscuentas')]"));
+	    ActionsUtil.objetosPut("consultapqr", 				By.xpath("//*[contains(@href,'/mis-pqr')]"));
 	    ActionsUtil.objetosPut("mejoraplan", 				By.xpath("//*[contains(@href,'/movil/mejora-tu-plan')]"));
 	    ActionsUtil.objetosPut("soportetecnico", 			By.xpath("//*[contains(@href,'/movil/soporte-tecnico')]"));
 	    /*-------------------------- mensajes de confirmacion y de errores -----------------------------------------*/
@@ -138,6 +139,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("informaciondedispositivos", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/span"));
 	    ActionsUtil.objetosPut("productotelefoniadetalles", By.xpath("//*[@class='product telefonia']//*[@id='action_Detalles']"));
 	    ActionsUtil.objetosPut("historicodeconsumo",        By.xpath("//*[contains(@href,'/hogar/servicios/historico/consumo/')]"));
+	    ActionsUtil.objetosPut("estadospqr",	 				By.xpath("//*[@id='pqr-container']"));
 	}
 	
 }
