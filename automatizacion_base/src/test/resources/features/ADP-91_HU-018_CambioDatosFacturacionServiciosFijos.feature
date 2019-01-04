@@ -22,7 +22,7 @@ Feature: HU018_CambioDatosFacturacionServiciosFijos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
-    And doy clic forzado en "Facturación"
+    And doy clic en "Facturación" si es visible
     And doy clic en "Modificar Facturación"
     And doy clic en "Documento"
     And doy clic en "CC"
