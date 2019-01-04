@@ -23,7 +23,7 @@ Para conocer la información y el detalle de los productos
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
     And doy clic en "Servicios" si es visible 
-    And doy clic en "Detalles Internet" 
+    And doy clic en "Producto Internet Detalles" 
    Then llevará al formulario con el objeto <Detalle Internet>
    
        Examples: 
@@ -48,7 +48,7 @@ Para conocer la información y el detalle de los productos
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
     And doy clic en "Servicios" si es visible
-    And doy clic en "Detalles Televisión"
+    And doy clic en "Producto Televisión Detalles"
     Then llevará al formulario con el objeto <Detalle Television>
     
     Examples: 

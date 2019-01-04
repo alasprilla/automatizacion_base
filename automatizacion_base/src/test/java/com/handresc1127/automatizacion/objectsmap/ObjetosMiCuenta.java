@@ -131,8 +131,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("duracionllamadas",          By.xpath("//*[contains(text(),'LLamadas')]/..//*[contains(text(),'Duración')]"));
 	    ActionsUtil.objetosPut("mesanteriorfechainicial",   By.xpath("/html/body/div[4]/div/div/div[1]/div[1]/div[1]"));
 	    ActionsUtil.objetosPut("mesanteriorfechafinal",     By.xpath("/html/body/div[6]/div/div[1]/div[1]/div[1]/div[1]"));
-	    ActionsUtil.objetosPut("detallesinternet",          By.xpath("/html/body/div[3]/div[2]/div/section/div/div[2]/div/div/section/div/div/div/div[1]/div[1]/div/div[2]/div/div[1]/div"));
-	    ActionsUtil.objetosPut("detallestelevision",        By.xpath("/html/body/div[3]/div[2]/div/section/div/div[2]/div/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/div[1]/div"));
+	    ActionsUtil.objetosPut("productotelevisiondetalles",By.xpath("//*[@class='product television']//*[@id='action_Detalles']"));
 	    ActionsUtil.objetosPut("planproducto",              By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/div[1]/div[2]/div/div[1]/span"));
 	    ActionsUtil.objetosPut("numerosuscripcionproducto", By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/div[1]/div[2]/div/div[2]/span"));
 	    ActionsUtil.objetosPut("direccionubicacionproducto",By.xpath("//*[@id=\"main-content\"]/div[2]/div/div/section[2]/div/div/div[1]/div/div[2]/div/div[1]/span"));
