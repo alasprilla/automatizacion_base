@@ -239,10 +239,10 @@ public class PageDefault extends PageObject {
 		String homePath = System.getProperty("user.home");
 		Path downloadPath = Paths.get(System.getProperty("user.home"), "Downloads");
 		String currentPath = System.getProperty("user.dir");
-		currentPath = "file:///" + currentPath + '\\' + archivo;
-		homePath = "file:///" + homePath + '\\' + archivo;
-		String downloadsPath = "file:///" + downloadPath + '\\' + archivo;
-		String dDiskDownloadsPath = "file:///D:\\Downloads" + '\\' + archivo;
+		currentPath = "file:///" + currentPath + '/' + archivo;
+		homePath = "file:///" + homePath + '/' + archivo;
+		String downloadsPath = "file:///" + downloadPath + '/' + archivo;
+		String dDiskDownloadsPath = "file:///D:/Downloads" + '/' + archivo;
 
 		By chromeErrFile = By.xpath("//*[@id=\"error-information-popup-content\"]/div[2]");
 		boolean errorOpen = false;
