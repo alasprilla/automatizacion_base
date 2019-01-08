@@ -10,7 +10,7 @@ Feature: HU009_ConsumosMovil
   Background: Borrar Datos de Navegacion
     And se borran cookies del navegador
 
-  Scenario Outline: Mi Cuenta - Consumos Datos
+  Scenario: Mi Cuenta - Consumos Datos
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -26,15 +26,11 @@ Feature: HU009_ConsumosMovil
     And Espero 1 segundos
     And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Consumos" si es visible
-    And llevará al formulario con el objeto <detalles>
+    And llevará al formulario con el objeto "Fecha y Hora Datos"
+    And llevará al formulario con el objeto "Día Datos"
+    And llevará al formulario con el objeto "Consumo Datos"
 
-    Examples: 
-      | detalles             |
-      | "Fecha y Hora Datos" |
-      | "Día Datos"          |
-      | "Consumo Datos"      |
-
-  Scenario Outline: Mi Cuenta - Consumos llamadas Seleccionando Fecha del Calendario
+  Scenario: Mi Cuenta - Consumos llamadas Seleccionando Fecha del Calendario
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -58,15 +54,11 @@ Feature: HU009_ConsumosMovil
     And doy clic en "Día del Calendario final Llamadas"
     And doy clic en "Ok fecha Final"
     And doy clic en "Ver Llamadas"
-    And llevará al formulario con el objeto <detalles llamadas>
+    And llevará al formulario con el objeto "Fecha y Hora llamadas"
+    And llevará al formulario con el objeto "Destino llamadas"
+    And llevará al formulario con el objeto "Duración llamadas"
 
-    Examples: 
-      | detalles llamadas       |
-      | "Fecha y Hora llamadas" |
-      | "Destino llamadas"      |
-      | "Duración llamadas"     |
-
-Scenario Outline: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calendario
+Scenario: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calendario
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -83,16 +75,11 @@ Scenario Outline: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calend
     And doy clic en "Linea Arma tu Plan" si es visible
     And doy clic en "Consumos" si es visible
     And doy clic en "Ver Llamadas"
-    And llevará al formulario con el objeto <detalles llamadas>
-
-    Examples: 
-      | detalles llamadas       |
-      | "Fecha y Hora llamadas" |
-      | "Destino llamadas"      |
-      | "Duración llamadas"     |
+    And llevará al formulario con el objeto "Fecha y Hora llamadas"
+    And llevará al formulario con el objeto "Destino llamadas"
+    And llevará al formulario con el objeto "Duración llamadas"
       
-      
-  Scenario Outline: Mi Cuenta - Consumos Mensajes Seleccionando Fecha del Calendario
+  Scenario: Mi Cuenta - Consumos Mensajes Seleccionando Fecha del Calendario
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -117,14 +104,10 @@ Scenario Outline: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calend
     And doy clic en "Ok fecha final"
     And Presiono la tecla "Avanzar Página" sobre "Ver Mensajes"
     And doy clic en "Ver Mensajes"
-    And llevará al formulario con el objeto <detalles Mensajes>
-
-    Examples: 
-      | detalles Mensajes       |
-      | "Fecha y Hora Mensajes" |
-      | "Destino Mensajes"      |
+    And llevará al formulario con el objeto "Fecha y Hora Mensajes"
+    And llevará al formulario con el objeto "Destino Mensajes"
       
- Scenario Outline: Mi Cuenta - Consumos Mensajes sin seleccionar Fecha del Calendario
+ Scenario: Mi Cuenta - Consumos Mensajes sin seleccionar Fecha del Calendario
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -140,12 +123,8 @@ Scenario Outline: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calend
     And Espero 1 segundos
     And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Consumos" si es visible
-    And Presiono la tecla "Avanzar Página" sobre "Ver Mensajes"
+    And Presiono la tecla "Avanzar Página" sobre "Ver llamadas"
     And doy clic en "Ver Mensajes"
-    And llevará al formulario con el objeto <detalles Mensajes>
-
-    Examples: 
-      | detalles Mensajes       |
-      | "Fecha y Hora Mensajes" |
-      | "Destino Mensajes"      |
+    And llevará al formulario con el objeto "Fecha y Hora Mensajes"
+    And llevará al formulario con el objeto "Destino Mensajes"
       

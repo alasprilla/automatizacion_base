@@ -122,7 +122,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("consumodatos", 	            By.xpath("//*[contains(text(),'Datos')]/..//*[contains(text(),'Consumo')]"));
 	    ActionsUtil.objetosPut("fechainicialllamadas",      By.id("edit-date-from"));
 	    ActionsUtil.objetosPut("fechafinalllamadas",        By.id("edit-date-till"));
-	    ActionsUtil.objetosPut("diadelcalendariollamadas",  By.xpath("//*[contains(a,'03')]"));
+	    ActionsUtil.objetosPut("diadelcalendariollamadas",  By.xpath("/html/body/div[4]/div/div[1]/div[3]/div[1]/table/tbody/tr[3]/td[2]"));
 	    ActionsUtil.objetosPut("diadelcalendariofinalllamadas", By.xpath("/html/body/div[6]/div/div/div[3]/div[1]/table/tbody/tr[4]/td[5]"));
 	    ActionsUtil.objetosPut("okfecha",                   By.xpath("//*[contains(@class,'dtp-btn-ok')]"));
 	    ActionsUtil.objetosPut("okfechafinal",              By.xpath("/html/body/div[6]/div/div[2]/button[4]"));
