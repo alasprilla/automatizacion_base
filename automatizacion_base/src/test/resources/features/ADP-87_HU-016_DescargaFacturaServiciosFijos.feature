@@ -47,7 +47,7 @@ Feature: HU016_DescargaFacturaServiciosFijos
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
     And doy clic en "Facturacion" si es visible
-    And doy clic en "Ultima Factura Pdf"
+    And doy clic en "Historico Ultima Factura Pdf"
     And Espero 15 segundos
     When abro en el navegador el archivo "11231944.951397311-44.pdf"
     And cerrar pestaña

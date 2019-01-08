@@ -76,6 +76,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("recargarmicuenta", 			By.id("action_Recargar"));
 	    ActionsUtil.objetosPut("transferir", 				By.id("action_Transferir"));
 	    ActionsUtil.objetosPut("ultimafacturapdf", 			By.id("action_Última factura PDF"));
+	    ActionsUtil.objetosPut("historicoultimafacturapdf", By.xpath("//*[@id='main-content']/div[2]/div[3]/div/section[1]/div/div/div/table/tbody/tr[1]/td[4]/div"));
 	    ActionsUtil.objetosPut("activatufacturaelectronica",By.id("action_Activa tu factura electrónica"));
 	    ActionsUtil.objetosPut("montoacompartir", 			By.id("edit-value-transfer"));
 	    ActionsUtil.objetosPut("numerodeldestinatario", 	By.id("edit-line-transfer"));
