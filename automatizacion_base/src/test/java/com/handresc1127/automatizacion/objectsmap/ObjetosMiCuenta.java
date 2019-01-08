@@ -44,7 +44,7 @@ public class ObjetosMiCuenta {
 		/*----------------------------------------------------------------------------------------------------------*/
 		/*--------------------------------------- menu options -----------------------------------------------------*/
 		ActionsUtil.objetosPut("resumen", 					By.xpath("(*//a[contains(.,'Resumen')])"));
-		ActionsUtil.objetosPut("facturacion", 				By.xpath("//*[contains(@href,'/movil/facturacion')]"));
+		ActionsUtil.objetosPut("facturacion", 				By.xpath("//*[contains(@href,'/movil/facturacion')]|//*[contains(@href,'/hogar/facturacion')]"));
 		ActionsUtil.objetosPut("saldos", 					By.xpath("//*[contains(@href,'/movil/saldos')]"));
 		ActionsUtil.objetosPut("servicios",					By.xpath("//*[contains(@href,'/hogar/servicios')]"));
 	    ActionsUtil.objetosPut("administrarservicios", 		By.xpath("//*[contains(@href,'/miscuentas')]"));

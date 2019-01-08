@@ -29,7 +29,7 @@ Feature: HU018_CambioDatosFacturacionServiciosFijos
     And ingreso "123458745" en el campo "Número Documento"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Electronico Fijo"
     And doy clic en "OK"
-    Then el campo "Mensaje Confirmación" tiene el texto "A partir de ahora recibirás tu factura en el correo electrónico lopezanamaria1@hotmail.com"
+    Then el campo "Mensaje Confirmación" tiene el texto "A partir de ahora recibirás tu factura en el correo electrónico automatizacionmicuenta@gmail.com"
 
 
   
