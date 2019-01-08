@@ -84,7 +84,7 @@ Feature: HU003 Validación de Email
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónico M"
     And Espero 1 segundos
-    Then el campo "Consultar M" tiene el atributo "class" en el valor "--active"
+    Then el campo "Consultar M" tiene el atributo "disabled" en el valor ""
 
     Examples: 
       | msisdn       | email                   |
