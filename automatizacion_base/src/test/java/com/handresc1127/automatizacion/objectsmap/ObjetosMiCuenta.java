@@ -28,7 +28,7 @@ public class ObjetosMiCuenta {
 		/*----------------------------------------------------------------------------------------------------------*/
 		/*------------------------------------------- PANTALLA 2 ---------------------------------------------------*/
 		/*----------------------------------------------------------------------------------------------------------*/
-		ActionsUtil.objetosPut("seleccionmsisdn", 			By.xpath("//*[@id='block-accountsblock-2']/div/div/div/div/div/span|//*[@id='account-mobile-selector']/div[1]/span[2]"));
+		ActionsUtil.objetosPut("seleccionmsisdn", 			By.xpath("//*[@id='account-mobile-selector']|//*[@id='block-accountsblock-2']//span[@class='line']"));
 		ActionsUtil.objetosPut("lineaarmatuplan1", 			By.xpath("((//*[@id='lines'])//a[contains(.,'3008819838')])"));
 		ActionsUtil.objetosPut("nolineaarmatuplan1", 		By.xpath("((//*[@id='lines'])//a[not(contains(.,'3008819838'))])"));
 		ActionsUtil.objetosPut("lineaarmatuplan", 			By.xpath("((//*[@id='lines'])//a[contains(.,'3008913170')])"));
