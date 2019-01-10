@@ -41,6 +41,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("nolineafija",           	By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 61 # 56 - 51 IN 1701'))])"));
 		ActionsUtil.objetosPut("lineafijacontelefono",  	By.xpath("((//*[@id='lines'])//a[contains(.,'CL 65 SUR # 42 B - 14 IN 1610')])"));
 		ActionsUtil.objetosPut("nolineafijacontelefono",    By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 65 SUR # 42 B - 14 IN 1610'))])"));
+		ActionsUtil.objetosPut("lineafijawifi",             By.xpath("((//*[@id='lines'])//a[contains(.,'CL 3 B # 79 B - 28 IN 502')])"));
+		ActionsUtil.objetosPut("nolineafijawifi",           By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 3 B # 79 B - 28 IN 502'))])"));
 		/*----------------------------------------------------------------------------------------------------------*/
 		/*--------------------------------------- menu options -----------------------------------------------------*/
 		ActionsUtil.objetosPut("resumen", 					By.xpath("(*//a[contains(.,'Resumen')])"));
@@ -147,6 +149,12 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("detalleconsumo",            By.xpath("//*[@id='table_group_month']"));
 	    ActionsUtil.objetosPut("verdetalle",                By.xpath("//*[@id='table_group_month']//*[contains(@value,'Ver Detalle')]"));
 	    ActionsUtil.objetosPut("fechaconsumo",              By.xpath("//*[@id='table_group_day']/form/div[1]/table/tbody/tr[1]/td[1]/div/span"));
+	    ActionsUtil.objetosPut("cambiarcanalwifi",          By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_canal_wifi/')]"));
+	    ActionsUtil.objetosPut("nuevocanal",                By.xpath("//*[@id='home-change-channel-network-form']/div[1]/div/div/input"));
+	    ActionsUtil.objetosPut("canal3",                    By.xpath("/html/body/div[3]/div[2]/div/section/div/section/div/div/form/div[1]/div/div/ul/li[4]"));
+	    ActionsUtil.objetosPut("canalautomatico",           By.xpath("/html/body/div[3]/div[2]/div/section/div/section/div/div/form/div[1]/div/div/ul/li[1]"));
+	    ActionsUtil.objetosPut("aceptarcambiocanal",        By.id("edit-submit"));
+	    ActionsUtil.objetosPut("mensajecambiocanal",        By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	}
 	
 }
