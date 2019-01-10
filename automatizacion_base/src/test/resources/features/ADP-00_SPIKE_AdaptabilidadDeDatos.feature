@@ -17,7 +17,7 @@ Feature: SPIKE Adaptabilidad de datos
     Examples: 
       | msisdn       |
       | "3043878232" |
-      | "3043302450" |
+      | "3008913170" |
       | "3004434877" |
       | "3043605513" |
       | "3003588240" |
