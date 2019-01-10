@@ -34,11 +34,11 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("banco", By.id("edit-bank"));
 		ActionsUtil.objetosPut("tipodepersona", By.id("edit-buyer-type-person"));
 		ActionsUtil.objetosPut("nombresyapellidos", By.id("edit-buyer-name"));
-		ActionsUtil.objetosPut("tipod", By.id("edit-buyer-document-type--2"));
-		ActionsUtil.objetosPut("numerodedocumentod", By.id("edit-buyer-document--2"));
+		ActionsUtil.objetosPut("tipod", By.id("edit-buyer-document-type"));
+		ActionsUtil.objetosPut("numerodedocumentod", By.id("edit-buyer-document"));
 		ActionsUtil.objetosPut("emailpse", By.id("PNEMail"));
-		ActionsUtil.objetosPut("pagard", By.id("edit-submit--2"));
-		ActionsUtil.objetosPut("pagar", By.id("edit-submit"));
+		ActionsUtil.objetosPut("pagard", By.id("edit-submit"));
+		ActionsUtil.objetosPut("pagar", By.id("edit-submit--2"));
 		ActionsUtil.objetosPut("iralbanco", By.id("btnSeguir"));
 		ActionsUtil.objetosPut("debug", By.id("btnDebug"));
 		ActionsUtil.objetosPut("bankprocessdate", By.id("txtBankProcessDate"));
@@ -68,13 +68,13 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("valorapagar",
 				By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]"));
 		ActionsUtil.objetosPut("cancelarnequi", By.id("tigoune-nequi-button-cancel"));
-		ActionsUtil.objetosPut("cancelarpse", By.id("edit-cancel--2"));
+		ActionsUtil.objetosPut("cancelarpse", By.id("edit-cancel"));
 		ActionsUtil.objetosPut("cancelartc", By.id("edit-cancel--2"));
 		ActionsUtil.objetosPut("msgerrortc", By.xpath("//*[@id='image-credit_card']//*[contains(@class,'error')]"));
 		ActionsUtil.objetosPut("formapagoseleccionada", By.xpath("//*[@class='tigoune-card actived']"));
 		ActionsUtil.objetosPut("formasdepago", By.xpath("//*[@id='payment_method']/div"));
 		ActionsUtil.objetosPut("numerocuotas", By.id("edit-cardnumber-quota"));
-		ActionsUtil.objetosPut("titulofacturasmoviles", By.id("title-init"));
+		ActionsUtil.objetosPut("titulofacturasmoviles", By.id("block-tigo-theme-content"));
 		ActionsUtil.objetosPut("tieneonotienefacturas", By.xpath(
 				"\"//*[@id='content_list_invoices' or @id='payment-method-type-label-credit-payu' or (@id='alert_main' and @style='display: block;')]\""));
 

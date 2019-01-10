@@ -72,7 +72,7 @@ Feature: HU004 Llenado formulario TC
     And ingreso "3000000000" en el campo "celular comprador"
     And doy clic en "Autorizo esta tarjeta para futuros pagos"
     And Espero 2 segundos
-    Then el campo "Pagar" tiene el atributo "class" en el valor "button--secondary"
+    Then el campo "Pagar" tiene el atributo "diseable" en el valor ""
     And doy clic en "Cancelar TC"
 
     Examples: 
