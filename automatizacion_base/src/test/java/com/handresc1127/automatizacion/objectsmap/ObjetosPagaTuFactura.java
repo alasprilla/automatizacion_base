@@ -37,8 +37,8 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("tipod", By.id("edit-buyer-document-type"));
 		ActionsUtil.objetosPut("numerodedocumentod", By.id("edit-buyer-document"));
 		ActionsUtil.objetosPut("emailpse", By.id("PNEMail"));
-		ActionsUtil.objetosPut("pagard", By.id("edit-submit--2"));
-		ActionsUtil.objetosPut("pagar", By.id("edit-submit"));
+		ActionsUtil.objetosPut("pagard", By.id("edit-submit"));
+		ActionsUtil.objetosPut("pagar", By.id("edit-submit--2"));
 		ActionsUtil.objetosPut("iralbanco", By.id("btnSeguir"));
 		ActionsUtil.objetosPut("debug", By.id("btnDebug"));
 		ActionsUtil.objetosPut("bankprocessdate", By.id("txtBankProcessDate"));
@@ -68,7 +68,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("valorapagar",
 				By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]"));
 		ActionsUtil.objetosPut("cancelarnequi", By.id("tigoune-nequi-button-cancel"));
-		ActionsUtil.objetosPut("cancelarpse", By.id("edit-cancel--2"));
+		ActionsUtil.objetosPut("cancelarpse", By.id("edit-cancel"));
 		ActionsUtil.objetosPut("cancelartc", By.id("edit-cancel--2"));
 		ActionsUtil.objetosPut("msgerrortc", By.xpath("//*[@id='image-credit_card']//*[contains(@class,'error')]"));
 		ActionsUtil.objetosPut("formapagoseleccionada", By.xpath("//*[@class='tigoune-card actived']"));
