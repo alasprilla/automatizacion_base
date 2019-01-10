@@ -34,8 +34,8 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("banco", By.id("edit-bank"));
 		ActionsUtil.objetosPut("tipodepersona", By.id("edit-buyer-type-person"));
 		ActionsUtil.objetosPut("nombresyapellidos", By.id("edit-buyer-name"));
-		ActionsUtil.objetosPut("tipod", By.id("edit-buyer-document-type--2"));
-		ActionsUtil.objetosPut("numerodedocumentod", By.id("edit-buyer-document--2"));
+		ActionsUtil.objetosPut("tipod", By.id("edit-buyer-document-type"));
+		ActionsUtil.objetosPut("numerodedocumentod", By.id("edit-buyer-document"));
 		ActionsUtil.objetosPut("emailpse", By.id("PNEMail"));
 		ActionsUtil.objetosPut("pagard", By.id("edit-submit--2"));
 		ActionsUtil.objetosPut("pagar", By.id("edit-submit"));
