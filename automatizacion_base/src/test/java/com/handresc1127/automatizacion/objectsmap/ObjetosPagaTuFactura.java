@@ -74,7 +74,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("formapagoseleccionada", By.xpath("//*[@class='tigoune-card actived']"));
 		ActionsUtil.objetosPut("formasdepago", By.xpath("//*[@id='payment_method']/div"));
 		ActionsUtil.objetosPut("numerocuotas", By.id("edit-cardnumber-quota"));
-		ActionsUtil.objetosPut("titulofacturasmoviles", By.id("title-init"));
+		ActionsUtil.objetosPut("titulofacturasmoviles", By.id("block-tigo-theme-content"));
 		ActionsUtil.objetosPut("tieneonotienefacturas", By.xpath(
 				"\"//*[@id='content_list_invoices' or @id='payment-method-type-label-credit-payu' or (@id='alert_main' and @style='display: block;')]\""));
 
