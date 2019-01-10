@@ -11,7 +11,7 @@ Feature: HU007 Validación número Invalido Celular
     When doy clic en "Movil"
     And ingreso <letras> en el campo "Tu línea Tigo"
     And el campo "Tu línea Tigo" tiene el texto ""
-    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo"
+    And el campo "label error celular" tiene el texto "El número de línea que ingresaste no es de Tigo. Verifícalo e intenta de nuevo."
     And el campo "label error celular" tiene el atributo "color" en el valor "rojo"
 
     Examples: 
