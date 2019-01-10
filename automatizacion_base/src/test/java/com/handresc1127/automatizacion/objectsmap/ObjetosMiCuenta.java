@@ -57,8 +57,11 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("productointernetdetalles",  By.xpath("//*[@class='product internet']//*[@id='action_Detalles']"));
 	    ActionsUtil.objetosPut("cambiardmzdelwifi",     	By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_dmz_red_wifi/')]"));
 	    ActionsUtil.objetosPut("ingresaripdmz",     		By.xpath("//*[@id='edit-ipdmz']"));
+	    ActionsUtil.objetosPut("cambiarcontrasenawifi",     By.xpath("//*[@id=\'main-content\']/div[2]/div/div/section[2]/div/div/div[2]/a"));
 	    /*----------------------------------------------------------------------------------------------------------*/
-	    
+	   
+	    ActionsUtil.objetosPut("aceptar", 		            By.id("edit-submit"));
+	    ActionsUtil.objetosPut("nuevacontrasenawifi", 		By.id("edit-password"));
 		ActionsUtil.objetosPut("correomicuenta", 			By.id("idEmail"));
 		ActionsUtil.objetosPut("correoelectronicofijo", 	By.id("edit-email"));
 	    ActionsUtil.objetosPut("ok", 						By.id("edit-submit"));
