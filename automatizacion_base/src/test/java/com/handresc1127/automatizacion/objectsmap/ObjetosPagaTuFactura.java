@@ -56,17 +56,15 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("primerpagototal",
 				By.xpath("(//*[@id='content_list_invoices']//*[contains(@id,'btn')])[1]"));
 		ActionsUtil.objetosPut("title-detail", By.id("title-detail"));
-		ActionsUtil.objetosPut("numerodelproducto", By.id("product-number"));
+		ActionsUtil.objetosPut("numerodelproducto", By.xpath("(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[2]"));
 		ActionsUtil.objetosPut("fechalimitedepago", By.xpath(
-				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[1]/div/table/tbody/tr[2]/td/div"));
+				"(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[3]"));
 		ActionsUtil.objetosPut("referentedepago", By.xpath(
-				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[2]/div/table/tbody/tr[2]/td/div"));
+				"(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[4]"));
 		ActionsUtil.objetosPut("numerodecontrato", By.xpath(
 				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div"));
-		ActionsUtil.objetosPut("periododefacturacion", By.xpath(
-				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div"));
 		ActionsUtil.objetosPut("valorapagar",
-				By.xpath("//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[4]/div[2]"));
+				By.xpath("(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[1]"));
 		ActionsUtil.objetosPut("cancelarnequi", By.id("tigoune-nequi-button-cancel"));
 		ActionsUtil.objetosPut("cancelarpse", By.id("edit-cancel"));
 		ActionsUtil.objetosPut("cancelartc", By.id("edit-cancel--2"));
@@ -81,6 +79,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("movil_msisdnconfacturas",By.id("payment-method-type-label-credit-payu"));
 		ActionsUtil.objetosPut("hogar_numdocumentoconfacturas",By.id("content_list_invoices"));
 		ActionsUtil.objetosPut("celularcomprador",By.id("edit-buyer-phone"));
+		ActionsUtil.objetosPut("detallesfactura",By.xpath("//*[@id='block-tigo-theme-content']/div/div[3]/div/div[2]/div[2]/div[1]/span"));
 		
 	}
 
