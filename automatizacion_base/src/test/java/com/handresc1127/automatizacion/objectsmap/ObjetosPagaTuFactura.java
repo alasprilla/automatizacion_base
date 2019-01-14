@@ -11,7 +11,7 @@ public class ObjetosPagaTuFactura {
 		ActionsUtil.objetosPut("movil", By.xpath("//*[@id='edit-radios']/div[2]/label"));
 		ActionsUtil.objetosPut("numerodedocumento", By.id("edit-document"));
 		ActionsUtil.objetosPut("tulineatigo", By.id("edit-candidate-number"));
-		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id='content_left_forms_unified']/div[1]/span"));
+		ActionsUtil.objetosPut("labelerrordocumento", By.xpath("//*[@id=\"content_left_home_unified\"]/div/span"));
 		ActionsUtil.objetosPut("labelerrorcelular", By.xpath("//*[@id=\'content_left_mobile_unified\']/div/div/span"));
 		ActionsUtil.objetosPut("labelerrorcorreo", By.xpath("//*[@id='content_right_mobile_unified']/div/div[1]/span"));
 		ActionsUtil.objetosPut("labelerrorcorreoh", By.xpath("//*[@id=\'content_right_forms_unified\']/div/span"));

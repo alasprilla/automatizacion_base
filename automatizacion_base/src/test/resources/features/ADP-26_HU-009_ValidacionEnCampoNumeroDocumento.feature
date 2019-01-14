@@ -27,7 +27,7 @@ Feature: HU009 CC válida en campo número de documento
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
     And ingreso <documento> en el campo "número de documento"
-    And el campo "label error documento" tiene el texto "El documento no es valido, por favor verificalo."
+    And el campo "label error documento" tiene el texto "El documento no es valido, por favor verifícalo."
     And el campo "label error documento" tiene el atributo "color" en el valor "rojo"
 
     Examples: 
