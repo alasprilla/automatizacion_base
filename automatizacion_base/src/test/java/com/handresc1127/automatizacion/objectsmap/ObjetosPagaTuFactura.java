@@ -61,8 +61,6 @@ public class ObjetosPagaTuFactura {
 				"(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[3]"));
 		ActionsUtil.objetosPut("referentedepago", By.xpath(
 				"(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[4]"));
-		ActionsUtil.objetosPut("numerodecontrato", By.xpath(
-				"//*[@id=\"block-tigo-theme-content\"]/div/div[2]/div/div[2]/div[3]/div[3]/div/table/tbody/tr[2]/td/div"));
 		ActionsUtil.objetosPut("valorapagar",
 				By.xpath("(//*[@class='tigoune-payment-content-values cardial-invioce']//*[@class='value'])[1]"));
 		ActionsUtil.objetosPut("cancelarnequi", By.id("tigoune-nequi-button-cancel"));
