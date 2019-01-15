@@ -60,14 +60,14 @@ Feature: HU009 CC válida en campo número de documento
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"
-    And ingreso "Hogar_numDocumento con facturas" en el campo "número de documento"
+    And ingreso "13461639" en el campo "número de documento"
+    #Linea debe ser configurable para una o multiples facturas
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en "Consultar H clic"
-    And doy clic en "primer Pago total"
     Then llevará al formulario con el objeto "title-detail"
     And el campo "title-detail" tiene el texto "RESUMEN DE TU TRANSACCIÓN"
-    And el campo "Numero del Producto" comienza con el texto "Tu dirección: ****"
+    And doy clic en "Detalles Factura"
+    And el campo "Numero del Producto" comienza con el texto "*******"
     And el campo "Fecha límite de pago" no está vacío
     And el campo "Referente de pago" no está vacío
-    And el campo "Número de contrato" no está vacío
     And el campo "Valor a pagar" no está vacío
