@@ -29,7 +29,7 @@ Feature: HU005 Llenado formulario TD
       | campo a validar           | banco    | tipoPersona | nombresApellidos    | tipoDoc | numeroDoc   | estadoBotonPagar    |
       | "Banco"                   | ""       | "N"         | "nombres apellidos" | "CC"    | "123456789" | "button--inactive"  |
       | "Tipo de persona"         | "BAN.CO" | ""          | "nombre apellidos"  | "CC"    | "123456789" | "button--inactive"  |
-      | "Nombres y Apellidos"     | "BAN.CO" | "N"         | ""                  | "CC"    | "123456789" | "button--inactive"  |
+      | "Nombres y Apellidos"     | "BAN.CO" | "N"         | ""                  | "CC"    | "123456789" | "button--secondary" |
       | "Tipo de documento"       | "BAN.CO" | "N"         | "nombre apellidos"  | ""      | "123456789" | "button--inactive"  |
       | "Número de documento"     | "BAN.CO" | "N"         | "nombre apellidos"  | "CC"    | ""          | "button--inactive"  |
       | "Todos los campos llenos" | "BAN.CO" | "N"         | "nombre apellidos"  | "CC"    | "123456789" | "button--secondary" |
