@@ -1,5 +1,6 @@
 #Author: your.email@your.domain.com
 #Keywords Summary :
+@Pasarela
 
 Feature: SPIKE Adaptabilidad de datos
   Como automatizador de pruebas

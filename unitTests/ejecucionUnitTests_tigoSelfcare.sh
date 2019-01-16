@@ -113,7 +113,7 @@ echo "##################################N@o£X£&%o£££É#####################
 echo "######################################æë£ë§N###################################" 
 echo "###############################################################################" 
 echo ""
-../vendor/bin/phpunit --testsuite=unit &> ../../outPut/tigoselfcare/executionPhpUnut.log
+../vendor/bin/phpunit --testsuite=unit &> ../../outPut/tigoselfcare/executionPhpUnit.log
 
 
 echo ""
