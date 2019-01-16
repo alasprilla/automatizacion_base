@@ -43,7 +43,7 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     Examples: 
       | valor  | valorformato |
       | "3Mil" | "$ 3,000"    |
-      | "6Mil" | "$ 6,000"    |
+      | "5Mil" | "$ 5,000"    |
 
   Scenario Outline: Recargas - Ingreso de número válido Tigo con deuda pendiente seleccionando Aumentar Recarga
     Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes"
@@ -62,4 +62,4 @@ Feature: HU022 Ingreso numero valido Tigo con deuda pendiente
     Examples: 
       | valor  |
       | "3Mil" |
-      | "6Mil" |
+      | "5Mil" |
