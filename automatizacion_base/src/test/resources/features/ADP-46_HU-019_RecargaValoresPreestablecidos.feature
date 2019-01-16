@@ -24,7 +24,7 @@ Para garantizar que funcione correctamente el inicio del proceso de recarga
      
       | valor  | valorformato |
       | "3mil" | "$ 3,000"    |
-      | "6Mil" | "$ 6,000"    |
-      | "15Mil"| "$ 15,000"   |
-      | "20mil"| "$ 20,000"   |
-      | "30Mil"| "$ 30,000"   |  
+      | "5Mil" | "$ 5,000"    |
+      | "10Mil"| "$ 10,000"   |
+      | "15mil"| "$ 15,000"   |
+      | "20Mil"| "$ 20,000"   |  
