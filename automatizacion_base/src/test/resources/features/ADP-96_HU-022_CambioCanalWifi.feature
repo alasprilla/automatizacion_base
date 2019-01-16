@@ -31,7 +31,7 @@ Feature: HU022_CambioCanalWifi
     And doy clic en "Cambiar canal Wifi"
     And doy clic en "Nuevo Canal"
     And doy clic en "Canal 3"
-    And doy clic en "Aceptar Cambio Canal"
+    And doy clic en "Aceptar"
     And el campo "Mensaje Cambio Canal" tiene el texto "El cambio de canal de la red de wifi fue exitosa."
 
   Scenario: Mi Cuenta - Cambio de Canal Automatico Wifi
@@ -55,5 +55,5 @@ Feature: HU022_CambioCanalWifi
     And doy clic en "Cambiar canal Wifi"
     And doy clic en "Nuevo Canal"
     And doy clic en "Canal Automatico"
-    And doy clic en "Aceptar Cambio Canal"
+    And doy clic en "Aceptar"
     And el campo "Mensaje Cambio Canal" tiene el texto "El cambio de canal de la red de wifi fue exitosa."

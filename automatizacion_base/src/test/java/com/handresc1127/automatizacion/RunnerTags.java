@@ -58,6 +58,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-93_HU-019_ServiciosFijos.feature",
 		"src/test/resources/features/ADP-92_ResponsiveDePantallasRecargas.feature",
 		"src/test/resources/features/ADP-94_HU-020_CambioContraseñaWifi.feature",
+		"src/test/resources/features/ADP-95_HU021_CambioNombreRedWifi.feature",
 		"src/test/resources/features/ADP-109_HU-024_DetallesServiciosFijos.feature",
 		"src/test/resources/features/ADP-101_PruebaAdherenciaDePaquetes.feature",
 		"src/test/resources/features/ADP-96_HU-022_CambioCanalWifi.feature",
@@ -65,7 +66,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-110_HU-025_HistoricoConsumosTelefonia.feature",
 		"src/test/resources/features/ADP-111_HU-026_ConsultaDePQR.feature" },
 
-		tags = { "@issue:ADP-94" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
+		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
 				"junit:target/reports/junit.xml", "json:target/reports/cukes.json" })
 
 public class RunnerTags {

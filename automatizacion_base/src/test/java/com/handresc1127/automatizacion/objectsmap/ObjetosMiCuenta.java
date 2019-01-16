@@ -156,8 +156,9 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("nuevocanal",                By.xpath("//*[@id='home-change-channel-network-form']/div[1]/div/div/input"));
 	    ActionsUtil.objetosPut("canal3",                    By.xpath("/html/body/div[3]/div[2]/div/section/div/section/div/div/form/div[1]/div/div/ul/li[4]"));
 	    ActionsUtil.objetosPut("canalautomatico",           By.xpath("/html/body/div[3]/div[2]/div/section/div/section/div/div/form/div[1]/div/div/ul/li[1]"));
-	    ActionsUtil.objetosPut("aceptarcambiocanal",        By.id("edit-submit"));
 	    ActionsUtil.objetosPut("mensajecambiocanal",        By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
+	    ActionsUtil.objetosPut("cambiarnombredelaredwifiurl",By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_nombre_red_wifi/')]"));
+	    ActionsUtil.objetosPut("cambiarnombredelaredwifi",  By.id("edit-ssid"));
 	}
 	
 }
