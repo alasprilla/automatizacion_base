@@ -15,7 +15,7 @@ Para garantizar que funcione correctamente el inicio del proceso de recarga
     When ingreso "3003255454" en el campo "Ingresa tu línea Tigo"
     And Espero 2 segundos
     And  doy clic en <valor>
-    And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico M"
+    And ingreso "pruebas@yopmail.com" en el campo "Correo electrónico"
     And doy clic en "Recargar"
     Then llevará al formulario con el objeto "Titulo Detalle"
     And el campo "valor" tiene el texto <valorformato>
