@@ -1,7 +1,7 @@
 #Author: Karen Perez Parrado
 #Keywords Summary :
 @issue:ADP-95 @MiCuenta
-Feature: HU021_Cambio de nombre de la red Wifi
+Feature: HU021 Cambio de nombre de la red Wifi
   
     YO como usuario de mi cuenta Tigo 
     QUIERO ingresar a mi servicio de internet
@@ -51,10 +51,10 @@ Feature: HU021_Cambio de nombre de la red Wifi
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Fija" si es visible
+    And doy clic en "No Linea Fija Wifi" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Fija" si es visible
+    And doy clic en "Linea Fija Wifi" si es visible
     And Espero 1 segundos
     And doy clic en "Servicios" si es visible
     And Espero 1 segundos
@@ -66,6 +66,6 @@ Feature: HU021_Cambio de nombre de la red Wifi
 
     Examples: 
       | Escenario                     | NombreRed    | Mensaje                                              |
-      | "Nombre Exitoso Alfanumérico" | "Pruebas1"   | "El cambio de nombre de la red de wifi fue exitosa." |
       | "Nombre Exitoso"              | "Prueba"     | "El cambio de nombre de la red de wifi fue exitosa." |
       | "Nombre Exitoso Numérico"     | "1234567890" | "El cambio de nombre de la red de wifi fue exitosa." |
+      | "Nombre Exitoso Alfanumérico" | "Correa1701" | "El cambio de nombre de la red de wifi fue exitosa." |
