@@ -29,3 +29,6 @@ php LogUnitTest.php metis/automatizacion_base/target/surefire-reports/com.handre
 echo ""
 echo ""
 echo "###############################################################################" 
+echo ""
+echo ""
+exit 0

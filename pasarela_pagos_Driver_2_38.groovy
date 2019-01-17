@@ -60,7 +60,7 @@ job("Pasarela_pagos") {
 				targets('clean install')
 				mavenName('(Default)')
 				pom('metis/automatizacion_base/')
-				properties('chrome.switches=--headless\nwebdriver.chrome.driver=src/test/resources/driver/chromedriver\nwebdriver.driver=\${NAVEGADOR}\nwebdriver.remote.driver=\${NAVEGADOR}\ntags=${ETIQUETA}\nbaseURL1=${URL1}\nbaseURL2=${URL2}')
+				properties('chrome.switches=--headless\nwebdriver.chrome.driver=src/test/resources/driver/chromedriver_2_38\nwebdriver.driver=\${NAVEGADOR}\nwebdriver.remote.driver=\${NAVEGADOR}\ntags=${ETIQUETA}\nbaseURL1=${URL1}\nbaseURL2=${URL2}')
 				usePrivateRepository('false')
 				injectBuildVariables('false')
 			}
