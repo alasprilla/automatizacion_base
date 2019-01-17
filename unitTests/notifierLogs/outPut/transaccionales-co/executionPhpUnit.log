@@ -1,0 +1,135 @@
+PHPUnit 6.5.13 by Sebastian Bergmann and contributors.
+
+Testing 
+...............................................................  63 / 177 ( 35%)
+...............E..FF...............EE.......................... 126 / 177 ( 71%)
+..............................EEE.EE....EEEEEF.....             177 / 177 (100%)
+
+Time: 1.57 minutes, Memory: 192.50MB
+
+There were 13 errors:
+
+1) Drupal\Test\tigoune_tokenization\Unit\Tokenization\FormatTokenizationTest::testFormatCreditCardData
+Exception: No se encuentra instalado el módulo mcrypt de PHP
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_tokenization/src/Tokenization/FormatTokenization.php:187
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_tokenization/src/Tokenization/FormatTokenization.php:120
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_tokenization/tests/src/Unit/Tokenization/FormatTokenizationTest.php:235
+
+2) Drupal\Test\tigoune_pay_nequi\Unit\Subscription\NequiClientTest::testSetParams
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "database".
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/vendor/symfony/dependency-injection/ContainerBuilder.php:1053
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/vendor/symfony/dependency-injection/ContainerBuilder.php:619
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/vendor/symfony/dependency-injection/ContainerBuilder.php:587
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/core/lib/Drupal.php:293
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_fulfillment/src/Model/FulfillmentProductsModel.php:67
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_pay_nequi/tests/src/Unit/Subscription/NequiClientTest.php:217
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_pay_nequi/tests/src/Unit/Subscription/NequiClientTest.php:29
+
+3) Drupal\Test\tigoune_pay_nequi\Unit\Subscription\NequiClientTest::testProcessTransactionWithoutData
+Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException: You have requested a non-existent service "database".
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/vendor/symfony/dependency-injection/ContainerBuilder.php:1053
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/vendor/symfony/dependency-injection/ContainerBuilder.php:619
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/vendor/symfony/dependency-injection/ContainerBuilder.php:587
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/core/lib/Drupal.php:293
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_fulfillment/src/Model/FulfillmentProductsModel.php:67
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_pay_nequi/tests/src/Unit/Subscription/NequiClientTest.php:217
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_pay_methods/tigoune_pay_nequi/tests/src/Unit/Subscription/NequiClientTest.php:29
+
+4) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testSendCodeUserTypeIsSetSmsAndMsisdnJsonResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:375
+
+5) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testSendCodeUserTypeIsSetSmsAndMsisdnArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:394
+
+6) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testSendCodeUserTypeIsSetEmailAndEmailArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:416
+
+7) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testGenerateCodeSessionWithData
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:460
+
+8) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testGenerateCodeSessionMaxRetryArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:491
+
+9) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testValidateCodeUserCodeIncorrectJSONResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:605
+
+10) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testValidateCodeUserCodeIncorrectArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:631
+
+11) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testValidateCodeUserCodeOkButUknownFunctionPHPArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:663
+
+12) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testValidateCodeUserCodeIncorrectExceedReTriesArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:696
+
+13) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testValidateCodeUserCodeIncorrectExceedExpiredTimeArrayResponse
+Error: Call to undefined method Mock_noticeMock_19e2b978::info()
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/src/Controller/OTPController.php:169
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:728
+
+--
+
+There were 3 failures:
+
+1) Drupal\Tests\tigoune_tokenization\Unit\Tokenization\TokenizationClientHttpTest::testRegisterCreditCard
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'1'
++'error'
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_tokenization/tests/src/Unit/Tokenization/TokenizationClientHttpTest.php:335
+
+2) Drupal\Tests\tigoune_tokenization\Unit\Tokenization\TokenizationClientHttpTest::testRegisterCreditCardDuplicateCard
+Failed asserting that an array has the key 'payload'.
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_transactions/tigoune_tokenization/tests/src/Unit/Tokenization/TokenizationClientHttpTest.php:364
+
+3) Drupal\Test\tigoune_otp\Unit\Tokenization\OTPControllerTest::testValidateCodeUserNoValidProcessArrayResponse
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'No se encontro información del proceso, por favor reintente enviar el código de seguridad.'
++'El código que has ingresado no es válido, por favor genera uno nuevo para continuar con el pago.'
+
+/var/lib/jenkins/workspace/Pasarela_pagos/transaccionales-co/modules/custom/tigoune_otp/tests/src/Unit/Controller/OTPControllerTest.php:767
+
+ERRORS!
+Tests: 177, Assertions: 437, Errors: 13, Failures: 3.
+
+Generating code coverage report in Clover XML format ... done
+
+Generating code coverage report in HTML format ... done

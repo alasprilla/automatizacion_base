@@ -1,0 +1,98 @@
+PHPUnit 6.5.13 by Sebastian Bergmann and contributors.
+
+Testing 
+F/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/SmsServiceTest.php:65:
+bool(false)
+EEEEEEEEEEEE                                                     13 / 13 (100%)
+
+Time: 1.3 minutes, Memory: 194.50MB
+
+There were 12 errors:
+
+1) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #0 (3003790380, 740, true)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+2) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #1 (3003790380, 739, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+3) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #2 (3003790380, 741, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+4) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #3 (3003790380, -1, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+5) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #4 (3004070675, 741, true)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+6) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #5 (3004070675, 740, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+7) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #6 (3004070675, 739, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+8) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #7 (3004070675, -1, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+9) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #8 (3146541402, -1, true)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+10) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #9 (3146541402, 741, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+11) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #10 (3146541402, 740, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+12) Drupal\tigoune_compras\tests\Unit\ComprasServiceTest::testIsBestOffer with data set #11 (3146541402, 739, false)
+ArgumentCountError: Too few arguments to function Drupal\tigoune_compras\Services\ComprasService::__construct(), 5 passed in /var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php on line 143 and exactly 6 expected
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/src/Services/ComprasService.php:29
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/ComprasServiceTest.php:143
+
+--
+
+There was 1 failure:
+
+1) Drupal\tigoune_compras\tests\Unit\SmsServiceTest::testSendSms
+Failed asserting that false is true.
+
+/var/lib/jenkins/workspace/Pasarela_pagos/tigoselfcareregional/sites/tigoselfcareregional.co/modules/custom/tigoune_compras/tests/src/Unit/SmsServiceTest.php:67
+
+ERRORS!
+Tests: 13, Assertions: 1, Errors: 12, Failures: 1.
+
+Generating code coverage report in Clover XML format ... done
+
+Generating code coverage report in HTML format ... done
