@@ -73,6 +73,7 @@ job("Pasarela_pagos") {
 	  shell('chmod a+x metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
       shell('metis/unitTests/ejecucionUnitTests_transaccionales.sh')
       shell('metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
+	  shell('metis/unitTests/notifierLogs/runPhp.sh')
 	  shell('metis/publicacionEvidencias.sh')
     }
 
@@ -132,7 +133,7 @@ job("Pasarela_pagos") {
 				  notifyBackToNormal('true')
 				  notifyRepeatedFailure('true')
 				  includeTestSummary('true')
-				  includeFailedTests('true')
+				  includeFailedTests('false')
 				  commitInfoChoice('NONE')
 				  includeCustomMessage('false')
 				  customMessage('hola Metis!')
