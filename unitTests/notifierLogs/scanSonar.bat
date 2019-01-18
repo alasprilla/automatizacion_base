@@ -1,1 +1,0 @@
-sonar-scanner -D project.settings=sonar.properties

@@ -70,7 +70,6 @@ job("Pasarela_pagos") {
 	steps {
       shell('metis/unitTests/ejecucionUnitTests_transaccionales.sh')
       shell('metis/unitTests/ejecucionUnitTests_tigoSelfcare.sh')
-	  shell('metis/unitTests/notifierLogs/runPhp.sh')
 	  shell('metis/publicacionEvidencias.sh')
     }
 
