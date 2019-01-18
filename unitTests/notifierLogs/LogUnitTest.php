@@ -29,7 +29,9 @@
 		print_r($data_string);
 		print(" <br>\n");
 		
-		$url = 'https://hooks.slack.com/services/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';
+		//#Alexand 'https://hooks.slack.com/services/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';
+		//#General 'https://hooks.slack.com/services/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';
+		$url = 'https://hooks.slack.com/services/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';
 		$ch = curl_init( $url );
 		# Setup request to send json via POST.
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, $data_string );

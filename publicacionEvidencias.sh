@@ -122,6 +122,6 @@ echo "##################################N@o£X£&%o£££É#####################
 echo "######################################æë£ë§N###################################" 
 echo "###############################################################################" 
 echo ""
-echo "php LogUnitTest.php /var/www/metis/atdd/1/unitTests/tigoselfcare/executionPhpUnit.log" | sftp metis@190.248.48.5
-echo "php LogUnitTest.php /var/www/metis/atdd/1/unitTests/transaccionales-co/executionPhpUnit.log" | sftp metis@190.248.48.5
-echo "php LogUnitTest.php /var/www/metis/atdd/1/unitTests/com.handresc1127.automatizacion.RunnerTags.txt" | sftp metis@190.248.48.5
+wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/tigoselfcare/executionPhpUnit.log
+wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/transaccionales-co/executionPhpUnit.log
+wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/com.handresc1127.automatizacion.RunnerTags.txt
