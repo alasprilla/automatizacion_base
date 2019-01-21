@@ -53,6 +53,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("consultapqr", 				By.xpath("//*[contains(@href,'/mis-pqr')]"));
 	    ActionsUtil.objetosPut("mejoraplan", 				By.xpath("//*[contains(@href,'/movil/mejora-tu-plan')]"));
 	    ActionsUtil.objetosPut("soportetecnico", 			By.xpath("//*[contains(@href,'/movil/soporte-tecnico')]"));
+	    ActionsUtil.objetosPut("visitatecnica",             By.xpath("//*[contains(@href,'/hogar/agendamiento')]"));
 	    /*-------------------------- mensajes de confirmacion y de errores -----------------------------------------*/
 	    ActionsUtil.objetosPut("mensajeconfirmacion", 		By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    /*------------------------------------------- dmz ----------------------------------------------------------*/
@@ -76,6 +77,7 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("modificarfacturacion", 		By.id("action_Modificar"));
 		ActionsUtil.objetosPut("pagarfactura", 				By.id("action_Pagar"));
 	    ActionsUtil.objetosPut("centrodeayuda", 			By.id("action_CENTRO DE AYUDA"));
+	    ActionsUtil.objetosPut("centrodeayudafijo", 		By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[2]/div[2]/a"));
 	    ActionsUtil.objetosPut("tienda", 					By.id("action_TIENDAS"));
 	    ActionsUtil.objetosPut("tiendas", 					By.xpath("/html/body/content/div[2]/div/section[1]/div/div/h3"));
 	    ActionsUtil.objetosPut("recargarmicuenta", 			By.id("action_Recargar"));
@@ -159,6 +161,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("mensajecambiocanal",        By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifiurl",By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_nombre_red_wifi/')]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifi",  By.id("edit-ssid"));
+	    
 	}
 	
 }
