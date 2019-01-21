@@ -46,16 +46,23 @@
 				$Failures=$map['Failures'][0];
 				$Inestables=$Errors+$Failures;
 				$color="#36a64f";
-				if((($Error/$Test)>0.15)||((($Failures/$Test)>0.15))||((($Inestables/$Test)>0.15))){
-					$color="#ff0000";
-				}elseif((($Error/$Test)>0.05)||((($Failures/$Test)>0.05))||((($Inestables/$Test)>0.05))){
+				if((($Errors/$Test)>0.05)||((($Failures/$Test)>0.05))||((($Inestables/$Test)>0.05))){
 					$color="#e08114";
+				}
+				if($Errors>0){
+					$color="#e08114";
+				}
+				if((($Errors/$Test)>0.15)||((($Failures/$Test)>0.15))||((($Inestables/$Test)>0.15))){
+					$color="#ff0000";
+				}
+				if($Failures>0){
+					$color="#ff0000";
 				}
 				
 				print(" <br>\n");
 				print("_____________________ <br>\n");
 				print("Test: $Test <br>\n");
-				print("Error: $Errors <br>\n");
+				print("Errors: $Errors <br>\n");
 				print("Failures: $Failures <br>\n");
 				print("Inestables: $Inestables <br>\n");
 				print("color: $color <br>\n");
