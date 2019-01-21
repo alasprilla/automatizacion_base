@@ -17,15 +17,15 @@ echo "######################################æë£ë§N#########################
 echo "###############################################################################" 
 echo ""
 
-php LogUnitTest.php outPut\tigoselfcare\executionPhpUnit.log
+php LogUnitTest.php outPut\tigoselfcare\executionPhpUnit.log TigoSelfcare
 echo ""
 echo ""
 echo "###############################################################################" 
-php LogUnitTest.php  outPut\transaccionales-co\executionPhpUnit.log
+php LogUnitTest.php  outPut\transaccionales-co\executionPhpUnit.log Transaccionales
 echo ""
 echo ""
 echo "###############################################################################" 
-php LogUnitTest.php metis/automatizacion_base/target/surefire-reports/com.handresc1127.automatizacion.RunnerTags.txt
+php LogUnitTest.php metis/automatizacion_base/target/surefire-reports/com.handresc1127.automatizacion.RunnerTags.txt Metis
 echo ""
 echo ""
 echo "###############################################################################" 

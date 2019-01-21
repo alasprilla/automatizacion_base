@@ -3,16 +3,23 @@
 	# Discriminacion de lectura de parametro segun sea cliente o web
 	if (PHP_SAPI === 'cli') {
 		echo "Esta usando un cliente <br>\n";
-		$nombre = $argv[1];
+		$fileName = $argv[1];
+		$title = $argv[2];
 	} else {
 		echo "Está usando un navegador Web <br>\n";
-		$nombre=$_GET['parametro'];
+		$fileName=$_GET['parametro'];
+		$title=$_GET['title'];
 	}
-	echo "parametro=$nombre <br>\n";
-	$archivo1=$nombre;
+	if (empty($title)) {
+		$title = $fileName;
+	}
+	echo "parametro=$fileName <br>\n";
+	echo "title=$title <br>\n";
+	$archivo1=$fileName;
 	$lectura = fopen($archivo1, "r");
 	$i=1;
-	$resp1=array();
+	$requestBody=array();
+	$requestFields=array();
 
 	if($lectura){
 		echo "Leyendo archivo...";
@@ -37,10 +44,11 @@
 				}
 				$Errors=$map['Errors'][0];
 				$Failures=$map['Failures'][0];
+				$Inestables=$Errors+$Failures;
 				$color="#36a64f";
-				if((($Error/$Test)>0.15)||((($Failures/$Test)>0.15))){
+				if((($Error/$Test)>0.15)||((($Failures/$Test)>0.15))||((($Inestables/$Test)>0.15))){
 					$color="#ff0000";
-				}elseif((($Error/$Test)>0.05)||((($Failures/$Test)>0.05))){
+				}elseif((($Error/$Test)>0.05)||((($Failures/$Test)>0.05))||((($Inestables/$Test)>0.05))){
 					$color="#e08114";
 				}
 				
@@ -49,18 +57,26 @@
 				print("Test: $Test <br>\n");
 				print("Error: $Errors <br>\n");
 				print("Failures: $Failures <br>\n");
+				print("Inestables: $Inestables <br>\n");
 				print("color: $color <br>\n");
 				
-				$resp1['text']=$text;
-				$resp1['pretext']=$linea;
-				$resp1['color']=$color;
+				$requestBody['text']=$linea;
+				$requestBody['pretext']=$title;
+				$requestBody['color']=$color;
+				
+				$requestField=array();
+				$requestField['title']='Resumen';
+				$requestField['value']=$text;
+				$requestField['short']='false';
+				array_push($requestFields, $requestField);	
 			}
 			$i++; 
 		}
 		fclose($lectura);
-		$data_string=json_encode($resp1);
+		$requestBody['fields']=$requestFields;
+		$data_string=json_encode($requestBody);
 		$resp2=array();
-		$data_string= '{"attachments":[' . json_encode($resp1) . ']}';
+		$data_string= '{"attachments":[' . json_encode($requestBody) . ']}';
 		
 		print(" <br>\n");
 		print("Json: ");

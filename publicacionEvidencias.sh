@@ -122,6 +122,6 @@ echo "##################################N@o£X£&%o£££É#####################
 echo "######################################æë£ë§N###################################" 
 echo "###############################################################################" 
 echo ""
-wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/tigoselfcare/executionPhpUnit.log
-wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/transaccionales-co/executionPhpUnit.log
-wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/com.handresc1127.automatizacion.RunnerTags.txt
+wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/tigoselfcare/executionPhpUnit.log&title=Pruebas unitarias de tigoSelfcare
+wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/transaccionales-co/executionPhpUnit.log&title=Pruebas unitarias de transaccionales-co
+wget http://190.248.48.5/metis/atdd/1/LogUnitTest.php?parametro=/var/www/metis/atdd/1/unitTests/com.handresc1127.automatizacion.RunnerTags.txt&title=Pruebas funcionales de los aplicativos
