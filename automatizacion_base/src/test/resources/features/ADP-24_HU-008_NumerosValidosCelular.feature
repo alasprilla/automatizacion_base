@@ -23,7 +23,7 @@ Feature: HU008 Validación número Celular
       | "3150000000" | "casoexitoso@ti.go"     |
       | "3200000000" | "caso_exitoso@tigo.com" |
 
-  Scenario Outline: PasPasarela - MSISDN válido Tigo sin facturas pendientes
+  Scenario Outline: Pasarela - MSISDN válido Tigo sin facturas pendientes
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"

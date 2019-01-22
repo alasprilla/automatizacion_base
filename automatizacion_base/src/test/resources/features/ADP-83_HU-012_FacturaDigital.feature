@@ -10,7 +10,7 @@ PARA para recibir mi factura en mi correo electrónico
     Background: Borrar Datos de Navegacion 
     And se borran cookies del navegador
   
-  Scenario: Cambio a facturación Electrónica
+  Scenario: Mi Cuenta - Cambio a facturación Electrónica
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -33,7 +33,7 @@ PARA para recibir mi factura en mi correo electrónico
     And Espero 4 segundos
     Then el campo "Mensaje Confirmación" tiene el texto "Tus datos de facturación se han modificado correctamente."
 
-  Scenario: Cambio a facturación Impresa
+  Scenario: Mi Cuenta - Cambio a facturación Impresa
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"

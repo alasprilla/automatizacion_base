@@ -6,7 +6,7 @@ Feature: SPIKE Adaptabilidad de datos
   Quiero que mis datos esten clasificados por el criterio facturas pendientes
   Para que el robot tome el dato que necesite y no tenga errores
 
-  Scenario Outline: Adaptabilidad tu linea tigo
+  Scenario Outline: Pasarela - Adaptabilidad tu linea tigo
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "Movil"
     And ingreso <msisdn> en el campo "Tu línea Tigo"
@@ -22,7 +22,7 @@ Feature: SPIKE Adaptabilidad de datos
       | "3043605513" |
       | "3003588240" |
 
-  Scenario Outline: Adaptabilidad hogares
+  Scenario Outline: Pasarela - Adaptabilidad hogares
     Given Estoy en la página de inicio "Pagina pago de facturas" en la url "https://transaccionesco-uat.tigocloud.net/servicios/facturas"
     When doy clic en "HOGAR"
     And selecciono "CC" en el campo "Tipo de documento"

@@ -1,13 +1,13 @@
 #Author: your.email@your.domain.com
 #Keywords Summary :
-@Pasarela
+@Recargas
 
 Feature: SPIKE Adaptabilidad de datos
   Como automatizador de pruebas
   Quiero que mis datos esten clasificados por el criterio lineas con saldo pendiente
   Para que el robot tome el dato que necesite y no tenga errores
 
-  Scenario Outline: Adaptabilidad tu saldo pendiente
+  Scenario Outline: Recargas - Adaptabilidad tu saldo pendiente
   	Given Estoy en la página de inicio "Pagina paquetes" en la url "https://transaccionesco-uat.tigocloud.net/servicios/paquetes?clear=true"
     When doy clic en "Recarga"
     And ingreso <msisdn> en el campo "Ingresa Tu Linea Tigo"

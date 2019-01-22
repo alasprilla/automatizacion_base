@@ -10,7 +10,7 @@ Feature: HU021 Cambio de nombre de la red Wifi
   Background: Borrar Datos de Navegacion
     Given se borran cookies del navegador
 
-  Scenario Outline: Cambio de nombre de la red wifi NO exitoso
+  Scenario Outline: Mi Cuenta - Cambio de nombre de la red wifi NO exitoso
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -40,7 +40,7 @@ Feature: HU021 Cambio de nombre de la red Wifi
       | "Menos de 6 Caracteres" | "hola1"      | "El nombre es inválido, revise que tenga entre 6 y 10 caracteres."     |
       | "Campo Vacio"           | ""           | "El nombre es inválido, revise que no esté vacio."                     |
 
-  Scenario Outline: Cambio de nombre de la red wifi exitoso
+  Scenario Outline: Mi Cuenta - Cambio de nombre de la red wifi exitoso
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"

@@ -10,7 +10,7 @@ Para resolver las fallas presentadas
     Background: Borrar Datos de Navegacion 
     And se borran cookies del navegador
 
-  Scenario: Centro de ayuda
+  Scenario: Mi Cuenta - Centro de ayuda
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
@@ -34,7 +34,7 @@ Para resolver las fallas presentadas
     And cerrar pestaña
   
   
-    Scenario: Tiendas
+    Scenario: Mi Cuenta - Tiendas
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"

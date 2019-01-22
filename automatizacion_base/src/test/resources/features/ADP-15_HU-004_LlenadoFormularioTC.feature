@@ -16,7 +16,7 @@ Feature: HU004 Llenado formulario TC
     And doy clic en "Consultar M clic"
     Then llevará al formulario con el objeto "title-detail"
 
-  Scenario: Validación del campo "Fecha vencimiento" con mes "MM"
+  Scenario: Pasarela - Validación del campo "Fecha vencimiento" con mes "MM"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso "4357223863986989" en el campo "Número de tarjeta"
     And ingreso "932" en el campo "CVV"
@@ -31,7 +31,7 @@ Feature: HU004 Llenado formulario TC
     Then el campo "Pagar" tiene el atributo "disabled" en el valor "true"
     And doy clic en "Cancelar TC"
 
-  Scenario: Validación del campo "Fecha vencimiento" con año "AA"
+  Scenario: Pasarela - Validación del campo "Fecha vencimiento" con año "AA"
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso "4357223863986989" en el campo "Número de tarjeta"
     And ingreso "932" en el campo "CVV"
@@ -46,7 +46,7 @@ Feature: HU004 Llenado formulario TC
     Then el campo "Pagar" tiene el atributo "disabled" en el valor "true"
     And doy clic en "Cancelar TC"
 
-  Scenario: Validación del campo "Fecha vencimiento" con fecha inferior al día actual
+  Scenario: Pasarela - Validación del campo "Fecha vencimiento" con fecha inferior al día actual
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso "4357223863986989" en el campo "Número de tarjeta"
     And ingreso "932" en el campo "CVV"
@@ -60,7 +60,7 @@ Feature: HU004 Llenado formulario TC
     Then el campo "Pagar" tiene el atributo "disabled" en el valor "true"
     And doy clic en "Cancelar TC"
 
-  Scenario Outline: Validación del campo "Fecha vencimiento" correcto
+  Scenario Outline: Pasarela - Validación del campo "Fecha vencimiento" correcto
     Given Estoy en la página de selección de formas de pago con el tipo "Tarjeta de Crédito" seleccionado
     And ingreso "4357223863986989" en el campo "Número de tarjeta"
     And ingreso "932" en el campo "CVV"
