@@ -28,7 +28,7 @@ Feature: HU028 Visita Tecnica Fijo
     #And doy clic en "Visita Técnica" si es visible
     #And el campo "Mensaje Card" tiene el texto "En el momento no tienes una visita programada."
     #And el campo "Mensaje Informacion" tiene el texto "Lo siento no tienes un agendamiento programado"
-    #And el campo "Mensaje Informacion" tiene el atributo "color" en el valor "azul"
+    #And el campo "Mensaje Informacion ColorFondo" tiene el atributo "background" en el valor "azul"
     #And doy clic en <Opciones>
     #And voy a la pestaña <Número Pestaña>
     #And lo llevará a la página <url>
@@ -56,10 +56,9 @@ Feature: HU028 Visita Tecnica Fijo
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
     And doy clic en "Visita Técnica" si es visible
-    And Espero 30 segundos
-    And el campo "Mensaje Card" tiene el texto "Los sentimos, en el momento no tienes una visita programada"
-    And el campo "Mensaje Informacion" tiene el texto "Lo siento no tienes un agendamiento programado"
-    And el campo "Mensaje Informacion" tiene el atributo "background-color" en el valor "azul"
+    #And el campo "Mensaje Card" tiene el texto "Los sentimos, en el momento no tienes una visita programada"
+    #And el campo "Mensaje Informacion" tiene el texto "Lo siento no tienes un agendamiento programado"
+    #And el campo "Mensaje Informacion ColorFondo" tiene el atributo "background" en el valor "azul"
     And doy clic en "Chat en linea"
     And cambiar de iframe
    Then llevará al formulario con el objeto "Chat Online"
