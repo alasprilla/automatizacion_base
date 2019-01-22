@@ -152,6 +152,12 @@ public class DefDefault {
 		pagePagaFact.clasificarDato(dataName, dataClass1, dataClass2);
 	}
 
+	@Then("^clasificar el dato \"([^\"]*)\" en \"([^\"]*)\" o en \"([^\"]*)\" o en \"([^\"]*)\"$")
+	public void clasificar_el_dato_en_o_en_o_en(String dataName, String dataClass1, String dataClass2, String dataClass3) {
+		pagePagaFact.clasificarDato(dataName, dataClass1, dataClass2, dataClass3);
+	}
+
+	
 	@Then("^se borran cookies del navegador$")
 	public void se_borran_cookies_del_navegador() {
 		pagePagaFact.borraCookies();

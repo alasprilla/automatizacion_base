@@ -587,7 +587,45 @@ public class ActionsUtil {
 		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
 		return retorno;
 	}
-
+    
+	public static int byShared(WebDriver driver, By objClass1, By objClass2, By objClass3) {
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.MILLISECONDS);
+		int retorno = 0;
+		for (int second = 0; second <= 60; second++) {
+			boolean flagBreak = false;
+			try {
+				driver.findElement(objClass1);
+				if (driver.findElement(objClass1).isDisplayed()) {
+					flagBreak = true;
+					retorno = 1;
+				}
+			} catch (Exception e) {
+			}
+			try {
+				driver.findElement(objClass2);
+				if (driver.findElement(objClass2).isDisplayed()) {
+					flagBreak = true;
+					retorno = 2;
+				}
+			} catch (Exception e) {
+			}
+			try {
+				driver.findElement(objClass3);
+				if (driver.findElement(objClass3).isDisplayed()) {
+					flagBreak = true;
+					retorno = 3;
+				}
+			} catch (Exception e) {
+			}
+			if (flagBreak) {
+				break;
+			}
+			sleepMiliseconds(100);
+		}
+		driver.manage().timeouts().implicitlyWait(TIMEOUTS, TimeUnit.MILLISECONDS);
+		return retorno;
+	}
+	
 	//// Base URL
 	private static String baseURL;
 
@@ -693,4 +731,6 @@ public class ActionsUtil {
 	public static String getSubString(WebDriver driver, By by, int strInit, int strEnd) {
 		return getText(driver, by).substring(strInit,strEnd);
 	}
+
+	
 }

@@ -187,6 +187,24 @@ public class PageDefault extends PageObject {
 		}
 
 	}
+	
+	public void clasificarDato(String dataValue, String dataClass1, String dataClass2, String dataClass3) {
+		sharedObjet(dataClass1);
+		By objClass1 = getObjetoToCliked();
+		sharedObjet(dataClass2);
+		By objClass2 = getObjetoToCliked();
+		sharedObjet(dataClass3);
+		By objClass3 = getObjetoToCliked();
+		int indexClass = ActionsUtil.byShared(getDriver(), objClass1, objClass2, objClass3);
+		if (indexClass == 1) {
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass1), dataValue);
+		} else if (indexClass == 2) {
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass2), dataValue);
+		} else if (indexClass == 3) {
+			DatosNegocio.dataPut(ActionsUtil.textoMinusculasSinEspacios(dataClass3), dataValue);
+		}
+		
+	}
 
 	public void comparUrlActual(String urlEsperada) {
 		ActionsUtil.curretCompareURL(getDriver(), urlEsperada);
@@ -328,4 +346,6 @@ public class PageDefault extends PageObject {
 		DatosNegocio.dataPut(datakey, string1 + string2);
 		LOGGER.info("Se guardo el dato: \""+datakey+"\" con el valor: \""+string1 + string2+"\"");
 	}
+
+	
 }
