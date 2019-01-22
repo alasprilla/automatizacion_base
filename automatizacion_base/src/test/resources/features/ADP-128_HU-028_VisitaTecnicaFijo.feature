@@ -1,7 +1,7 @@
 #Author: Alexandra Lasprilla
 #Keywords Summary :
 @issue:ADP-128 @MiCuenta
-Feature: HU028_Soporte Tecnico Fijo
+Feature: HU028 Visita Tecnica Fijo
   
   Yo como usuario de mi cuenta Tigo      #Pendiente 
   Quiero tener soporte de mis equipos
