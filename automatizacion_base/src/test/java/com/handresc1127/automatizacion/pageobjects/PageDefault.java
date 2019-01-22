@@ -312,4 +312,8 @@ public class PageDefault extends PageObject {
 		string2 = DatosNegocio.dataGet(string2);
 		DatosNegocio.dataPut(datakey, string1 + string2);
 	}
+
+	public void cambiarIframe() {
+		ActionsUtil.cambiarMarco(getDriver());
+	}
 }

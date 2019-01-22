@@ -197,4 +197,9 @@ public class DefDefault {
 
 		pagePagaFact.concatenar(string1, string2, datakey);
 	}
+
+	@Given("^cambiar de iframe$")
+	public void cambiar_de_iframe() {
+		pagePagaFact.cambiarIframe();
+	}
 }

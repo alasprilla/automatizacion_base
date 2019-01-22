@@ -675,4 +675,8 @@ public class ActionsUtil {
 	public static String getSubString(WebDriver driver, By by, int strInit, int strEnd) {
 		return getText(driver, by).substring(strInit,strEnd);
 	}
+
+	public static void cambiarMarco(WebDriver driver) {
+		driver.switchTo().frame(1);
+	}
 }
