@@ -465,7 +465,7 @@ public class ActionsUtil {
 
 	public static void compareAtributo(WebDriver driver, By by, String atributo, String valorEsperado) {
 		String valorObtenido = getAttribute(driver, by, atributo);
-		if (valorObtenido.isEmpty()||valorObtenido.isEmpty())
+		if (valorObtenido.isEmpty()||valorEsperado.isEmpty())
 			assertEquals(valorEsperado, valorObtenido);
 		else
 			assertThat(valorObtenido, CoreMatchers.containsString(valorEsperado));
