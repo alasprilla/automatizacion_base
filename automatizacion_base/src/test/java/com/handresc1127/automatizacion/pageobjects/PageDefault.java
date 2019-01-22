@@ -313,7 +313,30 @@ public class PageDefault extends PageObject {
 		DatosNegocio.dataPut(datakey, string1 + string2);
 	}
 
-	public void cambiarIframe() {
-		ActionsUtil.cambiarMarco(getDriver());
+	public void cambiarIframe(String posicion) {
+		
+		int indexTab;
+		try {
+			indexTab = Integer.parseInt(posicion);
+		} catch (Exception e) {
+			indexTab = 0;
+		}
+		if (indexTab == 0) {
+			switch (ActionsUtil.textoMinusculasSinEspacios(posicion)) {
+			case "cero":
+				indexTab = 0;
+				break;
+			case "uno":
+				indexTab = 1;
+				break;
+			case "dos":
+				indexTab = 2;
+				break;
+			default:
+				indexTab = 100;
+				break;
+			}
+		}
+		ActionsUtil.switchFrame(getDriver(),indexTab);
 	}
 }

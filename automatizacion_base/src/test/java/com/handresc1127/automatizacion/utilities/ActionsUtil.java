@@ -649,6 +649,11 @@ public class ActionsUtil {
 		driver.findElement(By.xpath("//*"));
 	}
 
+	
+	public static void switchFrame(WebDriver driver, int indexTab) {
+		driver.switchTo().frame(indexTab);
+	}
+	
 	public static void closeCurrentWindowsTab(WebDriver driver) {
 		driver.getWindowHandles();
 		Set<String> currentHandlers = driver.getWindowHandles();
@@ -676,7 +681,5 @@ public class ActionsUtil {
 		return getText(driver, by).substring(strInit,strEnd);
 	}
 
-	public static void cambiarMarco(WebDriver driver) {
-		driver.switchTo().frame(1);
-	}
+
 }
