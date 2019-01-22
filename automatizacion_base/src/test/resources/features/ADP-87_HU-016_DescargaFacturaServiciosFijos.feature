@@ -28,7 +28,12 @@ Feature: HU016_DescargaFacturaServiciosFijos
     And doy clic en "Facturacion" si es visible
     And doy clic en "Ultima Factura Pdf"
     And Espero 15 segundos
-    When abro en el navegador el archivo "11231944.951397311-44.pdf"
+    And guardo el texto de "Numero de contrato" como "txt nombre de la factura pdf"
+    And concateno "txt nombre de la factura pdf" con "." y se guarda en "txt nombre de la factura pdf"
+    And guardo el texto de "Referencia de Pago" como "txt Referencia de pago"
+    And concateno "txt nombre de la factura pdf" con "txt Referencia de pago" y se guarda en "txt nombre de la factura pdf"
+    And concateno "txt nombre de la factura pdf" con ".pdf" y se guarda en "txt nombre de la factura pdf"
+    When abro en el navegador el archivo "txt nombre de la factura pdf"
     And cerrar pestaña
 
   Scenario: Mi Cuenta - Descarga en historico de factura
@@ -49,5 +54,10 @@ Feature: HU016_DescargaFacturaServiciosFijos
     And doy clic en "Facturacion" si es visible
     And doy clic en "Historico Ultima Factura Pdf"
     And Espero 15 segundos
-    When abro en el navegador el archivo "11231944.951397311-44.pdf"
+    And guardo el texto de "Numero de contrato" como "txt nombre de la factura pdf"
+    And concateno "txt nombre de la factura pdf" con "." y se guarda en "txt nombre de la factura pdf"
+    And guardo el texto de "Referencia de Pago" como "txt Referencia de pago"
+    And concateno "txt nombre de la factura pdf" con "txt Referencia de pago" y se guarda en "txt nombre de la factura pdf"
+    And concateno "txt nombre de la factura pdf" con ".pdf" y se guarda en "txt nombre de la factura pdf"
+    When abro en el navegador el archivo "txt nombre de la factura pdf"
     And cerrar pestaña

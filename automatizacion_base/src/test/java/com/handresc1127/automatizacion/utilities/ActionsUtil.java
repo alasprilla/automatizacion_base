@@ -334,6 +334,24 @@ public class ActionsUtil {
 		WebElement element = driver.findElement(by);
 		return element.getText();
 	}
+	
+	public static String getTextIfDisplayed(WebDriver driver, By by) {
+		boolean wasRead = false;
+		String retorno = null;
+		List<WebElement> elementsToClicked = driver.findElements(by);
+		for (WebElement element : elementsToClicked) {
+			try {
+				if (element.isDisplayed()) {
+					retorno=element.getText();
+					wasRead = true;
+					break;
+				}
+			} catch (Exception e) {
+			}
+		}
+		assertTrue("No se clickeo ningún elemento " + by, wasRead);
+		return retorno;
+	}
 
 	public static String getTextAttribute(WebDriver driver, By by) {
 		highlightElement(driver, by);

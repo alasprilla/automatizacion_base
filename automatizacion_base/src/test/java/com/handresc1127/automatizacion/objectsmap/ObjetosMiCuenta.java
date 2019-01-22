@@ -81,7 +81,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("recargarmicuenta", 			By.id("action_Recargar"));
 	    ActionsUtil.objetosPut("transferir", 				By.id("action_Transferir"));
 	    ActionsUtil.objetosPut("ultimafacturapdf", 			By.id("action_Última factura PDF"));
-	    ActionsUtil.objetosPut("historicoultimafacturapdf", By.xpath("//*[@id='main-content']/div[2]/div[3]/div/section[1]/div/div/div/table/tbody/tr[1]/td[4]/div"));
+	    ActionsUtil.objetosPut("historicoultimafacturapdf", By.xpath("(//*[@class='historial-factura']//a[@href])[1]"));
 	    ActionsUtil.objetosPut("activatufacturaelectronica",By.id("action_Activa tu factura electrónica"));
 	    ActionsUtil.objetosPut("montoacompartir", 			By.id("edit-value-transfer"));
 	    ActionsUtil.objetosPut("numerodeldestinatario", 	By.id("edit-line-transfer"));
@@ -120,7 +120,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("continuarmicuenta", 		By.xpath("/html/body/div[2]/div/form/div[3]/button"));
 		ActionsUtil.objetosPut("creatucuenta", 				By.xpath("/html/body/div[2]/div/div[1]/h5"));
 		ActionsUtil.objetosPut("realizarregistrodeequipo", 	By.xpath("/html/body/content/div[2]/div/div/section/div/div/div/div/div/div/a"));
-	    ActionsUtil.objetosPut("referenciadepago",          By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div/div[5]/div"));
+	    ActionsUtil.objetosPut("referenciadepago",          By.xpath("((//*[@data-block-action='Billing'])//*[@class='title' and contains(text(),'Referente de pago:')])/..//*[@class='value ng-binding']"));
 	    ActionsUtil.objetosPut("consumos",                  By.xpath("//*[contains(@href,'consumos')]"));
 	    ActionsUtil.objetosPut("fechayhoradatos",           By.xpath("//*[contains(text(),'Datos')]/..//*[contains(text(),'Fecha y Hora')]"));
 	    ActionsUtil.objetosPut("diadatos", 	                By.xpath("//*[contains(text(),'Datos')]/..//*[contains(text(),'Día')]"));
@@ -159,6 +159,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("mensajecambiocanal",        By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifiurl",By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_nombre_red_wifi/')]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifi",  By.id("edit-ssid"));
+	    ActionsUtil.objetosPut("numerodecontrato",  		By.xpath("(//*[@id='account-mobile-selector']|//*[@id='block-accountsblock-2'])//*[@class='line']"));
+	    
 	}
 	
 }

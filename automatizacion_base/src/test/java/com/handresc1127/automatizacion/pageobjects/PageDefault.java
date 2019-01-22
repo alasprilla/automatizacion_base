@@ -242,11 +242,13 @@ public class PageDefault extends PageObject {
 		currentPath = "file:///" + currentPath + '/' + archivo;
 		homePath = "file:///" + homePath + '/' + archivo;
 		String downloadsPath = "file:///" + downloadPath + '/' + archivo;
-		String dDiskDownloadsPath = "file:///D:/Downloads" + '/' + archivo;
+		String dDiskDownloadsPath = "file:///D:/Downloads/" + archivo;
+		String customPath = "file:///home/driosr/Downloads/" + archivo;
 
 		By chromeErrFile = By.xpath("//*[@id=\"error-information-popup-content\"]/div[2]");
 		boolean errorOpen = false;
 		File  file = null;
+		currentPath=currentPath.replace('\\', '/');
 		ActionsUtil.goToWebSide(getDriver(), currentPath);
 		ActionsUtil.sleepSeconds(1);
 		errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
@@ -254,6 +256,7 @@ public class PageDefault extends PageObject {
 			file = new File(currentPath.replace("file:///", ""));
 		}
 		if (errorOpen) {
+			homePath=homePath.replace('\\', '/');
 			ActionsUtil.goToWebSide(getDriver(), homePath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
@@ -262,6 +265,7 @@ public class PageDefault extends PageObject {
 			}
 		}
 		if (errorOpen) {
+			downloadsPath=downloadsPath.replace('\\', '/');
 			ActionsUtil.goToWebSide(getDriver(), downloadsPath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
@@ -269,8 +273,8 @@ public class PageDefault extends PageObject {
 				file = new File(downloadsPath.replace("file:///", ""));
 			}
 		}
-		
 		if (errorOpen) {
+			dDiskDownloadsPath=dDiskDownloadsPath.replace('\\', '/');
 			ActionsUtil.goToWebSide(getDriver(), dDiskDownloadsPath);
 			ActionsUtil.sleepSeconds(1);
 			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
@@ -278,11 +282,21 @@ public class PageDefault extends PageObject {
 				file = new File(dDiskDownloadsPath.replace("file:///", ""));
 			}
 		}
+		if (errorOpen) {
+			customPath=customPath.replace('\\', '/');
+			ActionsUtil.goToWebSide(getDriver(), customPath);
+			ActionsUtil.sleepSeconds(1);
+			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
+			if(!errorOpen) {
+				file = new File(customPath.replace("file:///", ""));
+			}
+		}
 
 		LOGGER.info("HOME: "+homePath);
 		LOGGER.info("CURRENT: "+currentPath);
 		LOGGER.info("DOWNLOAD: "+downloadsPath);
 		LOGGER.info("D: "+dDiskDownloadsPath);
+		LOGGER.info("Custom: "+customPath);
 		LOGGER.info("Hubo error al abrir el archivo: "+errorOpen);
 		LOGGER.info("Nombre del archivo que se desea abrir: "+archivo);
 		LOGGER.info("Ruta del archivo que se desea abrir: "+file);
@@ -300,16 +314,18 @@ public class PageDefault extends PageObject {
 
 	public void guardarString(String objeto, String datokey) {
 		sharedObjet(objeto);
-		String datoValue = ActionsUtil.getText(getDriver(), getObjetoToCliked());
+		String datoValue = ActionsUtil.getTextIfDisplayed(getDriver(), getObjetoToCliked());
 		if (datoValue.isEmpty()) {
 			datoValue = ActionsUtil.getTextAttribute(getDriver(), getObjetoToCliked());
 		}
 		DatosNegocio.dataPut(datokey, datoValue);
+		LOGGER.info("Se guardo el dato: \""+datokey+"\" con el valor: \""+datoValue+"\"");
 	}
 
 	public void concatenar(String string1, String string2, String datakey) {
 		string1 = DatosNegocio.dataGet(string1);
 		string2 = DatosNegocio.dataGet(string2);
 		DatosNegocio.dataPut(datakey, string1 + string2);
+		LOGGER.info("Se guardo el dato: \""+datakey+"\" con el valor: \""+string1 + string2+"\"");
 	}
 }
