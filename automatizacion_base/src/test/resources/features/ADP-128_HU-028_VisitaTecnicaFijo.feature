@@ -60,7 +60,7 @@ Feature: HU028 Visita Tecnica Fijo
     #And el campo "Mensaje Informacion" tiene el texto "Lo siento no tienes un agendamiento programado"
     #And el campo "Mensaje Informacion ColorFondo" tiene el atributo "background" en el valor "azul"
     And doy clic en "Chat en linea"
-    And cambiar de iframe
+    And cambiar de iframe "uno"
    Then llevará al formulario con el objeto "Chat Online"
    
    
