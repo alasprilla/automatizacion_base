@@ -75,7 +75,10 @@ public class ObjetosPagaTuFactura {
 				"\"//*[@id='content_list_invoices' or @id='payment-method-type-label-credit-payu' or (@id='alert_main' and @style='display: block;')]\""));
 
 		ActionsUtil.objetosPut("movil_msisdnconfacturas",By.id("payment-method-type-label-credit-payu"));
-		ActionsUtil.objetosPut("hogar_numdocumentoconfacturas",By.id("content_list_invoices"));
+		ActionsUtil.objetosPut("movil_msisdnsinfacturas",By.id("payment-method-type-label-credit-payu"));
+		ActionsUtil.objetosPut("hogar_numdocumentoconfacturas",By.xpath("(//*[@class='item-group-detail invoice-actions'])[1]"));
+		ActionsUtil.objetosPut("hogar_numdocumentosinfacturas",By.xpath("//*[@class='content_alert']"));
+		ActionsUtil.objetosPut("hogar_numdocumentoconunafactura", By.id("title-detail"));
 		ActionsUtil.objetosPut("celularcomprador",By.id("edit-buyer-phone"));
 		ActionsUtil.objetosPut("detallesfactura",By.xpath("//*[@id='block-tigo-theme-content']/div/div[3]/div/div[2]/div[2]/div[1]/span"));
 		

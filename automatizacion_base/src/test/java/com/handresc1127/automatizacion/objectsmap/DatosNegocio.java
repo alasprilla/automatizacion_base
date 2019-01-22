@@ -22,6 +22,7 @@ public final class DatosNegocio {
 		dataPut("movil_msisdnsinfacturas", "3003588240");
 		dataPut("hogar_numdocumentoconfacturas", "552716");
 		dataPut("hogar_numdocumentosinfacturas", "71770656");
+		dataPut("hogar_numdocumentoconunafactura", "71980749");
 		dataPut("msisdncondeuda", "3008911502");
 		dataPut("msisdnsindeuda", "3008812932");
 		dataPut("thismm()", String.valueOf(now.get(Calendar.MONTH) + 1));
@@ -42,6 +43,7 @@ public final class DatosNegocio {
 
 	public static void dataPut(String key, String value){
 		datosDelNegocio.put(ActionsUtil.textoMinusculasSinEspacios(key),value);
+		System.out.println(datosDelNegocio);
 	}
 	
 }
