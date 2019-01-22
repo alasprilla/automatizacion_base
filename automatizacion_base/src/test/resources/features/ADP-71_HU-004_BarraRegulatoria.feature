@@ -1,6 +1,6 @@
 #Author:Jose David Moreno
 #Keywords Summary :
-@issue:ADP-71, @MiCuenta
+@issue:ADP-71 @MiCuenta
 Feature: HU004_Barra Regulatoria
   Y0 como usuario de mi cuenta Tigo 
   Quiero ingresar a la barra regulatoria

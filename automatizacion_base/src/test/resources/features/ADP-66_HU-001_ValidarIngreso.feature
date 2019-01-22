@@ -1,6 +1,6 @@
 #Author: Karen Perez Parrado
 #Keywords Summary :
-@issue:ADP-66, @MiCuenta
+@issue:ADP-66 @MiCuenta
 Feature: HU001 Validar Ingreso
   
   Como usuario de mi cuenta Tigo
