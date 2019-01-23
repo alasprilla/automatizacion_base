@@ -52,6 +52,8 @@ Feature: HU016_DescargaFacturaServiciosFijos
     And Espero 1 segundos
     And doy clic en "Linea Fija" si es visible
     And doy clic en "Facturacion" si es visible
+    And llevará al formulario con el objeto "Historico Ultima Factura Pdf"
+    And Presiono la tecla "Avanzar Página"
     And doy clic en "Historico Ultima Factura Pdf"
     And Espero 15 segundos
     And guardo el texto de "Numero de contrato" como "txt nombre de la factura pdf"
