@@ -135,7 +135,6 @@
 					<includes>
 						<include>**/RunnerTags.java</include>
 					</includes>
-					<rerunFailingTestsCount>1</rerunFailingTestsCount>
 				</configuration>
 			</plugin>
 
