@@ -29,8 +29,8 @@ Feature: HU008 Validación número Celular
     And ingreso <msisdn> en el campo "Tu línea Tigo"
     And ingreso <email> en el campo "Correo electrónicoM"
     And doy clic en "Consultar M clic"
-    Then el campo "Linea sin facturas" tiene el texto "No hemos encontrado facturas pendientes para este número de línea."
-    And el campo "Linea sin facturas" tiene el atributo "background" en el valor "azul"
+    Then el campo "Linea sin facturas" tiene el texto "No se encontraron datos en la consulta."
+    And el campo "Linea sin facturas" tiene el atributo "background" en el valor "rojo_rgb"
     And el campo "Linea sin facturas" tiene el atributo "color" en el valor "blanco"
 
     Examples: 

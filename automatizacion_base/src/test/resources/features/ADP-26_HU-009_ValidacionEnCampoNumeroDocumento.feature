@@ -43,7 +43,7 @@ Feature: HU009 CC válida en campo número de documento
     And ingreso "Hogar_numDocumento sin facturas" en el campo "número de documento"
     And ingreso "prueba@prueba.com" en el campo "Correo electrónico H"
     And doy clic en "Consultar H clic"
-    Then el campo "Linea sin facturas" tiene el texto "El usuario no tiene facturas pendientes"
+    Then el campo "Linea sin facturas" tiene el texto "El usuario no tiene facturas pendientes."
     And el campo "Linea sin facturas" tiene el atributo "color" en el valor "rgba(255, 255, 255, 1)"
     And el campo "Linea sin facturas" tiene el atributo "background-color" en el valor "rgba(0, 200, 255, 1)"
 
