@@ -705,6 +705,11 @@ public class ActionsUtil {
 		driver.findElement(By.xpath("//*"));
 	}
 
+	
+	public static void switchFrame(WebDriver driver, int indexTab) {
+		driver.switchTo().frame(indexTab);
+	}
+	
 	public static void closeCurrentWindowsTab(WebDriver driver) {
 		driver.getWindowHandles();
 		Set<String> currentHandlers = driver.getWindowHandles();

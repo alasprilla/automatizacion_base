@@ -160,6 +160,15 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifiurl",By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_nombre_red_wifi/')]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifi",  By.id("edit-ssid"));
 	    ActionsUtil.objetosPut("numerodecontrato",  		By.xpath("(//*[@id='account-mobile-selector']|//*[@id='block-accountsblock-2'])//*[@class='line']"));
+	    //OBJETOS HU-028
+	    ActionsUtil.objetosPut("visitatecnica",             By.xpath("//*[contains(@href,'/hogar/agendamiento')]"));
+	    ActionsUtil.objetosPut("mensajecard",               By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
+	    ActionsUtil.objetosPut("mensajeinformacion",        By.xpath("/html/body/div[3]/div[1]/div/div/div/p"));
+	    ActionsUtil.objetosPut("mensajeinformacioncolorfondo", By.xpath("/html/body/div[3]/div[1]/div/div"));
+	    ActionsUtil.objetosPut("centrodeayudafijo", 		By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[2]/div[2]/a"));
+	    ActionsUtil.objetosPut("chatonline",                By.xpath("/html/body/div[1]/div/div/div[2]/div/div[2]/div[1]"));
+	    ActionsUtil.objetosPut("chatenlinea",  	            By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[2]/div[3]/a"));
+	    ActionsUtil.objetosPut("volveralinicio",            By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
 	    
 	}
 	
