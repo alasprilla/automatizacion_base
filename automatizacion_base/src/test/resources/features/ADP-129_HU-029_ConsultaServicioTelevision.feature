@@ -28,7 +28,6 @@ Feature: HU029 Consulta Servicio Television
   And doy clic en "Servicios" si es visible
   Then el campo "Producto television detalles" no existe
   
-  
   Scenario: Usuario de televisión tradicional
   Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
   When doy clic en "Ingresar"
@@ -54,7 +53,6 @@ Feature: HU029 Consulta Servicio Television
   And doy clic en "Servicios" si es visible
   And doy clic en "Diagnosticar Fallas"
   And el campo "Modal Diagnostico fallas" tiene el texto "¡Espera mientras revisamos tus servicios en linea!"
-  
   
   Scenario: Usuario de televisión oneTV
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
