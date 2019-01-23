@@ -169,7 +169,12 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("mensajecambiocanal",        By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifiurl",By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_nombre_red_wifi/')]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifi",  By.id("edit-ssid"));
-	    
+	    ActionsUtil.objetosPut("nombreserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[1]"));
+	    ActionsUtil.objetosPut("numeroserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[2]"));
+	    ActionsUtil.objetosPut("estadoserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[3]"));
+	    ActionsUtil.objetosPut("diagnosticarfallas",        By.xpath("//*[@id='action_']"));
+	    ActionsUtil.objetosPut("modaldiagnosticofallas",    By.xpath("//*[@id='modal-diagnosis']/div[1]/div/h4"));
+	    ActionsUtil.objetosPut("television",                By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/div/div[1]/div/div[1]/h2"));
 	}
 	
 }
