@@ -180,9 +180,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("volveralinicio",            By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
 	    
 	    //OBJETOS HU-029
-	    ActionsUtil.objetosPut("lineafijacontelevision",    By.xpath("((//*[@id='lines'])//a[contains(.,'MZ 19 CS 4 PISO 2')])"));
-		ActionsUtil.objetosPut("nolineafijacontelevision",  By.xpath("((//*[@id='lines'])//a[not(contains(.,'MZ 19 CS 4 PISO 2'))])"));
-		ActionsUtil.objetosPut("productotelevisiondetalles",By.xpath("//*[@class='product television']//*[@id='action_Detalles']"));
+	    
+		
 		ActionsUtil.objetosPut("nombreserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[1]"));
 	    ActionsUtil.objetosPut("numeroserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[2]"));
 	    ActionsUtil.objetosPut("estadoserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[3]"));
