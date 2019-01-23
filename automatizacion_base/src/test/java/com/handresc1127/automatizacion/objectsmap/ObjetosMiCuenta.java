@@ -53,6 +53,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("consultapqr", 				By.xpath("//*[contains(@href,'/mis-pqr')]"));
 	    ActionsUtil.objetosPut("mejoraplan", 				By.xpath("//*[contains(@href,'/movil/mejora-tu-plan')]"));
 	    ActionsUtil.objetosPut("soportetecnico", 			By.xpath("//*[contains(@href,'/movil/soporte-tecnico')]"));
+	    ActionsUtil.objetosPut("visitatecnica",             By.xpath("//*[contains(@href,'/hogar/agendamiento')]"));
 	    /*-------------------------- mensajes de confirmacion y de errores -----------------------------------------*/
 	    ActionsUtil.objetosPut("mensajeconfirmacion", 		By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    /*------------------------------------------- dmz ----------------------------------------------------------*/
@@ -160,8 +161,6 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifiurl",By.xpath("//*[contains(@href,'/hogar/servicios/cambiar_nombre_red_wifi/')]"));
 	    ActionsUtil.objetosPut("cambiarnombredelaredwifi",  By.id("edit-ssid"));
 	    ActionsUtil.objetosPut("numerodecontrato",  		By.xpath("(//*[@id='account-mobile-selector']|//*[@id='block-accountsblock-2'])//*[@class='line']"));
-	    //OBJETOS HU-028
-	    ActionsUtil.objetosPut("visitatecnica",             By.xpath("//*[contains(@href,'/hogar/agendamiento')]"));
 	    ActionsUtil.objetosPut("mensajecard",               By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
 	    ActionsUtil.objetosPut("mensajeinformacion",        By.xpath("/html/body/div[3]/div[1]/div/div/div/p"));
 	    ActionsUtil.objetosPut("mensajeinformacioncolorfondo", By.xpath("/html/body/div[3]/div[1]/div/div"));
