@@ -84,8 +84,8 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("chatenlinea",  	            By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[2]/div[3]/a"));
 	    ActionsUtil.objetosPut("mensajeinformacion",        By.xpath("/html/body/div[3]/div[1]/div/div/div/p"));
 	    ActionsUtil.objetosPut("mensajeinformacioncolorfondo", By.xpath("/html/body/div[3]/div[1]/div/div"));
-	    ActionsUtil.objetosPut("mensajecard",               By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[1]/div/p"));
-	    ActionsUtil.objetosPut("volveralinicio",            By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[1]/div/a"));
+	    ActionsUtil.objetosPut("mensajecard",               By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
+	    ActionsUtil.objetosPut("volveralinicio",            By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
 	    ActionsUtil.objetosPut("tienda", 					By.id("action_TIENDAS"));
 	    ActionsUtil.objetosPut("tiendas", 					By.xpath("/html/body/content/div[2]/div/section[1]/div/div/h3"));
 	    ActionsUtil.objetosPut("recargarmicuenta", 			By.id("action_Recargar"));
