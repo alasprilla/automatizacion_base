@@ -1,11 +1,12 @@
 package com.handresc1127.automatizacion.pageobjects;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.slf4j.Logger;
@@ -254,72 +255,35 @@ public class PageDefault extends PageObject {
 
 	public void abrirArchivo(String archivo) {
 		archivo = DatosNegocio.dataGet(archivo);
-		String homePath = System.getProperty("user.home");
 		Path downloadPath = Paths.get(System.getProperty("user.home"), "Downloads");
-		String currentPath = System.getProperty("user.dir");
-		currentPath = "file:///" + currentPath + '/' + archivo;
-		homePath = "file:///" + homePath + '/' + archivo;
-		String downloadsPath = "file:///" + downloadPath + '/' + archivo;
-		String dDiskDownloadsPath = "file:///D:/Downloads/" + archivo;
-		String customPath = "file:///home/driosr/Downloads/" + archivo;
+		
+		List<String> fileLocations = new ArrayList<String>();
+		fileLocations.add("file:///" + System.getProperty("user.home")+ '/' + archivo);
+		fileLocations.add("file:///" +  System.getProperty("user.dir")+ '/' + archivo);
+		fileLocations.add("file:///" + downloadPath + '/' + archivo);
+		fileLocations.add("file:///D:/Downloads/" + archivo);
+		fileLocations.add("file:///home/driosr/Downloads/" + archivo);
 
-		By chromeErrFile = By.xpath("//*[@id=\"error-information-popup-content\"]/div[2]");
-		boolean errorOpen = false;
+		By chromeFileSrc = By.xpath("//*[contains(@src,'file')]");
+		boolean wasOpen = false;
 		File  file = null;
-		currentPath=currentPath.replace('\\', '/');
-		ActionsUtil.goToWebSide(getDriver(), currentPath);
-		ActionsUtil.sleepSeconds(1);
-		errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-		if (!errorOpen) {
-			file = new File(currentPath.replace("file:///", ""));
-		}
-		if (errorOpen) {
-			homePath=homePath.replace('\\', '/');
-			ActionsUtil.goToWebSide(getDriver(), homePath);
+		
+		for (String fileLocation : fileLocations) {
+			fileLocation=fileLocation.replace('\\', '/');
+			LOGGER.info("fileLocation: "+fileLocation);
+			ActionsUtil.goToWebSide(getDriver(), fileLocation.replace(" ", "%20"));
 			ActionsUtil.sleepSeconds(1);
-			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-			if (!errorOpen){
-				file = new File(homePath.replace("file:///", ""));
+			wasOpen = ActionsUtil.existsElement(getDriver(), chromeFileSrc);
+			if (wasOpen) {
+				file = new File(fileLocation.replace("file:///", "").replace("%20", " "));
+				break;
 			}
 		}
-		if (errorOpen) {
-			downloadsPath=downloadsPath.replace('\\', '/');
-			ActionsUtil.goToWebSide(getDriver(), downloadsPath);
-			ActionsUtil.sleepSeconds(1);
-			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-			if (!errorOpen){
-				file = new File(downloadsPath.replace("file:///", ""));
-			}
-		}
-		if (errorOpen) {
-			dDiskDownloadsPath=dDiskDownloadsPath.replace('\\', '/');
-			ActionsUtil.goToWebSide(getDriver(), dDiskDownloadsPath);
-			ActionsUtil.sleepSeconds(1);
-			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-			if(!errorOpen) {
-				file = new File(dDiskDownloadsPath.replace("file:///", ""));
-			}
-		}
-		if (errorOpen) {
-			customPath=customPath.replace('\\', '/');
-			ActionsUtil.goToWebSide(getDriver(), customPath);
-			ActionsUtil.sleepSeconds(1);
-			errorOpen = ActionsUtil.existsElement(getDriver(), chromeErrFile);
-			if(!errorOpen) {
-				file = new File(customPath.replace("file:///", ""));
-			}
-		}
-
-		LOGGER.info("HOME: "+homePath);
-		LOGGER.info("CURRENT: "+currentPath);
-		LOGGER.info("DOWNLOAD: "+downloadsPath);
-		LOGGER.info("D: "+dDiskDownloadsPath);
-		LOGGER.info("Custom: "+customPath);
-		LOGGER.info("Hubo error al abrir el archivo: "+errorOpen);
+		
+		LOGGER.info("El archivo se logró abrir: "+wasOpen);
 		LOGGER.info("Nombre del archivo que se desea abrir: "+archivo);
 		LOGGER.info("Ruta del archivo que se desea abrir: "+file);
-		LOGGER.info("Hubo error al abrir el archivo: "+errorOpen);
-		assertFalse("No se logró abrir el archivo "+archivo,errorOpen);
+		assertTrue("No se logró abrir el archivo "+archivo,wasOpen);
 		if(file!=null)
 			assertTrue("No se logró borrar el archivo "+file,file.delete());
 	}
