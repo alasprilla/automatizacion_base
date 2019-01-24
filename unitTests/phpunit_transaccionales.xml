@@ -112,6 +112,17 @@
       <group>tigoune_otp</group>
       <group>tigoune_pay_nequi</group>
       <group>tigoune_payment_unified</group>
+	  <group>tigo_portability</group>
+	  <group>tigo_activation</group>
+  	  <group>tigo_recargas_paquetes</group>
+	  <group>tigo_paquetes</group>
+	  <group>tigo_recharge</group>
+	  <group>tigoune_transactions</group>
+
+	  <group>tigoune_segment</group>
+	  <group>tigoune_paymentgateway</group>
+	  <group>tigoune_payment_mobile</group>
+	  <group>tigoune_invoice_home</group>
     </include>
   </groups>
   <logging>
