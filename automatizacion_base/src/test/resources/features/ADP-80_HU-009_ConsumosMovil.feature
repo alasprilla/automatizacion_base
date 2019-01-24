@@ -110,6 +110,7 @@ Scenario: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calendario
  Scenario: Mi Cuenta - Consumos Mensajes sin seleccionar Fecha del Calendario
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
     When doy clic en "Ingresar"
+    And se quiere visualizar con resolucion "800" x "900"
     And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
     And doy clic en "Validar"
     And doy clic en "siguiente"
@@ -118,10 +119,10 @@ Scenario: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calendario
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido" si es visible
+    And doy clic en "No Linea Arma tu plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido" si es visible
+    And doy clic en "Linea Arma tu plan" si es visible
     And doy clic en "Consumos" si es visible
     And Presiono la tecla "Avanzar Página" sobre "Ver llamadas"
     And doy clic en "Ver Mensajes"
