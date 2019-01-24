@@ -46,8 +46,8 @@ Feature: HU029 Consulta Servicio Television
   And doy clic en "Servicios" si es visible
   Then llevará al formulario con el objeto "Producto television detalles"
   Then llevará al formulario con el objeto "Nombre servicio TV Tradicional"
-  Then llevará al formulario con el objeto "Numero servicio television"
-  Then llevará al formulario con el objeto "Estado servicio television"
+  Then llevará al formulario con el objeto "Numero servicio TV Tradicional"
+  Then llevará al formulario con el objeto "Estado servicio TV Tradicional"
   And doy clic en "Producto television detalles"
   And llevará al formulario con el objeto "Television"
   And doy clic en "Servicios" si es visible
@@ -72,8 +72,8 @@ Feature: HU029 Consulta Servicio Television
     And doy clic en "Servicios" si es visible
     Then llevará al formulario con el objeto "Producto television detalles"
     Then llevará al formulario con el objeto "Nombre servicio TV OneTv"
-    Then llevará al formulario con el objeto "Numero servicio television"
-    Then llevará al formulario con el objeto "Estado servicio television"
+    Then llevará al formulario con el objeto "Numero servicio TV OneTv"
+    Then llevará al formulario con el objeto "Estado servicio TV OneTv"
     And doy clic en "Producto television detalles"
     And llevará al formulario con el objeto "Television"
     And doy clic en "Servicios" si es visible
