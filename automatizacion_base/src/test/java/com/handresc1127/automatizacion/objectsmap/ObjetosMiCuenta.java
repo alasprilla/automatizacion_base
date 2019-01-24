@@ -182,7 +182,8 @@ public class ObjetosMiCuenta {
 	    //OBJETOS HU-029
 	    
 		
-		ActionsUtil.objetosPut("nombreserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[1]"));
+		ActionsUtil.objetosPut("nombreserviciotvtradicional",By.xpath("//*[contains(text(),'Tradicional')]"));
+		ActionsUtil.objetosPut("nombreserviciotvonetv",     By.xpath("//*[contains(text(),'ONEtv')]"));
 	    ActionsUtil.objetosPut("numeroserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[2]"));
 	    ActionsUtil.objetosPut("estadoserviciotelevision",  By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[3]"));
 	    ActionsUtil.objetosPut("television",                By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/div/div[1]/div/div[1]/h2"));

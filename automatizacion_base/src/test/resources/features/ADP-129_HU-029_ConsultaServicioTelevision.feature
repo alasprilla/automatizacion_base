@@ -45,7 +45,7 @@ Feature: HU029 Consulta Servicio Television
   And doy clic en "Linea Fija" si es visible
   And doy clic en "Servicios" si es visible
   Then llevará al formulario con el objeto "Producto television detalles"
-  Then llevará al formulario con el objeto "Nombre servicio television"
+  Then llevará al formulario con el objeto "Nombre servicio TV Tradicional"
   Then llevará al formulario con el objeto "Numero servicio television"
   Then llevará al formulario con el objeto "Estado servicio television"
   And doy clic en "Producto television detalles"
@@ -71,7 +71,7 @@ Feature: HU029 Consulta Servicio Television
     And doy clic en "Linea Fija Wifi" si es visible
     And doy clic en "Servicios" si es visible
     Then llevará al formulario con el objeto "Producto television detalles"
-    Then llevará al formulario con el objeto "Nombre servicio television"
+    Then llevará al formulario con el objeto "Nombre servicio TV OneTv"
     Then llevará al formulario con el objeto "Numero servicio television"
     Then llevará al formulario con el objeto "Estado servicio television"
     And doy clic en "Producto television detalles"
