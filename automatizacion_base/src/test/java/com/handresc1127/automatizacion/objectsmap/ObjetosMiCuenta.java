@@ -169,6 +169,15 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("chatenlinea",  	            By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[2]/div[3]/a"));
 	    ActionsUtil.objetosPut("volveralinicio",            By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
 	    
+		ActionsUtil.objetosPut("nombreserviciotvtradicional",By.xpath("//*[contains(text(),'Tradicional')]"));
+		ActionsUtil.objetosPut("nombreserviciotvonetv",     By.xpath("//*[contains(text(),'ONEtv')]"));
+	    ActionsUtil.objetosPut("numeroserviciotvonetv",     By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[2]"));
+	    ActionsUtil.objetosPut("numeroserviciotvtradicional",By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[1]/div/div[2]/div/span[2]"));
+	    ActionsUtil.objetosPut("estadoserviciotvonetv",     By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/span[3]"));
+	    ActionsUtil.objetosPut("estadoserviciotvtradicional",By.xpath("//*[@id='main-content']/div[2]/div[1]/div/section/div/div/div/div[1]/div[1]/div/div[2]/div/span[3]"));
+	    ActionsUtil.objetosPut("television",                By.xpath("//*[@id='main-content']/div[2]/div/div/section[2]/div/div/div[1]/div/div[1]/h2"));
+	    ActionsUtil.objetosPut("diagnosticarfallas",        By.xpath("/html/body/div[3]/div[2]/div/section/div/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/div[2]"));
+	    ActionsUtil.objetosPut("modaldiagnosticofallas",    By.xpath("//*[@id='modal-diagnosis']/div[1]/div/h4"));
 	}
 	
 }
