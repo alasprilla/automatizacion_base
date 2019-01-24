@@ -118,10 +118,10 @@ Scenario: Mi Cuenta - Consumos llamadas sin seleccionar Fecha del Calendario
     And Espero 1 segundos
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "No Linea Hibrido" si es visible
+    And doy clic en "No Linea Arma tu plan" si es visible
     And doy clic en "Seleccion MSISDN" si es visible
     And Espero 1 segundos
-    And doy clic en "Linea Hibrido" si es visible
+    And doy clic en "Linea Arma tu plan" si es visible
     And doy clic en "Consumos" si es visible
     And Presiono la tecla "Avanzar Página" sobre "Ver llamadas"
     And doy clic en "Ver Mensajes"
