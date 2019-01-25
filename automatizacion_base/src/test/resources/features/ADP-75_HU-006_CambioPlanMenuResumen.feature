@@ -27,8 +27,7 @@ Feature: HU006_CambioDePlanMenuResumen
     And doy clic en "Linea Hibrido" si es visible
     And doy clic en "Resumen" si es visible
     And doy clic en "Cambiate Ya"
-    Then el campo "Mejorar Plan" tiene el texto "Mejorar Plan"
-    Then el campo "Detalle Plan" tiene el texto "Tenemos el plan perfecto para ti. Activalo en nuestro chat en línea."
+    Then llevará al formulario con el objeto "Planes"
 
   Scenario: Mi Cuenta - Cámbiate ya en Resumen de línea móvil prepago
     Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
