@@ -54,6 +54,7 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("mejoraplan", 				By.xpath("//*[contains(@href,'/movil/mejora-tu-plan')]"));
 	    ActionsUtil.objetosPut("soportetecnico", 			By.xpath("//*[contains(@href,'/movil/soporte-tecnico')]"));
 	    ActionsUtil.objetosPut("visitatecnica",             By.xpath("//*[contains(@href,'/hogar/agendamiento')]"));
+	    ActionsUtil.objetosPut("micuentamovil",             By.xpath("//*[contains(@href,'/movil/micuenta')]"));
 	    /*-------------------------- mensajes de confirmacion y de errores -----------------------------------------*/
 	    ActionsUtil.objetosPut("mensajeconfirmacion", 		By.xpath("/html/body/div[3]/div[1]/div/div/div/div[2]"));
 	    /*------------------------------------------- dmz ----------------------------------------------------------*/
@@ -168,6 +169,14 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("chatonline",                By.xpath("/html/body/div[1]/div/div/div[2]/div/div[2]/div[1]"));
 	    ActionsUtil.objetosPut("chatenlinea",  	            By.xpath("//*[@id='schedule-visits-container']/div[2]/div/div/div[2]/div[3]/a"));
 	    ActionsUtil.objetosPut("volveralinicio",            By.xpath("//*[@id='schedule-visits-container']/div/div/div/div[1]/div/p"));
+	    ActionsUtil.objetosPut("miinformacion",             By.xpath("//*[@class='block-title']"));
+	    ActionsUtil.objetosPut("nombre",                    By.xpath("//*[@class='value ng-binding'])[1]"));
+	    ActionsUtil.objetosPut("documento",                 By.xpath("//*[@class='value ng-binding'])[2]"));
+	    ActionsUtil.objetosPut("direccion",                 By.xpath("//*[@class='value ng-binding'])[3]"));
+	    ActionsUtil.objetosPut("departamento",              By.xpath("//*[@class='value ng-binding'])[4]"));
+	    ActionsUtil.objetosPut("ciudad",                    By.xpath("//*[@class='value ng-binding'])[5]"));
+	    ActionsUtil.objetosPut("correoelectronico",         By.xpath("//*[@class='value ng-binding'])[6]"));
+	    ActionsUtil.objetosPut("telefono",                  By.xpath("//*[@class='value ng-binding'])[7]"));
 	    
 	}
 	
