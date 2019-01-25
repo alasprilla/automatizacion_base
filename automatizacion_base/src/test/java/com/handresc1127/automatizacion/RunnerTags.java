@@ -65,6 +65,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		"src/test/resources/features/ADP-109_HU-024_DetallesServiciosFijos.feature",
 		"src/test/resources/features/ADP-110_HU-025_HistoricoConsumosTelefonia.feature",
 		"src/test/resources/features/ADP-111_HU-026_ConsultaDePQR.feature",
+		"src/test/resources/features/ADP-123_HU-025_HistoricoDeFacturacion.feature",
 		"src/test/resources/features/ADP-128_HU-028_VisitaTecnicaFijo.feature",
 		"src/test/resources/features/ADP-129_HU-029_ConsultaServicioTelevision.feature"},
 
