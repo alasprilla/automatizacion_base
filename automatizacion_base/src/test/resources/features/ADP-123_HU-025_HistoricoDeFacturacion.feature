@@ -33,21 +33,3 @@ Feature: HU025 Historico de facturación servicios fijos
     And concateno "txt nombre de la factura pdf" con ".pdf" y se guarda en "txt nombre de la factura pdf"
     When abro en el navegador el archivo "txt nombre de la factura pdf"
     And cerrar pestaña
-
-  Scenario: Mi Cuenta - Usuario no tiene facturas históricas generadas
-    Given Estoy en la página de inicio "Página mi cuenta tigo" en la url "https://tigoselfcareregional-uat-co.tigocloud.net"
-    When doy clic en "Ingresar"
-    And ingreso "automatizacionmicuenta@gmail.com" en el campo "Correo Mi Cuenta"
-    And doy clic en "Validar"
-    And doy clic en "siguiente"
-    And ingreso "Colombia2019" en el campo "Contrasena Gmail"
-    And doy clic en "Siguiente C"
-    And Espero 1 segundos
-    And doy clic en "Seleccion MSISDN" si es visible
-    And Espero 1 segundos
-    And doy clic en "No Linea Fija" si es visible
-    And doy clic en "Seleccion MSISDN" si es visible
-    And Espero 1 segundos
-    And doy clic en "Linea Fija" si es visible
-    And doy clic en "Facturación"
-#Entonces no se debe mostrar ningún link a descargar “PDF”
