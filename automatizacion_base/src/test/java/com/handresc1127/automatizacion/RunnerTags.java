@@ -46,7 +46,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 //		"src/test/resources/features/ADP-75_HU-006_CambioPlanMenuResumen.feature",
 //		"src/test/resources/features/ADP-78_HU-007_PagarFacturaMovilMenuResumen.feature",
 //		"src/test/resources/features/ADP-79_HU-008_DescargaDeFacturaMovil.feature",
-//		"src/test/resources/features/ADP-80_HU-009_ConsumosMovil.feature",
+		"src/test/resources/features/ADP-80_HU-009_ConsumosMovil.feature",
 //		"src/test/resources/features/ADP-81_HU-010_AsesorPersonalizado.feature",
 //		"src/test/resources/features/ADP-82_HU-011_AgregarTarjetaServiciosMoviles.feature",
 //		"src/test/resources/features/ADP-83_HU-012_FacturaDigital.feature",
@@ -66,7 +66,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 //		"src/test/resources/features/ADP-110_HU-025_HistoricoConsumosTelefonia.feature",
 //		"src/test/resources/features/ADP-111_HU-026_ConsultaDePQR.feature"
 //		"src/test/resources/features/ADP-128_HU-028_VisitaTecnicaFijo.feature"
-		"src/test/resources/features/ADP-129_HU-029_ConsultaServicioTelevision.feature"
+//		"src/test/resources/features/ADP-129_HU-029_ConsultaServicioTelevision.feature"
 		},
 
 		tags = { "" }, monochrome = true, plugin = { "pretty", "html:target/reports/html/",
