@@ -21,10 +21,10 @@ Feature: HU029 Consulta Servicio Television
   And Espero 1 segundos
   And doy clic en "Seleccion MSISDN" si es visible
   And Espero 1 segundos
-  And doy clic en "No linea Fija con Television" si es visible
+  And doy clic en "No linea Fija sin Television" si es visible
   And doy clic en "Seleccion MSISDN" si es visible
   And Espero 1 segundos
-  And doy clic en "Linea Fija con Television" si es visible
+  And doy clic en "Linea Fija sin Television" si es visible
   And doy clic en "Servicios" si es visible
   Then el campo "Producto television detalles" no existe
   

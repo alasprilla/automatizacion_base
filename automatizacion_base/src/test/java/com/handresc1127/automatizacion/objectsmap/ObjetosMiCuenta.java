@@ -43,6 +43,8 @@ public class ObjetosMiCuenta {
 		ActionsUtil.objetosPut("nolineafijacontelefono",    By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 65 SUR # 42 B - 14 IN 1610'))])"));
 		ActionsUtil.objetosPut("lineafijawifi",             By.xpath("((//*[@id='lines'])//a[contains(.,'CL 3 B # 79 B - 28 IN 502')])"));
 		ActionsUtil.objetosPut("nolineafijawifi",           By.xpath("((//*[@id='lines'])//a[not(contains(.,'CL 3 B # 79 B - 28 IN 502'))])"));
+		ActionsUtil.objetosPut("lineafijasintelevision",    By.xpath("((//*[@id='lines'])//a[contains(.,'MZ 19 CS 4 PISO 2')])"));
+		ActionsUtil.objetosPut("nolineafijasintelevision",  By.xpath("((//*[@id='lines'])//a[not(contains(.,'MZ 19 CS 4 PISO 2'))])"));
 		/*----------------------------------------------------------------------------------------------------------*/
 		/*--------------------------------------- menu options -----------------------------------------------------*/
 		ActionsUtil.objetosPut("resumen", 					By.xpath("(*//a[contains(.,'Resumen')])"));
