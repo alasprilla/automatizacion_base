@@ -52,7 +52,6 @@ Feature: HU009_ConsumosMovil
     And doy clic en "Día del Calendario Llamadas"
     And doy clic en "Ok fecha"
     And doy clic en "Fecha Final Llamadas"
-    And doy clic en "Mes Anterior Fecha Final"
     And doy clic en "Día del Calendario final Llamadas"
     And doy clic en "Ok fecha Final"
     And doy clic en "Ver Llamadas"
