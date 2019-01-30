@@ -192,6 +192,11 @@ public class ObjetosMiCuenta {
 	    ActionsUtil.objetosPut("diagnosticarfallas",        By.xpath("/html/body/div[3]/div[2]/div/section/div/div[2]/div[1]/div/section/div/div/div/div[1]/div[2]/div/div[2]/div/div[2]"));
 	    ActionsUtil.objetosPut("modaldiagnosticofallas",    By.xpath("//*[@id='modal-diagnosis']/div[1]/div/h4"));
 	    
+	    //OBJETOS HU-023 NELSON
+	    
+	    ActionsUtil.objetosPut("datosfacturacion",          By.xpath("//*[@id='main-content']/section/div/div/h2"));
+	    ActionsUtil.objetosPut("numero",                    By.xpath("//*[@id=\"edit-document-number\"]"));
+
 	}
 	
 }
